@@ -1,24 +1,3 @@
-{{-- Iklan --}}
-<style>
-    .owl-prev,
-    .owl-next {
-        margin-right: 25px;
-        margin-left: 25px;
-    }
-</style>
-
-<div class="sliderIklan">
-    <div id="oc-images" class="owl-carousel image-carousel  carousel-widget" data-items-xs="1" data-items-sm="1"
-        data-items-lg="1" data-items-xl="1" data-autoplay="3000" data-loop="true">
-        <div class="oc-item">
-            <img src="assets/iklan/Iklan Visit Cirebon (1074 x 258 px) - Jan 2024.png" alt="iklan swiss bawah" style="width: 1000%">
-        </div>
-        {{-- <div class="oc-item">
-                </div> --}}
-    </div>
-</div>
-{{-- end iklan --}}
-
 <!-- Footer
 ============================================= -->
 <footer id="footer" class="dark bg-blue-visit">
@@ -35,7 +14,8 @@
                 <a href="{{ getOption('fb_link') }}" target="_blank" class="h5">
                     <i class='uil-facebook-f'></i>
                 </a>
-                <a href="https://www.instagram.com/visitcirebon.id?igshid=ODA1NTc5OTg5Nw==" target="_blank" class="h5">
+                <a href="https://www.instagram.com/visitcirebon.id?igshid=ODA1NTc5OTg5Nw==" target="_blank"
+                    class="h5">
                     <i class='uil-instagram'></i>
                 </a>
                 <a href="https://www.tiktok.com/@visit.cirebon.id?_t=8iKVr2u4Z6e&_r=1" target="_blank" class="h5">

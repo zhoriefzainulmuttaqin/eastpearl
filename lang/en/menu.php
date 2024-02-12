@@ -1,11 +1,11 @@
 <?php
- 
+
 // lang/en/menu.php
- 
+
 return [
     'destinations' => 'Destinations',
     'events' => 'Events',
-    'culinaries' => 'Culinaries',
+    'culinaries' => 'Cafe & Resto',
     'souvenirs' => 'Souvenirs',
     'accomodations' => 'Accomodations',
     'services' => 'Services',

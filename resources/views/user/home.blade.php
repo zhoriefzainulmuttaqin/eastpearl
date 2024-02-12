@@ -20,7 +20,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             padding-top: 100px;
-            padding-bottom: 300px;
+            padding-bottom: 100px;
         }
 
         @media (max-width: 760px) {
@@ -99,8 +99,13 @@
         }
 
         .title_event {
-            font-size: var(--cnvs-font-size-h1);
-            font-weight: 999;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .subt_event {
+            font-size: 14px;
+
         }
 
         .entry-title h3 {
@@ -152,36 +157,7 @@
                 height: 0.7em;
             }
 
-            /* @media (min-width: 768px) and (max-width: 1920px) {
-                                                                                    #but_event {
-                                                                                    width: 15rem;
-                                                                                    height: 100px;
-                                                                                    font-size: 24px;
-                                                                                    font-weight: 500;
-                                                                                    margin-top: -3rem;
-                                                                                    margin-left: auto;
-                                                                                    margin-right: auto;
-                                                                                    display: flex;
-                                                                                    justify-content: center;
-                                                                                    align-items: center;
-                                                                                    border-radius: 5px;
 
-                                                                                }
-
-                                                                                .title_event {
-                                                                                    font-size: 16px;
-                                                                                    font-weight: 999;
-                                                                                    margin-bottom: 1.5rem;
-                                                                                    margin-top: 7rem !important;
-                                                                                }
-
-                                                                                .owl-carousel .owl-dots .owl-dot {
-                                                                                    background-color: #676565;
-                                                                                    width: 2em;
-                                                                                    height: 2em;
-                                                                                }
-
-                                                                                } */
 
         }
     </style>
@@ -189,84 +165,36 @@
         $sortedEvents = $events->sortByDesc('start_date');
     @endphp
 
-    {{-- end css event --}}
-    <div id="home-event-container">
-        <div class=" container-fluid mt-5 mt-md-0">
-            <p class=" text-center title_event">
 
-                {{ strtoupper(__('home.title_calender_events')) }}
-                <!-- <p>                                                                                 {{ __('content.welcome') }}
-                                                                                                            </p> -->
+    {{-- end css event --}}
+    <div id="home-event-container" class="d-none d-md-block">
+        <div class=" container-fluid mt-md-0" style="margin-top: -4rem !important;">
+            <p class=" text-center title_event">
+                Discover All of Indonesia’s Treasures with Us, Better than Anyone Else!
             </p>
-            <div class="d-block d-md-none">
-                <div id="oc-images" class="owl-carousel image-carousel  carousel-widget mb-6" data-items-xs="2"
-                    data-items-sm="2" data-items-lg="3" data-items-xl="5">
-                    @foreach ($sortedEvents as $event)
-                        <div class="oc-item">
-                            <a href="{{ url('event') }}"><img src="{{ url('assets/event/' . $event->cover_picture) }}"
-                                    alt="Image 1"
-                                    style="border-radius: 10px 10px 10px 10px !important; height: 10rem; width: 20rem;"></a>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="d-none d-md-block">
-                <div class="px-4">
-                    <div id="oc-events" class="owl-carousel events-carousel carousel-widget" data-margin="0"
-                        data-pagi="true" data-items="2" data-items-md="2" data-items-lg="3" data-items-xl="3">
-                        @foreach ($sortedEvents as $event)
-                            <div class="oc-item">
-                                <article class="entry event p-3">
-                                    <div
-                                        class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm">
-                                        <div class="col-12 mb-md-0">
-                                            <a href="{{ url('event') }}" class="entry-image">
-                                                <img src="{{ url('assets/event/' . $event->cover_picture) }}"
-                                                    class="rounded-2" style="height: 20rem;">
-                                            </a>
-                                        </div>
-                                        <div class="col-12 p-0 p-md-4 pt-0">
-                                            <div class="entry-title nott">
-                                                @if (App::isLocale('id'))
-                                                    <h3><a href="{{ url('event') }}">{{ $event->name }}</a></h3>
-                                                @else
-                                                    <h3><a href="{{ url('event') }}">{{ $event->name_en }}</a></h3>
-                                                @endif
-                                            </div>
-                                            <div class="entry-meta no-separator mb-1 mt-0 ">
-                                                <ul>
-                                                    <li>
-                                                        <a href="{{ url('event') }}" class="text-uppercase fw-medium">
-                                                            {{ $event->location }}
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="entry-content my-3">
-                                                <p class="mb-0">
-                                                    @if (App::isLocale('id'))
-                                                        <b>{{ tglIndo($event->start_date, 'd/m/Y') }}</b>
-                                                    @else
-                                                        <b>{{ date('d-M-Y', strtotime($event->start_date)) }}</b>
-                                                    @endif
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="text-center mt-5 mb-5">
-                <a href="{{ url('event') }}" class="btn btn-primary text-white bg-btn-visit" id="but_event">
-                    {{ __('home.see_all') }} {{ __('home.title_events') }}
-                    <i class="bi-arrow-right ms-2"></i>
-                </a>
-            </div>
+            <p class=" text-center subt_event" style="margin-top: -1rem;">
+                Tentukan pilihan Open Trip atau Private Trip
+                ke destinasi wisata alam di Labuan Bajo.
+                Tour Experts kami selalu siap untuk mengurus perjalan liburan dari awal hingga akhir. Sehingga kamu
+                mendapatkan pengalaman unik tak terlupakan selama mengeksplorasi keindahan Labuan Bajo.
+
+            </p>
         </div>
+        <div class="clearfix"></div>
+    </div>
+    <div id="home-event-container" class="d-block d-md-none">
+        <div class=" container-fluid mt-md-0" style="margin-top: -4rem !important;">
+            <p class=" text-center title_event">
+                Discover All of Indonesia’s Treasures with Us, Better than Anyone Else!
+            </p>
+            <p class=" text-center subt_event">
+                Tentukan pilihan Open Trip atau Private Trip
+                ke destinasi wisata alam di Labuan Bajo.
+                Tour Experts kami selalu siap untuk mengurus perjalan liburan dari awal hingga akhir. Sehingga kamu
+                mendapatkan pengalaman unik tak terlupakan selama mengeksplorasi keindahan Labuan Bajo.
+            </p>
+        </div>
+        <div class="clearfix"></div>
     </div>
 
     {{-- css wisata --}}
@@ -323,7 +251,7 @@
 
         .top_wisata {
             position: relative;
-            margin-top: -300px;
+            margin-top: -80px;
         }
 
         @media (max-width: 760px) {
@@ -333,10 +261,6 @@
             }
         }
 
-
-        /* .mySwiper2-mobile{
-                                                        margin-left:-9.75rem;
-                                                    } */
         @media only screen and (min-width: 200px) and (max-width: 767px) {
             .mySwiper2-mobile {
                 /* margin-left:-20%; */
@@ -404,55 +328,51 @@
     <div class="container top_wisata">
         <div class="d-none d-md-block">
             <div class="row mb-5">
-                <div class="col-md-7">
-                    <h1 class="mb-1">
-                        <b>TOP {{ __('home.title_destinations') }}</b>
-                    </h1>
-                    <div class="text-lg fs-4">
-                        {{ __('home.subtitle_destinations') }}
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="mt-5">
-                        <a href="{{ url('wisata') }}" class="btn btn-primary float-end text-white bg-btn-visit"
-                            id="but_wisata">
-                            {{ __('home.explore_all') }} {{ __('home.title_destinations') }}
-                            <i class="bi-arrow-right ms-2"></i>
-                        </a>
-                    </div>
+                <div class="text-center">
+                    <p class="" style="font-size: 28px; font-weight: 600;">
+                        <b>Paket Open Trip & Private Trip di Labuan Bajo
+                        </b>
+                    </p>
                 </div>
             </div>
         </div>
         <div class="d-block d-md-none">
-            <div class="container text-center" style="margin-top: -3rem;">
-                <b class="h1 title_wisata">TOP {{ strtoupper(__('home.title_destinations')) }}</b>
-                <br>
-                <div style="font-size:10px; font-weight:500;">
-                    {{ __('home.subtitle_destinations') }}
-                </div>
+            <div class="container text-center" style="margin-top: -6rem;">
+                <p class="" style="font-size: 16px; font-weight: 600;">
+                    <b>Paket Open Trip & Private Trip di Labuan Bajo
+                    </b>
+                </p>
             </div>
         </div>
         <!-- Swiper -->
-        <swiper-container class="mySwiper2 d-none d-md-block" id="mySwiper" effect="coverflow" grab-cursor="true"
-            centered-slides="true" slides-per-view="2" coverflow-effect-rotate="30" coverflow-effect-stretch="0"
-            coverflow-effect-depth="100" coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true" loop="true"
-            style="margin-top: -2rem;">
-            @foreach ($tours as $tour)
-                <swiper-slide class="card">
-                    <a href="/wisata" style="text-decoration: none; color: white;">
-                        <img src='{{ url("assets/wisata/$tour->picture") }}' />
-                        <div class="image-caption">
-                            @if (App::isLocale('id'))
-                                <b style="font-weight: 800;">{{ $tour->name }}</b>
-                            @else
-                                <b style="font-weight: 800;">{{ $tour->name_en }}</b>
-                            @endif
-                        </div>
-                    </a>
-                </swiper-slide>
-            @endforeach
-
-        </swiper-container>
+        <div class="px-4 d-none d-md-block">
+            <div id="oc-events" class="owl-carousel events-carousel carousel-widget" data-margin="0" data-pagi="true"
+                data-items="2" data-items-md="2" data-items-lg="3" data-items-xl="3">
+                @foreach ($culiners as $culiner)
+                    <div class="oc-item">
+                        <article class="entry event p-3">
+                            <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
+                                style="height: 12rem;">
+                                <div class="col-12 mb-md-0">
+                                    <a href="{{ url('kuliner') }}" class="entry-image">
+                                        <img src='{{ url("assets/kuliner/$culiner->picture") }}' alt="{{ $culiner->name }}"
+                                            class="rounded-2" style="max-height: 20rem;">
+                                    </a>
+                                </div>
+                                <div class="image-caption text-center"
+                                    style="background: #000000 transparent; color: #ddd; ">
+                                    @if (App::isLocale('id'))
+                                        <b style="font-weight: 800;">{{ $culiner->name }}</b>
+                                    @else
+                                        <b style="font-weight: 800;">{{ $culiner->name_en }}</b>
+                                    @endif
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                @endforeach
+            </div>
+        </div>
 
         <swiper-container class="mySwiper2 mySwiper2-mobile d-block d-md-none " id="mySwiper" effect="coverflow"
             grab-cursor="true" centered-slides="true" slides-per-view="3" coverflow-effect-rotate="30"
@@ -714,7 +634,7 @@
             /* Adjust the blur amount */
         }
 
-        .cafe_caption .entry-image{
+        .cafe_caption .entry-image {
             height: 220px;
         }
 
@@ -1846,5 +1766,3 @@
     <!-- Initialize Swiper -->
     <script></script>
 @endsection
-
-

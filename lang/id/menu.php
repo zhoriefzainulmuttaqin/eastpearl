@@ -1,11 +1,11 @@
 <?php
- 
+
 // lang/id/menu.php
- 
+
 return [
     'destinations' => 'Wisata',
     'events' => 'Event',
-    'culinaries' => 'Kuliner',
+    'culinaries' => 'Kafe $ Resto',
     'souvenirs' => 'Oleh - oleh',
     'accomodations' => 'Akomodasi',
     'services' => 'Layanan',
