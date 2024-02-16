@@ -22,7 +22,7 @@
         gtag('config', 'G-26YC4R3P36');
     </script>
 
-    <div class="container-lg mt-5">
+    {{-- <div class="container-lg mt-5">
         <h1 class="text-center mb-5">
             <b>{{ __('services.we_have_professional_services') }}</b>
             <br>
@@ -103,5 +103,5 @@
         <div class="mt-5 mb-5"></div>
         <div class="clearfix"></div>
         <div class="mt-5 mb-5"></div>
-    </div>
+    </div> --}}
 @endsection

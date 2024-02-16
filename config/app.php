@@ -16,11 +16,11 @@ return [
     |
     */
 
-    'name' => "Visit Cirebon",
+    'name' => "East Pearl",
 
-    'year_made' => 2023,
+    'year_made' => 2024,
 
-    'slogan' => "Never - Ending Experience",
+    'slogan' => "Preferred Partner For Travels",
 
     'cities'    => ([
         "Kota Cirebon",

@@ -28,7 +28,7 @@
     <div class="container-lg mt-5">
         <form action="{{ url('akomodasi') }}" method="get">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-12">
                     <div class="card my-5 shadow border-0">
                         <div class="card-body">
                             <div class="input-group">
@@ -308,7 +308,7 @@
                                                 <strong class="fs-4 text-danger">
                                                     <br>
                                                     <?php
-                                                    if ($accomodation->id == 6 || $accomodation->id == 41  || $accomodation->id == 16 || $accomodation->id == 4 ) {
+                                                    if ($accomodation->id == 6 || $accomodation->id == 41 || $accomodation->id == 16 || $accomodation->id == 4) {
                                                         echo 'Rp. ' . number_format($accomodation->price_start_from, 0, ',', '.');
                                                     } else {
                                                         echo '-';

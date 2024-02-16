@@ -30,6 +30,7 @@ use App\Http\Controllers\TourController;
 use App\Http\Controllers\TransactionAdminController;
 use App\Http\Controllers\TransactionAffiliate;
 use App\Http\Controllers\UserHomeController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,6 +54,8 @@ Route::get('/wisata', [TourController::class, 'tours']);
 Route::get('/detail-wisata/{slug}', [TourController::class, 'detail_tour']);
 Route::get('/kuliner', [RestaurantController::class, 'restaurants']);
 Route::get('/oleh-oleh', [ShopController::class, 'shops']);
+Route::get('/about', [AboutController::class, 'about']);
+
 
 Route::get("event", [EventController::class, "event"]);
 Route::get("akomodasi", [AkomodasiController::class, "akomodasi"]);

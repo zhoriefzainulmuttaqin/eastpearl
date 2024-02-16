@@ -29,7 +29,7 @@ class UserHomeController extends Controller
         }
 
         $events = Event::orderBy("start_date", "asc")->orderBy("id", "asc")->get();
-        $culiners = Restaurant::whereIn('id', [16, 18, 53])->get();
+        $culiners = Restaurant::get();
         $cafe = Restaurant::where('cafe_resto', '=', 1)->limit(12)->get();
         $souvenirs = Shop::where("id","!=",1)->whereIn('id', [4, 57, 29])->get();
         // $iklanAtas = Ads::where('status', 1)->get();

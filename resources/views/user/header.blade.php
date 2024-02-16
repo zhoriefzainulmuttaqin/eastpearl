@@ -48,7 +48,7 @@ $locale = App::currentLocale();
                             <li class="menu-item"><a class="menu-link" href="{{ url('/') }}">
                                     <div>Home</div>
                                 </a></li>
-                            <li class="menu-item"><a class="menu-link" href="{{ url('wisata') }}">
+                            {{-- <li class="menu-item"><a class="menu-link" href="{{ url('wisata') }}">
                                     <div>{{ __('menu.destinations') }}</div>
                                 </a></li>
                             <li class="menu-item"><a class="menu-link" href="{{ url('event') }}">
@@ -56,14 +56,15 @@ $locale = App::currentLocale();
                                 </a></li>
                             <li class="menu-item"><a class="menu-link" href="{{ url('kuliner') }}">
                                     <div>{{ __('menu.culinaries') }}</div>
-                                </a></li>
-                            <li class="menu-item"><a class="menu-link" href="{{ url('oleh-oleh') }}">
-                                    <div>{{ __('menu.souvenirs') }}</div>
+                                </a></li> --}}
+                            {{-- <li class="menu-item"><a class="menu-link" href="{{ url('oleh-oleh') }}">
+                                    <div>{{ __('menu.open_trip') }}</div>
                                 </a></li>
                             <li class="menu-item"><a class="menu-link" href="{{ url('akomodasi') }}">
-                                    <div>{{ __('menu.accomodations') }}</div>
-                                </a></li>
+                                    <div>{{ __('menu.private_trip') }}</div>
+                                </a></li> --}}
                             <li class="menu-item">
+
                                 <a class="menu-link" href="#">
                                     <div>
                                         {{ __('menu.services') }}
@@ -73,17 +74,29 @@ $locale = App::currentLocale();
                                 </a>
                                 <ul class="sub-menu-container mega-menu-dropdown p-lg-0">
                                     <li class="menu-item">
-                                        <a class="menu-link" href="{{ url('layanan-produk') }}">
-                                            <div>{{ __('menu.service_products') }}</div>
+                                        <a class="menu-link" href="{{ url('open-trip') }}">
+                                            <div>{{ __('menu.open_trip') }}</div>
                                         </a>
                                     </li>
                                     <li class="menu-item">
-                                        <a class="menu-link" href="{{ url('layanan-jasa') }}">
-                                            <div>{{ __('menu.our_services') }}</div>
+                                        <a class="menu-link" href="{{ url('private-trip') }}">
+                                            <div>{{ __('menu.private_trip') }}</div>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="{{ url('land-trip') }}">
+                                            <div>{{ __('menu.private_trip') }}</div>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <li class="menu-item"><a class="menu-link" href="{{ url('about') }}">
+                                    <div>{{ __('menu.about') }}</div>
+                                </a></li>
+                            <li class="menu-item"><a class="menu-link" href="{{ url('akomodasi') }}">
+                                    <div>Galeri</div>
+                                </a></li>
+                            <li class="menu-item">
                         </ul>
 
                     </nav><!-- #primary-menu end -->

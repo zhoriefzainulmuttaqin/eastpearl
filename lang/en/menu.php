@@ -9,8 +9,10 @@ return [
     'souvenirs' => 'Souvenirs',
     'accomodations' => 'Accomodations',
     'services' => 'Services',
-    'service_products' => 'Products',
-    'our_services' => 'Our Services',
+    'private_trip' => 'Private Trip',
+    'open_trip' => 'Open Trip',
+    'land_trip' => 'Land Trip',
     'profile'   => "Profile",
+    'about'   => "About Us",
     'login'   => "Login",
 ];

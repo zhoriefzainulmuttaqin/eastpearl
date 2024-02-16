@@ -36,8 +36,6 @@ class RestaurantController extends Controller
             $restaurants = Restaurant::query()
             ->when(!empty($cafe), function (Builder $query) {
                 $query->where('cafe_resto', 1);
-            }, function (Builder $query) {
-                $query->where('cafe_resto', 0);
             })
                 ->when($locale, function (Builder $query, $locale) use ($keyword) {
                     if ($locale == 'en') {

@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\App;
                 <p style="font-size: 20px; font-weight: 400; margin-top:-1rem;"> {{ __('tours.desc_title') }}</p>
 
                 <div class="row">
-                    <div class="col-lg-4 col-sm-12 mt-4">
+                    <div class="col-lg-12 col-sm-12 mt-4">
                         <h5 class="mb-0">{{ __('tours.search_destination') }}</h5>
                         <div class="row">
                             <div class="col-lg-6 col-md-3 col-sm-4">
@@ -46,91 +46,14 @@ use Illuminate\Support\Facades\App;
                         </div>
                         <div class="input-group w-100 mt-1">
                             <input type="text" id="icons-filter" name="keyword" class="form-control border-end-0"
-                                value="{{ isset($_GET['keyword']) ? $_GET['keyword'] : '' }}"
-                                placeholder="{{ __("
-                                							tours.search_destination_placeholder") }}">
+                                value="{{ isset($_GET['keyword']) ? $_GET['keyword'] : '' }}" placeholder="Search">
                             <button type="submit" class="input-group-text bg-white border-start-0">
                                 <i class="uil uil-search"></i>
                             </button>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-sm-12 mt-4">
-                        <div class="row">
-                            <div class="col-6">
-                                <h5 class="mb-0">{{ __('tours.search_categories') }}</h5>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <hr
-                                            style="height: 2px;
-										background-color: #0F304F;
-										border: none;">
-                                        <div class="col-lg-6"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="float-end mt-2">
-                                    {{-- <input class="form-check-input" style="display: none" id="cat-list-0"
-									onchange="submit()" type="checkbox" name="cat_list[]" value="0">
-								<label for="cat-list-0" class="form-check-label btn btn-sm text-white text-sm"
-									style="background-color: #0F304F;">Reset Kategori </label> --}}
-                                    <?php
-                                    if (isset($_GET['keyword'])) {
-                                        $cari = $_GET['keyword'];
-                                    } else {
-                                        $cari = '';
-                                    }
-                                    ?>
-                                    <a href="{{ url('wisata?keyword=' . $cari) }}" class="btn btn-sm text-white text-sm"
-                                        style="background-color: #0F304F;">
-                                        {{ __('tours.search_categories_reset') }}</a>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- versi select option --}}
-                        {{-- <select class="form-select" aria-label="Default select example" name="cat_list[]"
-						onchange="submit()">
-						<option value="0" {{ !empty($cat_list[0]) ? 'selected' : '' }}>Semua Kategori</option>
-						@foreach ($categories as $category)
-						<option value="{{ $category->id }}" {{ !empty($cat_list[$category->id]) ? 'selected' : '' }}>{{
-							$category->name }}</option>
-						@endforeach
-					</select> --}}
 
-                        <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
-                            {{-- semua kategori --}}
-                            {{-- <div class="col">
-							<div class="">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" id="cat-list-0" {{ !empty($cat_list[0]) ? 'checked'
-										: '' }} onchange="submit()" type="radio" name="cat_list[]" value="0">
-									<label for="cat-list-0" class="form-check-label">Semua Kategori </label>
-								</div>
-							</div>
-						</div> --}}
-                            @foreach ($categories as $category)
-                                <div class="col">
-                                    <div class="">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" id="cat-list-{{ $loop->iteration }}"
-                                                {{ !empty($cat_list[$category->id]) ? 'checked' : '' }} onchange="submit()"
-                                                type="checkbox" name="cat_list[]" value="{{ $category->id }}">
-
-                                            <label class="form-check-label" for="cat-list-{{ $loop->iteration }}">
-                                                @if (App::isLocale('id'))
-                                                    {{ $category->name }}
-                                                @else
-                                                    {{ $category->name_en }}
-                                                @endif
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
                 </div>
-            </div>
         </section>
     </form>
     <section id="content">
@@ -246,8 +169,7 @@ use Illuminate\Support\Facades\App;
                                     <div class="entry-meta no-separator d-flex ">
                                         <ul class="me-auto">
                                             <li><a href="{{ url('layanan-produk/tourism-card') }}"
-                                                    class="fw-normal text-dark"><i
-                                                        class="uil uil-ticket text-warning"></i>
+                                                    class="fw-normal text-dark"><i class="uil uil-ticket text-warning"></i>
                                                     Disc. Card</a></li>
                                         </ul>
 

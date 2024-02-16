@@ -45,20 +45,10 @@ use Illuminate\Support\Facades\App;
                 <div class="card-body">
 
                     <form action="" method="get" class="row  align-items-center">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1"
-                                    class="form-label fw-bold fs-4">{{ __('restaurants.label_order') }}</label>
-                                <select class="form-select" name="cafe_resto" id="exampleFormControlSelect1"
-                                    onchange="submit()">
-                                    <option {{ $cafe_resto == '0' ? 'selected' : '' }} value="0">kuliner</option>
-                                    <option {{ $cafe_resto == '1' ? 'selected' : '' }} value="1">cafe & resto</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
+
+                        <div class="col-md-12">
                             <div class="mb-3">
-                                <label for="cari" class="form-label fw-bold fs-4">{{ __('restaurants.search') }}</label>
+                                <label for="cari" class="form-label fw-bold fs-4">Search</label>
                                 <div class="input-group mb-3">
                                     <input type="search" class="form-control" id="cari"
                                         value="{{ isset($_GET['keyword']) ? $_GET['keyword'] : '' }}" name="keyword"
@@ -120,13 +110,13 @@ use Illuminate\Support\Facades\App;
                                 <div class="mb-3">
                                     <div class="fw-bold">
                                         {{-- <?= number_format($restaurant->price, 0, ',', '.') ?> --}}
-                                         <?php
-                                                    if ($restaurant->id == 121 || $restaurant->id == 122   ) {
-                                                        echo 'Rp. ' . number_format($restaurant->price, 0, ',', '.');
-                                                    } else {
-                                                        echo '-';
-                                                    }
-                                                    ?>
+                                        <?php
+                                        if ($restaurant->id == 121 || $restaurant->id == 122) {
+                                            echo 'Rp. ' . number_format($restaurant->price, 0, ',', '.');
+                                        } else {
+                                            echo '-';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="entry-meta no-separator mb-3">

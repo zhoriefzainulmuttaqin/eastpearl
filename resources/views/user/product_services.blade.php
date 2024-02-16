@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\App;
             margin-top: 10%;
         }
 
-        .fixed-height {
+        <div class="col-4 text-center"><a href="/layanan-produk"><img src="{{ url('assets/layanan-produk/paketOlehIcon.png') }}" class="img-fluid img_layanan" width="200px"><br></a></div>.fixed-height {
             height: 700px !important;
 
         }
@@ -31,7 +31,7 @@ use Illuminate\Support\Facades\App;
     <?= url('assets/layanan-produk/bg.png') ?>
 @endsection
 
-@section('content')
+{{-- @section('content')
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-26YC4R3P36"></script>
     <script>
@@ -204,4 +204,4 @@ use Illuminate\Support\Facades\App;
         </div>
     </div>
     <div class="clearfix mb-5"></div>
-@endsection
+@endsection --}}

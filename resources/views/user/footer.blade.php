@@ -7,9 +7,9 @@
     <div id="copyrights">
         <div class="container">
             <p class="text-center">
-                <b class="h3">{{ getOption('slogan') }}</b>
+                <b class="h3">Preferred Partner For Travels</b>
                 <br>
-                with <span class='text-warning'>visitcirebon.id</span>
+                with <span class='text-warning'>eastpearl.id</span>
                 <br>
                 <a href="{{ getOption('fb_link') }}" target="_blank" class="h5">
                     <i class='uil-facebook-f'></i>
