@@ -171,7 +171,7 @@
         @else
             {{-- <div class=" d-block d-lg-none"> --}}
             <section id="slider" class="slider-element slider-parallax min-vh-40 min-vh-md-100 dark include-header"
-                style="background: url('assets/bg/padar.png') no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
+                style="background: url(@yield('cover')) no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
                 <div class="slider-inner">
                     <div class="vertical-middle slider-element-fade">
                         <div class="container-fluid py-5">

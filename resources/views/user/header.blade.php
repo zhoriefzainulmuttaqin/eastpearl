@@ -85,7 +85,7 @@ $locale = App::currentLocale();
                                     </li>
                                     <li class="menu-item">
                                         <a class="menu-link" href="{{ url('land-trip') }}">
-                                            <div>{{ __('menu.private_trip') }}</div>
+                                            <div>{{ __('menu.land_trip') }}</div>
                                         </a>
                                     </li>
                                 </ul>
@@ -93,7 +93,7 @@ $locale = App::currentLocale();
                             <li class="menu-item"><a class="menu-link" href="{{ url('about') }}">
                                     <div>{{ __('menu.about') }}</div>
                                 </a></li>
-                            <li class="menu-item"><a class="menu-link" href="{{ url('akomodasi') }}">
+                            <li class="menu-item"><a class="menu-link" href="{{ url('galeri') }}">
                                     <div>Galeri</div>
                                 </a></li>
                             <li class="menu-item">

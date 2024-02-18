@@ -66,7 +66,7 @@
 @endsection
 
 @section('cover')
-    <?= url('assets/bg/stasiun.png') ?>
+    <?= url('assets/bg/padar.png') ?>
 @endsection
 
 @section('content')

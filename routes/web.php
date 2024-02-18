@@ -55,6 +55,9 @@ Route::get('/detail-wisata/{slug}', [TourController::class, 'detail_tour']);
 Route::get('/kuliner', [RestaurantController::class, 'restaurants']);
 Route::get('/oleh-oleh', [ShopController::class, 'shops']);
 Route::get('/about', [AboutController::class, 'about']);
+Route::get('/galeri', [AboutController::class, 'galeri']);
+Route::get('/open-trip', [AboutController::class, 'openTrip']);
+
 
 
 Route::get("event", [EventController::class, "event"]);
