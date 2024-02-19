@@ -34,6 +34,11 @@
     @yield('style')
 
 </head>
+<style>
+    .stretched {
+        background-color: #af3e3e !important;
+    }
+</style>
 
 <body class="stretched">
     @php
