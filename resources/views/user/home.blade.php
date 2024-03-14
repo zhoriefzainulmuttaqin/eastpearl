@@ -9,19 +9,21 @@
 @section('style')
     <link rel="stylesheet" href="{{ url('canvas') }}/css/components/bs-rating.css">
     <link rel="stylesheet" href="{{ url('swiperjs/swiper-bundle.min.css') }}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
     <style>
         body {
             /* overflow-x: hidden; */
         }
 
         #home-event-container {
-            background-image: url("<?= url('assets/ellipse.png') ?>");
+            /* background-image: url("<?= url('assets/ellipse.png') ?>"); */
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             padding-top: 100px;
             padding-bottom: 100px;
-
+            background-color: #f4b8fc;
         }
 
         @media (max-width: 760px) {
@@ -35,6 +37,7 @@
             }
         }
     </style>
+
     <!-- Demo styles -->
     <style>
         .swiper {
@@ -82,6 +85,10 @@
 
         gtag('config', 'G-26YC4R3P36');
     </script>
+
+
+
+
 
     {{-- css event --}}
     <style>
@@ -169,11 +176,11 @@
 
     {{-- end css event --}}
     <div id="home-event-container" class="d-none d-md-block">
-        <div class=" container-fluid mt-md-0" style="margin-top: -4rem !important;">
+        <div class=" container mt-md-0" style="margin-top: -4rem !important;">
             <p class=" text-center title_event">
                 Discover All of Indonesia’s Treasures with Us, Better than Anyone Else!
             </p>
-            <p class=" text-center subt_event" style="margin-top: -1rem;">
+            <p class=" text-center subt_event" style="margin-top: 1rem;">
                 Tentukan pilihan Open Trip atau Private Trip
                 ke destinasi wisata alam di Labuan Bajo.
                 Tour Experts kami selalu siap untuk mengurus perjalan liburan dari awal hingga akhir. Sehingga kamu
@@ -184,7 +191,7 @@
         <div class="clearfix"></div>
     </div>
     <div id="home-event-container" class="d-block d-md-none">
-        <div class=" container-fluid mt-md-0" style="margin-top: -4rem !important;">
+        <div class=" container mt-md-0" style="margin-top: -4rem !important;">
             <p class=" text-center title_event">
                 Discover All of Indonesia’s Treasures with Us, Better than Anyone Else!
             </p>
@@ -196,6 +203,80 @@
             </p>
         </div>
         <div class="clearfix"></div>
+    </div>
+    <style>
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url(assets/wave.png);
+            /* transform: rotate(180deg); */
+            background-size: 1000px 100px;
+
+        }
+
+        .wave.wave1 {
+            animation: animate 30s linear infinite;
+            z-index: 1000;
+            opacity: 1;
+            animation-delay: 0s;
+            bottom: 0;
+        }
+
+        .wave.wave2 {
+            animation: animate2 15s linear infinite;
+            z-index: 999;
+            opacity: 0.5;
+            animation-delay: -5s;
+            bottom: 10px;
+        }
+
+        .wave.wave3 {
+            animation: animate 30s linear infinite;
+            z-index: 998;
+            opacity: 0.2;
+            animation-delay: -2s;
+            bottom: 15;
+        }
+
+        .wave.wave4 {
+            animation: animate2 5s linear infinite;
+            z-index: 997;
+            opacity: 0.7;
+            animation-delay: -5s;
+            bottom: 20px;
+        }
+
+
+        @keyframes animate {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: 1000px;
+            }
+        }
+
+        @keyframes animate2 {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: -1000px;
+            }
+        }
+    </style>
+    <div style="position: relative; margin-top: 40px;">
+        <div class="wave wave1">
+
+        </div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
     </div>
 
     {{-- css wisata --}}
@@ -252,7 +333,7 @@
 
         .top_wisata {
             position: relative;
-            margin-top: -80px;
+            margin-top: 0px;
         }
 
         @media (max-width: 760px) {
@@ -326,11 +407,11 @@
         }
     </style>
     {{-- end css wisata --}}
-    <div class="container top_wisata">
+    <div class="container top_wisata ">
         <div class="d-none d-md-block">
             <div class="row mb-5">
                 <div class="text-center">
-                    <p class="" style="font-size: 28px; font-weight: 600;">
+                    <p class="" style="font-size: 28px; font-weight: 400;">
                         <b>Paket Open Trip & Private Trip di Labuan Bajo
                         </b>
                     </p>
@@ -338,265 +419,63 @@
             </div>
         </div>
         <div class="d-block d-md-none">
-            <div class="container text-center" style="margin-top: -6rem;">
-                <p class="" style="font-size: 16px; font-weight: 600;">
+            <div class="container text-center"">
+                <p class="" style="font-size: 16px; font-weight: 400;">
                     <b>Paket Open Trip & Private Trip di Labuan Bajo
                     </b>
                 </p>
             </div>
         </div>
         <!-- Swiper -->
-        <div class="px-4 d-none d-md-block">
-            <div id="oc-events" class="owl-carousel events-carousel carousel-widget" data-margin="0" data-pagi="true"
-                data-items="2" data-items-md="2" data-items-lg="3" data-items-xl="3">
-                @foreach ($culiners as $culiner)
-                    <div class="oc-item">
-                        <article class="entry event p-3">
-                            <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
-                                style="height: 12rem;">
-                                <div class="col-12 mb-md-0">
-                                    <a href="{{ url('kuliner') }}" class="entry-image">
-                                        <img src='{{ url("assets/kuliner/$culiner->picture") }}' alt="{{ $culiner->name }}"
-                                            class="rounded-2" style="max-height: 20rem;">
-                                    </a>
-                                </div>
-                                <div class="image-caption text-center"
-                                    style="background: #000000 transparent; color: #ddd; ">
-                                    @if (App::isLocale('id'))
-                                        <b style="font-weight: 800;">{{ $culiner->name }}</b>
-                                    @else
-                                        <b style="font-weight: 800;">{{ $culiner->name_en }}</b>
-                                    @endif
-                                </div>
-                            </div>
-                        </article>
+        <div class="d-none d-md-flex justify-content-center">
+            <!-- component -->
+            <a href="">
+                <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg me-4">
+                    <div
+                        class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                        <img src="{{ url('assets/bg/padar.png') }}"
+                            class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                            alt="" />
                     </div>
-                @endforeach
+                    <div
+                        class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                        <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Pulau Padar</h1>
+                        <h1 class="text-sm font-light text-gray-200 shadow-xl">Rasakan sensasi pulau yang memanjakan mata
+                        </h1>
+                    </div>
+                </div>
+            </a>
+            <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg me-4">
+                <div
+                    class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                    <img src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80"
+                        class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                        alt="" />
+                </div>
+                <div
+                    class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                    <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Azores</h1>
+                    <h1 class="text-sm font-light text-gray-200 shadow-xl">A Little Paradise in Portugal</h1>
+                </div>
             </div>
-        </div>
-
-        <swiper-container class="mySwiper2 mySwiper2-mobile d-block d-md-none " id="mySwiper" effect="coverflow"
-            grab-cursor="true" centered-slides="true" slides-per-view="3" coverflow-effect-rotate="30"
-            coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="1"
-            coverflow-effect-slide-shadows="true" loop="true">
-            @foreach ($tours as $tour)
-                <swiper-slide class="card">
-                    <a href="/wisata" style="text-decoration: none; color: white;">
-                        <img src='{{ url("assets/wisata/$tour->picture") }}' />
-                        <div class="image-caption">
-                            @if (App::isLocale('id'))
-                                <b style="font-weight: 800;">{{ $tour->name }}</b>
-                            @else
-                                <b style="font-weight: 800;">{{ $tour->name_en }}</b>
-                            @endif
-                        </div>
-                    </a>
-                </swiper-slide>
-            @endforeach
-
-        </swiper-container>
-
-        {{-- <swiper-container class="mySwiper2 mySwiper2-mobile d-block d-md-none " id="mySwiper" effect="coverflow"
-            grab-cursor="true" centered-slides="true" slides-per-view="3" coverflow-effect-rotate="30"
-            coverflow-effect-stretch="0" coverflow-effect-depth="100" coverflow-effect-modifier="1"
-            coverflow-effect-slide-shadows="true" loop="true">
-            @foreach ($tours as $tour)
-                <swiper-slide class="card">
-                    <a href="/wisata" style="text-decoration: none; color: white;">
-                        <img src='{{ url("assets/wisata/$tour->picture") }}' />
-                        <div class="image-caption">
-                            @if (App::isLocale('id'))
-                                <b style="font-weight: 800;">{{ $tour->name }}</b>
-                            @else
-                                <b style="font-weight: 800;">{{ $tour->name_en }}</b>
-                            @endif
-                        </div>
-                    </a>
-                </swiper-slide>
-            @endforeach
-
-        </swiper-container> --}}
-
-
-
-
-        {{-- <div class="container mt-lg-6">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-md-12">
-                <div class="owl-carousel carousel-widget owl-loaded owl-drag with-carousel-dots" data-items="1"
-                    data-items-md="3" data-autoplay="5000">
-                    <div class="owl-stage-outer">
-                        <div class="owl-stage"
-                            style="transform: translate3d(-383px, 0px, 0px); transition: all 0.25s ease 0s; width: 1149px;">
-                            <div class="owl-item" style="width: 363px; margin-right: 20px;">
-                                <div class="p-2">
-                                    <div class="card text-center rounded-6 shadow-sm overflow-hidden">
-                                        <div class="card-body p-4">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <img class="rounded-circle mx-auto w-auto mb-4"
-                                                        src="{{ url('assets/profil/user_default.png') }}" width="64"
-                                                        height="64" alt="Customer Testimonails">
-                                                    <div
-                                                        class="rating-container theme-krajee-svg rating-md rating-animate">
-                                                        <div class="rating-stars" tabindex="0"><span
-                                                                class="empty-stars"><span class="star"
-                                                                    title="One Star"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Two Stars"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Three Stars"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Four Stars"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Five Stars"><span
-                                                                        class="bi-star"></span></span></span><span
-                                                                class="filled-stars" style="width: 100%;"><span
-                                                                    class="star" title="One Star"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Two Stars"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Three Stars"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Four Stars"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Five Stars"><span
-                                                                        class="bi-star-fill"></span></span></span></div>
-                                                    </div>
-                                                    <p class="mb-4 font-secondary"
-                                                        style="font-size: 1.125rem; line-height: 1.65;">Pelayanan yang
-                                                        bagus, cepat, dan dapat dipercaya. Senang bisa menggunakan produk
-                                                        tourism card, membantu segala hal dalam kuliner,wisata, dan oleh
-                                                        oleh</p>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center">
-                                                    <div>
-                                                        <h4 class="h6 mb-0 fw-medium">Yusuf</h4>
-                                                        <small class="text-muted">yusuf123@gmail.com</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="bg-icon bi-star-fill op-02"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item active" style="width: 363px; margin-right: 20px;">
-                                <div class="p-2">
-                                    <div class="card text-center rounded-6 shadow-sm overflow-hidden">
-                                        <div class="card-body p-4">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <img class="rounded-circle mx-auto w-auto mb-4"
-                                                        src="{{ url('assets/profil/user_default.png') }}" width="64"
-                                                        height="64" alt="Customer Testimonails">
-                                                    <div
-                                                        class="rating-container theme-krajee-svg rating-md rating-animate">
-                                                        <div class="rating-stars" tabindex="0"><span
-                                                                class="empty-stars"><span class="star"
-                                                                    title="One Star"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Two Stars"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Three Stars"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Four Stars"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Five Stars"><span
-                                                                        class="bi-star"></span></span></span><span
-                                                                class="filled-stars" style="width: 100%;"><span
-                                                                    class="star" title="One Star"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Two Stars"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Three Stars"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Four Stars"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Five Stars"><span
-                                                                        class="bi-star-fill"></span></span></span></div>
-                                                    </div>
-                                                    <p class="mb-4 font-secondary"
-                                                        style="font-size: 1.125rem; line-height: 1.65;">Antarmukanya
-                                                        sederhana dan user-friendly sehingga mudah digunakan bagi saya
-                                                        wisatawan dari luar jawa yang ingin menikmati wisata dan kebudayaan
-                                                        disini.</p>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center">
-                                                    <div>
-                                                        <h4 class="h6 mb-0 fw-medium">Nabila</h4>
-                                                        <small class="text-muted">nabila14@gmail.com</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="bg-icon bi-star-fill op-02"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item active" style="width: 363px; margin-right: 20px;">
-                                <div class="p-2">
-                                    <div class="card text-center rounded-6 shadow-sm overflow-hidden">
-                                        <div class="card-body p-4">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <img class="rounded-circle mx-auto w-auto mb-4"
-                                                        src="{{ url('assets/profil/user_default.png') }}" width="64"
-                                                        height="64" alt="Customer Testimonails">
-                                                    <div
-                                                        class="rating-container theme-krajee-svg rating-md rating-animate">
-                                                        <div class="rating-stars" tabindex="0"><span
-                                                                class="empty-stars"><span class="star"
-                                                                    title="One Star"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Two Stars"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Three Stars"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Four Stars"><span
-                                                                        class="bi-star"></span></span><span class="star"
-                                                                    title="Five Stars"><span
-                                                                        class="bi-star"></span></span></span><span
-                                                                class="filled-stars" style="width: 100%;"><span
-                                                                    class="star" title="One Star"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Two Stars"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Three Stars"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Four Stars"><span
-                                                                        class="bi-star-fill"></span></span><span
-                                                                    class="star" title="Five Stars"><span
-                                                                        class="bi-star-fill"></span></span></span></div>
-                                                    </div>
-                                                    <p class="mb-4 font-secondary"
-                                                        style="font-size: 1.125rem; line-height: 1.65;">Asik dan
-                                                        menyenangkan sekali menggunakan produk tourism card, bisa
-                                                        menggunakannya dengan fleksibel mau ke kuliner, wisata ataupun
-                                                        oleh-oleh. Sangat membantu, terima kasih.</p>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center">
-                                                    <div>
-                                                        <h4 class="h6 mb-0 fw-medium">Arnold</h4>
-                                                        <small class="text-muted">arnold22@gmail.com</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="bg-icon bi-star-fill op-02"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i
-                                class="uil uil-angle-left-b"></i></button><button type="button" role="presentation"
-                            class="owl-next disabled"><i class="uil uil-angle-right-b"></i></button>
-                    </div>
+            <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
+                <div
+                    class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                    <img src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80"
+                        class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                        alt="" />
+                </div>
+                <div
+                    class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                    <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Azores</h1>
+                    <h1 class="text-sm font-light text-gray-200 shadow-xl">A Little Paradise in Portugal</h1>
                 </div>
             </div>
         </div>
-    </div> --}}
+
+
+
+
         <style>
             .support {
                 margin-top: 6rem;
@@ -627,66 +506,12 @@
                 }
             }
         </style>
-        <div class="support" style=" ">
-            <h3 class="text-center title_support">{{ __('home.supported_by') }}</h3>
-            <div class="container text-center d-none d-md-block">
-                <div id="oc-clients" class="owl-carousel image-carousel carousel-widget justify-content-center"
-                    data-margin="30" data-nav="true" data-pagi="true" data-autoplay="5000" data-items-xs="3"
-                    data-items-sm="3" data-items-md="6" data-items-lg="6" data-items-xl="6" data-loop="true">
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/bi-3.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/disbudpar-cirebon.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/disbudpar-kab-cirebon.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/dispora-indramayu.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/disporapar-kuningan.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/exotic-majalengka.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/phri.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/grand-tryas.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/tryas.png') }}"></a></div>
-                    <div class="oc-item align-items-center" style="margin-top: 30px; "><a href="#"><img
-                                src="{{ url('assets/wiwarna.png') }}"></a></div>
-                </div>
-            </div>
-            <div class="container text-center d-block d-md-none">
-                <div id="oc-clients" class="owl-carousel image-carousel carousel-widget justify-content-center"
-                    data-margin="30" data-nav="true" data-pagi="true" data-autoplay="5000" data-items-xs="3"
-                    data-items-sm="3" data-items-md="6" data-items-lg="6" data-items-xl="6" data-loop="true">
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/bi-3.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/disbudpar-cirebon.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/disbudpar-kab-cirebon.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/dispora-indramayu.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/disporapar-kuningan.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/exotic-majalengka.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/phri.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/grand-tryas.png') }}"></a></div>
-                    <div class="oc-item align-items-center"><a href="#"><img
-                                src="{{ url('assets/sponsor/tryas.png') }}"></a></div>
-                    <div class="oc-item align-items-center mt-3" style="width: 100px; height: auto;"><a
-                            href="#"><img src="{{ url('assets/wiwarna.png') }}"></a></div>
-                </div>
-            </div>
-        </div>
     @endsection
 
     @section('script')
         <!-- Swiper JS -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
 
         <!-- Initialize Swiper -->
         <script></script>
