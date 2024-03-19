@@ -31,6 +31,7 @@ use App\Http\Controllers\TransactionAdminController;
 use App\Http\Controllers\TransactionAffiliate;
 use App\Http\Controllers\UserHomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\GaleriController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,7 +56,7 @@ Route::get('/detail-wisata/{slug}', [TourController::class, 'detail_tour']);
 Route::get('/kuliner', [RestaurantController::class, 'restaurants']);
 Route::get('/oleh-oleh', [ShopController::class, 'shops']);
 Route::get('/about', [AboutController::class, 'about']);
-Route::get('/galeri', [AboutController::class, 'galeri']);
+Route::get('/galeri', [GaleriController::class, 'user_galeri']);
 Route::get('/open-trip', [AboutController::class, 'openTrip']);
 
 
@@ -182,6 +183,14 @@ Route::prefix("app-admin")->group(function () {
         Route::get("data/iklan/ubah/{slug}", [IklanController::class, "ubah_iklan"]);
         Route::post("data/iklan/proses-ubah", [IklanController::class, "proses_ubah_iklan"]);
         Route::get("data/iklan/hapus/{slug}", [IklanController::class, "proses_hapus_iklan"]);
+
+         // galeri
+         Route::get("data/galeri", [GaleriController::class, "galeri"]);
+         Route::get("data/tambah/galeri", [GaleriController::class, "tambah_galeri"]);
+         Route::post("data/galeri/proses-tambah", [GaleriController::class, "proses_tambah_galeri"]);
+         Route::get("data/galeri/ubah/{slug}", [GaleriController::class, "ubah_galeri"]);
+         Route::post("data/galeri/proses-ubah", [GaleriController::class, "proses_ubah_galeri"]);
+         Route::get("data/galeri/hapus/{slug}", [GaleriController::class, "proses_hapus_galeri"]);
 
         // kategori wisata
         Route::get("data/wisata/kategori", [TourController::class, "admin_wisata_kategori"]);

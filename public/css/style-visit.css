@@ -1,6 +1,7 @@
 #header-wrap {
     position: fixed !important;
     top: 0;
+    z-index: 99999;
 }
 .logo-default {
     height: 40px !important;
@@ -82,7 +83,6 @@
         align-items: center;
         opacity: 0.8;
     }
-
 }
 .bg-blue-visit {
     background-color: #122f4d !important;
@@ -142,7 +142,6 @@
 
     @media (max-width: 760px) {
         top: -100px !important;
-
     }
 }
 

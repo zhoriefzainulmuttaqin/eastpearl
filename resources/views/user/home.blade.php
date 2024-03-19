@@ -412,7 +412,7 @@
             <div class="row mb-5">
                 <div class="text-center">
                     <p class="" style="font-size: 28px; font-weight: 400;">
-                        <b>Paket Open Trip & Private Trip di Labuan Bajo
+                        <b>Paket Open Trip, Private Trip & Land Trip di Labuan Bajo
                         </b>
                     </p>
                 </div>
@@ -421,16 +421,16 @@
         <div class="d-block d-md-none">
             <div class="container text-center"">
                 <p class="" style="font-size: 16px; font-weight: 400;">
-                    <b>Paket Open Trip & Private Trip di Labuan Bajo
+                    <b>Paket Open Trip di Labuan Bajo
                     </b>
                 </p>
             </div>
         </div>
         <!-- Swiper -->
-        <div class="d-none d-md-flex justify-content-center">
+        <div class="d-md-flex justify-content-center flex-wrap">
             <!-- component -->
             <a href="">
-                <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg me-4">
+                <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
                     <div
                         class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
                         <img src="{{ url('assets/bg/padar.png') }}"
@@ -445,74 +445,140 @@
                     </div>
                 </div>
             </a>
-            <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg me-4">
-                <div
-                    class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
-                    <img src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80"
-                        class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
-                        alt="" />
+            <a href="">
+                <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
+                    <div
+                        class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                        <img src="{{ url('assets/bg/padar.png') }}"
+                            class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                            alt="" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                        <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Pulau Padar</h1>
+                        <h1 class="text-sm font-light text-gray-200 shadow-xl">Rasakan sensasi pulau yang memanjakan mata
+                        </h1>
+                    </div>
                 </div>
-                <div
-                    class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-                    <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Azores</h1>
-                    <h1 class="text-sm font-light text-gray-200 shadow-xl">A Little Paradise in Portugal</h1>
+            </a>
+            <a href="">
+                <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
+                    <div
+                        class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                        <img src="{{ url('assets/bg/padar.png') }}"
+                            class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                            alt="" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                        <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Pulau Padar</h1>
+                        <h1 class="text-sm font-light text-gray-200 shadow-xl">Rasakan sensasi pulau yang memanjakan mata
+                        </h1>
+                    </div>
                 </div>
-            </div>
-            <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
-                <div
-                    class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
-                    <img src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80"
-                        class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
-                        alt="" />
+            </a>
+            <a href="">
+                <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
+                    <div
+                        class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                        <img src="{{ url('assets/bg/padar.png') }}"
+                            class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                            alt="" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                        <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Pulau Padar</h1>
+                        <h1 class="text-sm font-light text-gray-200 shadow-xl">Rasakan sensasi pulau yang memanjakan mata
+                        </h1>
+                    </div>
                 </div>
-                <div
-                    class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-                    <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Azores</h1>
-                    <h1 class="text-sm font-light text-gray-200 shadow-xl">A Little Paradise in Portugal</h1>
+            </a>
+            <a href="">
+                <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
+                    <div
+                        class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                        <img src="{{ url('assets/bg/padar.png') }}"
+                            class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                            alt="" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                        <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Pulau Padar</h1>
+                        <h1 class="text-sm font-light text-gray-200 shadow-xl">Rasakan sensasi pulau yang memanjakan mata
+                        </h1>
+                    </div>
                 </div>
-            </div>
+            </a>
+            <a href="">
+                <div class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
+                    <div
+                        class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                        <img src="{{ url('assets/bg/padar.png') }}"
+                            class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                            alt="" />
+                    </div>
+                    <div
+                        class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                        <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Pulau Padar</h1>
+                        <h1 class="text-sm font-light text-gray-200 shadow-xl">Rasakan sensasi pulau yang memanjakan mata
+                        </h1>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="mt-5">
+            <a href="{{ url('wisata') }}" class="btn btn-primary text-white bg-btn-visit" id="but_wisata">
+                Semua Paket
+            </a>
         </div>
 
 
+        {{-- tentang --}}
+        <div class="container top_wisata ">
+            <div class="d-none d-md-block">
+                <div class="row " style="margin-bottom: -50px;">
+                    <div class="text-center">
+                        <p class="" style="font-size: 28px; font-weight: 400;">
+                            <b>Tentang Kami
+                            </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class=" flex w-200 flex-row rounded-xl bg-white bg-clip-border text-gray-700 ">
+                <div class=" mx-4 overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                    <img src="https://indonesiajuara.asia/wp-content/uploads/2022/05/IndonesiaJuara-Trip-355x280-1-300x237.jpeg"
+                        style="width: 350rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
+                </div>
+                <div class="p-6">
+                    <div>
 
+                    </div>
+                    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                        Eastpearl merupakan Tour Operator yang menjalankan langsung aktivitas tour dengan konsep
+                        berpetualang di wisata alam Indonesia. Berpengalaman lebih dari 7 tahun dengan review Tour Terbaik
+                        di
+                        TripAdvisor, kami menyediakan paket wisata Open Trip dan Private Trip—termasuk sewa kapal Phinisi.
+                        Destinasi wisata pilihan kami adalah Labuan Bajo, Sumba, Nusa Penida, Raja Ampat, dan Derawan.
+                        Dengan
+                        tim Guide Lokal yang memiliki pengetahuan daerah yang lengkap dan pelayanan dari hati,
+                        IndonesiaJuara
+                        memastikan setiap wisatawan yang berlibur bersama IndonesiaJuara akan mendapatkan pengalaman
+                        terbaiknya!
+                        Kami juga menjamin harga terbaik, tanpa hidden fee. Informasi biaya setiap paket trip ditampilkan
+                        sedetail mungkin dan akan diperjelas lagi saat berkomunikasi via WhatsApp agar kamu bisa
+                        merencanakan
+                        budget liburan dengan tepat.
+                    </p>
+                </div>
+            </div>
+        @endsection
 
-        <style>
-            .support {
-                margin-top: 6rem;
-                margin-bottom: 5rem;
+        @section('script')
+            <!-- Swiper JS -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+            <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
 
-            }
-
-            .title_support {
-                font-size: var(--cnvs-font-size-h1);
-                font-weight: 999;
-                margin-bottom: 5rem;
-
-            }
-
-            @media (max-width: 760px) {
-                .support {
-                    margin-bottom: 2rem;
-                    margin-top: -3rem;
-                    font-size: 16px;
-                    font-weight: 999;
-                }
-
-                .title_support {
-                    font-size: 18px;
-                    font-weight: 999;
-                    margin-bottom: 1rem !important;
-
-                }
-            }
-        </style>
-    @endsection
-
-    @section('script')
-        <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
-
-        <!-- Initialize Swiper -->
-        <script></script>
-    @endsection
+            <!-- Initialize Swiper -->
+            <script></script>
+        @endsection

@@ -39,7 +39,7 @@
 
                 </div>
                 <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                    IndonesiaJuara Trip merupakan Tour Operator yang menjalankan langsung aktivitas tour dengan konsep
+                    Eastpearl merupakan Tour Operator yang menjalankan langsung aktivitas tour dengan konsep
                     berpetualang di wisata alam Indonesia. Berpengalaman lebih dari 7 tahun dengan review Tour Terbaik di
                     TripAdvisor, kami menyediakan paket wisata Open Trip dan Private Trip—termasuk sewa kapal Phinisi.
                     Destinasi wisata pilihan kami adalah Labuan Bajo, Sumba, Nusa Penida, Raja Ampat, dan Derawan. Dengan
@@ -101,59 +101,58 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="grid gap-4">
                         <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="">
+                            <img class="h-auto max-w-full rounded-lg" src="{{ url('assets/bg/padar.png') }}" alt="">
                         </div>
                         <!-- Add event listener to trigger popup -->
                         <div>
-                            <img class="h-auto max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
+                            <img class="h-auto max-w-full rounded-lg popup-trigger" src="{{ url('assets/bg/padar.png') }}"
+                                alt="">
                         </div>
                         <div>
-                            <img class="h-auto max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="grid gap-4">
-                        <div>
-                            <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
+                            <img class="h-auto max-w-full rounded-lg popup-trigger" src="{{ url('assets/bg/padar.png') }}"
+                                alt="">
                         </div>
                     </div>
                     <div class="grid gap-4">
                         <div>
                             <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
+                                src="{{ url('assets/bg/padar.png') }}" alt="">
                         </div>
                         <div>
                             <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
+                                src="{{ url('assets/bg/padar.png') }}" alt="">
                         </div>
                         <div>
                             <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
+                                src="{{ url('assets/bg/padar.png') }}" alt="">
                         </div>
                     </div>
                     <div class="grid gap-4">
                         <div>
                             <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
+                                src="{{ url('assets/bg/padar.png') }}" alt="">
                         </div>
                         <div>
                             <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
+                                src="{{ url('assets/bg/padar.png') }}" alt="">
                         </div>
                         <div>
                             <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
+                                src="{{ url('assets/bg/padar.png') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div>
+                            <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
+                                src="{{ url('assets/bg/padar.png') }}" alt="">
+                        </div>
+                        <div>
+                            <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
+                                src="{{ url('assets/bg/padar.png') }}" alt="">
+                        </div>
+                        <div>
+                            <img class="cursor-pointer h-auto  max-w-full rounded-lg popup-trigger"
+                                src="{{ url('assets/bg/padar.png') }}" alt="">
                         </div>
                     </div>
                 </div>

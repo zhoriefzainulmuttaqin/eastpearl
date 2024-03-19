@@ -28,7 +28,7 @@
     <div class="container-lg mt-5">
         <h1
             class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-            Dapatkan liburan menyenangkan anda dengan <span class="text-blue-600 dark:text-blue-500">paket open trip Labuan
+            Dapatkan liburan menyenangkan anda dengan <span class="" style="color: #f4b8fc">paket open trip Labuan
                 Bajo</h1>
         <p class="text-lg mb-4 font-normal text-gray-500 lg:text-xl dark:text-gray-400">Tour Experts kami selalu siap untuk
             mengurus perjalan liburan dari awal hingga akhir. Sehingga kamu mendapatkan pengalaman unik tak terlupakan
@@ -39,8 +39,7 @@
                 class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div
                     class="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                    <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
-                        alt="ui/ux review check" />
+                    <img src="{{ url('assets/bg/padar.png') }}" alt="ui/ux review check" />
                     <div
                         class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60">
                     </div>
@@ -61,7 +60,7 @@
                     <div class="mb-3 flex items-center justify-between">
                         <h5
                             class="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
-                            Wooden House, Florida
+                            Pulau Padar
                         </h5>
                         <p
                             class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
@@ -145,7 +144,7 @@
                     <button
                         class="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button" data-ripple-light="true">
-                        Reserve
+                        Detail
                     </button>
                 </div>
             </div>
@@ -153,8 +152,7 @@
                 class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div
                     class="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                    <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
-                        alt="ui/ux review check" />
+                    <img src="{{ url('assets/bg/padar.png') }}" alt="ui/ux review check" />
                     <div
                         class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60">
                     </div>
@@ -175,7 +173,7 @@
                     <div class="mb-3 flex items-center justify-between">
                         <h5
                             class="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
-                            Wooden House, Florida
+                            Pulau Padar
                         </h5>
                         <p
                             class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
@@ -259,7 +257,7 @@
                     <button
                         class="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button" data-ripple-light="true">
-                        Reserve
+                        Detail
                     </button>
                 </div>
             </div>
@@ -267,8 +265,7 @@
                 class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div
                     class="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                    <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
-                        alt="ui/ux review check" />
+                    <img src="{{ url('assets/bg/padar.png') }}" alt="ui/ux review check" />
                     <div
                         class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60">
                     </div>
@@ -289,7 +286,7 @@
                     <div class="mb-3 flex items-center justify-between">
                         <h5
                             class="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
-                            Wooden House, Florida
+                            Pulau Padar
                         </h5>
                         <p
                             class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
@@ -303,8 +300,7 @@
                         </p>
                     </div>
                     <p class="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
-                        Enter a freshly updated and thoughtfully furnished peaceful home
-                        surrounded by ancient trees, stone walls, and open meadows.
+                        Nikmati Pulau Indah dengan pemandangan bukit dan laut yang mengagumkan
                     </p>
                     <div class="group mt-8 inline-flex flex-wrap items-center gap-3">
                         <span data-tooltip-target="money"
@@ -373,7 +369,7 @@
                     <button
                         class="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button" data-ripple-light="true">
-                        Reserve
+                        Detail
                     </button>
                 </div>
             </div>
@@ -381,8 +377,7 @@
                 class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div
                     class="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                    <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
-                        alt="ui/ux review check" />
+                    <img src="{{ url('assets/bg/padar.png') }}" alt="ui/ux review check" />
                     <div
                         class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60">
                     </div>
@@ -403,7 +398,7 @@
                     <div class="mb-3 flex items-center justify-between">
                         <h5
                             class="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
-                            Wooden House, Florida
+                            Pulau Padar
                         </h5>
                         <p
                             class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
@@ -487,7 +482,7 @@
                     <button
                         class="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button" data-ripple-light="true">
-                        Reserve
+                        Detail
                     </button>
                 </div>
             </div>
@@ -495,8 +490,7 @@
                 class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div
                     class="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                    <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
-                        alt="ui/ux review check" />
+                    <img src="{{ url('assets/bg/padar.png') }}" alt="ui/ux review check" />
                     <div
                         class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60">
                     </div>
@@ -517,7 +511,7 @@
                     <div class="mb-3 flex items-center justify-between">
                         <h5
                             class="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
-                            Wooden House, Florida
+                            Pulau Padar
                         </h5>
                         <p
                             class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
@@ -601,7 +595,7 @@
                     <button
                         class="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button" data-ripple-light="true">
-                        Reserve
+                        Detail
                     </button>
                 </div>
             </div>
@@ -609,8 +603,7 @@
                 class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div
                     class="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                    <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
-                        alt="ui/ux review check" />
+                    <img src="{{ url('assets/bg/padar.png') }}" alt="ui/ux review check" />
                     <div
                         class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60">
                     </div>
@@ -631,7 +624,7 @@
                     <div class="mb-3 flex items-center justify-between">
                         <h5
                             class="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
-                            Wooden House, Florida
+                            Pulau Padar
                         </h5>
                         <p
                             class="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
@@ -715,7 +708,7 @@
                     <button
                         class="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button" data-ripple-light="true">
-                        Reserve
+                        Detail
                     </button>
                 </div>
             </div>

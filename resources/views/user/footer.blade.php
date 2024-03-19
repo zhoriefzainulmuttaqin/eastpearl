@@ -1,6 +1,6 @@
 <!-- Footer
 ============================================= -->
-<footer id="footer" class="dark bg-blue-visit">
+<footer id="footer" class="dark " style="background-color: #f4b8fc">
 
     <!-- Copyrights
     ============================================= -->
@@ -9,7 +9,7 @@
             <p class="text-center">
                 <b class="h3">Preferred Partner For Travels</b>
                 <br>
-                with <span class='text-warning'>eastpearl.id</span>
+                with <span class='text-white'>eastpearl.id</span>
                 <br>
                 <a href="{{ getOption('fb_link') }}" target="_blank" class="h5">
                     <i class='uil-facebook-f'></i>
@@ -32,7 +32,7 @@
                     $footer_year = config('app.year_made') . ' - ' . date('Y');
                 }
                 ?>
-                <b class="text-warning">Copyright &copy; {{ config('app.year_made') }}</b>
+                <b class="text-white">Copyright &copy; {{ config('app.year_made') }}</b>
             </p>
         </div>
     </div><!-- #copyrights end -->

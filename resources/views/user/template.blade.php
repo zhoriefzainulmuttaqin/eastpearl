@@ -41,16 +41,7 @@
 </style>
 
 <body class="stretched">
-    @php
-        use App\Models\Ads;
 
-        $iklanAtas = Ads::where('status', 1)
-            ->whereIn('active_status', [1]) // Ganti dengan nilai yang sesuai
-            ->get();
-        $iklanPopup = Ads::where('status', 3)
-            ->whereIn('active_status', [1]) // Ganti dengan nilai yang sesuai
-            ->get();
-    @endphp
     <!-- Document Wrapper
  ============================================= -->
     <div id="wrapper">
