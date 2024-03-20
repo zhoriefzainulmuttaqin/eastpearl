@@ -32,11 +32,11 @@ class GaleriController extends Controller
         $validatedData = $request->validate(
             [
                 'image_name' => 'unique:galleries',
-                'picture' => 'image',
+                'image' => 'image',
             ],
             [
                 'image_name.unique' => 'Nama sudah ada !',
-                'picture.image' => 'File harus berupa gambar',
+                'image.image' => 'File harus berupa gambar',
             ]
         );
         // file
@@ -49,7 +49,7 @@ class GaleriController extends Controller
 
             'image_name' =>  $request->image_name,
             'image' =>  $nameImage,
-            'status' =>  $request->status ?? 0,
+            'status' =>  $request->status ?? 1,
         ]);
 
         session()->flash('msg_status', 'success');
@@ -57,71 +57,93 @@ class GaleriController extends Controller
         return redirect()->to('/app-admin/data/galeri');
     }
 
-    public function ubah_galeri_akomodasi(Accomodation $Accomodation, AccomodationGallery $AccomodationGallery)
+   public function ubah_galeri()
     {
-        $data = [
-            'accomodation' => $Accomodation,
-            'gallery' => $AccomodationGallery,
-        ];
-        return view('admin.ubah_galeri_akomodasi', $data);
-    }
-    public function proses_ubah_galeri_akomodasi(Request $request)
-    {
-        $accomodation = Accomodation::find($request->accomodation_id);
-        $validatedData = $request->validate(
-            [
-                'name' => 'max:255',
-                'name_en' => 'max:255',
-                'image' => 'image',
-            ],
-            [
-                'name.max' => 'Nama maksimal 255 karakter',
-                'name_en.max' => 'Nama maksimal 255 karakter',
-                'picture.image' => 'File harus berupa gambar',
-            ]
-        );
+        $galeri = Galeri::first();
 
-        $gallery = AccomodationGallery::where('id', $request->input('gallery_id'))->first();
-        if ($request->file('picture')) {
-            if ($gallery->picture != NULL) {
-                unlink(('./assets/akomodasi/') . $gallery->picture);
-            }
-            $image = $request->file('picture');
-            $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
-            $image->move('./assets/akomodasi/', $nameImage);
-            $validatedData['picture'] = $nameImage;
+        return view('admin.ubahGaleri', compact('galeri'));
+    }
+    public function proses_ubah_galeri(Request $request)
+
+    {
+      // wajib
+      $id = $request->id;
+      $image_name = $request->image_name;
+      $status = $request->status;
+
+      $data_galeri = Galeri::where('id', $id)->first();
+
+      $rules = [];
+
+      if ($request->image_name != $data_galeri->image_name) {
+          $rules['image_name'] = 'required|unique:galleries';
+      } else {
+          $rules['image_name'] = 'required';
+      }
+
+
+      $rules['image'] = 'image';
+
+      $validateData = $request->validate(
+        [
+            'image_name' => $rules['image_name'],
+            'image' => $rules['image'],
+        ],
+        [
+            'image_name.required' => 'Nama harus diisi.',
+            'image_name.unique' => 'Nama sudah terdaftar.',
+            'image.image' => 'File harus berupa gambar.',
+        ]
+    );
+
+      if ($request->file('image')) {
+          if ($data_galeri->image != NULL) {
+              unlink(('./assets/galeri/') . $data_galeri->image);
+          }
+          $image = $request->file('image');
+          $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
+          $image->move('./assets/galeri/', $nameImage);
+      } else {
+          $nameImage = $request->image_old;
+      }
+
+      Galeri::where('id', $id)
+          ->update([
+
+              'image_name' =>  $image_name,
+              'image' =>  $nameImage,
+              'status' =>  $request->status ?? 1,
+
+          ]);
+
+      session()->flash('msg_status', 'success');
+      session()->flash('msg', "<h5>Berhasil</h5><p>Gambar Berhasil Diubah</p>");
+      return redirect()->to('app-admin/data/galeri');
+    }
+
+     public function proses_hapus_galeri(Request $request)
+    {
+        $id = $request->id;
+        $galeri = Galeri::where('id', $id)->first();
+
+        if ($galeri) {
+            unlink(('./assets/galeri/') . $galeri->image);
+            Galeri::where('id', $id)->delete();
+            session()->flash('msg_status', 'success');
+            session()->flash('msg', "<h5>Berhasil</h5><p>Data galeri berhasil dihapus !</p>");
+            return redirect()->to('/app-admin/data/galeri');
+        } else {
+            session()->flash('msg_status', 'warning');
+            session()->flash('msg', "<h5>Gagal</h5><p>Data galeri tidak ditemukan !</p>");
+            return redirect()->to('/app-admin/data/galeri');
         }
-        $validatedData['data_id'] = $accomodation->id;
-
-        AccomodationGallery::where('id', $request->input('gallery_id'))->update($validatedData);
-        session()->flash('msg_status', 'success');
-        session()->flash('msg', "<h5>Berhasil</h5><p>Galeri Akomodasi Berhasil Diubah</p>");
-        return redirect()->to("/app-admin/data/ubah/galeri/akomodasi/$accomodation->slug/$gallery->id");
     }
-    public function hapus_galeri_akomodasi(Accomodation $Accomodation, AccomodationGallery $AccomodationGallery)
-    {
-        unlink(('./assets/akomodasi/') . $AccomodationGallery->picture);
-        AccomodationGallery::where('id', $AccomodationGallery->id)->delete();
-        session()->flash('msg_status', 'success');
-        session()->flash('msg', "<h5>Berhasil</h5><p>Galeri Akomodasi Berhasil Dihapus</p>");
-        return redirect()->to("/app-admin/data/galeri/akomodasi/$Accomodation->slug");
-    }
-    public function link_akomodasi(Accomodation $Accomodation)
-    {
-        $accomodationLinks = AccomodationLink::where('data_id', $Accomodation->id)->orderBy('source_name', 'asc')->get();
-        $data = [
-            'accomodation' => $Accomodation,
-            'accomodationLinks' => $accomodationLinks,
-        ];
-        return view('admin.link_akomodasi', $data);
-    }
-
 
     // USER
     public function user_galeri()
     {
         $galeri = Galeri::get();
 
-        return view('user.galeri');
+        return view('user.galeri', compact('galeri'));
     }
 }

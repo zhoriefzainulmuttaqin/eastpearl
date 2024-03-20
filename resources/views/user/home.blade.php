@@ -169,9 +169,9 @@
 
         }
     </style>
-    @php
+    {{-- @php
         $sortedEvents = $events->sortByDesc('start_date');
-    @endphp
+    @endphp --}}
 
 
     {{-- end css event --}}

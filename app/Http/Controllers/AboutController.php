@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
+use App\Models\AboutModel;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    //
-
-    public function about(Request $request)
+    //admin
+    public function admin_tentang(Request $request)
     {
-
-        return view('user.about',);
+        $about = About::get();
+        return view('admin.about', compact('about'));
     }
 
     public function galeri(Request $request)

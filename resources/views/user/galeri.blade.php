@@ -38,65 +38,18 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             @foreach ($galeri as $galleries)
-                <div class="grid gap-4">
+                <div class="grid gap-12">
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src="{{ url('assets/galeri/'. $galleries->image) }}" alt="">
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg popup-trigger" src="{{ url('assets/bg/padar.png') }}"
-                            alt="">
-                    </div>
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg popup-trigger" src="{{ url('assets/bg/padar.png') }}"
+                        <img class="h-auto max-w-full rounded-lg" src="{{ url('assets/galeri/' . $galleries->image) }}"
                             alt="">
                     </div>
                 </div>
             @endforeach
-
         </div>
 
-        <!-- Popup -->
-        <div id="popup-image"
-            class="fixed top-0 left-0 w-full h-full z-50 bg-black opacity-0 transition-opacity flex justify-center items-center">
-            <div id="popup-content" class="max-w-screen p-10">
-                <img id="popup-image-src" class="max-w-full">
-            </div>
-        </div>
     </div>
 
-    <script>
-        // Get references to the popup and popup image
-        const popup = document.getElementById('popup-image');
-        const popupImage = document.getElementById('popup-image-src');
-
-        // Get all elements that trigger the popup
-        const popupTriggers = document.querySelectorAll('.popup-trigger');
-
-        // Loop through each trigger to add event listener
-        popupTriggers.forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                // Change the source of the popup image to the clicked image
-                popupImage.src = trigger.src;
-                // Show the popup
-                popup.classList.add('opacity-100');
-                popup.classList.remove('opacity-0');
-                // Disable scrolling when the popup is open
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        // Add event listener to close popup when clicking outside the image
-        popup.addEventListener('click', (event) => {
-            // Check if the click was outside the image
-            if (event.target === popup) {
-                // Hide the popup
-                popup.classList.remove('opacity-100');
-                popup.classList.add('opacity-0');
-                // Enable scrolling when the popup is closed
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
+    <script></script>
 
     <div class="clearfix mb-5"></div>
 

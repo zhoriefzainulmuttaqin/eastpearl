@@ -1,13 +1,13 @@
 @extends('admin.template')
 
 @section('title')
-    Galeri
+    Tentang Kami
 @endsection
 
 @section('content')
     <div class="mb-3 text-right">
-        <a href='{{ url('/app-admin/data/tambah/galeri') }}'>
-            <button type="button" class="btn  btn-sm btn-primary">Tambah Galeri</button>
+        <a href='{{ url('/app-admin/data/tambah/tentang') }}'>
+            <button type="button" class="btn  btn-sm btn-primary">Tambah Tentang</button>
         </a>
     </div>
     <div class="row">
@@ -17,29 +17,32 @@
                     <table class="table table-bordered" id="datatable">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Nama Foto</th>
                                 <th class="text-center">Foto</th>
+                                <th class="text-center">Nama Instansi</th>
+                                <th class="text-center">Deskripsi</th>
+                                <th class="text-center">Alamat</th>
+                                <th class="text-center">Link Maps</th>
                                 <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($galeri as $galleries)
+                            @foreach ($about as $tentang)
                                 <tr>
-                                    <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td>{{ $galleries->image_name }}</td>
                                     <td class="text-center">
-                                        <img src='{{ url("/assets/galeri/$galleries->image") }}'
+                                        <img src='{{ url("/assets/tentang/$tentang->image_us") }}'
                                             class="img-preview mb-3 img-fluid" style="height: 50px; widht: auto;">
                                     </td>
+                                    <td>{{ $tentang->office_name }}</td>
+                                    <td>{{ $tentang->description }}</td>
+                                    <td>{{ $tentang->office_address }}</td>
+                                    <td>{{ $tentang->office_maps }}</td>
                                     <td class="text-center">
-                                        <a
-                                            href='{{ url("/app-admin/data/galeri/ubah/$galleries->image_name/$galleries->id") }}'>
+                                        <a href='{{ url("/app-admin/data/tentang/ubah/$tentang->office_name") }}'>
                                             <button type="button" class="btn btn-sm btn-success" title="Ubah">
                                                 <i class="fas fa-edit"></i></button>
                                         </a>
-                                        <a href="{{ url("/app-admin/data/galeri/hapus/$galleries->image_name/$galleries->id") }}"
-                                            onclick='return confirm("Apakah anda yakin hapus {{ $galleries->image_name }}?")'>
+                                        <a href="{{ url("/app-admin/data/tentang/hapus/$tentang->office_name") }}"
+                                            onclick='return confirm("Apakah anda yakin hapus {{ $tentang->office_name }}?")'>
                                             <button type="button" class="btn btn-sm btn-danger" title="hapus">
                                                 <i class="fas fa-trash"></i></button>
                                         </a>

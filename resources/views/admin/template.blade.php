@@ -86,6 +86,10 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Galeri</p>
                                     </a>
+                                    <a href="{{ url('app-admin/data/tentang') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Tentan Kami</p>
+                                    </a>
                                 </li>
                             </ul>
                         </li>
