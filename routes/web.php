@@ -133,9 +133,9 @@ Route::prefix("app-admin")->group(function () {
          Route::get("data/tentang", [AboutController::class, "admin_tentang"]);
          Route::get("data/tambah/tentang", [AboutController::class, "tambah_tentang"]);
          Route::post("data/tentang/proses-tambah", [AboutController::class, "proses_tambah_tentang"]);
-         Route::get("data/tentang/ubah/{slug}/{id}", [AboutController::class, "ubah_tentang"]);
+         Route::get("data/tentang/ubah/{slug}", [AboutController::class, "ubah_tentang"]);
          Route::post("data/tentang/proses-ubah", [AboutController::class, "proses_ubah_tentang"]);
-         Route::get("data/tentang/hapus/{slug}/{id}", [AboutController::class, "proses_hapus_tentang"]);
+         Route::get("data/tentang/hapus/{slug}", [AboutController::class, "proses_hapus_tentang"]);
 
         // akun admin
         Route::get("akun/admin", [AccountController::class, "akun_admin"]);

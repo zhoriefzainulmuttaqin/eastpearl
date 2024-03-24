@@ -94,7 +94,7 @@
                         <div class="swiper swiper-parent">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide dark">
-                                    {{-- <div class="container-fluid py-5 text-center">
+                                    <div class="container-fluid py-5 text-center">
                                         <img src="{{ url('assets/logo-light.png') }}" id="logo-on-header">
                                         <p class="text-white d-none d-md-block display-6" style="font-size: 20px;">
                                             {{ strtoupper(__('home.portal_text')) }} <br>
@@ -115,7 +115,7 @@
                                                 ENGLISH
                                             </a>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     <div class="swiper-slide-bg" style="background-image: url('assets/bg/padar.png');">
                                     </div>
                                 </div>
@@ -167,12 +167,18 @@
         @else
             {{-- <div class=" d-block d-lg-none"> --}}
             <section id="slider" class="slider-element slider-parallax min-vh-40 min-vh-md-100 dark include-header"
-                style="background: url(@yield('cover')) no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
+                style="background: url(@yield('cover')) no-repeat; background-size: cover;margin-bottom:0px; background-position: center center; filter: brightness(50%);">
                 <div class="slider-inner">
                     <div class="vertical-middle slider-element-fade">
                         <div class="container-fluid py-5">
-                            <div class="heading-block text-center border-bottom-0 mt-6 mt-md-0">
-
+                            <div class="heading-block text-center border-bottom-0 mt-6 mt-md-0"
+                                style=" filter: brightness(100%);">
+                                <h1>Tentang Kami</h1>
+                                <p style="padding-left: 200px; padding-right: 200px;">Lorem ipsum dolor, sit amet
+                                    consectetur adipisicing elit.
+                                    Fugiat incidunt explicabo
+                                    repudiandae nulla delectus nihil, error adipisci corrupti ab itaque architecto
+                                    deserunt dicta eos perferendis tempore ad illum qui omnis.</p>
                             </div>
                         </div>
                     </div>

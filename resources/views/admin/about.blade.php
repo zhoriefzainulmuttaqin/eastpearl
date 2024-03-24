@@ -5,11 +5,18 @@
 @endsection
 
 @section('content')
-    <div class="mb-3 text-right">
-        <a href='{{ url('/app-admin/data/tambah/tentang') }}'>
-            <button type="button" class="btn  btn-sm btn-primary">Tambah Tentang</button>
-        </a>
-    </div>
+    @php
+        $isEmpty = $about->isEmpty(); // menampilkan button ketika data table = empty
+    @endphp
+
+    @if ($isEmpty)
+        <div class="mb-3 text-right">
+            <a href='{{ url('/app-admin/data/tambah/tentang') }}'>
+                <button type="button" class="btn  btn-sm btn-primary">Tambah Tentang</button>
+            </a>
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -29,7 +36,7 @@
                             @foreach ($about as $tentang)
                                 <tr>
                                     <td class="text-center">
-                                        <img src='{{ url("/assets/tentang/$tentang->image_us") }}'
+                                        <img src='{{ url("/assets/tentang/$tentang->image") }}'
                                             class="img-preview mb-3 img-fluid" style="height: 50px; widht: auto;">
                                     </td>
                                     <td>{{ $tentang->office_name }}</td>

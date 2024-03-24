@@ -48,21 +48,6 @@ $locale = App::currentLocale();
                             <li class="menu-item"><a class="menu-link" href="{{ url('/') }}">
                                     <div>Home</div>
                                 </a></li>
-                            {{-- <li class="menu-item"><a class="menu-link" href="{{ url('wisata') }}">
-                                    <div>{{ __('menu.destinations') }}</div>
-                                </a></li>
-                            <li class="menu-item"><a class="menu-link" href="{{ url('event') }}">
-                                    <div>{{ __('menu.events') }}</div>
-                                </a></li>
-                            <li class="menu-item"><a class="menu-link" href="{{ url('kuliner') }}">
-                                    <div>{{ __('menu.culinaries') }}</div>
-                                </a></li> --}}
-                            {{-- <li class="menu-item"><a class="menu-link" href="{{ url('oleh-oleh') }}">
-                                    <div>{{ __('menu.open_trip') }}</div>
-                                </a></li>
-                            <li class="menu-item"><a class="menu-link" href="{{ url('akomodasi') }}">
-                                    <div>{{ __('menu.private_trip') }}</div>
-                                </a></li> --}}
                             <li class="menu-item">
 
                                 <a class="menu-link" href="#">
@@ -115,7 +100,7 @@ $locale = App::currentLocale();
                         </a>
                     </div> -->
                     <!-- #top-cart end -->
-                    @if (Auth()->check())
+                    {{-- @if (Auth()->check())
                         <a href="{{ url('profil') }}" class="btn btn-danger btn-sm ms-3 d-none d-md-block d-lg-block">
                             <i class="uil-user"></i>
                             {{ __('menu.profile') }}
@@ -125,7 +110,7 @@ $locale = App::currentLocale();
                             <i class="uil-signin"></i>
                             {{ __('menu.login') }}
                         </a>
-                    @endif
+                    @endif --}}
 
                 </div>
                 <div class="primary-menu-trigger">
@@ -142,23 +127,8 @@ $locale = App::currentLocale();
                         <li class="menu-item"><a class="menu-link" href="{{ url('/') }}">
                                 <div>Home</div>
                             </a></li>
-                        <li class="menu-item"><a class="menu-link" href="{{ url('wisata') }}">
-                                <div>{{ __('menu.destinations') }}</div>
-                            </a></li>
-                        <li class="menu-item"><a class="menu-link" href="{{ url('event') }}">
-                                <div>{{ __('menu.events') }}</div>
-                            </a></li>
-                        <li class="menu-item"><a class="menu-link" href="{{ url('kuliner') }}">
-                                <div>{{ __('menu.culinaries') }}</div>
-                            </a></li>
-                        <li class="menu-item"><a class="menu-link" href="{{ url('oleh-oleh') }}">
-                                <div>{{ __('menu.souvenirs') }}</div>
-                            </a></li>
-                        <!-- <li class="menu-item"><a class="menu-link" href="{{ url('berita') }}"><div>Berita</div></a></li> -->
-                        <li class="menu-item"><a class="menu-link" href="{{ url('akomodasi') }}">
-                                <div>{{ __('menu.accomodations') }}</div>
-                            </a></li>
                         <li class="menu-item">
+
                             <a class="menu-link" href="#">
                                 <div>
                                     {{ __('menu.services') }}
@@ -168,18 +138,30 @@ $locale = App::currentLocale();
                             </a>
                             <ul class="sub-menu-container mega-menu-dropdown p-lg-0">
                                 <li class="menu-item">
-                                    <a class="menu-link" href="{{ url('layanan-produk') }}">
-                                        <div>{{ __('menu.service_products') }}</div>
+                                    <a class="menu-link" href="{{ url('open-trip') }}">
+                                        <div>{{ __('menu.open_trip') }}</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a class="menu-link" href="{{ url('layanan-jasa') }}">
-                                        <div>{{ __('menu.our_services') }}</div>
+                                    <a class="menu-link" href="{{ url('private-trip') }}">
+                                        <div>{{ __('menu.private_trip') }}</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a class="menu-link" href="{{ url('land-trip') }}">
+                                        <div>{{ __('menu.land_trip') }}</div>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        @if (Auth()->check())
+                        <li class="menu-item"><a class="menu-link" href="{{ url('about') }}">
+                                <div>{{ __('menu.about') }}</div>
+                            </a></li>
+                        <li class="menu-item"><a class="menu-link" href="{{ url('galeri') }}">
+                                <div>Galeri</div>
+                            </a></li>
+                        <li class="menu-item">
+                            {{-- @if (Auth()->check())
                             <li class="menu-item d-block d-md-none d-xl-none mb-3">
                                 <a class="menu-link btn btn-danger btn-sm" href="{{ url('profil') }}">
                                     <div>
@@ -197,7 +179,7 @@ $locale = App::currentLocale();
                                     </div>
                                 </a>
                             </li>
-                        @endif
+                        @endif --}}
                     </ul>
 
                 </nav><!-- #primary-menu end -->
