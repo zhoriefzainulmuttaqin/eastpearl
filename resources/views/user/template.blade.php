@@ -67,7 +67,7 @@
                 }
 
                 .swiper-slide-bg {
-                    filter: brightness(70%);
+                    filter: brightness(110%);
                     /* You can adjust the percentage as needed */
                 }
 
@@ -95,16 +95,8 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide dark">
                                     <div class="container-fluid py-5 text-center">
-                                        <img src="{{ url('assets/logo-light.png') }}" id="logo-on-header">
-                                        <p class="text-white d-none d-md-block display-6" style="font-size: 20px;">
-                                            {{ strtoupper(__('home.portal_text')) }} <br>
-                                            (CIREBON KUNINGAN INDRAMAYU MAJALENGKA)
-                                        </p>
-                                        <p class="text-white d-block d-md-none"
-                                            style="font-size:7px; margin-top: -1rem;">
-                                            {{ strtoupper(__('home.portal_text')) }} <br>
-                                            (CIREBON KUNINGAN INDRAMAYU MAJALENGKA)
-                                        </p>
+                                        <img src="{{ url('assets/eastpearl_logo3.png') }}" id="logo-on-header">
+
                                         <div class="language">
                                             <a href="{{ url('atur-bahasa/id') }}"
                                                 class="btn text-center bg-btn-language but_lang1">
@@ -114,9 +106,14 @@
                                                 class="btn text-center bg-btn-language but_lang2">
                                                 ENGLISH
                                             </a>
+                                            <a href="{{ url('atur-bahasa/mandarin') }}"
+                                                class="btn text-center bg-btn-language but_lang3">
+                                                普通话
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide-bg" style="background-image: url('assets/bg/padar.png');">
+                                    <div class="swiper-slide-bg bg_image2"
+                                        style="background-image: url('assets/bg/padar.png');">
                                     </div>
                                 </div>
 
@@ -125,6 +122,7 @@
                     </div>
                 </section>
             </div>
+
 
             <div class="d-block d-lg-none">
                 <section id="slider" class="slider-element swiper_wrapper min-vh-md-100 dark include-header"
@@ -166,25 +164,32 @@
             </div>
         @else
             {{-- <div class=" d-block d-lg-none"> --}}
-            <section id="slider" class="slider-element slider-parallax min-vh-40 min-vh-md-100 dark include-header"
-                style="background: url(@yield('cover')) no-repeat; background-size: cover;margin-bottom:0px; background-position: center center; filter: brightness(50%);">
+            <section id="slider"
+                class="bg_image slider-element slider-parallax min-vh-40 min-vh-md-100 dark include-header"
+                style="background: url(@yield('cover')) no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
                 <div class="slider-inner">
                     <div class="vertical-middle slider-element-fade">
                         <div class="container-fluid py-5">
-                            <div class="heading-block text-center border-bottom-0 mt-6 mt-md-0"
-                                style=" filter: brightness(100%);">
+                            <div class="heading-block text-center border-bottom-0 mt-6 mt-md-0" style="">
                                 <h1>Tentang Kami</h1>
-                                <p style="padding-left: 200px; padding-right: 200px;">Lorem ipsum dolor, sit amet
-                                    consectetur adipisicing elit.
-                                    Fugiat incidunt explicabo
-                                    repudiandae nulla delectus nihil, error adipisci corrupti ab itaque architecto
-                                    deserunt dicta eos perferendis tempore ad illum qui omnis.</p>
+                                <p style="padding-left: 200px; padding-right: 200px;">
+                                    Lorem ipsum dolor, sit amet
+                                    consectetur adipisicing elit. Fugiat incidunt explicabo repudiandae nulla delectus
+                                    nihil, error adipisci corrupti ab itaque architecto deserunt dicta eos perferendis
+                                    tempore ad illum qui omnis.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            {{-- </div> --}}
+
+            <style>
+                /* Mengatur kecerahan background gambar menjadi 60% */
+                .bg_image {
+                    filter: brightness(60%);
+                }
+            </style>
         @endif
 
         <style>

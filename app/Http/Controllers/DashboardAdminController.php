@@ -22,33 +22,33 @@ class DashboardAdminController extends Controller
 {
     //
     public function dashboard(){
-        $count_wisata = Tour::count();
-        $count_kuliner = Restaurant::count();
-        $count_oleholeh = Shop::count();
-        $count_akomodasi = Accomodation::count();
+        // $count_wisata = Tour::count();
+        // $count_kuliner = Restaurant::count();
+        // $count_oleholeh = Shop::count();
+        // $count_akomodasi = Accomodation::count();
 
-        $events = Event::where("start_date",">=",date("Y-m-d"))->orderBy("start_date","asc")->get();
+        // $events = Event::where("start_date",">=",date("Y-m-d"))->orderBy("start_date","asc")->get();
 
-        $cardSales = DiscountCardSale::where("status",1)->orderBy("id","desc")->limit(10)->get();
-        $giftSales = GiftSale::where("status",1)->orderBy("id","desc")->limit(10)->get();
-        
-        $news = News::join('categories', 'news.category_id', '=', 'categories.id')
-        ->join('administrators', 'news.admin_id', '=', 'administrators.id')
-        ->where('categories.type', 1)
-        ->select(['news.*', 'categories.name as category_name', 'categories.name_en as category_name_en', 'administrators.name as admin_name'])
-        ->limit(3)
-        ->orderBy('news.published_date', 'desc')
-        ->get();
+        // $cardSales = DiscountCardSale::where("status",1)->orderBy("id","desc")->limit(10)->get();
+        // $giftSales = GiftSale::where("status",1)->orderBy("id","desc")->limit(10)->get();
+
+        // $news = News::join('categories', 'news.category_id', '=', 'categories.id')
+        // ->join('administrators', 'news.admin_id', '=', 'administrators.id')
+        // ->where('categories.type', 1)
+        // ->select(['news.*', 'categories.name as category_name', 'categories.name_en as category_name_en', 'administrators.name as admin_name'])
+        // ->limit(3)
+        // ->orderBy('news.published_date', 'desc')
+        // ->get();
 
         $data = ([
-            "count_wisata" => $count_wisata,
-            "count_kuliner" => $count_kuliner,
-            "count_oleholeh" => $count_oleholeh,
-            "count_akomodasi" => $count_akomodasi,
-            "events"    => $events,
-            "cardSales" => $cardSales,
-            "giftSales" => $giftSales,
-            "news"  => $news,
+            // "count_wisata" => $count_wisata,
+            // "count_kuliner" => $count_kuliner,
+            // "count_oleholeh" => $count_oleholeh,
+            // "count_akomodasi" => $count_akomodasi,
+            // "events"    => $events,
+            // "cardSales" => $cardSales,
+            // "giftSales" => $giftSales,
+            // "news"  => $news,
         ]);
 
         return view("admin.dashboard",$data);

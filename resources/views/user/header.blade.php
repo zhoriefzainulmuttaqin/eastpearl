@@ -16,23 +16,23 @@ $locale = App::currentLocale();
                     <a href="{{ url('/') }}" class="ps-2 d-flex">
 
                         <img class="logo-default py-1"
-                            srcset="{{ url('assets/eastpearl-logo.png') }} {{ url('assets/eastpearl-logo.png') }}"
-                            src="{{ url('assets/eastpearl-logo.png') }}" alt="Logo EastPearl">
+                            srcset="{{ url('assets/eastpearl1.png') }} {{ url('assets/eastpearl1.png') }}"
+                            src="{{ url('assets/eastpearl1.png') }}" alt="Logo EastPearl">
                         <img src="{{ url('assets/wiputih.png') }}" alt=""
                             style="height: 50px; width: auto; margin: 0 10px;">
                         <!-- Sesuaikan ukuran dan margin sesuai kebutuhan -->
-                        <img class="logo-dark py-1" srcset="{{ url('assets/eastpearl-logo.png') }}"
-                            src=" {{ url('assets/eastpearl-logo.png') }}" alt="Logo EastPearl">
+                        <img class="logo-dark py-1" srcset="{{ url('assets/eastpearl1.png') }}"
+                            src=" {{ url('assets/eastpearl1.png') }}" alt="Logo EastPearl">
                     </a>
                 </div>
                 <div class="d-block d-md-none" id="logo" style="display: flex; ">
                     <a href="{{ url('/') }}" class="ps-2 d-flex">
 
                         <img class="logo-default py-1"
-                            srcset="{{ url('assets/eastpearl-logo.png') }} {{ url('assets/eastpearl-logo.png') }}"
-                            src="{{ url('assets/eastpearl-logo.png') }}" alt="Logo EastPearl">
-                        <img class="logo-dark py-1 m-auto" srcset="{{ url('assets/eastpearl-logo.png') }}"
-                            src=" {{ url('assets/eastpearl-logo.png') }}" alt="Logo EastPearl"
+                            srcset="{{ url('assets/eastpearl1.png') }} {{ url('assets/eastpearl1.png') }}"
+                            src="{{ url('assets/eastpearl1.png') }}" alt="Logo EastPearl">
+                        <img class="logo-dark py-1 m-auto" srcset="{{ url('assets/eastpearl1.png') }}"
+                            src=" {{ url('assets/eastpearl1.png') }}" alt="Logo EastPearl"
                             style="width: 100% !important;">
                         <img src="{{ url('assets/wiputih.png') }}" alt=""
                             style="height: 35px; width: auto; margin-left: 20px;">

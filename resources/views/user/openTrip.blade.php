@@ -27,8 +27,8 @@
 
     <div class="container-lg mt-5">
         <h1
-            class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-            Dapatkan liburan menyenangkan anda dengan <span class="" style="color: #f4b8fc">paket open trip Labuan
+            class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-6xl dark:text-white">
+            Dapatkan liburan menyenangkan anda dengan <span class="" style="color: #ba1918">paket open trip Labuan
                 Bajo</h1>
         <p class="text-lg mb-4 font-normal text-gray-500 lg:text-xl dark:text-gray-400">Tour Experts kami selalu siap untuk
             mengurus perjalan liburan dari awal hingga akhir. Sehingga kamu mendapatkan pengalaman unik tak terlupakan

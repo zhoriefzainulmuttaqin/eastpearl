@@ -50,9 +50,9 @@
                     <div class="vertical-middle">
                         <div class="container py-5">
 
-                            <div class="text-center">
-                                <a href="{{ url('/') }}"><img src="{{ url('assets/east_pearl_redesign.png') }}"
-                                        style="height: 200px;"></a>
+                            <div class="text-center mb-4">
+                                <a href="{{ url('/') }}"><img src="{{ url('assets/eastpearl1.png') }}"
+                                        style="height: 150px;"></a>
                             </div>
 
                             <div class="card mx-auto rounded-0 border-0" style="max-width: 400px;">
@@ -89,8 +89,8 @@
                                 </div>
                             </div>
 
-                            <div class="text-center text-muted mt-3"><small>Copyrights &copy; All Rights Reserved by
-                                    Canvas Inc.</small></div>
+                            <div class="text-center text-white mt-3"><small>Copyrights &copy; All Rights Reserved by
+                                    eastpearl.id</small></div>
 
                         </div>
                     </div>

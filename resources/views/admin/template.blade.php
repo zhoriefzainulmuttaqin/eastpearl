@@ -49,7 +49,7 @@
         </nav>
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="{{ url('app-admin') }}" class="brand-link">
-                <img src="{{ url('assets/logo-light.png') }}" alt="AdminLTE Logo" class="brand-image"
+                <img src="{{ url('assets/eastpearl1.png') }}" alt="AdminLTE Logo" class="brand-image"
                     style="opacity: .8">
                 <span class="brand-text font-weight-light">&nbsp;</span>
             </a>
@@ -90,32 +90,14 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tentang Kami</p>
                                     </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-exchange-alt"></i>
-                                <p>
-                                    Transaksi
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ url('app-admin/transaksi/tourism-card') }}" class="nav-link">
+                                    <a href="{{ url('app-admin/data/kategori') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Tourism Card</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ url('app-admin/transaksi/paket-oleholeh') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Paket Oleh - oleh</p>
+                                        <p>Kategori Layanan</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
@@ -135,42 +117,6 @@
                                     <a href="{{ url('app-admin/akun/pengguna') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Pengguna</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
-                                <p>
-                                    Laporan
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview" style='font-size:14px'>
-                                <li class="nav-item">
-                                    <a href="{{ url('app-admin/laporan/transaksi/tourism-card') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Transaksi Tourism Card</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ url('app-admin/laporan/transaksi/paket-oleholeh') }}"
-                                        class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Transaksi Paket Oleh - oleh</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ url('app-admin/laporan/penggunaan-kartu') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Penggunaan Kartu</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ url('app-admin/laporan/penggunaan-kartu') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Affiliate</p>
                                     </a>
                                 </li>
                             </ul>

@@ -15,10 +15,63 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="office_name"> Nama Instansi </label>
-                            <input type="text" class="form-control @error('office_name') is-invalid @enderror"
-                                name="office_name" id="name" placeholder="Masukan Nama Instansi "
-                                value="{{ old('office_name') }}" required autocomplete="off"></input>
+                            <label for="company_name"> Nama Instansi </label>
+                            <input type="text" class="form-control @error('company_name') is-invalid @enderror"
+                                name="company_name" id="name" placeholder="Masukan Nama Instansi "
+                                value="{{ old('company_name') }}" required autocomplete="off"></input>
+                            @error('company_name')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="slogan">Slogan </label>
+                            <input type="text" class="form-control @error('slogan') is-invalid @enderror" name="slogan"
+                                id="name" placeholder="Masukan Nama Instansi " value="{{ old('slogan') }}" required
+                                autocomplete="off"></input>
+                            @error('slogan')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Deskripsi Singkat</label>
+                            <textarea id="content" name="description" placeholder="Masukkan Deskripsi" rows="10" required>{{ old('description') }}</textarea>
+                            <div class="my-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="content_en">Deskripsi Singkat (Dalam Bahasa Inggris)</label>
+                            <textarea id="content_en" name="description_en" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('description_en') }}</textarea>
+                            <div class="my-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="content_mandarin">Deskripsi Singkat (Dalam Bahasa Mandarin)</label>
+                            <textarea id="content_mandarin" name="description_mandarin" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('description_mandarin') }}</textarea>
+                            <div class="my-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="long_content">Deskripsi Lengkap</label>
+                            <textarea id="long_content" name="long_description" placeholder="Masukkan Deskripsi" rows="10" required>{{ old('long_description') }}</textarea>
+                            <div class="my-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="long_content_en">Deskripsi Lengkap (Dalam Bahasa Inggris)</label>
+                            <textarea id="long_content_en" name="long_description_en" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('long_description_en') }}</textarea>
+                            <div class="my-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="long_content_mandarin">Deskripsi Lengkap (Dalam Bahasa Mandarin)</label>
+                            <textarea id="long_content_mandarin" name="long_description_mandarin" placeholder="Masukkan Deskripsi"
+                                rows="10"required>{{ old('long_description_mandarin') }}</textarea>
+                            <div class="my-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location"> Alamat Instansi </label>
+                            <input type="text" class="form-control @error('location') is-invalid @enderror"
+                                name="location" id="name" placeholder="Masukan Alamat " value="{{ old('location') }}"
+                                required autocomplete="off"></input>
                             @error('office_name')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -26,32 +79,11 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="content">Deskripsi</label>
-                            <textarea id="content" name="description" placeholder="Masukkan Deskripsi" rows="10" required>{{ old('content') }}</textarea>
-                            <div class="my-3"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="content_en">Deskripsi (Dalam Bahasa Inggris)</label>
-                            <textarea id="content_en" name="description_en" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('content_en') }}</textarea>
-                            <div class="my-3"></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="office_address"> Alamat Instansi </label>
-                            <input type="text" class="form-control @error('office_address') is-invalid @enderror"
-                                name="office_address" id="name" placeholder="Masukan Alamat "
-                                value="{{ old('office_address') }}" required autocomplete="off"></input>
-                            @error('office_name')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="office_maps"> Link Maps Instansi </label>
-                            <input type="text" class="form-control @error('office_maps') is-invalid @enderror"
-                                name="office_maps" id="name" placeholder="Masukan Link "
-                                value="{{ old('office_maps') }}" required autocomplete="off"></input>
-                            @error('office_maps')
+                            <label for="link_maps"> Link link_maps Instansi </label>
+                            <input type="text" class="form-control @error('link_maps') is-invalid @enderror"
+                                name="link_maps" id="name" placeholder="Masukan Link " value="{{ old('link_maps') }}"
+                                required autocomplete="off"></input>
+                            @error('link_maps')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -109,6 +141,22 @@
             removePlugins: 'image'
         });
         CKEDITOR.replace('content_en', {
+            enterMode: CKEDITOR.ENTER_BR,
+            removePlugins: 'image'
+        });
+        CKEDITOR.replace('content_mandarin', {
+            enterMode: CKEDITOR.ENTER_BR,
+            removePlugins: 'image'
+        });
+        CKEDITOR.replace('long_content', {
+            enterMode: CKEDITOR.ENTER_BR,
+            removePlugins: 'image'
+        });
+        CKEDITOR.replace('long_content_en', {
+            enterMode: CKEDITOR.ENTER_BR,
+            removePlugins: 'image'
+        });
+        CKEDITOR.replace('long_content_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
             removePlugins: 'image'
         });

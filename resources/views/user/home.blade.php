@@ -23,7 +23,7 @@
             background-size: cover;
             padding-top: 100px;
             padding-bottom: 100px;
-            background-color: #f4b8fc;
+            background-color: #ba1918;
         }
 
         @media (max-width: 760px) {
@@ -176,7 +176,7 @@
 
     {{-- end css event --}}
     <div id="home-event-container" class="d-none d-md-block">
-        <div class=" container mt-md-0" style="margin-top: -4rem !important;">
+        <div class=" container mt-md-0 text-white" style="margin-top: -4rem !important;">
             <p class=" text-center title_event">
                 Discover All of Indonesia’s Treasures with Us, Better than Anyone Else!
             </p>
@@ -293,6 +293,7 @@
             justify-content: center;
             align-items: center;
             border-radius: 5px;
+            background-color: #ba1918;
         }
 
         .image-caption {
@@ -527,7 +528,7 @@
             </a>
         </div>
         <div class="mt-5">
-            <a href="{{ url('wisata') }}" class="btn btn-primary text-white bg-btn-visit" id="but_wisata">
+            <a href="{{ url('wisata') }}" class="btn text-white " id="but_wisata">
                 Semua Paket
             </a>
         </div>
@@ -545,15 +546,16 @@
                     </div>
                 </div>
             </div>
-            <div class=" flex w-200 flex-row rounded-xl bg-white bg-clip-border text-gray-700 ">
-                <div class=" mx-4 overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                    <img src="https://indonesiajuara.asia/wp-content/uploads/2022/05/IndonesiaJuara-Trip-355x280-1-300x237.jpeg"
-                        style="width: 350rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
+            <div class="d-flex flex-row">
+                <div class="rounded-xl  ">
+                    <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                        <img src="https://indonesiajuara.asia/wp-content/uploads/2022/05/IndonesiaJuara-Trip-355x280-1-300x237.jpeg"
+                            style="width: 350rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
+                    </div>
+
                 </div>
                 <div class="p-6">
-                    <div>
 
-                    </div>
                     <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
                         Eastpearl merupakan Tour Operator yang menjalankan langsung aktivitas tour dengan konsep
                         berpetualang di wisata alam Indonesia. Berpengalaman lebih dari 7 tahun dengan review Tour Terbaik

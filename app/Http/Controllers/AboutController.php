@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\AboutModel;
+use App\Models\Galeri;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
@@ -27,17 +28,29 @@ class AboutController extends Controller
     {
         $validatedData = $request->validate(
             [
-                'office_name' => 'required',
+                'company_name' => 'required',
                 'description' => 'required',
-                'office_address' => 'required',
-                'office_maps' => 'required',
+                'description_en' => 'required',
+                'description_mandarin' => 'required',
+                'long_description' => 'required',
+                'long_description_en' => 'required',
+                'long_description_mandarin' => 'required',
+                'location' => 'required',
+                'link_maps' => 'required',
                 'image' => 'image',
+                'slogan' => 'required',
             ],
             [
-                'office_name.required' => 'Data harus diisi!',
+                'company_name.required' => 'Data harus diisi!',
                 'description.required' => 'Data harus diisi!',
-                'office_address.required' => 'Data harus diisi!',
-                'office_maps.required' => 'Data harus diisi!',
+                'description_en.required' => 'Data harus diisi!',
+                'description_mandarin.required' => 'Data harus diisi!',
+                'long_description.required' => 'Data harus diisi!',
+                'long_description_en.required' => 'Data harus diisi!',
+                'long_description_mandarin.required' => 'Data harus diisi!',
+                'location.required' => 'Data harus diisi!',
+                'link_maps.required' => 'Data harus diisi!',
+                'slogan.required' => 'Data harus diisi!',
                 'image.image' => 'File harus berupa gambar',
             ]
         );
@@ -49,10 +62,16 @@ class AboutController extends Controller
 
         About::insert([
 
-            'office_name' =>  $request->office_name,
+            'company_name' =>  $request->company_name,
             'description' =>  $request->description,
-            'office_address' =>  $request->office_address,
-            'office_maps' =>  $request->office_maps,
+            'description_en' =>  $request->description_en,
+            'description_mandarin' =>  $request->description_mandarin,
+            'long_description' =>  $request->long_description,
+            'long_description_en' =>  $request->long_description_en,
+            'long_description_mandarin' =>  $request->long_description_mandarin,
+            'location' =>  $request->location,
+            'link_maps' =>  $request->link_maps,
+            'slogan' =>  $request->slogan,
             'image' =>  $nameImage,
         ]);
 
@@ -67,7 +86,39 @@ class AboutController extends Controller
         return view('admin.ubahTentang', compact('about'));
     }
 
+    public function proses_ubah_tentang(Request $request)
+    {
+        $checkEvent = About::where('name', $request->input('name'))->where('id', '!=', $request->input('tentang_id'))->first();
+        if ($checkEvent) {
+            $rules = [
+                'name' => 'max:255',
+                'name_en' => 'max:255',
+                'name_mandarin' => 'max:255',
+            ];
+        } else {
+            $rules = [
+                'name' => 'max:255',
+                'name_en' => 'max:255',
+                'name_mandarin' => 'max:255',
+            ];
+        }
 
+        $validatedData = $request->validate(
+            $rules,
+            [
+                'name.max' => 'Nama maksimal 255 karakter',
+                'name_en.max' => 'Nama maksimal 255 karakter',
+                'name_mandarin.max' => 'Nama maksimal 255 karakter',
+            ]
+        );
+
+        About::where('id', $request->input('tentang_id'))->update($validatedData);
+        $tentang = About::where('id', $request->input('tentang_id'))->first();
+
+        session()->flash('msg_status', 'success');
+        session()->flash('msg', "<h5>Berhasil</h5><p>Data Berhasil Diubah</p>");
+        return redirect()->to("/app-admin/data/ubah/tentang/$tentang->name");
+    }
 
 
      public function proses_hapus_tentang(Request $request)
@@ -102,7 +153,9 @@ class AboutController extends Controller
 
       public function about(Request $request)
     {
+                $about = About::get();
+                $galeri = Galeri::get();
 
-        return view('user.about',);
+        return view('user.about', compact('about','galeri'));
     }
 }

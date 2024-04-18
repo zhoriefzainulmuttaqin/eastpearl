@@ -1,6 +1,6 @@
 <!-- Footer
 ============================================= -->
-<footer id="footer" class="dark " style="background-color: #f4b8fc">
+<footer id="footer" class="dark " style="background-color: #ba1918">
 
     <!-- Copyrights
     ============================================= -->

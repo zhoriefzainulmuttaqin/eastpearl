@@ -27,6 +27,8 @@
                                 <th class="text-center">Foto</th>
                                 <th class="text-center">Nama Instansi</th>
                                 <th class="text-center">Deskripsi</th>
+                                <th class="text-center">Deskripsi Lengkap</th>
+                                <th class="text-center">Slogan</th>
                                 <th class="text-center">Alamat</th>
                                 <th class="text-center">Link Maps</th>
                                 <th class="text-center">Aksi</th>
@@ -39,17 +41,20 @@
                                         <img src='{{ url("/assets/tentang/$tentang->image") }}'
                                             class="img-preview mb-3 img-fluid" style="height: 50px; widht: auto;">
                                     </td>
-                                    <td>{{ $tentang->office_name }}</td>
+                                    <td>{{ $tentang->company_name }}</td>
                                     <td>{{ $tentang->description }}</td>
-                                    <td>{{ $tentang->office_address }}</td>
-                                    <td>{{ $tentang->office_maps }}</td>
+                                    <td>{{ $tentang->long_description }}</td>
+                                    <td>{{ $tentang->slogan }}</td>
+                                    <td>{{ $tentang->location }}</td>
+                                    <td>{{ $tentang->link_maps }}</td>
                                     <td class="text-center">
-                                        <a href='{{ url("/app-admin/data/tentang/ubah/$tentang->office_name") }}'>
+                                        <a
+                                            href='{{ url("/app-admin/data/tentang/ubah/$tentang->officecompany_name_name") }}'>
                                             <button type="button" class="btn btn-sm btn-success" title="Ubah">
                                                 <i class="fas fa-edit"></i></button>
                                         </a>
-                                        <a href="{{ url("/app-admin/data/tentang/hapus/$tentang->office_name") }}"
-                                            onclick='return confirm("Apakah anda yakin hapus {{ $tentang->office_name }}?")'>
+                                        <a href="{{ url("/app-admin/data/tentang/hapus/$tentang->company_name") }}"
+                                            onclick='return confirm("Apakah anda yakin hapus {{ $tentang->company_name }}?")'>
                                             <button type="button" class="btn btn-sm btn-danger" title="hapus">
                                                 <i class="fas fa-trash"></i></button>
                                         </a>
