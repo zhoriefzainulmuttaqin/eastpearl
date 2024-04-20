@@ -98,6 +98,14 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Fasilitas Layanan</p>
                                     </a>
+                                    <a href="{{ url('app-admin/data/destination') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Destinasi Layanan</p>
+                                    </a>
+                                    <a href="{{ url('app-admin/data/fasilitas') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Fasilitas Layanan</p>
+                                    </a>
                                 </li>
                             </ul>
                         </li>

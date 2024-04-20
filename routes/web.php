@@ -32,6 +32,7 @@ use App\Http\Controllers\TransactionAffiliate;
 use App\Http\Controllers\UserHomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
 use Illuminate\Support\Facades\Route;
@@ -118,6 +119,14 @@ Route::prefix("app-admin")->group(function () {
          Route::get("data/fasilitas/ubah/{slug}", [FasilitasController::class, "ubah_fasilitas"]);
          Route::post("data/fasilitas/proses-ubah", [FasilitasController::class, "proses_ubah_fasilitas"]);
          Route::get("data/fasilitas/hapus/{id}", [FasilitasController::class, "proses_hapus_fasilitas"]);
+
+        //  destination
+         Route::get("data/destination", [DestinationController::class, "admin_destination"]);
+         Route::get("data/tambah/destination", [DestinationController::class, "tambah_destination"]);
+         Route::post("data/destination/proses-tambah", [DestinationController::class, "proses_tambah_destination"]);
+         Route::get("data/destination/ubah/{slug}", [DestinationController::class, "ubah_destination"]);
+         Route::post("data/destination/proses-ubah", [DestinationController::class, "proses_ubah_destination"]);
+         Route::get("data/destination/hapus/{id}", [DestinationController::class, "proses_hapus_destination"]);
 
         // akun admin
         Route::get("akun/admin", [AccountController::class, "akun_admin"]);

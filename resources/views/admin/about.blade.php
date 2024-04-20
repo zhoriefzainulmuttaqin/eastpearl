@@ -26,8 +26,6 @@
                             <tr>
                                 <th class="text-center">Foto</th>
                                 <th class="text-center">Nama Instansi</th>
-                                <th class="text-center">Deskripsi</th>
-                                <th class="text-center">Deskripsi Lengkap</th>
                                 <th class="text-center">Slogan</th>
                                 <th class="text-center">Alamat</th>
                                 <th class="text-center">Link Maps</th>
@@ -42,8 +40,6 @@
                                             class="img-preview mb-3 img-fluid" style="height: 50px; widht: auto;">
                                     </td>
                                     <td>{{ $tentang->company_name }}</td>
-                                    <td>{{ $tentang->description }}</td>
-                                    <td>{{ $tentang->long_description }}</td>
                                     <td>{{ $tentang->slogan }}</td>
                                     <td>{{ $tentang->location }}</td>
                                     <td>{{ $tentang->link_maps }}</td>

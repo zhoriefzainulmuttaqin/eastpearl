@@ -1,13 +1,13 @@
 @extends('admin.template')
 
 @section('title')
-    Data Fasilitas Layanan
+    Data Destinasi Layanan
 @endsection
 
 @section('content')
     <div class="mb-3 text-right">
-        <a href='{{ url('/app-admin/data/tambah/fasilitas') }}'>
-            <button type="button" class="btn  btn-sm btn-primary">Tambah Fasilitas</button>
+        <a href='{{ url('/app-admin/data/tambah/destination') }}'>
+            <button type="button" class="btn  btn-sm btn-primary">Tambah Destinasi</button>
         </a>
     </div>
 
@@ -19,24 +19,29 @@
                         <thead>
                             <tr>
                                 <th class="text-center">No</th>
+                                <th class="text-center">Gambar</th>
                                 <th class="text-center">Nama</th>
                                 <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($fasilitas as $fas)
+                            @foreach ($destination as $dest)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $fas->name }}</td>
                                     <td class="text-center">
-                                        <a href='{{ url("/app-admin/data/fasilitas/ubah/$fas->name") }}'>
+                                        <img src='{{ url("/assets/destination/$dest->image") }}'
+                                            class="img-preview mb-3 img-fluid" style="height: 50px; widht: auto;">
+                                    </td>
+                                    <td>{{ $dest->name }}</td>
+                                    <td class="text-center">
+                                        <a href='{{ url("/app-admin/data/destination/ubah/$dest->name") }}'>
                                             <button type="button" class="btn btn-sm btn-success" title="Ubah">
-                                                <i class="fas fa-edit"></i></button>
+                                                <i class="dest fa-edit"></i></button>
                                         </a>
-                                        <a href="{{ url("/app-admin/data/fasilitas/hapus/$fas->id") }}"
-                                            onclick='return confirm("Apakah anda yakin hapus {{ $fas->name }}?")'>
+                                        <a href="{{ url("/app-admin/data/destination/hapus/$dest->id") }}"
+                                            onclick='return confirm("Apakah anda yakin hapus {{ $dest->name }}?")'>
                                             <button type="button" class="btn btn-sm btn-danger" title="hapus">
-                                                <i class="fas fa-trash"></i></button>
+                                                <i class="dest fa-trash"></i></button>
                                         </a>
                                     </td>
                                 </tr>
