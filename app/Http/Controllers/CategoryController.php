@@ -51,58 +51,41 @@ class CategoryController extends Controller
 
       public function ubah_kategori(Request $request)
     {
-        $kategori = Category::get();
+        $kategori = Category::first();
         return view('admin.ubahkategori', compact('kategori'));
     }
  public function proses_ubah_kategori(Request $request)
-    {
-        // wajib
-        $id = $request->id;
-        $name = $request->name;
-        $name_en = $request->name_en;
-        $name_mandarin = $request->name_mandarin;
-
-
-
-        $kategori = Category::where('id', $id)->first();
-
-        $rules = [];
-
-        if ($request->name != $kategori->name) {
-            $rules['name'] = 'required|unique:categories';
+   {
+        $checkEvent = Category::where('name', $request->input('name'))->where('id', '!=', $request->input('kategori_id'))->first();
+        if ($checkEvent) {
+            $rules = [
+                'name' => 'max:255',
+                'name_en' => 'max:255',
+                'name_mandarin' => 'max:255',
+            ];
         } else {
-            $rules['name'] = 'required';
+            $rules = [
+                'name' => 'max:255',
+                'name_en' => 'max:255',
+                'name_mandarin' => 'max:255',
+            ];
         }
 
-        if ($request->name_en != $kategori->name_en) {
-            $rules['name_en'] = 'required|unique:categories';
-        } else {
-            $rules['name_en'] = 'required';
-        }
+        $validatedData = $request->validate(
+            $rules,
+            [
+                'name.max' => 'Nama maksimal 255 karakter',
+                'name_en.max' => 'Nama maksimal 255 karakter',
+                'name_mandarin.max' => 'Nama maksimal 255 karakter',
+            ]
+        );
 
-        if ($request->name_mandarin != $kategori->name_mandarin) {
-            $rules['name_mandarin'] = 'required|unique:categories';
-        } else {
-            $rules['name_mandarin'] = 'required';
-        }
-
-        $validateData = $request->validate($rules, [
-            'name.unique' => 'Kategori : ' . $name . ' sudah terdaftar !',
-            'name_en.unique' => 'Kategori : ' . $name_en . ' sudah terdaftar !',
-            'name_mandarin.unique' => 'Kategori : ' . $name_mandarin . ' sudah terdaftar !',
-
-        ]);
-
-        Category::where('id', $id)
-            ->update([
-                'name' => $name,
-                'name_en' => $name_en,
-                'name_mandarin' => $name_mandarin,
-            ]);
+        Category::where('id', $request->input('kategori_id'))->update($validatedData);
+        $kategori = Category::where('id', $request->input('kategori_id'))->first();
 
         session()->flash('msg_status', 'success');
-        session()->flash('msg', "<h5>Berhasil</h5><p> Kategori Berhasil Diubah</p>");
-        return redirect()->to('app-admin/kelola/akun/kategori/' . $id);
+        session()->flash('msg', "<h5>Berhasil</h5><p>Data Berhasil Diubah</p>");
+        return redirect()->to("/app-admin/data/kategori/ubah/$kategori->name");
     }
      public function proses_hapus_kategori(Request $request)
     {
@@ -110,9 +93,16 @@ class CategoryController extends Controller
         $kategori = Category::where('id', $id)->first();
 
 
+            if ($kategori) {
+            Category::where('id', $id)->delete();
             session()->flash('msg_status', 'success');
             session()->flash('msg', "<h5>Berhasil</h5><p>Data kategori berhasil dihapus !</p>");
             return redirect()->to('/app-admin/data/kategori');
+        } else {
+            session()->flash('msg_status', 'warning');
+            session()->flash('msg', "<h5>Gagal</h5><p>Data kategori tidak ditemukan !</p>");
+            return redirect()->to('/app-admin/data/kategori');
+        }
 
     }
 }

@@ -82,7 +82,7 @@ Route::prefix("app-admin")->group(function () {
     Route::post('proses-login', [AuthAdminController::class, 'proses_masuk']);
     Route::get('keluar', [AuthAdminController::class, 'keluar'])->middleware('admin');
 
-Route::group(["middleware" => ["admin", "redirect.on.null"]], function () {
+    Route::group(["middleware" => "admin"], function () {
         Route::get("dashboard", [DashboardAdminController::class, "dashboard"]);
         Route::get("logout", [AuthAdminController::class, "keluar"]);
 
@@ -98,17 +98,17 @@ Route::group(["middleware" => ["admin", "redirect.on.null"]], function () {
          Route::get("data/tentang", [AboutController::class, "admin_tentang"]);
          Route::get("data/tambah/tentang", [AboutController::class, "tambah_tentang"]);
          Route::post("data/tentang/proses-tambah", [AboutController::class, "proses_tambah_tentang"]);
-         Route::get("data/tentang/ubah/{slug}", [AboutController::class, "ubah_tentang"]);
+         Route::get("data/tentang/ubah/{company_name}", [AboutController::class, "ubah_tentang"]);
          Route::post("data/tentang/proses-ubah", [AboutController::class, "proses_ubah_tentang"]);
-         Route::get("data/tentang/hapus/{slug}", [AboutController::class, "proses_hapus_tentang"]);
+         Route::get("data/tentang/hapus/{id}", [AboutController::class, "proses_hapus_tentang"]);
 
         //  kategori
- Route::get("data/kategori", [CategoryController::class, "admin_kategori"]);
+         Route::get("data/kategori", [CategoryController::class, "admin_kategori"]);
          Route::get("data/tambah/kategori", [CategoryController::class, "tambah_kategori"]);
          Route::post("data/kategori/proses-tambah", [CategoryController::class, "proses_tambah_kategori"]);
          Route::get("data/kategori/ubah/{slug}", [CategoryController::class, "ubah_kategori"]);
          Route::post("data/kategori/proses-ubah", [CategoryController::class, "proses_ubah_kategori"]);
-         Route::get("data/kategori/hapus/{slug}", [CategoryController::class, "proses_hapus_kategori"]);
+         Route::get("data/kategori/hapus/{id}", [CategoryController::class, "proses_hapus_kategori"]);
 
         // akun admin
         Route::get("akun/admin", [AccountController::class, "akun_admin"]);

@@ -38,7 +38,7 @@
                                             <button type="button" class="btn btn-sm btn-success" title="Ubah">
                                                 <i class="fas fa-edit"></i></button>
                                         </a>
-                                        <a href="{{ url("/app-admin/data/kategori/hapus/$ktg->name") }}"
+                                        <a href="{{ url("/app-admin/data/kategori/hapus/$ktg->id") }}"
                                             onclick='return confirm("Apakah anda yakin hapus {{ $ktg->name }}?")'>
                                             <button type="button" class="btn btn-sm btn-danger" title="hapus">
                                                 <i class="fas fa-trash"></i></button>

@@ -80,11 +80,12 @@ class AboutController extends Controller
         return redirect()->to('/app-admin/data/tentang');
     }
 
-      public function ubah_tentang(Request $request)
+      public function ubah_tentang()
     {
-        $about = About::get();
-        return view('admin.ubahTentang', compact('about'));
-    }
+        $tentang = About::first();
+
+        return view('admin.ubahTentang', compact('tentang'));
+        }
 
     public function proses_ubah_tentang(Request $request)
     {

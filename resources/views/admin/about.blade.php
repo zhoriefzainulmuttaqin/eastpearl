@@ -48,12 +48,11 @@
                                     <td>{{ $tentang->location }}</td>
                                     <td>{{ $tentang->link_maps }}</td>
                                     <td class="text-center">
-                                        <a
-                                            href='{{ url("/app-admin/data/tentang/ubah/$tentang->officecompany_name_name") }}'>
+                                        <a href='{{ url("/app-admin/data/tentang/ubah/$tentang->company_name") }}'>
                                             <button type="button" class="btn btn-sm btn-success" title="Ubah">
                                                 <i class="fas fa-edit"></i></button>
                                         </a>
-                                        <a href="{{ url("/app-admin/data/tentang/hapus/$tentang->company_name") }}"
+                                        <a href="{{ url("/app-admin/data/tentang/hapus/$tentang->id") }}"
                                             onclick='return confirm("Apakah anda yakin hapus {{ $tentang->company_name }}?")'>
                                             <button type="button" class="btn btn-sm btn-danger" title="hapus">
                                                 <i class="fas fa-trash"></i></button>

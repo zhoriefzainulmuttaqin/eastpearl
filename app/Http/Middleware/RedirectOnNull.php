@@ -11,9 +11,9 @@ class RedirectOnNull
     {
         $response = $next($request);
 
-        // Periksa jika terjadi kesalahan "Attempt to read property 'active' on null"
-        if ($response->exception && $response->exception->getMessage() === 'Attempt to read property \'active\' on null') {
-            // Redirect ke rute '/app-admin/'
+        if ($response->exception && $response->exception->getMessage() === 'Attempt to read property "active" on null') {
+            session()->flash('msg_status', 'warning');
+            session()->flash('msg', "<h5 style='color: red;'>Maaf Sesi Anda Telah Berakhir, Silakan Login Kembali</h5>");
             return Redirect::to('/app-admin/');
         }
 
