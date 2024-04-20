@@ -94,6 +94,10 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Kategori Layanan</p>
                                     </a>
+                                    <a href="{{ url('app-admin/data/fasilitas') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Fasilitas Layanan</p>
+                                    </a>
                                 </li>
                             </ul>
                         </li>
