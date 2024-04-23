@@ -106,6 +106,39 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Fasilitas Layanan</p>
                                     </a>
+                                    <a href="{{ url('app-admin/data/layanan') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Data Layanan</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Layanan
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('app-admin/data/open_trip') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Open Trip</p>
+                                    </a>
+                                    <a href="{{ url('app-admin/data/privae_trip') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Private Trip</p>
+                                    </a>
+                                    <a href="{{ url('app-admin/data/land_trip') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Land Trip</p>
+                                    </a>
+                                    <a href="{{ url('app-admin/data/fly_bajo') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Fly Bajo</p>
+                                    </a>
                                 </li>
                             </ul>
                         </li>

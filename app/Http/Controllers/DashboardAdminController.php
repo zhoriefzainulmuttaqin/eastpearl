@@ -17,6 +17,7 @@ use App\Models\DiscountCardSale;
 use App\Models\Gift;
 use App\Models\GiftSale;
 use App\Models\GiftSaleItem;
+use Illuminate\Support\Str;
 
 class DashboardAdminController extends Controller
 {
@@ -52,5 +53,11 @@ class DashboardAdminController extends Controller
         ]);
 
         return view("admin.dashboard",$data);
+    }
+
+     public function buat_slug(Request $request)
+    {
+        $slug = Str::of($request->name)->slug('-');
+        return response()->json(['slug' => $slug]);
     }
 }

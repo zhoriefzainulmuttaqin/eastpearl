@@ -35,6 +35,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\LayananController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -128,6 +129,14 @@ Route::prefix("app-admin")->group(function () {
          Route::post("data/destination/proses-ubah", [DestinationController::class, "proses_ubah_destination"]);
          Route::get("data/destination/hapus/{id}", [DestinationController::class, "proses_hapus_destination"]);
 
+        //  layanan
+         Route::get("data/layanan", [LayananController::class, "admin_layanan"]);
+         Route::get("data/tambah/layanan", [LayananController::class, "tambah_layanan"]);
+         Route::post("data/layanan/proses-tambah", [LayananController::class, "proses_tambah_layanan"]);
+         Route::get("data/layanan/ubah/{slug}", [LayananController::class, "ubah_layanan"]);
+         Route::post("data/layanan/proses-ubah", [LayananController::class, "proses_ubah_layanan"]);
+         Route::get("data/layanan/hapus/{id}", [LayananController::class, "proses_hapus_layanan"]);
+
         // akun admin
         Route::get("akun/admin", [AccountController::class, "akun_admin"]);
         Route::get("tambah/akun/admin", [AccountController::class, "tambah_akun_admin"]);
@@ -146,6 +155,10 @@ Route::prefix("app-admin")->group(function () {
         Route::get("kelola/akun/pengguna/{id}", [AccountController::class, "kelola_akun_pengguna"]);
         Route::post("akun/pengguna/proses-ubah", [AccountController::class, "proses_ubah_akun_pengguna"]);
         Route::post("akun/pengguna/proses-reset-password", [AccountController::class, "proses_reset_password_akun_pengguna"]);
+
+
+        // buat slug
+        Route::get('buatSlug', [DashboardAdminController::class, "buat_slug"]);
 
         // Laporan
     });

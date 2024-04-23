@@ -10,7 +10,7 @@ class Layanan extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $table = 'categories';
+    protected $table = 'services';
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 }
