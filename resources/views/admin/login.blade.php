@@ -28,7 +28,7 @@
 
     <!-- Document Title
  ============================================= -->
-    <link href="{{ url('assets/logosaja.png') }}" rel="icon" type="image/png">
+    <link href="{{ url('assets/eastpearl_logo3.png') }}" rel="icon" type="image/png">
     <title>Login Admin | {{ config('app.name') }} - {{ config('app.slogan') }}</title>
 
 </head>

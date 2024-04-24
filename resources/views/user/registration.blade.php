@@ -28,7 +28,7 @@
 
     <!-- Document Title
  ============================================= -->
-    <link href="{{ url('images/logosaja.png') }}" rel="icon" type="image/png">
+    <link href="{{ url('images/eastpearl_logo3.png') }}" rel="icon" type="image/png">
     <title>Login | {{ config('app.name') }} - {{ config('app.slogan') }}</title>
 
 
@@ -107,9 +107,8 @@
 
                                     <div class="col-12 form-group">
                                         <label for="address"> Alamat </label>
-                                        <textarea class="form-control" name="address"
-                                            id="address" placeholder="Masukan Alamat . . . " required autocomplete="off"
-                                            required>{{ old('address') }}</textarea>
+                                        <textarea class="form-control" name="address" id="address" placeholder="Masukan Alamat . . . " required
+                                            autocomplete="off" required>{{ old('address') }}</textarea>
                                     </div>
 
                                     <div class="col-12 form-group">

@@ -28,7 +28,7 @@
 
     <!-- Document Title
  ============================================= -->
-    <link href="{{ url('images/logosaja.png') }}" rel="icon" type="image/png">
+    <link href="{{ url('images/eastpearl_logo3.png') }}" rel="icon" type="image/png">
     <title>Login | {{ config('app.name') }} - {{ config('app.slogan') }}</title>
 
 
@@ -71,7 +71,8 @@
                                 </div>
                             </div>
                             <div class="accordion-content">
-                                <form id="login-form" name="login-form" class="row mb-0" action="{{ url('proses-login') }}" method="post">
+                                <form id="login-form" name="login-form" class="row mb-0"
+                                    action="{{ url('proses-login') }}" method="post">
                                     @csrf
                                     <?php if (session('msg_status')) : ?>
                                     <div class="col-12 mx-auto">
@@ -94,7 +95,8 @@
                                             class="form-control">
                                     </div>
                                     <div class="form-check col-12 form-group ms-3">
-                                        <input class="form-check-input btn-outline-primary" name="tourism_card" type="checkbox" value="1" id="defaultCheck1">
+                                        <input class="form-check-input btn-outline-primary" name="tourism_card"
+                                            type="checkbox" value="1" id="defaultCheck1">
                                         <label class="form-check-label" for="defaultCheck1">
                                             Ingin membeli Tourism Card?
                                         </label>
@@ -116,8 +118,9 @@
 
                         </div>
                     </div>
-                    <div class="col-md-4 d-none d-md-block" >
-                        <img src="{{ url('assets/iklanTourismNotAvailable.webp') }}" class='img-fluid' width="100%" style="border-radius: 10px;">
+                    <div class="col-md-4 d-none d-md-block">
+                        <img src="{{ url('assets/iklanTourismNotAvailable.webp') }}" class='img-fluid' width="100%"
+                            style="border-radius: 10px;">
                     </div>
                 </div>
 

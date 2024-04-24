@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Destination;
+use App\Models\Fasilitas;
 use App\Models\Layanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -20,7 +22,9 @@ class LayananController extends Controller
     {
         $services = Layanan::get();
         $categories = Category::get();
-        return view('admin.tambahServices', compact('services', 'categories'));
+        $destination = Destination::get();
+        $facility = Fasilitas::get();
+        return view('admin.tambahServices', compact('services', 'categories','facility', 'destination'));
     }
 
     public function proses_tambah_layanan(Request $request)
@@ -57,6 +61,7 @@ class LayananController extends Controller
         $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
         $image->move('./assets/services/', $nameImage);
 
+        $destination=[];
 
         Layanan::insert([
 
@@ -68,8 +73,9 @@ class LayananController extends Controller
             'short_desc_en' =>  $request->short_desc_en,
             'short_desc_mandarin' =>  $request->short_desc_mandarin,
             'price' =>  $request->price,
-            'facililties_id' =>  1,
-            'category_id' =>  1,
+            'facililties_id' =>  $request->facililties_id,
+            'category_id' =>  $request->category_id,
+            'destination_id' =>  $request->destination_id,
             'image' =>  $nameImage,
         ]);
 

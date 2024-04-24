@@ -3,7 +3,9 @@
 @section('title')
     Layanan
 @endsection
-
+@section('style')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endsection
 @section('content')
     <div class="row mt--2">
         <div class="col-md-12">
@@ -67,6 +69,28 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label for="facililties_id">Fasilitas</label>
+                            <select class="js-example-basic-multiple form-control" multiple="multiple" id="facililties_id[]"
+                                required name="facililties_id[]">
+                                <option value="">--- Pilih Fasilitas ---</option>
+                                @foreach ($facility as $fas)
+                                    <option value="{{ $fas->id }}">{{ $fas->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="destination_id">Destinasi</label>
+                            <select class="js-example-basic-multiple form-control" multiple="multiple" id="destination_id[]"
+                                required name="destination_id">
+                                <option value="">--- Pilih Destinasi ---</option>
+                                @foreach ($destination as $dest)
+                                    <option value="{{ $dest->id }}">{{ $dest->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
                             <label for="content">Deskripsi Singkat</label>
                             <textarea id="content" name="short_desc" placeholder="Masukkan Deskripsi" rows="10" required>{{ old('short_desc') }}</textarea>
                             <div class="my-3"></div>
@@ -94,9 +118,10 @@
                         </div>
                         <div class="form-group">
                             <label for="image" class="form-label">Gambar</label>
-                            <img id="addImage" class="img-preview mb-3 img-fluid" style="max-height: 300px; width: auto;">
-                            <input class="form-control @error('image') is-invalid @enderror" type="file" name="image"
-                                id="image" onchange="previewImage()" required>
+                            <img id="addImage" class="img-preview mb-3 img-fluid"
+                                style="max-height: 300px; width: auto;">
+                            <input class="form-control @error('image') is-invalid @enderror" type="file"
+                                name="image" id="image" onchange="previewImage()" required>
                             @error('image')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -117,6 +142,8 @@
 @endsection
 @section('script')
     <script src="{{ url('ckeditor/ckeditor.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <script>
         const slug = document.querySelector('#slug');
         const name = document.querySelector('#name');
@@ -162,6 +189,10 @@
         CKEDITOR.replace('long_content_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
             removePlugins: 'image'
+        });
+
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
         });
     </script>
 @endsection
