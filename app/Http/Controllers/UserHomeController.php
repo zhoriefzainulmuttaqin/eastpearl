@@ -12,7 +12,7 @@ use App\Models\Restaurant;
 use App\Models\Shop;
 use App\Models\Tour;
 use App\Models\Accomodation;
-
+use App\Models\Layanan;
 use Illuminate\Support\Facades\Cookie;
 
 class UserHomeController extends Controller
@@ -30,10 +30,8 @@ class UserHomeController extends Controller
 
 
 
-        $data = ([
+       $service = Layanan::get();
 
-        ]);
-
-        return view("user.home", $data);
+        return view("user.home", compact('service'));
     }
 }

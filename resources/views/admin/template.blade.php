@@ -23,6 +23,11 @@
     @yield('style')
 
 </head>
+@php
+    use App\Models\Category;
+
+    $categories = Category::get();
+@endphp
 
 <body
     class="hold-transition sidebar-mini layout-fixed control-sidebar-slide-open layout-navbar-fixed layout-footer-fixed">
@@ -102,10 +107,7 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Destinasi Layanan</p>
                                     </a>
-                                    <a href="{{ url('app-admin/data/fasilitas') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Fasilitas Layanan</p>
-                                    </a>
+
                                     <a href="{{ url('app-admin/data/layanan') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Layanan</p>
@@ -123,22 +125,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url('app-admin/data/open_trip') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Open Trip</p>
-                                    </a>
-                                    <a href="{{ url('app-admin/data/privae_trip') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Private Trip</p>
-                                    </a>
-                                    <a href="{{ url('app-admin/data/land_trip') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Land Trip</p>
-                                    </a>
-                                    <a href="{{ url('app-admin/data/fly_bajo') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Fly Bajo</p>
-                                    </a>
+                                    @foreach ($categories as $category)
+                                        <a href='{{ url("/app-admin/data/$category->name") }}' class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>{{ $category->name }}</p>
+                                        </a>
+                                    @endforeach
                                 </li>
                             </ul>
                         </li>

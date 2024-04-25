@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 
 class LayananController extends Controller
 {
-     //admin
+    //admin
     public function admin_layanan(Request $request)
     {
         $services = Layanan::get();
@@ -24,7 +24,7 @@ class LayananController extends Controller
         $categories = Category::get();
         $destination = Destination::get();
         $facility = Fasilitas::get();
-        return view('admin.tambahServices', compact('services', 'categories','facility', 'destination'));
+        return view('admin.tambahServices', compact('services', 'categories', 'facility', 'destination'));
     }
 
     public function proses_tambah_layanan(Request $request)
@@ -39,8 +39,9 @@ class LayananController extends Controller
                 'short_desc_en' => 'required',
                 'short_desc_mandarin' => 'required',
                 'price' => 'required',
-                'facililties_id' => 'required',
-                'category_id_id' => 'required',
+                'facilities_id' => 'required',
+                'category_id' => 'required',
+                'destination_id' => 'required',
                 'image' => 'image',
             ],
             [
@@ -52,6 +53,9 @@ class LayananController extends Controller
                 'short_desc_en.required' => 'Data harus diisi!',
                 'short_desc_mandarin.required' => 'Data harus diisi!',
                 'price.required' => 'Data harus diisi!',
+                'facilities_id.required' => 'Data harus diisi!',
+                'category_id.required' => 'Data harus diisi!',
+                'destination_id.required' => 'Data harus diisi!',
 
                 'image.image' => 'File harus berupa gambar',
             ]
@@ -61,35 +65,38 @@ class LayananController extends Controller
         $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
         $image->move('./assets/services/', $nameImage);
 
-        $destination=[];
+        $facilities_ids = json_encode($request->input('facilities_id'));
+        $destination_ids = json_encode($request->input('destination_id'));
 
-        Layanan::insert([
+$layanan = Layanan::create([
 
-            'name' =>  $request->name,
-            'name_en' =>  $request->name_en,
-            'name_mandarin' =>  $request->name_mandarin,
-            'slug' =>  $request->slug,
-            'short_desc' =>  $request->short_desc,
-            'short_desc_en' =>  $request->short_desc_en,
-            'short_desc_mandarin' =>  $request->short_desc_mandarin,
-            'price' =>  $request->price,
-            'facililties_id' =>  $request->facililties_id,
-            'category_id' =>  $request->category_id,
-            'destination_id' =>  $request->destination_id,
-            'image' =>  $nameImage,
+            'name' => $request->name,
+            'name_en' => $request->name_en,
+            'name_mandarin' => $request->name_mandarin,
+            'slug' => $request->slug,
+            'short_desc' => $request->short_desc,
+            'short_desc_en' => $request->short_desc_en,
+            'short_desc_mandarin' => $request->short_desc_mandarin,
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+            'image' => $nameImage,
         ]);
+
+        // Simpan ke dalam pivot table
+$layanan->facilities()->attach($facilities_ids);
+$layanan->destinations()->attach($destination_ids);
 
         session()->flash('msg_status', 'success');
         session()->flash('msg', "<h5>Berhasil</h5><p>Data Berhasil Ditambahkan</p>");
         return redirect()->to('/app-admin/data/layanan');
     }
 
-      public function ubah_layanan()
+    public function ubah_layanan()
     {
         $services = Layanan::first();
 
         return view('admin.ubahservices', compact('services'));
-        }
+    }
 
     public function proses_ubah_services(Request $request)
     {
@@ -126,7 +133,7 @@ class LayananController extends Controller
     }
 
 
-     public function proses_hapus_layanan(Request $request)
+    public function proses_hapus_layanan(Request $request)
     {
         $id = $request->id;
         $services = Layanan::where('id', $id)->first();
@@ -149,12 +156,12 @@ class LayananController extends Controller
     public function openTrip(Request $request)
     {
 
-        return view('user.openTrip',);
+        return view('user.openTrip', );
     }
 
-      public function layanan(Request $request)
+    public function layanan(Request $request)
     {
-                $services = Layanan::get();
+        $services = Layanan::get();
 
         return view('user.services', compact('services'));
     }

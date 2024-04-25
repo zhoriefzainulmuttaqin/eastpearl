@@ -171,13 +171,7 @@
                     <div class="vertical-middle slider-element-fade">
                         <div class="container-fluid py-5">
                             <div class="heading-block text-center border-bottom-0 mt-6 mt-md-0" style="">
-                                <h1>Tentang Kami</h1>
-                                <p style="padding-left: 200px; padding-right: 200px;">
-                                    Lorem ipsum dolor, sit amet
-                                    consectetur adipisicing elit. Fugiat incidunt explicabo repudiandae nulla delectus
-                                    nihil, error adipisci corrupti ab itaque architecto deserunt dicta eos perferendis
-                                    tempore ad illum qui omnis.
-                                </p>
+
                             </div>
                         </div>
                     </div>

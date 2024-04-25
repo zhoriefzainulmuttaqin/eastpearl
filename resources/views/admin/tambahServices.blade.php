@@ -69,9 +69,9 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="facililties_id">Fasilitas</label>
-                            <select class="js-example-basic-multiple form-control" multiple="multiple" id="facililties_id[]"
-                                required name="facililties_id[]">
+                            <label for="facilities_id">Fasilitas</label>
+                            <select class="js-example-basic-multiple form-control" multiple="multiple" id="facilities_id[]"
+                                required name="facilities_id[]">
                                 <option value="">--- Pilih Fasilitas ---</option>
                                 @foreach ($facility as $fas)
                                     <option value="{{ $fas->id }}">{{ $fas->name }}</option>
@@ -81,14 +81,13 @@
                         <div class="form-group">
                             <label for="destination_id">Destinasi</label>
                             <select class="js-example-basic-multiple form-control" multiple="multiple" id="destination_id[]"
-                                required name="destination_id">
+                                required name="destination_id[]">
                                 <option value="">--- Pilih Destinasi ---</option>
                                 @foreach ($destination as $dest)
                                     <option value="{{ $dest->id }}">{{ $dest->name }}</option>
                                 @endforeach
                             </select>
                         </div>
-
 
                         <div class="form-group">
                             <label for="content">Deskripsi Singkat</label>

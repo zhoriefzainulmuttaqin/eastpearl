@@ -5,61 +5,6 @@
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
-                <div class="inner">
-                    {{-- <h3>{{ $count_wisata }}</h3> --}}
-                    <p>Tempat Wisata</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-map-marked"></i>
-                </div>
-                <a href="{{ url('app-admin/data/wisata') }}" class="small-box-footer">Kelola Data <i
-                        class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
-                <div class="inner">
-                    {{-- <h3>{{ $count_kuliner }}</h3> --}}
-                    <p>Kuliner</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-utensils"></i>
-                </div>
-                <a href="{{ url('app-admin/data/kuliner') }}" class="small-box-footer">Kelola Data <i
-                        class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-warning">
-                <div class="inner">
-                    {{-- <h3>{{ $count_oleholeh }}</h3> --}}
-                    <p>Oleh - Oleh</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-gift"></i>
-                </div>
-                <a href="{{ url('app-admin/data/oleholeh') }}" class="small-box-footer">Kelola Data <i
-                        class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-danger">
-                <div class="inner">
-                    {{-- <h3>{{ $count_akomodasi }}</h3> --}}
-                    <p>Akomodasi</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-home"></i>
-                </div>
-                <a href="{{ url('app-admin/data/akomodasi') }}" class="small-box-footer">Kelola Data <i
-                        class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-    </div>
-
     {{-- <div class="row">
         <div class="col-md-5">
             <div class="card">

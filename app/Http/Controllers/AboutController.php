@@ -89,27 +89,24 @@ class AboutController extends Controller
 
     public function proses_ubah_tentang(Request $request)
     {
-        $checkEvent = About::where('name', $request->input('name'))->where('id', '!=', $request->input('tentang_id'))->first();
+        $checkEvent = About::where('company_name', $request->input('company_name'))->where('id', '!=', $request->input('tentang_id'))->first();
         if ($checkEvent) {
             $rules = [
-                'name' => 'max:255',
-                'name_en' => 'max:255',
-                'name_mandarin' => 'max:255',
+                'company_name' => 'max:255',
+
             ];
         } else {
             $rules = [
-                'name' => 'max:255',
-                'name_en' => 'max:255',
-                'name_mandarin' => 'max:255',
+                'company_name' => 'max:255',
+
             ];
         }
 
         $validatedData = $request->validate(
             $rules,
             [
-                'name.max' => 'Nama maksimal 255 karakter',
-                'name_en.max' => 'Nama maksimal 255 karakter',
-                'name_mandarin.max' => 'Nama maksimal 255 karakter',
+                'company_name.max' => 'Nama maksimal 255 karakter',
+
             ]
         );
 
@@ -118,7 +115,7 @@ class AboutController extends Controller
 
         session()->flash('msg_status', 'success');
         session()->flash('msg', "<h5>Berhasil</h5><p>Data Berhasil Diubah</p>");
-        return redirect()->to("/app-admin/data/ubah/tentang/$tentang->name");
+        return redirect()->to("/app-admin/data/ubah/tentang/$tentang->company_name");
     }
 
 

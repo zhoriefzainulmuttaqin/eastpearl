@@ -20,23 +20,13 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            AdministratorSeeder::class,
-            AccomodationSeeder::class,
+            AboutSeeder::class,
             CategorySeeder::class,
-            EventSeeder::class,
-            AccomodationGallerySeeder::class,
-            AccomodationLinkSeeder::class,
-            NewsSeeder::class,
-            PartnerSeeder::class,
-            RestaurantSeeder::class,
-            ShopSeeder::class,
-            TourSeeder::class,
+            FasilitasSeeder::class,
+            AdministratorSeeder::class,
             OptionSeeder::class,
             UserSeeder::class,
-            PaymentSeeder::class,
             // UserSeeder::class,
-            GiftSeeder::class,
-            TourPackageSeeder::class,
         ]);
     }
 }

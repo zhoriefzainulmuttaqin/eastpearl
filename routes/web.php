@@ -101,7 +101,7 @@ Route::prefix("app-admin")->group(function () {
          Route::get("data/tentang", [AboutController::class, "admin_tentang"]);
          Route::get("data/tambah/tentang", [AboutController::class, "tambah_tentang"]);
          Route::post("data/tentang/proses-tambah", [AboutController::class, "proses_tambah_tentang"]);
-         Route::get("data/tentang/ubah/{company_name}", [AboutController::class, "ubah_tentang"]);
+         Route::get("data/tentang/ubah/{id}", [AboutController::class, "ubah_tentang"]);
          Route::post("data/tentang/proses-ubah", [AboutController::class, "proses_ubah_tentang"]);
          Route::get("data/tentang/hapus/{id}", [AboutController::class, "proses_hapus_tentang"]);
 

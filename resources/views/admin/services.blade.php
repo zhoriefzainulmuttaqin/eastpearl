@@ -30,11 +30,11 @@
                             @foreach ($services as $layanan)
                                 <tr>
                                     <td class="text-center">
-                                        <img src='{{ url("/assets/layanan/$layanan->image") }}'
+                                        <img src='{{ url("/assets/services/$layanan->image") }}'
                                             class="img-preview mb-3 img-fluid" style="height: 50px; widht: auto;">
                                     </td>
                                     <td>{{ $layanan->name }}</td>
-                                    <td>{{ $layanan->fasilitas->name }}</td>
+                                    <td>{{ $layanan->facilities_id }}</td>
                                     <td>{{ $layanan->price }}</td>
                                     <td class="text-center">
                                         <a href='{{ url("/app-admin/data/layanan/ubah/$layanan->name") }}'>
