@@ -12,12 +12,12 @@ return new class extends Migration {
     {
         Schema::create('services_facilities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_services');
-            $table->foreignId('id_facilities');
+            $table->foreignId('services_id');
+            $table->foreignId('facilities_id');
             $table->timestamps();
 
-            $table->foreign('id_services')->references('id')->on('services')->onDelete('cascade');
-            $table->foreign('id_facilities')->references('id')->on('facilities')->onDelete('cascade');
+            $table->foreign('services_id')->references('id')->on('services')->onDelete('cascade');
+            $table->foreign('facilities_id')->references('id')->on('facilities')->onDelete('cascade');
         });
     }
 

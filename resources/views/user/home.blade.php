@@ -413,7 +413,7 @@
             <div class="row mb-5">
                 <div class="text-center">
                     <p class="" style="font-size: 28px; font-weight: 400;">
-                        <b>Paket Open Trip, Private Trip & Land Trip di Labuan Bajo
+                        <b>Paket {{ $about->company_name }} di Labuan Bajo
                         </b>
                     </p>
                 </div>
@@ -430,7 +430,7 @@
         <!-- Swiper -->
         <div class="d-md-flex justify-content-center flex-wrap">
             <!-- component -->
-            @foreach ($service as $layanan)
+            @foreach ($service->take(6) as $layanan)
                 <a href="">
                     <div
                         class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">

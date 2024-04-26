@@ -49,6 +49,16 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <input name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug"
+                            value="{{ old('slug') }}"type="text" required placeholder="Masukkan Slug . . .">
+                        @error('slug')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
                     <div class="card-footer">
                         <a href="{{ url('/app-admin/data/kategori') }}">
                             <button type="button" class="btn btn-danger float-left">Kembali</button>

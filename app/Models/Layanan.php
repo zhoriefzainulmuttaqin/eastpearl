@@ -14,9 +14,13 @@ class Layanan extends Model
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 
-     public function facilities()
+    public function categories()
     {
-        return $this->belongsToMany(Fasilitas::class, 'layanan_facilities', 'layanan_id', 'facilities_id');
+        return $this->belongsTo(Category::class, 'categories_id');
+    }
+    public function facilities()
+    {
+        return $this->belongsToMany(Fasilitas::class, 'services_facilities', 'services_id', 'facilities_id');
     }
 
     /**
@@ -26,6 +30,6 @@ class Layanan extends Model
      */
     public function destinations()
     {
-        return $this->belongsToMany(Destination::class, 'layanan_destinations', 'layanan_id', 'destination_id');
+        return $this->belongsToMany(Destination::class, 'services_destinations', 'services_id', 'destination_id');
     }
 }

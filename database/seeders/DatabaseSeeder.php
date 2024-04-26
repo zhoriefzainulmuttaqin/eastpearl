@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             AboutSeeder::class,
             CategorySeeder::class,
             FasilitasSeeder::class,
+            DestinasiSeeder::class,
             AdministratorSeeder::class,
             OptionSeeder::class,
             UserSeeder::class,

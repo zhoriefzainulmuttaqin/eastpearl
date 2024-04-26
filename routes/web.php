@@ -57,9 +57,7 @@ Route::get("set-bahasa/{locale}", [LocaleController::class, "set_bahasa"]);
 
 Route::get('/about', [AboutController::class, 'about']);
 Route::get('/galeri', [GaleriController::class, 'user_galeri']);
-Route::get('/open-trip', [AboutController::class, 'openTrip']);
-
-
+Route::get('/laynanan/{slug}', [LayananController::class, 'layanan'])->name('layanan.kategori');
 
 
 Route::get("login", [AuthUserController::class, "masuk"])->name("login");
@@ -89,53 +87,53 @@ Route::prefix("app-admin")->group(function () {
         Route::get("dashboard", [DashboardAdminController::class, "dashboard"]);
         Route::get("logout", [AuthAdminController::class, "keluar"]);
 
-         // galeri
-         Route::get("data/galeri", [GaleriController::class, "galeri"]);
-         Route::get("data/tambah/galeri", [GaleriController::class, "tambah_galeri"]);
-         Route::post("data/galeri/proses-tambah", [GaleriController::class, "proses_tambah_galeri"]);
-         Route::get("data/galeri/ubah/{slug}/{id}", [GaleriController::class, "ubah_galeri"]);
-         Route::post("data/galeri/proses-ubah", [GaleriController::class, "proses_ubah_galeri"]);
-         Route::get("data/galeri/hapus/{slug}/{id}", [GaleriController::class, "proses_hapus_galeri"]);
+        // galeri
+        Route::get("data/galeri", [GaleriController::class, "galeri"]);
+        Route::get("data/tambah/galeri", [GaleriController::class, "tambah_galeri"]);
+        Route::post("data/galeri/proses-tambah", [GaleriController::class, "proses_tambah_galeri"]);
+        Route::get("data/galeri/ubah/{slug}/{id}", [GaleriController::class, "ubah_galeri"]);
+        Route::post("data/galeri/proses-ubah", [GaleriController::class, "proses_ubah_galeri"]);
+        Route::get("data/galeri/hapus/{slug}/{id}", [GaleriController::class, "proses_hapus_galeri"]);
 
-         // tentang
-         Route::get("data/tentang", [AboutController::class, "admin_tentang"]);
-         Route::get("data/tambah/tentang", [AboutController::class, "tambah_tentang"]);
-         Route::post("data/tentang/proses-tambah", [AboutController::class, "proses_tambah_tentang"]);
-         Route::get("data/tentang/ubah/{id}", [AboutController::class, "ubah_tentang"]);
-         Route::post("data/tentang/proses-ubah", [AboutController::class, "proses_ubah_tentang"]);
-         Route::get("data/tentang/hapus/{id}", [AboutController::class, "proses_hapus_tentang"]);
+        // tentang
+        Route::get("data/tentang", [AboutController::class, "admin_tentang"]);
+        Route::get("data/tambah/tentang", [AboutController::class, "tambah_tentang"]);
+        Route::post("data/tentang/proses-tambah", [AboutController::class, "proses_tambah_tentang"]);
+        Route::get("data/tentang/ubah/{id}", [AboutController::class, "ubah_tentang"]);
+        Route::post("data/tentang/proses-ubah", [AboutController::class, "proses_ubah_tentang"]);
+        Route::get("data/tentang/hapus/{id}", [AboutController::class, "proses_hapus_tentang"]);
 
         //  kategori
-         Route::get("data/kategori", [CategoryController::class, "admin_kategori"]);
-         Route::get("data/tambah/kategori", [CategoryController::class, "tambah_kategori"]);
-         Route::post("data/kategori/proses-tambah", [CategoryController::class, "proses_tambah_kategori"]);
-         Route::get("data/kategori/ubah/{slug}", [CategoryController::class, "ubah_kategori"]);
-         Route::post("data/kategori/proses-ubah", [CategoryController::class, "proses_ubah_kategori"]);
-         Route::get("data/kategori/hapus/{id}", [CategoryController::class, "proses_hapus_kategori"]);
+        Route::get("data/kategori", [CategoryController::class, "admin_kategori"]);
+        Route::get("data/tambah/kategori", [CategoryController::class, "tambah_kategori"]);
+        Route::post("data/kategori/proses-tambah", [CategoryController::class, "proses_tambah_kategori"]);
+        Route::get("data/kategori/ubah/{slug}", [CategoryController::class, "ubah_kategori"]);
+        Route::post("data/kategori/proses-ubah", [CategoryController::class, "proses_ubah_kategori"]);
+        Route::get("data/kategori/hapus/{id}", [CategoryController::class, "proses_hapus_kategori"]);
 
         //  fasilitas
-         Route::get("data/fasilitas", [FasilitasController::class, "admin_fasilitas"]);
-         Route::get("data/tambah/fasilitas", [FasilitasController::class, "tambah_fasilitas"]);
-         Route::post("data/fasilitas/proses-tambah", [FasilitasController::class, "proses_tambah_fasilitas"]);
-         Route::get("data/fasilitas/ubah/{slug}", [FasilitasController::class, "ubah_fasilitas"]);
-         Route::post("data/fasilitas/proses-ubah", [FasilitasController::class, "proses_ubah_fasilitas"]);
-         Route::get("data/fasilitas/hapus/{id}", [FasilitasController::class, "proses_hapus_fasilitas"]);
+        Route::get("data/fasilitas", [FasilitasController::class, "admin_fasilitas"]);
+        Route::get("data/tambah/fasilitas", [FasilitasController::class, "tambah_fasilitas"]);
+        Route::post("data/fasilitas/proses-tambah", [FasilitasController::class, "proses_tambah_fasilitas"]);
+        Route::get("data/fasilitas/ubah/{slug}", [FasilitasController::class, "ubah_fasilitas"]);
+        Route::post("data/fasilitas/proses-ubah", [FasilitasController::class, "proses_ubah_fasilitas"]);
+        Route::get("data/fasilitas/hapus/{id}", [FasilitasController::class, "proses_hapus_fasilitas"]);
 
         //  destination
-         Route::get("data/destination", [DestinationController::class, "admin_destination"]);
-         Route::get("data/tambah/destination", [DestinationController::class, "tambah_destination"]);
-         Route::post("data/destination/proses-tambah", [DestinationController::class, "proses_tambah_destination"]);
-         Route::get("data/destination/ubah/{slug}", [DestinationController::class, "ubah_destination"]);
-         Route::post("data/destination/proses-ubah", [DestinationController::class, "proses_ubah_destination"]);
-         Route::get("data/destination/hapus/{id}", [DestinationController::class, "proses_hapus_destination"]);
+        Route::get("data/destination", [DestinationController::class, "admin_destination"]);
+        Route::get("data/tambah/destination", [DestinationController::class, "tambah_destination"]);
+        Route::post("data/destination/proses-tambah", [DestinationController::class, "proses_tambah_destination"]);
+        Route::get("data/destination/ubah/{slug}", [DestinationController::class, "ubah_destination"]);
+        Route::post("data/destination/proses-ubah", [DestinationController::class, "proses_ubah_destination"]);
+        Route::get("data/destination/hapus/{id}", [DestinationController::class, "proses_hapus_destination"]);
 
         //  layanan
-         Route::get("data/layanan", [LayananController::class, "admin_layanan"]);
-         Route::get("data/tambah/layanan", [LayananController::class, "tambah_layanan"]);
-         Route::post("data/layanan/proses-tambah", [LayananController::class, "proses_tambah_layanan"]);
-         Route::get("data/layanan/ubah/{slug}", [LayananController::class, "ubah_layanan"]);
-         Route::post("data/layanan/proses-ubah", [LayananController::class, "proses_ubah_layanan"]);
-         Route::get("data/layanan/hapus/{id}", [LayananController::class, "proses_hapus_layanan"]);
+        Route::get("data/layanan", [LayananController::class, "admin_layanan"]);
+        Route::get("data/tambah/layanan", [LayananController::class, "tambah_layanan"]);
+        Route::post("data/layanan/proses-tambah", [LayananController::class, "proses_tambah_layanan"]);
+        Route::get("data/layanan/ubah/{slug}", [LayananController::class, "ubah_layanan"]);
+        Route::post("data/layanan/proses-ubah", [LayananController::class, "proses_ubah_layanan"]);
+        Route::get("data/layanan/hapus/{id}", [LayananController::class, "proses_hapus_layanan"]);
 
         // akun admin
         Route::get("akun/admin", [AccountController::class, "akun_admin"]);

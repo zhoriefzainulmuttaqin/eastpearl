@@ -5,6 +5,11 @@ $locale = App::currentLocale();
 <!-- Header
 ============================================= -->
 <link rel="stylesheet" href="style.css">
+@php
+    use App\Models\Category;
+
+    $categories = Category::get();
+@endphp
 <header id="header" class="transparent-header page-section dark">
     <div id="header-wrap">
         <div class="container-fluid">
@@ -59,19 +64,12 @@ $locale = App::currentLocale();
                                 </a>
                                 <ul class="sub-menu-container mega-menu-dropdown p-lg-0">
                                     <li class="menu-item">
-                                        <a class="menu-link" href="{{ url('open-trip') }}">
-                                            <div>{{ __('menu.open_trip') }}</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a class="menu-link" href="{{ url('private-trip') }}">
-                                            <div>{{ __('menu.private_trip') }}</div>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a class="menu-link" href="{{ url('land-trip') }}">
-                                            <div>{{ __('menu.land_trip') }}</div>
-                                        </a>
+                                        @foreach ($categories as $category)
+                                            <a class="menu-link"
+                                                href="{{ route('layanan.kategori', ['slug' => $category->slug]) }}">
+                                                <div>{{ $category->name }}</div>
+                                            </a>
+                                        @endforeach
                                     </li>
                                 </ul>
                             </li>

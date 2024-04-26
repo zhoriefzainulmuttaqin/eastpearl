@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Category;
 use App\Models\Destination;
 use App\Models\Fasilitas;
@@ -40,7 +41,7 @@ class LayananController extends Controller
                 'short_desc_mandarin' => 'required',
                 'price' => 'required',
                 'facilities_id' => 'required',
-                'category_id' => 'required',
+                'categories_id' => 'required',
                 'destination_id' => 'required',
                 'image' => 'image',
             ],
@@ -54,7 +55,7 @@ class LayananController extends Controller
                 'short_desc_mandarin.required' => 'Data harus diisi!',
                 'price.required' => 'Data harus diisi!',
                 'facilities_id.required' => 'Data harus diisi!',
-                'category_id.required' => 'Data harus diisi!',
+                'categories_id.required' => 'Data harus diisi!',
                 'destination_id.required' => 'Data harus diisi!',
 
                 'image.image' => 'File harus berupa gambar',
@@ -65,10 +66,10 @@ class LayananController extends Controller
         $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
         $image->move('./assets/services/', $nameImage);
 
-        $facilities_ids = json_encode($request->input('facilities_id'));
-        $destination_ids = json_encode($request->input('destination_id'));
+        $facilities_ids = $request->input('facilities_id');
+        $destination_ids = $request->input('destination_id');
 
-$layanan = Layanan::create([
+        $layanan = Layanan::create([
 
             'name' => $request->name,
             'name_en' => $request->name_en,
@@ -78,13 +79,13 @@ $layanan = Layanan::create([
             'short_desc_en' => $request->short_desc_en,
             'short_desc_mandarin' => $request->short_desc_mandarin,
             'price' => $request->price,
-            'category_id' => $request->category_id,
+            'categoies_id' => $request->categories_id,
             'image' => $nameImage,
         ]);
 
         // Simpan ke dalam pivot table
-$layanan->facilities()->attach($facilities_ids);
-$layanan->destinations()->attach($destination_ids);
+        $layanan->facilities()->attach($facilities_ids);
+        $layanan->destinations()->attach($destination_ids);
 
         session()->flash('msg_status', 'success');
         session()->flash('msg', "<h5>Berhasil</h5><p>Data Berhasil Ditambahkan</p>");
@@ -153,16 +154,13 @@ $layanan->destinations()->attach($destination_ids);
 
     // user
 
-    public function openTrip(Request $request)
+
+    public function layanan($slug)
     {
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $about = About::first();
+        $services = Layanan::where('categories_id', $category->id)->get();
 
-        return view('user.openTrip', );
-    }
-
-    public function layanan(Request $request)
-    {
-        $services = Layanan::get();
-
-        return view('user.services', compact('services'));
+        return view('user.layanan', compact('services', 'category', 'about'));
     }
 }
