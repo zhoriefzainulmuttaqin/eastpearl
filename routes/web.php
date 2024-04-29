@@ -57,7 +57,8 @@ Route::get("set-bahasa/{locale}", [LocaleController::class, "set_bahasa"]);
 
 Route::get('/about', [AboutController::class, 'about']);
 Route::get('/galeri', [GaleriController::class, 'user_galeri']);
-Route::get('/laynanan/{slug}', [LayananController::class, 'layanan'])->name('layanan.kategori');
+Route::get('/layanan/{slug}', [LayananController::class, 'layanan'])->name('layanan.kategori');
+Route::get('/layanan/detail/{slug}', [LayananController::class, 'detail_layanan'])->name('detail.layanan.kategori');
 
 
 Route::get("login", [AuthUserController::class, "masuk"])->name("login");
@@ -129,6 +130,15 @@ Route::prefix("app-admin")->group(function () {
 
         //  layanan
         Route::get("data/layanan", [LayananController::class, "admin_layanan"]);
+        Route::get("data/tambah/layanan", [LayananController::class, "tambah_layanan"]);
+        Route::post("data/layanan/proses-tambah", [LayananController::class, "proses_tambah_layanan"]);
+        Route::get("data/layanan/ubah/{slug}", [LayananController::class, "ubah_layanan"]);
+        Route::post("data/layanan/proses-ubah", [LayananController::class, "proses_ubah_layanan"]);
+        Route::get("data/layanan/hapus/{id}", [LayananController::class, "proses_hapus_layanan"]);
+
+        //  data per layanan
+        Route::get('data/laynanan/{slug}', [LayananController::class, 'layananKategori'])->name('data.layanan.kategori');
+        Route::get('data/detail/laynanan/{slug}', [LayananController::class, 'detailLayananKategori'])->name('layanan.detail');
         Route::get("data/tambah/layanan", [LayananController::class, "tambah_layanan"]);
         Route::post("data/layanan/proses-tambah", [LayananController::class, "proses_tambah_layanan"]);
         Route::get("data/layanan/ubah/{slug}", [LayananController::class, "ubah_layanan"]);

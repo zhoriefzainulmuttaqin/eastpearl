@@ -73,23 +73,6 @@
 @endsection
 
 @section('content')
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-26YC4R3P36"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-26YC4R3P36');
-    </script>
-
-
-
-
-
     {{-- css event --}}
     <style>
         #but_event {

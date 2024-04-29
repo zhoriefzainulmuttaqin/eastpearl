@@ -7,19 +7,6 @@
 
 
 @section('content')
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-26YC4R3P36"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-26YC4R3P36');
-    </script>
-
     <div class="container">
         <div class="row mb-5">
             <div class="col-12">
@@ -123,13 +110,13 @@
                                             <td>:</td>
                                             <td>
                                                 @if (Auth()->user()->disc_card->isNotEmpty())
-                                                    <a href="{{ url('discount-card/' .Auth()->user()->disc_card->first()->id .'/download') }}"
+                                                    <a href="{{ url('discount-card/' . Auth()->user()->disc_card->first()->id . '/download') }}"
                                                         class="btn btn-success btn-sm">
                                                         <i class='fa fa-download'></i>
                                                         Download Kartu
                                                     </a>
                                                 @else
-                                                   <span class="text-danger">-</span>
+                                                    <span class="text-danger">-</span>
                                                 @endif
                                             </td>
                                         </tr>

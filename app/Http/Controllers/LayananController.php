@@ -152,6 +152,17 @@ class LayananController extends Controller
         }
     }
 
+
+    // Layanan per kategori
+    public function layananKategori($slug)
+    {
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $about = About::first();
+        $services = Layanan::where('categories_id', $category->id)->get();
+
+        return view('admin.category_services', compact('services', 'category', 'about'));
+    }
+
     // user
 
 
@@ -162,5 +173,11 @@ class LayananController extends Controller
         $services = Layanan::where('categories_id', $category->id)->get();
 
         return view('user.layanan', compact('services', 'category', 'about'));
+    }
+    public function detail_layanan($slug)
+    {
+        $services = Layanan::where('slug', $slug)->first();
+
+        return view('user.detail_layanan', compact('services'));
     }
 }

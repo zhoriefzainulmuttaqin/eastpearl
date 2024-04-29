@@ -49,7 +49,6 @@ class GaleriController extends Controller
 
             'image_name' =>  $request->image_name,
             'image' =>  $nameImage,
-            'status' =>  $request->status ?? 1,
         ]);
 
         session()->flash('msg_status', 'success');
