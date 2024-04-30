@@ -16,6 +16,8 @@
                 <form method="POST" action="{{ url('app-admin/data/layanan/proses-ubah') }}" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="services_id" value="{{ $services->id }}">
+                    <input type="hidden" name="bulan_terbaik" value="{{ $services->bulan_terbaik }}">
+
                     <div class="card-body">
 
                         <div class="form-group">
@@ -150,7 +152,7 @@
                         <div class="form-group">
                             <label for="price"> Harga</label>
                             <input type="number" min="0"
-                                class="form-control @error('price') is-invalid @enderror" price="price" id="price"
+                                class="form-control @error('price') is-invalid @enderror" name="price" id="price"
                                 placeholder="0" value="{{ old('price') ?? $services->price }}" required
                                 autocomplete="off"></input>
                             @error('price')

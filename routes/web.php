@@ -53,6 +53,7 @@ Route::get('/', [UserHomeController::class, "home"]);
 
 Route::get("atur-bahasa/{locale}", [LocaleController::class, "atur_bahasa"]);
 Route::get("set-bahasa/{locale}", [LocaleController::class, "set_bahasa"]);
+Route::get("set-bahasa/{locale}", [LocaleController::class, "set_bahasa"]);
 // Route::get("get-cookie", [LocaleController::class, "getCookie"]);
 
 Route::get('/about', [AboutController::class, 'about']);

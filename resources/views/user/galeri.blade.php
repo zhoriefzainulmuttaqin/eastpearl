@@ -15,12 +15,10 @@
     <div class="container-lg mt-5">
         <h1
             class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-dark">
-            Lihat keseruan kami dalam memberikan pelayanan touris melihat <span style="color: #ba1918">keindahan Labuan
-                Bajo</span>
+            {{ __('galeri.keseruan') }}</span>
         </h1>
         <p class="text-lg mb-4 font-normal text-gray-500 lg:text-1xl dark:text-gray-400">
-            Tour Experts kami selalu siap untuk mengurus perjalan liburan dari awal hingga akhir. Sehingga kamu mendapatkan
-            pengalaman unik tak terlupakan selama mengeksplorasi keindahan Labuan Bajo.
+            {{ __('galeri.text_keseruan') }}
         </p>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">

@@ -19,20 +19,26 @@
 @endsection
 
 @section('content')
-
-
     @foreach ($about as $tentang)
         <div class="container-lg mt-5">
 
             <div class="text-center">
-                <span class="judul">Mengapa Harus Memilih Kami</span>
+                <span class="judul">{{ __('about.alasan') }}</span>
             </div>
             <div class="mt-4" style="text-align:justify; padding-left: 50px; padding-right: 50px;">
-                <span class="isi">{{ $tentang->long_description }}</span>
+                <span class="isi">
+                    @if (App::isLocale('id'))
+                        {{ $tentang->long_description }}
+                    @elseif(App::isLocale('en'))
+                        {{ $tentang->long_description_en }}
+                    @else
+                        {{ $tentang->long_description_mandarin }}
+                    @endif
+                </span>
             </div>
 
             <div class="text-center mt-5">
-                <span class="judul">Galeri</span>
+                <span class="judul">{{ __('about.galeri') }}</span>
             </div>
             <div class="grid grid-cols-3 md:grid-cols-4 gap-4 mt-4">
                 @foreach ($galeri as $galleries)

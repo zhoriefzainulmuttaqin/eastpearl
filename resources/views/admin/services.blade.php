@@ -37,7 +37,7 @@
                                     <td>{{ $layanan->categories->name }}</td>
                                     <td>{{ $layanan->price }}</td>
                                     <td class="text-center">
-                                        <a href='{{ url("/app-admin/data/layanan/ubah/$layanan->name") }}'>
+                                        <a href='{{ url("/app-admin/data/layanan/ubah/$layanan->slug") }}'>
                                             <button type="button" class="btn btn-sm btn-success" title="Ubah">
                                                 <i class="fas fa-edit"></i></button>
                                         </a>

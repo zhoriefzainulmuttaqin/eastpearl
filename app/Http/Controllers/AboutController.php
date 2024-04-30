@@ -8,6 +8,8 @@ use App\Models\Galeri;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Cookie;
 
 class AboutController extends Controller
 {
@@ -62,17 +64,17 @@ class AboutController extends Controller
 
         About::insert([
 
-            'company_name' =>  $request->company_name,
-            'description' =>  $request->description,
-            'description_en' =>  $request->description_en,
-            'description_mandarin' =>  $request->description_mandarin,
-            'long_description' =>  $request->long_description,
-            'long_description_en' =>  $request->long_description_en,
-            'long_description_mandarin' =>  $request->long_description_mandarin,
-            'location' =>  $request->location,
-            'link_maps' =>  $request->link_maps,
-            'slogan' =>  $request->slogan,
-            'image' =>  $nameImage,
+            'company_name' => $request->company_name,
+            'description' => $request->description,
+            'description_en' => $request->description_en,
+            'description_mandarin' => $request->description_mandarin,
+            'long_description' => $request->long_description,
+            'long_description_en' => $request->long_description_en,
+            'long_description_mandarin' => $request->long_description_mandarin,
+            'location' => $request->location,
+            'link_maps' => $request->link_maps,
+            'slogan' => $request->slogan,
+            'image' => $nameImage,
         ]);
 
         session()->flash('msg_status', 'success');
@@ -80,12 +82,12 @@ class AboutController extends Controller
         return redirect()->to('/app-admin/data/tentang');
     }
 
-      public function ubah_tentang()
+    public function ubah_tentang()
     {
         $tentang = About::first();
 
         return view('admin.ubahTentang', compact('tentang'));
-        }
+    }
 
     public function proses_ubah_tentang(Request $request)
     {
@@ -119,7 +121,7 @@ class AboutController extends Controller
     }
 
 
-     public function proses_hapus_tentang(Request $request)
+    public function proses_hapus_tentang(Request $request)
     {
         $id = $request->id;
         $tentang = About::where('id', $id)->first();
@@ -140,20 +142,28 @@ class AboutController extends Controller
     public function galeri(Request $request)
     {
 
-        return view('user.galeri',);
+        return view('user.galeri', );
     }
 
     public function openTrip(Request $request)
     {
 
-        return view('user.openTrip',);
+        return view('user.openTrip', );
     }
 
-      public function about(Request $request)
+    public function about(Request $request)
     {
-                $about = About::get();
-                $galeri = Galeri::get();
+        if (Cookie::get('user-language') != NULL) {
+            $locale = Cookie::get('user-language');
+            App::setLocale($locale);
+        } else {
+            $locale = "id";
+            App::setLocale("id");
+        }
 
-        return view('user.about', compact('about','galeri'));
+        $about = About::get();
+        $galeri = Galeri::get();
+
+        return view('user.about', compact('about', 'galeri'));
     }
 }

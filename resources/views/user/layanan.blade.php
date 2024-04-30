@@ -15,11 +15,23 @@
     <div class="container-lg mt-5">
         <h1
             class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-6xl dark:text-white">
-            Dapatkan liburan menyenangkan anda dengan <span class="" style="color: #ba1918">paket {{ $category->name }}
-                {{ $about->company_name }}</h1>
-        <p class="text-lg mb-4 font-normal text-gray-500 lg:text-xl dark:text-gray-400">Tour Experts kami selalu siap untuk
-            mengurus perjalan liburan dari awal hingga akhir. Sehingga kamu mendapatkan pengalaman unik tak terlupakan
-            selama mengeksplorasi keindahan Labuan Bajo.</p>
+            {{ __('layanan.liburan') }} <span class="" style="color: #ba1918">
+                @if (App::isLocale('id'))
+                    {{ __('layanan.paket') }} {{ $category->name }}
+                @elseif(App::isLocale('en'))
+                    {{ $category->name_en }}
+                @else
+                    {{ $category->name_mandarin }}
+                @endif
+                @if (App::isLocale('id'))
+                    {{ __('layanan.paket') }} {{ $about->company_name }}
+                @elseif(App::isLocale('en'))
+                    {{ $about->company_name }} {{ __('layanan.paket') }}
+                @else
+                @endif
+        </h1>
+        <p class="text-lg mb-4 font-normal text-gray-500 lg:text-xl dark:text-gray-400"> {{ __('layanan.text_liburan') }}
+        </p>
         <!-- component -->
         <div class="grid grid-cols-3 md:grid-cols-3 gap-3 flex-wrap">
             @foreach ($services as $layanan)
@@ -49,11 +61,24 @@
                         <div class="flex items-center justify-center">
                             <h5
                                 class="mb-2 block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
-                                {{ $layanan->name }}
+                                @if (App::isLocale('id'))
+                                    {{ $layanan->name }}
+                                @elseif(App::isLocale('en'))
+                                    {{ $layanan->name_en }}
+                                @else
+                                    {{ $layanan->name_mandarin }}
+                                @endif
                             </h5>
                         </div>
                         <p class="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
-                            {!! nl2br($layanan->short_desc) !!}
+
+                            @if (App::isLocale('id'))
+                                {!! nl2br($layanan->short_desc) !!}
+                            @elseif(App::isLocale('en'))
+                                {!! nl2br($layanan->short_desc_en) !!}
+                            @else
+                                {!! nl2br($layanan->short_desc_mandarin) !!}
+                            @endif
                         </p>
                         <div class="group mt-8 inline-flex flex-wrap items-center gap-3">
                             <span data-tooltip-target="money"
@@ -124,7 +149,7 @@
                             <button
                                 class="block w-full select-none rounded-lg bg-danger py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                 type="button" data-ripple-light="true">
-                                Detail
+                                {{ __('layanan.detail') }}
                             </button>
                         </a>
                     </div>

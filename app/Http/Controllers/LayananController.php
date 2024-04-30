@@ -8,6 +8,8 @@ use App\Models\Destination;
 use App\Models\Fasilitas;
 use App\Models\Layanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Str;
 
 class LayananController extends Controller
@@ -93,20 +95,62 @@ class LayananController extends Controller
         return view('admin.ubahservices', compact('services', 'categories', 'destination', 'facility'));
     }
 
-    public function proses_ubah_services(Request $request)
+    public function proses_ubah_layanan(Request $request)
     {
+        dd($request->all());
+
+        $bulan_sekarang = date('n');
+        $tahun_sekarang = date('Y');
+        $bulan_terbaik = [];
+
+        for ($bulan = $bulan_sekarang; $bulan <= 12; $bulan++) {
+            $bulan_terbaik[] = date('F', strtotime("$tahun_sekarang-$bulan-01"));
+        }
+
+        $bulan_pertama = $bulan_terbaik[0];
+        $bulan_terakhir = end($bulan_terbaik);
+
+        $bulan_terbaik_string = "$bulan_pertama-$bulan_terakhir";
         $checkEvent = Layanan::where('name', $request->input('name'))->where('id', '!=', $request->input('services_id'))->first();
         if ($checkEvent) {
             $rules = [
                 'name' => 'max:255',
                 'name_en' => 'max:255',
                 'name_mandarin' => 'max:255',
+                'slug' => 'unique:services',
+                'image' => 'image',
+                'short_desc' => 'required',
+                'short_desc_en' => 'required',
+                'short_desc_mandarin' => 'required',
+                'long_desc' => 'required',
+                'long_desc_en' => 'required',
+                'long_desc_mandarin' => 'required',
+                'price' => 'required',
+                'meeting_point' => 'required',
+                'aktivitas_fisik' => 'required',
+                'durasi' => 'required',
+                'minimal_peserta' => 'required',
+                'category_id' => 'required',
             ];
         } else {
             $rules = [
                 'name' => 'max:255',
                 'name_en' => 'max:255',
                 'name_mandarin' => 'max:255',
+                'slug' => '',
+                'image' => 'image',
+                'short_desc' => 'required',
+                'short_desc_en' => 'required',
+                'short_desc_mandarin' => 'required',
+                'long_desc' => 'required',
+                'long_desc_en' => 'required',
+                'long_desc_mandarin' => 'required',
+                'price' => 'required',
+                'meeting_point' => 'required',
+                'aktivitas_fisik' => 'required',
+                'durasi' => 'required',
+                'minimal_peserta' => 'required',
+                'category_id' => 'required',
             ];
         }
 
@@ -116,15 +160,31 @@ class LayananController extends Controller
                 'name.max' => 'Nama maksimal 255 karakter',
                 'name_en.max' => 'Nama maksimal 255 karakter',
                 'name_mandarin.max' => 'Nama maksimal 255 karakter',
+                'slug.unique' => 'Slug sudah ada',
+                'image.image' => 'File harus berupa gambar',
             ]
         );
+        $validatedData['slug'] = Str::of($request->slug)->slug('-');
+
+        if ($request->file('image')) {
+            $services = Layanan::where('id', $request->input('services_id'))->first();
+            if ($services->image != NULL) {
+                unlink(('./assets/services/') . $services->image);
+            }
+            $image = $request->file('image');
+            $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
+            $image->move('./assets/services/', $nameImage);
+            $validatedData['image'] = $nameImage;
+        }
+        $validatedData['bulan_terbaik'] = $bulan_terbaik_string;
 
         Layanan::where('id', $request->input('services_id'))->update($validatedData);
         $services = Layanan::where('id', $request->input('services_id'))->first();
 
+
         session()->flash('msg_status', 'success');
         session()->flash('msg', "<h5>Berhasil</h5><p>Data Berhasil Diubah</p>");
-        return redirect()->to("/app-admin/data/ubah/layanan/$services->name");
+        return redirect()->to("/app-admin/data/ubah/layanan/$services->slug");
     }
 
 
@@ -162,6 +222,14 @@ class LayananController extends Controller
 
     public function layanan($slug)
     {
+        if (Cookie::get('user-language') != NULL) {
+            $locale = Cookie::get('user-language');
+            App::setLocale($locale);
+        } else {
+            $locale = "id";
+            App::setLocale("id");
+        }
+
         $category = Category::where('slug', $slug)->firstOrFail();
         $about = About::first();
         $services = Layanan::where('categories_id', $category->id)->get();
@@ -170,6 +238,14 @@ class LayananController extends Controller
     }
     public function detail_layanan($slug)
     {
+        if (Cookie::get('user-language') != NULL) {
+            $locale = Cookie::get('user-language');
+            App::setLocale($locale);
+        } else {
+            $locale = "id";
+            App::setLocale("id");
+        }
+
         $services = Layanan::where('slug', $slug)->first();
         $other_services = Layanan::where('slug', '!=', $slug)->get();
 

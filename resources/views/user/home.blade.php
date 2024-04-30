@@ -161,14 +161,10 @@
     <div id="home-event-container" class="d-none d-md-block">
         <div class=" container mt-md-0 text-white" style="margin-top: -4rem !important;">
             <p class=" text-center title_event">
-                Discover All of Indonesia’s Treasures with Us, Better than Anyone Else!
+                {{ __('home.slogan_atas') }}
             </p>
             <p class=" text-center subt_event" style="margin-top: 1rem;">
-                Tentukan pilihan Open Trip atau Private Trip
-                ke destinasi wisata alam di Labuan Bajo.
-                Tour Experts kami selalu siap untuk mengurus perjalan liburan dari awal hingga akhir. Sehingga kamu
-                mendapatkan pengalaman unik tak terlupakan selama mengeksplorasi keindahan Labuan Bajo.
-
+                {{ __('home.text_slogan_atas') }}
             </p>
         </div>
         <div class="clearfix"></div>
@@ -176,13 +172,11 @@
     <div id="home-event-container" class="d-block d-md-none">
         <div class=" container mt-md-0" style="margin-top: -4rem !important;">
             <p class=" text-center title_event">
-                Discover All of Indonesia’s Treasures with Us, Better than Anyone Else!
+                {{ __('home.slogan_atas') }}
             </p>
             <p class=" text-center subt_event">
-                Tentukan pilihan Open Trip atau Private Trip
-                ke destinasi wisata alam di Labuan Bajo.
-                Tour Experts kami selalu siap untuk mengurus perjalan liburan dari awal hingga akhir. Sehingga kamu
-                mendapatkan pengalaman unik tak terlupakan selama mengeksplorasi keindahan Labuan Bajo.
+                {{ __('home.text_slogan_atas') }}
+
             </p>
         </div>
         <div class="clearfix"></div>
@@ -396,16 +390,19 @@
             <div class="row mb-5">
                 <div class="text-center">
                     <p class="" style="font-size: 28px; font-weight: 400;">
-                        <b>Paket {{ $about->company_name }} di Labuan Bajo
+                        <b>
+                            {{ __('home.paket') }}
+
                         </b>
                     </p>
                 </div>
             </div>
         </div>
         <div class="d-block d-md-none">
-            <div class="container text-center"">
+            <div class="container text-center">
                 <p class="" style="font-size: 16px; font-weight: 400;">
-                    <b>Paket Open Trip di Labuan Bajo
+                    <b> {{ __('home.paket') }}
+
                     </b>
                 </p>
             </div>
@@ -425,7 +422,15 @@
                         </div>
                         <div
                             class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-                            <h1 class="font-serif text-2xl font-bold text-white shadow-xl">{{ $kategori->name }}</h1>
+                            <h1 class="font-serif text-2xl font-bold text-white shadow-xl">
+                                @if (App::isLocale('id'))
+                                    {{ $kategori->name }}
+                                @elseif(App::isLocale('en'))
+                                    {{ $kategori->name_en }}
+                                @else
+                                    {{ $kategori->name_mandarin }}
+                                @endif
+                            </h1>
                             </h1>
                         </div>
                     </div>
@@ -433,37 +438,40 @@
             @endforeach
 
         </div>
-        <div class="mt-5">
-            <a href="{{ url('wisata') }}" class="btn text-white " id="but_wisata">
-                Semua Paket
-            </a>
-        </div>
+
 
 
         {{-- tentang --}}
-        <div class="container top_wisata ">
+        <div class="container top_wisata mt-4">
             <div class="d-none d-md-block">
                 <div class="row " style="margin-bottom: -50px;">
                     <div class="text-center">
                         <p class="" style="font-size: 28px; font-weight: 400;">
-                            <b>Tentang Kami
+                            <b> {{ __('home.tentang_kami') }}
+
                             </b>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="d-flex flex-row">
+            <div class="d-flex flex-row mt-4">
                 <div class="rounded-xl  ">
                     <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                         <img src="{{ url('assets/tentang/' . $about->image) }}"
-                            style="width: 350rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
+                            style="width: 250rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
                     </div>
 
                 </div>
                 <div class="p-6">
 
                     <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                        {{ $about->long_description }}
+                        @if (App::isLocale('id'))
+                            {{ $about->long_description }}
+                        @elseif(App::isLocale('en'))
+                            {{ $about->long_description_en }}
+                        @else
+                            {{ $about->long_description_mandarin }}
+                        @endif
                     </p>
                 </div>
             </div>

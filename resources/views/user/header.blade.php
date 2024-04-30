@@ -51,13 +51,13 @@ $locale = App::currentLocale();
                     <nav class="primary-menu d-none d-sm-none d-md-none d-lg-block d-xl-block">
                         <ul class="menu-container one-page-menu">
                             <li class="menu-item"><a class="menu-link" href="{{ url('/') }}">
-                                    <div>Home</div>
+                                    <div>{{ __('menu.home') }}</div>
                                 </a></li>
                             <li class="menu-item">
 
                                 <a class="menu-link" href="#">
                                     <div>
-                                        {{ __('menu.services') }}
+                                        {{ __('menu.layanan') }}
                                         <i
                                             class="bi-caret-down-fill text-smaller d-none d-lg-inline-block d-lg-inline-block d-xl-inline-block me-0"></i>
                                     </div>
@@ -67,17 +67,25 @@ $locale = App::currentLocale();
                                         @foreach ($categories as $category)
                                             <a class="menu-link"
                                                 href="{{ route('layanan.kategori', ['slug' => $category->slug]) }}">
-                                                <div>{{ $category->name }}</div>
+                                                <div>
+                                                    @if (App::isLocale('id'))
+                                                        {{ $category->name }}
+                                                    @elseif(App::isLocale('en'))
+                                                        {{ $category->name_en }}
+                                                    @else
+                                                        {{ $category->name_mandarin }}
+                                                    @endif
+                                                </div>
                                             </a>
                                         @endforeach
                                     </li>
                                 </ul>
                             </li>
                             <li class="menu-item"><a class="menu-link" href="{{ url('about') }}">
-                                    <div>{{ __('menu.about') }}</div>
+                                    <div>{{ __('menu.tentang') }}</div>
                                 </a></li>
                             <li class="menu-item"><a class="menu-link" href="{{ url('galeri') }}">
-                                    <div>Galeri</div>
+                                    <div>{{ __('menu.galeri') }}</div>
                                 </a></li>
                             <li class="menu-item">
                         </ul>
