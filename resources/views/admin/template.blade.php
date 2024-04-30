@@ -126,7 +126,7 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     @foreach ($categories as $category)
-                                        <a href="{{ route('layanan.kategori', ['slug' => $category->slug]) }}"
+                                        <a href="{{ route('data.layanan.kategori', ['slug' => $category->slug]) }}"
                                             class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>{{ $category->name }}</p>
@@ -151,12 +151,7 @@
                                         <p>Admin</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{ url('app-admin/akun/pengguna') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Pengguna</p>
-                                    </a>
-                                </li>
+
                             </ul>
                         </li>
                     </ul>

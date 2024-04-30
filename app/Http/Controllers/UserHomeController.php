@@ -34,8 +34,9 @@ class UserHomeController extends Controller
 
         $service = Layanan::get();
         $category = Category::first();
+        $categories = Category::all();
         $about = About::first();
 
-        return view("user.home", compact('service', 'category', 'about'));
+        return view("user.home", compact('service', 'category', 'about', 'categories'));
     }
 }

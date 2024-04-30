@@ -53,7 +53,7 @@
                             </h5>
                         </div>
                         <p class="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
-                            {{ $layanan->short_desc }}
+                            {!! nl2br($layanan->short_desc) !!}
                         </p>
                         <div class="group mt-8 inline-flex flex-wrap items-center gap-3">
                             <span data-tooltip-target="money"

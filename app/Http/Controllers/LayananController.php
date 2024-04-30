@@ -30,37 +30,7 @@ class LayananController extends Controller
 
     public function proses_tambah_layanan(Request $request)
     {
-        $validatedData = $request->validate(
-            [
-                'name' => 'required',
-                'name_en' => 'required',
-                'name_mandarin' => 'required',
-                'slug' => 'required',
-                'short_desc' => 'required',
-                'short_desc_en' => 'required',
-                'short_desc_mandarin' => 'required',
-                'price' => 'required',
-                'facilities_id' => 'required',
-                'categories_id' => 'required',
-                'destination_id' => 'required',
-                'image' => 'image',
-            ],
-            [
-                'name.required' => 'Data harus diisi!',
-                'name_en.required' => 'Data harus diisi!',
-                'name_mandarin.required' => 'Data harus diisi!',
-                'slug.required' => 'Data harus diisi!',
-                'short_desc.required' => 'Data harus diisi!',
-                'short_desc_en.required' => 'Data harus diisi!',
-                'short_desc_mandarin.required' => 'Data harus diisi!',
-                'price.required' => 'Data harus diisi!',
-                'facilities_id.required' => 'Data harus diisi!',
-                'categories_id.required' => 'Data harus diisi!',
-                'destination_id.required' => 'Data harus diisi!',
 
-                'image.image' => 'File harus berupa gambar',
-            ]
-        );
         // file
         $image = $request->file('image');
         $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
@@ -69,8 +39,21 @@ class LayananController extends Controller
         $facilities_ids = $request->input('facilities_id');
         $destination_ids = $request->input('destination_id');
 
-        $layanan = Layanan::create([
+        $bulan_sekarang = date('n');
+        $tahun_sekarang = date('Y');
 
+        $bulan_terbaik = [];
+
+        for ($bulan = $bulan_sekarang; $bulan <= 12; $bulan++) {
+            $bulan_terbaik[] = date('F', strtotime("$tahun_sekarang-$bulan-01"));
+        }
+
+        $bulan_pertama = $bulan_terbaik[0];
+        $bulan_terakhir = end($bulan_terbaik);
+
+        $bulan_terbaik_string = "$bulan_pertama-$bulan_terakhir";
+
+        $layanan = Layanan::create([
             'name' => $request->name,
             'name_en' => $request->name_en,
             'name_mandarin' => $request->name_mandarin,
@@ -78,10 +61,19 @@ class LayananController extends Controller
             'short_desc' => $request->short_desc,
             'short_desc_en' => $request->short_desc_en,
             'short_desc_mandarin' => $request->short_desc_mandarin,
+            'long_desc' => $request->long_desc,
+            'long_desc_en' => $request->long_desc_en,
+            'long_desc_mandarin' => $request->long_desc_mandarin,
             'price' => $request->price,
-            'categoies_id' => $request->categories_id,
+            'categories_id' => $request->categories_id,
+            'meeting_point' => $request->meeting_point,
+            'aktivitas_fisik' => $request->aktivitas_fisik,
+            'durasi' => $request->durasi,
+            'minimal_peserta' => $request->minimal_peserta,
+            'bulan_terbaik' => $bulan_terbaik_string,
             'image' => $nameImage,
         ]);
+
 
         // Simpan ke dalam pivot table
         $layanan->facilities()->attach($facilities_ids);
@@ -95,8 +87,10 @@ class LayananController extends Controller
     public function ubah_layanan()
     {
         $services = Layanan::first();
-
-        return view('admin.ubahservices', compact('services'));
+        $categories = Category::get();
+        $destination = Destination::get();
+        $facility = Fasilitas::get();
+        return view('admin.ubahservices', compact('services', 'categories', 'destination', 'facility'));
     }
 
     public function proses_ubah_services(Request $request)
@@ -177,7 +171,8 @@ class LayananController extends Controller
     public function detail_layanan($slug)
     {
         $services = Layanan::where('slug', $slug)->first();
+        $other_services = Layanan::where('slug', '!=', $slug)->get();
 
-        return view('user.detail_layanan', compact('services'));
+        return view('user.detail_layanan', compact('services', 'other_services'));
     }
 }

@@ -413,20 +413,19 @@
         <!-- Swiper -->
         <div class="d-md-flex justify-content-center flex-wrap">
             <!-- component -->
-            @foreach ($service->take(6) as $layanan)
-                <a href="">
+            @foreach ($categories as $kategori)
+                <a href="{{ url('layanan/' . $kategori->slug) }}">
                     <div
-                        class="group relative m-0 h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
+                        class="group relative m-0 h-72 w-72 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
                         <div
                             class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
-                            <img src="{{ url("/assets/services/$layanan->image") }}"
+                            <img src="https://blog-cdn.kitalulus.com/blog/wp-content/uploads/2024/02/20152158/6544aa8c4383b7d0c5450d58_labuan20bajo6.webp"
                                 class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
                                 alt="" />
                         </div>
                         <div
                             class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-                            <h1 class="font-serif text-2xl font-bold text-white shadow-xl">{{ $layanan->name }}</h1>
-                            <h1 class="text-sm font-light text-gray-200 shadow-xl">{{ $layanan->short_desc }}
+                            <h1 class="font-serif text-2xl font-bold text-white shadow-xl">{{ $kategori->name }}</h1>
                             </h1>
                         </div>
                     </div>
@@ -456,7 +455,7 @@
             <div class="d-flex flex-row">
                 <div class="rounded-xl  ">
                     <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                        <img src="https://indonesiajuara.asia/wp-content/uploads/2022/05/IndonesiaJuara-Trip-355x280-1-300x237.jpeg"
+                        <img src="{{ url('assets/tentang/' . $about->image) }}"
                             style="width: 350rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
                     </div>
 
@@ -464,20 +463,7 @@
                 <div class="p-6">
 
                     <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                        Eastpearl merupakan Tour Operator yang menjalankan langsung aktivitas tour dengan konsep
-                        berpetualang di wisata alam Indonesia. Berpengalaman lebih dari 7 tahun dengan review Tour Terbaik
-                        di
-                        TripAdvisor, kami menyediakan paket wisata Open Trip dan Private Trip—termasuk sewa kapal Phinisi.
-                        Destinasi wisata pilihan kami adalah Labuan Bajo, Sumba, Nusa Penida, Raja Ampat, dan Derawan.
-                        Dengan
-                        tim Guide Lokal yang memiliki pengetahuan daerah yang lengkap dan pelayanan dari hati,
-                        IndonesiaJuara
-                        memastikan setiap wisatawan yang berlibur bersama IndonesiaJuara akan mendapatkan pengalaman
-                        terbaiknya!
-                        Kami juga menjamin harga terbaik, tanpa hidden fee. Informasi biaya setiap paket trip ditampilkan
-                        sedetail mungkin dan akan diperjelas lagi saat berkomunikasi via WhatsApp agar kamu bisa
-                        merencanakan
-                        budget liburan dengan tepat.
+                        {{ $about->long_description }}
                     </p>
                 </div>
             </div>

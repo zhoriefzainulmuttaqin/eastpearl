@@ -20,10 +20,18 @@ return new class extends Migration {
             $table->longText('short_desc');
             $table->longText('short_desc_en');
             $table->longText('short_desc_mandarin');
+            $table->longText('long_desc');
+            $table->longText('long_desc_en');
+            $table->longText('long_desc_mandarin');
             $table->integer('price');
             $table->foreignId('facilities_id');
             $table->foreignId('categories_id');
             $table->foreignId('destination_id');
+            $table->string('meeting_point');
+            $table->string('bulan_terbaik');
+            $table->string('aktivitas_fisik');
+            $table->string('durasi');
+            $table->integer('minimal_peserta');
 
             $table->timestamps();
         });

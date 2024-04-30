@@ -46,7 +46,7 @@
                             <li><a href="{{ url('/') }}"
                                     class="after:content-['/'] after:ml-2 text-gray-600 hover:text-red-700">Home</a>
                             </li>
-                            <li><a href="{{ url('/') }}"
+                            <li><a href="javascript:void(0)" onclick="goBack()"
                                     class="after:content-['/'] after:ml-2 text-gray-600 hover:text-red-700">Layanan</a>
                             </li>
                             <li class="text-red-700" aria-current="page">{{ $services->name }}</li>
@@ -57,7 +57,8 @@
                     <span class="title font-semibold text-gray-900 ms-2">{{ $services->name }}</span>
                 </div>
                 <div class="ms-4 mt-2 mb-4">
-                    <span class="price text-gray-600">Start from {{ $services->price }}</span>
+                    <span class="price text-gray-600">Start from Rp.
+                        {{ number_format($services->price, 0, ',', '.') }}</span>
                 </div>
             </div>
         </div>
@@ -71,12 +72,12 @@
             </div>
             <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div class="titLin m-4 d-flex">
-                    {{ $services->short_desc }}
+                    {!! nl2br($services->long_desc) !!}
                 </div>
             </div>
             <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div class="ms-4 mt-4 font-semibold text-gray-900">
-                    Fasilitas:
+                    Fasilitas yang didapatkan:
                 </div>
                 <div class="m-4 ">
                     <ul class="list-disc ms-4">
@@ -87,14 +88,34 @@
                     </ul>
                 </div>
             </div>
-            <div class="trip_lainnya font-semibold text-gray-900 mt-4 mb-2">Destinasi</div>
-            <div class="relative  flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-
+            <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                <div class="ms-4 mt-4 font-semibold text-gray-900">
+                    Seputar trip:
+                </div>
+                <div class="m-4 ">
+                    <ul class="list-disc ms-4">
+                        <li><span class="font-bold text-gray-700">Meeting Point: </span>{{ $services->meeting_point }}
+                        </li>
+                        <li><span class="font-bold text-gray-700">Durasi: </span>{{ $services->durasi }}</li>
+                        <li><span class="font-bold text-gray-700">Minimal Peserta:
+                            </span>{{ $services->minimal_peserta }}</li>
+                        <li><span class="font-bold text-gray-700">Bulan Terbaik: </span>{{ $services->bulan_terbaik }}
+                        <li><span class="font-bold text-gray-700">Aktivitas Fisik:
+                            </span>{{ $services->aktivitas_fisik }}
+                        </li>
+                        <!-- ... -->
+                    </ul>
+                </div>
+            </div>
+            <div class="relative mt-2  flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                <div class="ms-4 mt-4 font-semibold text-gray-900">
+                    Rute yang akan dijelajahi:
+                </div>
                 <div class="m-4 ">
                     <div class="py-5">
                         <details class="group">
                             <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                <span class="font-semibold text-gray-900 "> Pulau Padar</span>
+                                <span class="font-semibold text-gray-800 "> Pulau Padar</span>
                                 <span class="transition group-open:rotate-180">
                                     <svg fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -117,7 +138,7 @@
                     <div class="py-5">
                         <details class="group">
                             <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                <span class="font-semibold text-gray-900 "> Pulau Padar</span>
+                                <span class="font-semibold text-gray-800 "> Pulau Padar</span>
                                 <span class="transition group-open:rotate-180">
                                     <svg fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -140,7 +161,7 @@
                     <div class="py-5">
                         <details class="group">
                             <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                <span class="font-semibold text-gray-900 "> Pulau Padar</span>
+                                <span class="font-semibold text-gray-800 "> Pulau Padar</span>
                                 <span class="transition group-open:rotate-180">
                                     <svg fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -166,32 +187,54 @@
 
 
         <div class="kanan col-3 ms-auto">
+            <div class="flex">
+                <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+                    <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
+                        <i class="uil uil-whatsapp"></i> Booking WA
+                    </a>
+                </div>
+                <div
+                    class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
+                    <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
+                        <i class="uil uil-envelope"></i> Booking Email
+                    </a>
+                </div>
+            </div>
+
             <div>
                 <div class="flex flex-col">
 
                     <span class="trip_lainnya font-semibold text-gray-900">Trip Lainnya </span>
                     <span class="">Rekomendasi terbaik untuk anda </span>
                 </div>
-                <div class="relative flex flex-col mt-2 rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                    <img class="rounded-xl" src="{{ url("/assets/services/$services->image") }}"
-                        alt="{{ $services->slug }}" style="width: cover; height: 100%;" />
-                    <div class="m-3 flex flex-col">
-                        <span class="title2 font-semibold text-gray-900 ">{{ $services->name }}</span>
-                        <span class="">{{ $services->short_desc }}</span>
-                    </div>
-                </div>
-            </div>
-            <div>
+                @foreach ($other_services->take(3) as $ots)
+                    <a href="{{ url('/layanan/detail/' . $ots->slug) }}">
 
-                <div class="relative flex flex-col mt-2 rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                    <img class="rounded-xl" src="{{ url("/assets/services/$services->image") }}"
-                        alt="{{ $services->slug }}" style="width: cover; height: 100%;" />
-                    <div class="m-3 flex flex-col">
-                        <span class="title2 font-semibold text-gray-900 ">{{ $services->name }}</span>
-                        <span class="">{{ $services->short_desc }}</span>
-                    </div>
-                </div>
+                        <div
+                            class="relative flex flex-col mt-2 rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                            <img class="rounded-xl" src="{{ url("/assets/services/$ots->image") }}"
+                                alt="{{ $ots->slug }}" style="width: cover; height: 100%;" />
+                            <div class="m-3 flex flex-col">
+                                <span class="title2 font-semibold text-gray-900 ">{{ $ots->name }}</span>
+                                {!! nl2br($ots->short_desc) !!}
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
             </div>
+        </div>
+    </div>
+
+    <div class="flex mt-4 justify-content-left">
+        <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+            <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
+                <i class="uil uil-whatsapp"></i> Booking WA
+            </a>
+        </div>
+        <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
+            <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
+                <i class="uil uil-envelope"></i> Booking Email
+            </a>
         </div>
     </div>
 
@@ -204,4 +247,10 @@
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 @endsection
