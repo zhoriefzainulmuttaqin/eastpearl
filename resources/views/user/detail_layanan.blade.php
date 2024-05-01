@@ -44,21 +44,38 @@
                     <nav aria-label="breadcrumb">
                         <ol class="flex space-x-2">
                             <li><a href="{{ url('/') }}"
-                                    class="after:content-['/'] after:ml-2 text-gray-600 hover:text-red-700">Home</a>
+                                    class="after:content-['/'] after:ml-2 text-gray-600 hover:text-red-700">{{ __('detail_layanan.home') }}</a>
                             </li>
                             <li><a href="javascript:void(0)" onclick="goBack()"
-                                    class="after:content-['/'] after:ml-2 text-gray-600 hover:text-red-700">Layanan</a>
+                                    class="after:content-['/'] after:ml-2 text-gray-600 hover:text-red-700">{{ __('detail_layanan.layanan') }}</a>
                             </li>
-                            <li class="text-red-700" aria-current="page">{{ $services->name }}</li>
+                            <li class="text-red-700" aria-current="page">
+                                @if (App::isLocale('id'))
+                                    {{ $services->name }}
+                                @elseif(App::isLocale('en'))
+                                    {{ $services->name_en }}
+                                @else
+                                    {{ $services->name_mandarin }}
+                                @endif
+                            </li>
                         </ol>
                     </nav>
                 </div>
                 <div class="ms-3">
-                    <span class="title font-semibold text-gray-900 ms-2">{{ $services->name }}</span>
+                    <span class="title font-semibold text-gray-900 ms-2">
+                        @if (App::isLocale('id'))
+                            {{ $services->name }}
+                        @elseif(App::isLocale('en'))
+                            {{ $services->name_en }}
+                        @else
+                            {{ $services->name_mandarin }}
+                        @endif
+                    </span>
                 </div>
                 <div class="ms-4 mt-2 mb-4">
-                    <span class="price text-gray-600">Start from Rp.
-                        {{ number_format($services->price, 0, ',', '.') }}</span>
+                    <span class="price text-gray-600">{{ __('detail_layanan.start_from') }} Rp.
+                        {{ number_format($services->price, 0, ',', '.') }}
+                    </span>
                 </div>
             </div>
         </div>
@@ -67,17 +84,24 @@
     <div class="flex justify-content-between">
         <div class="kiri flex-col col-9 " style="padding-right: 20px;">
             <div class="relative flex flex-col  rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                <img class="rounded-xl" src="{{ url("/assets/services/$services->image") }}" alt="{{ $services->slug }}"
-                    style="width: cover; height: 100%;" />
+                <img class="rounded-xl" src="{{ url("/assets/services/$services->image") }}"
+                    alt="{{ $services->slug }}" style="width: cover; height: 100%;" />
             </div>
             <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div class="titLin m-4 d-flex">
-                    {!! nl2br($services->long_desc) !!}
+
+                    @if (App::isLocale('id'))
+                        {!! nl2br($services->long_desc) !!}
+                    @elseif(App::isLocale('en'))
+                        {!! nl2br($services->long_desc_en) !!}
+                    @else
+                        {!! nl2br($services->long_desc_mandarin) !!}
+                    @endif
                 </div>
             </div>
             <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div class="ms-4 mt-4 font-semibold text-gray-900">
-                    Fasilitas yang didapatkan:
+                    {{ __('detail_layanan.fasilitas') }}
                 </div>
                 <div class="m-4 ">
                     <ul class="list-disc ms-4">
@@ -90,17 +114,20 @@
             </div>
             <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div class="ms-4 mt-4 font-semibold text-gray-900">
-                    Seputar trip:
+                    {{ __('detail_layanan.seputar') }}
                 </div>
                 <div class="m-4 ">
                     <ul class="list-disc ms-4">
-                        <li><span class="font-bold text-gray-700">Meeting Point: </span>{{ $services->meeting_point }}
+                        <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.meeting') }}
+                            </span>{{ $services->meeting_point }}
                         </li>
-                        <li><span class="font-bold text-gray-700">Durasi: </span>{{ $services->durasi }}</li>
-                        <li><span class="font-bold text-gray-700">Minimal Peserta:
+                        <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.durasi') }}
+                            </span>{{ $services->durasi }}</li>
+                        <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.peserta') }}
                             </span>{{ $services->minimal_peserta }}</li>
-                        <li><span class="font-bold text-gray-700">Bulan Terbaik: </span>{{ $services->bulan_terbaik }}
-                        <li><span class="font-bold text-gray-700">Aktivitas Fisik:
+                        <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.bulan') }}
+                            </span>{{ $services->bulan_terbaik }}
+                        <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.aktivitas') }}
                             </span>{{ $services->aktivitas_fisik }}
                         </li>
                         <!-- ... -->
@@ -109,7 +136,7 @@
             </div>
             <div class="relative mt-2  flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div class="ms-4 mt-4 font-semibold text-gray-900">
-                    Rute yang akan dijelajahi:
+                    {{ __('detail_layanan.rute') }}
                 </div>
                 <div class="m-4 ">
                     <div class="py-5">
@@ -190,13 +217,13 @@
             <div class="flex">
                 <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
                     <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
-                        <i class="uil uil-whatsapp"></i> Booking WA
+                        <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
                     </a>
                 </div>
                 <div
                     class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
                     <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
-                        <i class="uil uil-envelope"></i> Booking Email
+                        <i class="uil uil-envelope"></i> {{ __('detail_layanan.book_email') }}
                     </a>
                 </div>
             </div>
@@ -204,8 +231,9 @@
             <div>
                 <div class="flex flex-col">
 
-                    <span class="trip_lainnya font-semibold text-gray-900">Trip Lainnya </span>
-                    <span class="">Rekomendasi terbaik untuk anda </span>
+                    <span
+                        class="trip_lainnya font-semibold text-gray-900">{{ __('detail_layanan.trip_lainnya') }}</span>
+                    <span class="">{{ __('detail_layanan.rekomendasi') }}</span>
                 </div>
                 @foreach ($other_services->take(3) as $ots)
                     <a href="{{ url('/layanan/detail/' . $ots->slug) }}">
@@ -215,8 +243,23 @@
                             <img class="rounded-xl" src="{{ url("/assets/services/$ots->image") }}"
                                 alt="{{ $ots->slug }}" style="width: cover; height: 100%;" />
                             <div class="m-3 flex flex-col">
-                                <span class="title2 font-semibold text-gray-900 ">{{ $ots->name }}</span>
-                                {!! nl2br($ots->short_desc) !!}
+                                <span class="title2 font-semibold text-gray-900 ">
+                                    @if (App::isLocale('id'))
+                                        {{ $ots->name }}
+                                    @elseif(App::isLocale('en'))
+                                        {{ $ots->name_en }}
+                                    @else
+                                        {{ $ots->name_mandarin }}
+                                    @endif
+                                </span>
+
+                                @if (App::isLocale('id'))
+                                    {!! nl2br($ots->short_desc) !!}
+                                @elseif(App::isLocale('en'))
+                                    {!! nl2br($ots->short_desc_en) !!}
+                                @else
+                                    {!! nl2br($ots->short_desc_mandarin) !!}
+                                @endif
                             </div>
                         </div>
                     </a>
@@ -228,12 +271,12 @@
     <div class="flex mt-4 justify-content-left">
         <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
             <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
-                <i class="uil uil-whatsapp"></i> Booking WA
+                <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
             </a>
         </div>
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
             <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
-                <i class="uil uil-envelope"></i> Booking Email
+                <i class="uil uil-envelope"></i> {{ __('detail_layanan.book_email') }}
             </a>
         </div>
     </div>
