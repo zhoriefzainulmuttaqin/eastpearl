@@ -19,6 +19,7 @@
                         <thead>
                             <tr>
                                 <th class="text-center">No</th>
+                                <th class="text-center">Sampul</th>
                                 <th class="text-center">Nama</th>
                                 <th class="text-center">Nama (Inggris)</th>
                                 <th class="text-center">Nama (Mandarin)</th>
@@ -29,12 +30,16 @@
                             @foreach ($kategori as $ktg)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                    <td class="text-center">
+                                        <img src='{{ url("/assets/kategori/$ktg->image") }}'
+                                            class="img-preview mb-3 img-fluid" style="height: 50px; widht: auto;">
+                                    </td>
                                     <td>{{ $ktg->name }}</td>
                                     <td>{{ $ktg->name_en }}</td>
                                     <td>{{ $ktg->name_mandarin }}</td>
 
                                     <td class="text-center">
-                                        <a href='{{ url("/app-admin/data/kategori/ubah/$ktg->name") }}'>
+                                        <a href='{{ url("/app-admin/data/kategori/ubah/$ktg->slug") }}'>
                                             <button type="button" class="btn btn-sm btn-success" title="Ubah">
                                                 <i class="fas fa-edit"></i></button>
                                         </a>

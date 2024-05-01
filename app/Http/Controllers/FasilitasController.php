@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class FasilitasController extends Controller
 {
-     public function admin_fasilitas(Request $request)
+    public function admin_fasilitas(Request $request)
     {
         $fasilitas = Fasilitas::get();
         return view('admin.fasilitas', compact('fasilitas'));
@@ -38,9 +38,9 @@ class FasilitasController extends Controller
 
         Fasilitas::insert([
 
-            'name' =>  $request->name,
-            'name_en' =>  $request->name_en,
-            'name_mandarin' =>  $request->name_mandarin,
+            'name' => $request->name,
+            'name_en' => $request->name_en,
+            'name_mandarin' => $request->name_mandarin,
 
         ]);
 
@@ -49,51 +49,58 @@ class FasilitasController extends Controller
         return redirect()->to('/app-admin/data/fasilitas');
     }
 
-      public function ubah_fasilitas(Request $request)
+    public function ubah_fasilitas(Request $request)
     {
-        $fasilitas = Fasilitas::first();
+        $id = $request->id;
+
+        $fasilitas = Fasilitas::where('id', $id)->first();
         return view('admin.ubahfasilitas', compact('fasilitas'));
     }
- public function proses_ubah_fasilitas(Request $request)
-   {
-        $checkEvent = Fasilitas::where('name', $request->input('name'))->where('id', '!=', $request->input('fasilitas_id'))->first();
-        if ($checkEvent) {
-            $rules = [
-                'name' => 'max:255',
-                'name_en' => 'max:255',
-                'name_mandarin' => 'max:255',
-            ];
+    public function proses_ubah_fasilitas(Request $request)
+    {
+        // wajib
+        $id = $request->id;
+
+        $data_fasilitas = Fasilitas::where('id', $id)->first();
+
+        $rules = [];
+
+        if ($request->name != $data_fasilitas->name) {
+            $rules['name'] = 'required|unique:facilities';
         } else {
-            $rules = [
-                'name' => 'max:255',
-                'name_en' => 'max:255',
-                'name_mandarin' => 'max:255',
-            ];
+            $rules['name'] = 'required';
         }
 
-        $validatedData = $request->validate(
-            $rules,
+        $validateData = $request->validate(
             [
-                'name.max' => 'Nama maksimal 255 karakter',
-                'name_en.max' => 'Nama maksimal 255 karakter',
-                'name_mandarin.max' => 'Nama maksimal 255 karakter',
+                'name' => $rules['name'],
+            ],
+            [
+                'name.required' => 'Nama harus diisi.',
+                'name.unique' => 'Nama sudah terdaftar.',
             ]
         );
 
-        Fasilitas::where('id', $request->input('fasilitas_id'))->update($validatedData);
-        $fasilitas = Fasilitas::where('id', $request->input('fasilitas_id'))->first();
+        fasilitas::where('id', $id)
+            ->update([
+
+                'name' => $request->name,
+                'name_en' => $request->name_en,
+                'name_mandarin' => $request->name_mandarin,
+
+            ]);
 
         session()->flash('msg_status', 'success');
-        session()->flash('msg', "<h5>Berhasil</h5><p>Data Berhasil Diubah</p>");
-        return redirect()->to("/app-admin/data/fasilitas/ubah/$fasilitas->name");
+        session()->flash('msg', "<h5>Berhasil</h5><p>Gambar Berhasil Diubah</p>");
+        return redirect()->to('app-admin/data/fasilitas/ubah/' . $id);
     }
-     public function proses_hapus_fasilitas(Request $request)
+    public function proses_hapus_fasilitas(Request $request)
     {
         $id = $request->id;
         $fasilitas = Fasilitas::where('id', $id)->first();
 
 
-            if ($fasilitas) {
+        if ($fasilitas) {
             Fasilitas::where('id', $id)->delete();
             session()->flash('msg_status', 'success');
             session()->flash('msg', "<h5>Berhasil</h5><p>Data fasilitas berhasil dihapus !</p>");

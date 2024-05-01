@@ -13,7 +13,9 @@
                 </div>
                 <form method="POST" action="{{ url('app-admin/data/kategori/proses-ubah') }}" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="kategori_id" value="{{ $kategori->id }}">
+                    <input type="hidden" name="id" value="{{ $kategori->id }}">
+                    <input type="hidden" name="image_old" value="{{ $kategori->image }}">
+
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name"> Nama </label>
@@ -49,7 +51,30 @@
                                 </div>
                             @enderror
                         </div>
-
+                        <div class="form-group">
+                            <label for="slug">Slug</label>
+                            <input name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug"
+                                value="{{ old('slug') ? old('slug') : $kategori->slug }}" type="text" required
+                                placeholder="Masukan Slug . . . ">
+                            @error('slug')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="image" class="form-label">Gambar </label>
+                            <br>
+                            <img id="addImage" src="{{ url('assets/kategori/' . $kategori->image) }}"
+                                class="mb-3 img-thumbnail" style="max-height: 300px; width: auto;">
+                            <input class="form-control @error('image') is-invalid @enderror" type="file" name="image"
+                                id="image" onchange="previewImage()">
+                            @error('image')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
                     </div>
                     <div class="card-footer">
                         <a href="<?= url('app-admin/data/kategori') ?>">

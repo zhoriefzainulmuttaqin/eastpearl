@@ -53,13 +53,13 @@ class DestinationController extends Controller
 
         Destination::insert([
 
-            'name' =>  $request->name,
-            'name_en' =>  $request->name_en,
-            'name_mandarin' =>  $request->name_mandarin,
-            'description' =>  $request->description,
-            'description_en' =>  $request->description_en,
-            'description_mandarin' =>  $request->description_mandarin,
-            'image' =>  $nameImage,
+            'name' => $request->name,
+            'name_en' => $request->name_en,
+            'name_mandarin' => $request->name_mandarin,
+            'description' => $request->description,
+            'description_en' => $request->description_en,
+            'description_mandarin' => $request->description_mandarin,
+            'image' => $nameImage,
         ]);
 
         session()->flash('msg_status', 'success');
@@ -67,71 +67,74 @@ class DestinationController extends Controller
         return redirect()->to('/app-admin/data/destination');
     }
 
-   public function ubah_destination()
+    public function ubah_destination(Request $request)
     {
-        $destination = Destination::first();
+        $id = $request->id;
+        $destination = Destination::where('id', $id)->first();
 
         return view('admin.ubahDestination', compact('destination'));
     }
     public function proses_ubah_destination(Request $request)
-
     {
-      // wajib
-      $id = $request->id;
-      $image_name = $request->image_name;
-      $status = $request->status;
-
-      $data_destination = Destination::where('id', $id)->first();
-
-      $rules = [];
-
-      if ($request->image_name != $data_destination->image_name) {
-          $rules['image_name'] = 'required|unique:destination';
-      } else {
-          $rules['image_name'] = 'required';
-      }
+        // wajib
+        $id = $request->id;
 
 
-      $rules['image'] = 'image';
+        $data_destination = Destination::where('id', $id)->first();
 
-      $validateData = $request->validate(
-        [
-            'image_name' => $rules['image_name'],
-            'image' => $rules['image'],
-        ],
-        [
-            'image_name.required' => 'Nama harus diisi.',
-            'image_name.unique' => 'Nama sudah terdaftar.',
-            'image.image' => 'File harus berupa gambar.',
-        ]
-    );
+        $rules = [];
 
-      if ($request->file('image')) {
-          if ($data_destination->image != NULL) {
-              unlink(('./assets/destination/') . $data_destination->image);
-          }
-          $image = $request->file('image');
-          $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
-          $image->move('./assets/destination/', $nameImage);
-      } else {
-          $nameImage = $request->image_old;
-      }
+        if ($request->name != $data_destination->name) {
+            $rules['name'] = 'required|unique:destination';
+        } else {
+            $rules['name'] = 'required';
+        }
 
-      Destination::where('id', $id)
-          ->update([
 
-              'image_name' =>  $image_name,
-              'image' =>  $nameImage,
-              'status' =>  $request->status ?? 1,
+        $rules['image'] = 'image';
 
-          ]);
+        $validateData = $request->validate(
+            [
+                'name' => $rules['name'],
+                'image' => $rules['image'],
+            ],
+            [
+                'name.required' => 'Nama harus diisi.',
+                'name.unique' => 'Nama sudah terdaftar.',
+                'image.image' => 'File harus berupa gambar.',
+            ]
+        );
 
-      session()->flash('msg_status', 'success');
-      session()->flash('msg', "<h5>Berhasil</h5><p>Gambar Berhasil Diubah</p>");
-      return redirect()->to('app-admin/data/destination');
+        if ($request->file('image')) {
+            if ($data_destination->image != NULL) {
+                unlink(('./assets/destination/') . $data_destination->image);
+            }
+            $image = $request->file('image');
+            $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
+            $image->move('./assets/destination/', $nameImage);
+        } else {
+            $nameImage = $request->image_old;
+        }
+
+        Destination::where('id', $id)
+            ->update([
+
+                'name' => $request->name,
+                'name_en' => $request->name_en,
+                'name_mandarin' => $request->name_mandarin,
+                'description' => $request->description,
+                'description_en' => $request->description_en,
+                'description_mandarin' => $request->description_mandarin,
+                'image' => $nameImage,
+
+            ]);
+
+        session()->flash('msg_status', 'success');
+        session()->flash('msg', "<h5>Berhasil</h5><p>Gambar Berhasil Diubah</p>");
+        return redirect()->to('app-admin/data/destination');
     }
 
-     public function proses_hapus_destination(Request $request)
+    public function proses_hapus_destination(Request $request)
     {
         $id = $request->id;
         $destination = Destination::where('id', $id)->first();

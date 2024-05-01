@@ -34,7 +34,7 @@
                                     </td>
                                     <td>{{ $dest->name }}</td>
                                     <td class="text-center">
-                                        <a href='{{ url("/app-admin/data/destination/ubah/$dest->name") }}'>
+                                        <a href='{{ url("/app-admin/data/destination/ubah/$dest->id ") }}'>
                                             <button type="button" class="btn btn-sm btn-success" title="Ubah">
                                                 <i class="fas fa-edit"></i></button>
                                         </a>

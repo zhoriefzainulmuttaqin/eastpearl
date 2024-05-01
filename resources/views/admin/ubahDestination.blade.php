@@ -31,8 +31,8 @@
                         </div>
                         <div class="form-group">
                             <label for="name_en"> Nama (Inggris) </label>
-                            <input type="text" class="form-control @error('name_en') is-invalid @enderror"
-                                name_en="name_en" id="name_en" placeholder="Masukan Nama "
+                            <input type="text" class="form-control @error('name_en') is-invalid @enderror" name="name_en"
+                                id="name_en" placeholder="Masukan Nama "
                                 value="{{ old('name_en') ?? $destination->name_en }}" required autocomplete="off"></input>
                             @error('name_en')
                                 <div class="invalid-feedback">
@@ -43,7 +43,7 @@
                         <div class="form-group">
                             <label for="name_mandarin"> Nama (Mandarin) </label>
                             <input type="text" class="form-control @error('name_mandarin') is-invalid @enderror"
-                                name_mandarin="name_mandarin" id="name_mandarin" placeholder="Masukan Nama "
+                                name="name_mandarin" id="name_mandarin" placeholder="Masukan Nama "
                                 value="{{ old('name_mandarin') ?? $destination->name_mandarin }}" required
                                 autocomplete="off"></input>
                             @error('name_mandarin')
@@ -53,42 +53,21 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="description"> Deskripsi </label>
-                            <input type="text" class="form-control @error('description') is-invalid @enderror"
-                                name="description" id="description" placeholder="Masukan Deskripsi "
-                                value="{{ old('description') ?? $destination->description }}" required
-                                autocomplete="off"></input>
-                            @error('description')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                            <label for="description">Deskripsi (Dalam Bahasa Mandarin)</label>
+                            <textarea id="description" name="description" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('description') ?? $destination->description }}</textarea>
+                            <div class="my-3"></div>
                         </div>
                         <div class="form-group">
-                            <label for="description_en"> Deskripsi (Inggris) </label>
-                            <input type="text" class="form-control @error('description_en') is-invalid @enderror"
-                                name="description_en" id="description_en" placeholder="Masukan Deskripsi (Inggris) "
-                                value="{{ old('description_en') ?? $destination->description_en }}" required
-                                autocomplete="off"></input>
-                            @error('description_en')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                            <label for="description_en">Deskripsi (Dalam Bahasa Mandarin)</label>
+                            <textarea id="description_en" name="description_en" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('description_en') ?? $destination->description_en }}</textarea>
+                            <div class="my-3"></div>
                         </div>
                         <div class="form-group">
-                            <label for="description_mandarin"> Deskripsi (Mandarin) </label>
-                            <input type="text" class="form-control @error('description_mandarin') is-invalid @enderror"
-                                name="description_mandarin" id="description_mandarin"
-                                placeholder="Masukan Deskripsi (Mandarin) "
-                                value="{{ old('description_mandarin') ?? $destination->description_mandarin }}" required
-                                autocomplete="off"></input>
-                            @error('description_mandarin')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                            <label for="description_mandarin">Deskripsi (Dalam Bahasa Mandarin)</label>
+                            <textarea id="description_mandarin" name="description_mandarin" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('description_mandarin') ?? $destination->description_mandarin }}</textarea>
+                            <div class="my-3"></div>
                         </div>
+
                         <div class="form-group">
                             <label for="image" class="form-label">Gambar </label>
                             <br>

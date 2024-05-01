@@ -59,6 +59,17 @@
                             </div>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="image" class="form-label">Gambar </label>
+                        <img id="addImage" class="img-preview mb-3 img-fluid" style="max-height: 300px; width: auto;">
+                        <input class="form-control @error('image') is-invalid @enderror" type="file" name="image"
+                            id="image" onchange="previewImage()" required>
+                        @error('image')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
                     <div class="card-footer">
                         <a href="{{ url('/app-admin/data/kategori') }}">
                             <button type="button" class="btn btn-danger float-left">Kembali</button>
@@ -71,4 +82,19 @@
     </div>
 @endsection
 @section('script')
+    <script>
+        function previewImage() {
+            const image = document.querySelector('#image');
+            const imgPreview = document.querySelector('#addImage');
+
+            imgPreview.style.display = 'block';
+
+            const ofReader = new FileReader();
+            ofReader.readAsDataURL(image.files[0]);
+
+            ofReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+    </script>
 @endsection

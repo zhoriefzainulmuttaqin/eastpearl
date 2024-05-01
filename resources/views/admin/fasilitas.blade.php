@@ -29,7 +29,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $fas->name }}</td>
                                     <td class="text-center">
-                                        <a href='{{ url("/app-admin/data/fasilitas/ubah/$fas->name") }}'>
+                                        <a href='{{ url("/app-admin/data/fasilitas/ubah/$fas->id") }}'>
                                             <button type="button" class="btn btn-sm btn-success" title="Ubah">
                                                 <i class="fas fa-edit"></i></button>
                                         </a>

@@ -13,7 +13,7 @@
                 </div>
                 <form method="POST" action="{{ url('app-admin/data/fasilitas/proses-ubah') }}" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="fasilitas_id" value="{{ $fasilitas->id }}">
+                    <input type="hidden" name="id" value="{{ $fasilitas->id }}">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name"> Nama </label>

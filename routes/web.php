@@ -117,7 +117,7 @@ Route::prefix("app-admin")->group(function () {
         Route::get("data/fasilitas", [FasilitasController::class, "admin_fasilitas"]);
         Route::get("data/tambah/fasilitas", [FasilitasController::class, "tambah_fasilitas"]);
         Route::post("data/fasilitas/proses-tambah", [FasilitasController::class, "proses_tambah_fasilitas"]);
-        Route::get("data/fasilitas/ubah/{slug}", [FasilitasController::class, "ubah_fasilitas"]);
+        Route::get("data/fasilitas/ubah/{id}", [FasilitasController::class, "ubah_fasilitas"]);
         Route::post("data/fasilitas/proses-ubah", [FasilitasController::class, "proses_ubah_fasilitas"]);
         Route::get("data/fasilitas/hapus/{id}", [FasilitasController::class, "proses_hapus_fasilitas"]);
 
@@ -125,7 +125,7 @@ Route::prefix("app-admin")->group(function () {
         Route::get("data/destination", [DestinationController::class, "admin_destination"]);
         Route::get("data/tambah/destination", [DestinationController::class, "tambah_destination"]);
         Route::post("data/destination/proses-tambah", [DestinationController::class, "proses_tambah_destination"]);
-        Route::get("data/destination/ubah/{slug}", [DestinationController::class, "ubah_destination"]);
+        Route::get("data/destination/ubah/{id}", [DestinationController::class, "ubah_destination"]);
         Route::post("data/destination/proses-ubah", [DestinationController::class, "proses_ubah_destination"]);
         Route::get("data/destination/hapus/{id}", [DestinationController::class, "proses_hapus_destination"]);
 

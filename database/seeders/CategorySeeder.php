@@ -22,7 +22,7 @@ class CategorySeeder extends Seeder
                 'slug' => 'open-trip',
             ]),
             ([
-                'image' => 'opentrip.jpg',
+                'image' => 'privatetrip.jpg',
                 'name' => 'Private Trip',
                 'name_en' => 'Private Trip',
                 'name_mandarin' => '私人旅行',

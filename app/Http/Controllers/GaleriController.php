@@ -57,9 +57,11 @@ class GaleriController extends Controller
         return redirect()->to('/app-admin/data/galeri');
     }
 
-    public function ubah_galeri()
+    public function ubah_galeri(Request $request)
     {
-        $galeri = Galeri::first();
+        $id = $request->id;
+
+        $galeri = Galeri::where('id', $id)->first();
 
         return view('admin.ubahGaleri', compact('galeri'));
     }
@@ -68,7 +70,6 @@ class GaleriController extends Controller
         // wajib
         $id = $request->id;
         $image_name = $request->image_name;
-        $status = $request->status;
 
         $data_galeri = Galeri::where('id', $id)->first();
 
@@ -111,13 +112,12 @@ class GaleriController extends Controller
 
                 'image_name' => $image_name,
                 'image' => $nameImage,
-                'status' => $request->status ?? 1,
 
             ]);
 
         session()->flash('msg_status', 'success');
         session()->flash('msg', "<h5>Berhasil</h5><p>Gambar Berhasil Diubah</p>");
-        return redirect()->to('app-admin/data/galeri');
+        return redirect()->to('app-admin/data/galeri/ubah/' . $image_name . '/' . $id);
     }
 
     public function proses_hapus_galeri(Request $request)

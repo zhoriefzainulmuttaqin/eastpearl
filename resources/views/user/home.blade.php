@@ -416,7 +416,7 @@
                         class="group relative m-0 h-72 w-72 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
                         <div
                             class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
-                            <img src="https://blog-cdn.kitalulus.com/blog/wp-content/uploads/2024/02/20152158/6544aa8c4383b7d0c5450d58_labuan20bajo6.webp"
+                            <img src="{{ url("/assets/kategori/$kategori->image") }}"
                                 class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
                                 alt="" />
                         </div>
