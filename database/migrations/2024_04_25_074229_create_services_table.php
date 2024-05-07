@@ -24,9 +24,7 @@ return new class extends Migration {
             $table->longText('long_desc_en');
             $table->longText('long_desc_mandarin');
             $table->integer('price');
-            $table->foreignId('facilities_id');
             $table->foreignId('categories_id');
-            $table->foreignId('destination_id');
             $table->string('meeting_point');
             $table->string('bulan_terbaik');
             $table->string('aktivitas_fisik');

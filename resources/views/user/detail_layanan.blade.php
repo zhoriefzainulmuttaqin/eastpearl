@@ -106,7 +106,7 @@
                 <div class="m-4 ">
                     <ul class="list-disc ms-4">
                         @foreach ($facilities as $fas)
-                            <li>{{ $fas->facilities->name }}</li>
+                            <li>{{ $fas->name }}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -137,62 +137,31 @@
                 <div class="ms-4 mt-4 font-semibold text-gray-900">
                     {{ __('detail_layanan.rute') }}
                 </div>
-                @if ($destination->isNotEmpty())
+                @foreach ($destination as $dest)
                     <div class="m-4">
-                        @foreach ($destination as $dest)
-                            <div class="py-5">
-                                <details class="group">
-                                    <summary
-                                        class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                        <span class="font-semibold text-gray-800">{{ $dest->destination->name }}</span>
-                                        <span class="transition group-open:rotate-180">
-                                            <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                                <path d="M6 9l6 6 6-6"></path>
-                                            </svg>
-                                        </span>
-                                    </summary>
-                                    <div class="flex mt-4">
-                                        <img class="rounded-xl"
-                                            src="{{ url("/assets/destination/$dest->destination->image") }}"
-                                            alt="{{ $dest->destination->name }}" style="width: 50%; height: 100%;" />
-                                        <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
-                                            {{ $dest->destination->description }}
-                                        </p>
-                                    </div>
-                                </details>
-                            </div>
-                        @endforeach
+                        <div class="py-5">
+                            <details class="group">
+                                <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">{{ $dest->name }}</span>
+                                    <span class="transition group-open:rotate-180">
+                                        <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                            <path d="M6 9l6 6 6-6"></path>
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <div class="flex mt-4">
+                                    <img class="rounded-xl" src="{{ url("/assets/destination/{$dest->image}") }}"
+                                        alt="{{ $dest->name }}" style="width: 50%; height: 100%;" />
+                                    <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
+                                        {{ $dest->description }}
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
                     </div>
-                @else
-                    <div class="m-4">
-                        @foreach ($allDest as $dest)
-                            <div class="py-5">
-                                <details class="group">
-                                    <summary
-                                        class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                        <span class="font-semibold text-gray-800">{{ $dest->name }}</span>
-                                        <span class="transition group-open:rotate-180">
-                                            <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                                <path d="M6 9l6 6 6-6"></path>
-                                            </svg>
-                                        </span>
-                                    </summary>
-                                    <div class="flex mt-4">
-                                        <img class="rounded-xl" src="{{ url("/assets/destination/$dest->image") }}"
-                                            alt="{{ $dest->name }}" style="width: 50%; height: 100%;" />
-                                        <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
-                                            {{ $dest->description }}
-                                        </p>
-                                    </div>
-                                </details>
-                            </div>
-                        @endforeach
-                    </div>
-                @endif
+                @endforeach
 
             </div>
         </div>

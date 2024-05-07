@@ -45,7 +45,7 @@
                         <div class="form-group">
                             <label for="name_mandarin"> Nama (Mandarin)</label>
                             <input type="text" class="form-control @error('name_mandarin') is-invalid @enderror"
-                                name_mandarin="name_mandarin" id="name_mandarin" placeholder="Masukan Nama"
+                                name="name_mandarin" id="name_mandarin" placeholder="Masukan Nama"
                                 value="{{ old('name_mandarin') ?? $services->name_mandarin }}" required
                                 autocomplete="off"></input>
                             @error('name_mandarin')
@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-group">
                             <label for="slug"> slug</label>
-                            <input type="text" class="form-control @error('slug') is-invalid @enderror" slug="slug"
+                            <input type="text" class="form-control @error('slug') is-invalid @enderror" name="slug"
                                 id="slug" placeholder="Masukan Nama" value="{{ old('slug') ?? $services->slug }}"
                                 required autocomplete="off"></input>
                             @error('slug')
@@ -89,7 +89,7 @@
                                 <option value="">--- Pilih Fasilitas ---</option>
                                 @foreach ($facility as $fas)
                                     <?php
-                                    if ($services->facilities_id == $fas->id) {
+                                    if ($fas->id) {
                                         $selected = 'selected';
                                     } else {
                                         $selected = '';
@@ -107,7 +107,7 @@
                                 <option value="">--- Pilih Destinasi ---</option>
                                 @foreach ($destination as $des)
                                     <?php
-                                    if ($services->destination_id == $des->id) {
+                                    if ($des->id) {
                                         $selected = 'selected';
                                     } else {
                                         $selected = '';

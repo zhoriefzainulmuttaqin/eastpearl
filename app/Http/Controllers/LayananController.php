@@ -12,6 +12,7 @@ use App\Models\LayananFasilitas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 class LayananController extends Controller
@@ -88,106 +89,67 @@ class LayananController extends Controller
         return redirect()->to('/app-admin/data/layanan');
     }
 
-    public function ubah_layanan()
+    public function ubah_layanan(Request $request)
     {
-        $services = Layanan::first();
+        $slug = $request->slug;
+
+        $services = Layanan::where('slug', $slug)->first();
         $categories = Category::get();
-        $destination = Destination::get();
-        $facility = Fasilitas::get();
-        return view('admin.ubahservices', compact('services', 'categories', 'destination', 'facility'));
+        $allFas = Fasilitas::get();
+        $allDest = Destination::get();
+        $destination = $services->destinations;
+        $facility = $services->facilities;
+        return view('admin.ubahservices', compact('services', 'categories', 'destination', 'facility','allFas','allDest'));
     }
 
     public function proses_ubah_layanan(Request $request)
     {
-        dd($request->all());
+        $layanan = Layanan::findOrFail($request->services_id);
 
-        $bulan_sekarang = date('n');
-        $tahun_sekarang = date('Y');
-        $bulan_terbaik = [];
-
-        for ($bulan = $bulan_sekarang; $bulan <= 12; $bulan++) {
-            $bulan_terbaik[] = date('F', strtotime("$tahun_sekarang-$bulan-01"));
-        }
-
-        $bulan_pertama = $bulan_terbaik[0];
-        $bulan_terakhir = end($bulan_terbaik);
-
-        $bulan_terbaik_string = "$bulan_pertama-$bulan_terakhir";
-        $checkEvent = Layanan::where('name', $request->input('name'))->where('id', '!=', $request->input('services_id'))->first();
-        if ($checkEvent) {
-            $rules = [
-                'name' => 'max:255',
-                'name_en' => 'max:255',
-                'name_mandarin' => 'max:255',
-                'slug' => 'unique:services',
-                'image' => 'image',
-                'short_desc' => 'required',
-                'short_desc_en' => 'required',
-                'short_desc_mandarin' => 'required',
-                'long_desc' => 'required',
-                'long_desc_en' => 'required',
-                'long_desc_mandarin' => 'required',
-                'price' => 'required',
-                'meeting_point' => 'required',
-                'aktivitas_fisik' => 'required',
-                'durasi' => 'required',
-                'minimal_peserta' => 'required',
-                'category_id' => 'required',
-            ];
-        } else {
-            $rules = [
-                'name' => 'max:255',
-                'name_en' => 'max:255',
-                'name_mandarin' => 'max:255',
-                'slug' => '',
-                'image' => 'image',
-                'short_desc' => 'required',
-                'short_desc_en' => 'required',
-                'short_desc_mandarin' => 'required',
-                'long_desc' => 'required',
-                'long_desc_en' => 'required',
-                'long_desc_mandarin' => 'required',
-                'price' => 'required',
-                'meeting_point' => 'required',
-                'aktivitas_fisik' => 'required',
-                'durasi' => 'required',
-                'minimal_peserta' => 'required',
-                'category_id' => 'required',
-            ];
-        }
-
-        $validatedData = $request->validate(
-            $rules,
-            [
-                'name.max' => 'Nama maksimal 255 karakter',
-                'name_en.max' => 'Nama maksimal 255 karakter',
-                'name_mandarin.max' => 'Nama maksimal 255 karakter',
-                'slug.unique' => 'Slug sudah ada',
-                'image.image' => 'File harus berupa gambar',
-            ]
-        );
-        $validatedData['slug'] = Str::of($request->slug)->slug('-');
-
-        if ($request->file('image')) {
-            $services = Layanan::where('id', $request->input('services_id'))->first();
-            if ($services->image != NULL) {
-                unlink(('./assets/services/') . $services->image);
+        // Jika ada file gambar baru yang diunggah
+        if ($request->hasFile('image')) {
+            // Hapus file gambar lama
+            if (File::exists(public_path("assets/services/{$layanan->image}"))) {
+                File::delete(public_path("assets/services/{$layanan->image}"));
             }
+
+            // Upload file gambar baru
             $image = $request->file('image');
             $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
-            $image->move('./assets/services/', $nameImage);
-            $validatedData['image'] = $nameImage;
+            $image->move(public_path("assets/services/"), $nameImage);
+
+            $layanan->image = $nameImage;
         }
-        $validatedData['bulan_terbaik'] = $bulan_terbaik_string;
 
-        Layanan::where('id', $request->input('services_id'))->update($validatedData);
-        $services = Layanan::where('id', $request->input('services_id'))->first();
+        $layanan->name = $request->name;
+        $layanan->name_en = $request->name_en;
+        $layanan->name_mandarin = $request->name_mandarin;
+        $layanan->slug = $request->slug;
+        $layanan->short_desc = $request->short_desc;
+        $layanan->short_desc_en = $request->short_desc_en;
+        $layanan->short_desc_mandarin = $request->short_desc_mandarin;
+        $layanan->long_desc = $request->long_desc;
+        $layanan->long_desc_en = $request->long_desc_en;
+        $layanan->long_desc_mandarin = $request->long_desc_mandarin;
+        $layanan->price = $request->price;
+        $layanan->categories_id = $request->categories_id;
+        $layanan->meeting_point = $request->meeting_point;
+        $layanan->aktivitas_fisik = $request->aktivitas_fisik;
+        $layanan->durasi = $request->durasi;
+        $layanan->minimal_peserta = $request->minimal_peserta;
 
+        // Simpan perubahan
+        $layanan->save();
+
+        // Synchronize fasilitas dan destinasi baru
+        $layanan->facilities()->sync($request->facilities_id);
+        $layanan->destinations()->sync($request->destination_id);
 
         session()->flash('msg_status', 'success');
         session()->flash('msg', "<h5>Berhasil</h5><p>Data Berhasil Diubah</p>");
-        return redirect()->to("/app-admin/data/ubah/layanan/$services->slug");
+        return redirect()->to('/app-admin/data/layanan');
     }
+
 
 
     public function proses_hapus_layanan(Request $request)
@@ -249,13 +211,11 @@ class LayananController extends Controller
         }
 
         $services = Layanan::where('slug', $slug)->first();
-        $other_services = Layanan::get();
-        $destination = LayananDestinasi::whereHas('services', function ($query) use ($services) {
-            $query->where('id', $services->id);
-        })->get();
-        $facilities = LayananFasilitas::whereHas('services', function ($query) use ($services) {
-            $query->where('id', $services->id);
-        })->get();
+        $other_services = Layanan::where('slug', '!=', $slug)->get();
+        $destination = $services->destinations;
+
+        $facilities = $services->facilities;
+
 
         $allDest = Destination::get();
         $allFasc = Destination::get();

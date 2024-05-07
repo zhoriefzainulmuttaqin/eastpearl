@@ -13,10 +13,10 @@ class LayananDestinasi extends Model
     protected $guarded = ['id'];
     public function destination()
     {
-        return $this->belongsTo(Destination::class, 'destination_id');
+        return $this->hasMany(Destination::class, 'id');
     }
     public function services()
     {
-        return $this->belongsTo(Layanan::class, 'destination_id');
+        return $this->hasMany(Layanan::class, 'id');
     }
 }

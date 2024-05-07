@@ -40,7 +40,7 @@
                     <div
                         class="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                         <img src="{{ url("/assets/services/$layanan->image") }}" alt="{{ $layanan->slug }}"
-                            style="width: 100%;" />
+                            style="width: 100%; height: 15rem;" />
                         <div
                             class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60">
                         </div>
@@ -71,15 +71,23 @@
                             </h5>
                         </div>
                         <p class="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
-
                             @if (App::isLocale('id'))
-                                {!! nl2br($layanan->short_desc) !!}
+                                {!! nl2br(
+                                    strlen($layanan->short_desc) > 200 ? substr($layanan->short_desc, 0, 200) . '...' : $layanan->short_desc,
+                                ) !!}
                             @elseif(App::isLocale('en'))
-                                {!! nl2br($layanan->short_desc_en) !!}
+                                {!! nl2br(
+                                    strlen($layanan->short_desc_en) > 200 ? substr($layanan->short_desc_en, 0, 200) . '...' : $layanan->short_desc_en,
+                                ) !!}
                             @else
-                                {!! nl2br($layanan->short_desc_mandarin) !!}
+                                {!! nl2br(
+                                    strlen($layanan->short_desc_mandarin) > 200
+                                        ? substr($layanan->short_desc_mandarin, 0, 200) . '...'
+                                        : $layanan->short_desc_mandarin,
+                                ) !!}
                             @endif
                         </p>
+
                         <div class="group mt-8 inline-flex flex-wrap items-center gap-3">
                             <span data-tooltip-target="money"
                                 class="cursor-pointer rounded-full border border-pink-500/5 bg-pink-500/5 p-3 text-danger transition-colors hover:border-pink-500/10 hover:bg-pink-500/10 hover:!opacity-100 group-hover:opacity-70">
