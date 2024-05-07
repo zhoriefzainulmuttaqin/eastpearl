@@ -88,7 +88,7 @@
                     alt="{{ $services->slug }}" style="width: cover; height: 100%;" />
             </div>
             <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                <div class="titLin m-4 d-flex">
+                <div class="titLin m-4 ">
 
                     @if (App::isLocale('id'))
                         {!! nl2br($services->long_desc) !!}
@@ -105,10 +105,9 @@
                 </div>
                 <div class="m-4 ">
                     <ul class="list-disc ms-4">
-                        <li>Makan</li>
-                        <li>Makan</li>
-                        <li>Makan</li>
-                        <!-- ... -->
+                        @foreach ($facilities as $fas)
+                            <li>{{ $fas->facilities->name }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -138,77 +137,63 @@
                 <div class="ms-4 mt-4 font-semibold text-gray-900">
                     {{ __('detail_layanan.rute') }}
                 </div>
-                <div class="m-4 ">
-                    <div class="py-5">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                <span class="font-semibold text-gray-800 "> Pulau Padar</span>
-                                <span class="transition group-open:rotate-180">
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                        <path d="M6 9l6 6 6-6"></path>
-                                    </svg>
-                                </span>
-                            </summary>
-                            <div class="flex mt-4">
-                                <img class="rounded-xl" src="{{ url("/assets/services/$services->image") }}"
-                                    alt="{{ $services->slug }}" style="width: 50%; height: 100%;" />
-                                <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aspernatur
-                                    neque, at mollitia reiciendis beatae placeat tenetur eveniet numquam, unde
-                                    doloribus? Quia aperiam iste ipsum totam modi quidem praesentium ab.
-                                </p>
+                @if ($destination->isNotEmpty())
+                    <div class="m-4">
+                        @foreach ($destination as $dest)
+                            <div class="py-5">
+                                <details class="group">
+                                    <summary
+                                        class="flex justify-between items-center font-medium cursor-pointer list-none">
+                                        <span class="font-semibold text-gray-800">{{ $dest->destination->name }}</span>
+                                        <span class="transition group-open:rotate-180">
+                                            <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                                <path d="M6 9l6 6 6-6"></path>
+                                            </svg>
+                                        </span>
+                                    </summary>
+                                    <div class="flex mt-4">
+                                        <img class="rounded-xl"
+                                            src="{{ url("/assets/destination/$dest->destination->image") }}"
+                                            alt="{{ $dest->destination->name }}" style="width: 50%; height: 100%;" />
+                                        <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
+                                            {{ $dest->destination->description }}
+                                        </p>
+                                    </div>
+                                </details>
                             </div>
-                        </details>
+                        @endforeach
                     </div>
-                    <div class="py-5">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                <span class="font-semibold text-gray-800 "> Pulau Padar</span>
-                                <span class="transition group-open:rotate-180">
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                        <path d="M6 9l6 6 6-6"></path>
-                                    </svg>
-                                </span>
-                            </summary>
-                            <div class="flex mt-4">
-                                <img class="rounded-xl" src="{{ url("/assets/services/$services->image") }}"
-                                    alt="{{ $services->slug }}" style="width: 50%; height: 100%;" />
-                                <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aspernatur
-                                    neque, at mollitia reiciendis beatae placeat tenetur eveniet numquam, unde
-                                    doloribus? Quia aperiam iste ipsum totam modi quidem praesentium ab.
-                                </p>
+                @else
+                    <div class="m-4">
+                        @foreach ($allDest as $dest)
+                            <div class="py-5">
+                                <details class="group">
+                                    <summary
+                                        class="flex justify-between items-center font-medium cursor-pointer list-none">
+                                        <span class="font-semibold text-gray-800">{{ $dest->name }}</span>
+                                        <span class="transition group-open:rotate-180">
+                                            <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                                <path d="M6 9l6 6 6-6"></path>
+                                            </svg>
+                                        </span>
+                                    </summary>
+                                    <div class="flex mt-4">
+                                        <img class="rounded-xl" src="{{ url("/assets/destination/$dest->image") }}"
+                                            alt="{{ $dest->name }}" style="width: 50%; height: 100%;" />
+                                        <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
+                                            {{ $dest->description }}
+                                        </p>
+                                    </div>
+                                </details>
                             </div>
-                        </details>
+                        @endforeach
                     </div>
-                    <div class="py-5">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                <span class="font-semibold text-gray-800 "> Pulau Padar</span>
-                                <span class="transition group-open:rotate-180">
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision"
-                                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="1.5" viewBox="0 0 24 24" width="24">
-                                        <path d="M6 9l6 6 6-6"></path>
-                                    </svg>
-                                </span>
-                            </summary>
-                            <div class="flex mt-4">
-                                <img class="rounded-xl" src="{{ url("/assets/services/$services->image") }}"
-                                    alt="{{ $services->slug }}" style="width: 50%; height: 100%;" />
-                                <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aspernatur
-                                    neque, at mollitia reiciendis beatae placeat tenetur eveniet numquam, unde
-                                    doloribus? Quia aperiam iste ipsum totam modi quidem praesentium ab.
-                                </p>
-                            </div>
-                        </details>
-                    </div>
-                </div>
+                @endif
+
             </div>
         </div>
 

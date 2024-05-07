@@ -131,28 +131,24 @@
                         <div class="swiper swiper-parent">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide dark">
-                                    {{-- <div class="container-fluid py-5 text-center">
-                                        <img src="{{ url('assets/logo-light.png') }}" id="logo-on-header">
-                                        <p class="text-white d-none d-md-block display-6" style="font-size: 20px;">
-                                            {{ strtoupper(__('home.portal_text')) }} <br>
-                                            (CIREBON KUNINGAN INDRAMAYU MAJALENGKA)
-                                        </p>
-                                        <p class="text-white d-block d-md-none"
-                                            style="font-size:7px; margin-top: -1rem;">
-                                            {{ strtoupper(__('home.portal_text')) }} <br>
-                                            (CIREBON KUNINGAN INDRAMAYU MAJALENGKA)
-                                        </p>
+                                    <div class="container-fluid py-5 text-center">
+                                        <img src="{{ url('assets/eastpearl_logo3.png') }}" id="logo-on-header">
+
                                         <div class="language">
                                             <a href="{{ url('atur-bahasa/id') }}"
                                                 class="btn text-center bg-btn-language but_lang1">
-                                                BAHASA INDONESIA
+                                                BAHASA
                                             </a>
                                             <a href="{{ url('atur-bahasa/en') }}"
                                                 class="btn text-center bg-btn-language but_lang2">
                                                 ENGLISH
                                             </a>
+                                            <a href="{{ url('atur-bahasa/mandarin') }}"
+                                                class="btn text-center bg-btn-language but_lang3">
+                                                普通话
+                                            </a>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                     <div class="swiper-slide-bg" style="background-image: url('assets/bg/padar.png');">
                                     </div>
                                 </div>

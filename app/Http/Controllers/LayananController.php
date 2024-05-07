@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Destination;
 use App\Models\Fasilitas;
 use App\Models\Layanan;
+use App\Models\LayananDestinasi;
+use App\Models\LayananFasilitas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cookie;
@@ -247,8 +249,16 @@ class LayananController extends Controller
         }
 
         $services = Layanan::where('slug', $slug)->first();
-        $other_services = Layanan::where('slug', '!=', $slug)->get();
+        $other_services = Layanan::get();
+        $destination = LayananDestinasi::whereHas('services', function ($query) use ($services) {
+            $query->where('id', $services->id);
+        })->get();
+        $facilities = LayananFasilitas::whereHas('services', function ($query) use ($services) {
+            $query->where('id', $services->id);
+        })->get();
 
-        return view('user.detail_layanan', compact('services', 'other_services'));
+        $allDest = Destination::get();
+        $allFasc = Destination::get();
+        return view('user.detail_layanan', compact('services', 'other_services', 'destination', 'facilities', 'allDest', 'allFasc'));
     }
 }

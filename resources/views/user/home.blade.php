@@ -170,7 +170,7 @@
         <div class="clearfix"></div>
     </div>
     <div id="home-event-container" class="d-block d-md-none">
-        <div class=" container mt-md-0" style="margin-top: -4rem !important;">
+        <div class=" container mt-md-0 text-white" style="margin-top: -4rem !important;">
             <p class=" text-center title_event">
                 {{ __('home.slogan_atas') }}
             </p>
@@ -408,7 +408,7 @@
             </div>
         </div>
         <!-- Swiper -->
-        <div class="d-md-flex justify-content-center flex-wrap">
+        <div class="d-md-flex justify-content-center flex-wrap d-none d-md-block">
             <!-- component -->
             @foreach ($categories as $kategori)
                 <a href="{{ url('layanan/' . $kategori->slug) }}">
@@ -436,52 +436,115 @@
                     </div>
                 </a>
             @endforeach
-
         </div>
-
-
-
-        {{-- tentang --}}
-        <div class="container top_wisata mt-4">
-            <div class="d-none d-md-block">
-                <div class="row " style="margin-bottom: -50px;">
-                    <div class="text-center">
-                        <p class="" style="font-size: 28px; font-weight: 400;">
-                            <b> {{ __('home.tentang_kami') }}
-
-                            </b>
-                        </p>
+        <div class="d-md-flex justify-content-center flex-wrap d-block d-md-none">
+            <!-- component -->
+            @foreach ($categories as $kategori)
+                <a href="{{ url('layanan/' . $kategori->slug) }}">
+                    <div
+                        class="group relative m-0 h-72 w-72 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-auto mt-2">
+                        <div
+                            class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                            <img src="{{ url("/assets/kategori/$kategori->image") }}"
+                                class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                                alt="" />
+                        </div>
+                        <div
+                            class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                            <h1 class="font-serif text-2xl font-bold text-white shadow-xl">
+                                @if (App::isLocale('id'))
+                                    {{ $kategori->name }}
+                                @elseif(App::isLocale('en'))
+                                    {{ $kategori->name_en }}
+                                @else
+                                    {{ $kategori->name_mandarin }}
+                                @endif
+                            </h1>
+                            </h1>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="d-flex flex-row mt-4">
-                <div class="rounded-xl  ">
-                    <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                        <img src="{{ url('assets/tentang/' . $about->image) }}"
-                            style="width: 250rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
-                    </div>
+                </a>
+            @endforeach
+        </div>
+    </div>
 
-                </div>
-                <div class="p-6">
 
-                    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                        @if (App::isLocale('id'))
-                            {{ $about->long_description }}
-                        @elseif(App::isLocale('en'))
-                            {{ $about->long_description_en }}
-                        @else
-                            {{ $about->long_description_mandarin }}
-                        @endif
+    {{-- tentang --}}
+    <div class="container top_wisata mt-4 d-none d-md-block">
+        <div class="">
+            <div class="row " style="margin-bottom: -50px;">
+                <div class="text-center">
+                    <p class="" style="font-size: 28px; font-weight: 400;">
+                        <b> {{ __('home.tentang_kami') }}
+
+                        </b>
                     </p>
                 </div>
             </div>
-        @endsection
+        </div>
+        <div class="d-flex flex-row mt-4">
+            <div class="rounded-xl  ">
+                <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                    <img src="{{ url('assets/tentang/' . $about->image) }}"
+                        style="width: 250rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
+                </div>
 
-        @section('script')
-            <!-- Swiper JS -->
-            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
-            <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
+            </div>
+            <div class="p-6">
 
-            <!-- Initialize Swiper -->
-            <script></script>
-        @endsection
+                <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                    @if (App::isLocale('id'))
+                        {{ $about->long_description }}
+                    @elseif(App::isLocale('en'))
+                        {{ $about->long_description_en }}
+                    @else
+                        {{ $about->long_description_mandarin }}
+                    @endif
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container top_wisata mt-4 d-block d-md-none">
+        <div class="">
+            <div class="row " style="margin-bottom: -50px;">
+                <div class="text-center">
+                    <p class="" style="font-size: 28px; font-weight: 400;">
+                        <b> {{ __('home.tentang_kami') }}
+
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-col mt-4 mb-4">
+            <div class="rounded-xl  mt-5">
+                <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                    <img src="{{ url('assets/tentang/' . $about->image) }}"
+                        style="width: 250rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
+                </div>
+
+            </div>
+            <div class="p-1 mt-2">
+
+                <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                    @if (App::isLocale('id'))
+                        {{ $about->long_description }}
+                    @elseif(App::isLocale('en'))
+                        {{ $about->long_description_en }}
+                    @else
+                        {{ $about->long_description_mandarin }}
+                    @endif
+                </p>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('script')
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
+
+    <!-- Initialize Swiper -->
+    <script></script>
+@endsection
