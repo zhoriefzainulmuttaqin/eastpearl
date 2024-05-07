@@ -10,52 +10,63 @@ use App\Models\Restaurant;
 use App\Models\Shop;
 use App\Models\Tour;
 use App\Models\Accomodation;
+use App\Models\Destination;
 use App\Models\Payment;
 use App\Models\Pattern;
 use App\Models\DiscountCard;
 use App\Models\DiscountCardSale;
+use App\Models\Fasilitas;
 use App\Models\Gift;
 use App\Models\GiftSale;
 use App\Models\GiftSaleItem;
+use App\Models\Layanan;
 use Illuminate\Support\Str;
 
 class DashboardAdminController extends Controller
 {
     //
-    public function dashboard(){
-        // $count_wisata = Tour::count();
-        // $count_kuliner = Restaurant::count();
-        // $count_oleholeh = Shop::count();
-        // $count_akomodasi = Accomodation::count();
+    public function dashboard()
+    {
+        $count_open_trip = Layanan::whereHas('categories', function ($query) {
+            $query->where('name', 'open trip')->orWhere('name', 'Open Trip');
+        })->count();
 
-        // $events = Event::where("start_date",">=",date("Y-m-d"))->orderBy("start_date","asc")->get();
+        $count_private_trip = Layanan::whereHas('categories', function ($query) {
+            $query->where('name', 'private trip')->orWhere('name', 'Private Trip');
+        })->count();
 
-        // $cardSales = DiscountCardSale::where("status",1)->orderBy("id","desc")->limit(10)->get();
-        // $giftSales = GiftSale::where("status",1)->orderBy("id","desc")->limit(10)->get();
+        $count_land_trip = Layanan::whereHas('categories', function ($query) {
+            $query->where('name', 'land trip')->orWhere('name', 'Land Trip');
+        })->count();
 
-        // $news = News::join('categories', 'news.category_id', '=', 'categories.id')
-        // ->join('administrators', 'news.admin_id', '=', 'administrators.id')
-        // ->where('categories.type', 1)
-        // ->select(['news.*', 'categories.name as category_name', 'categories.name_en as category_name_en', 'administrators.name as admin_name'])
-        // ->limit(3)
-        // ->orderBy('news.published_date', 'desc')
-        // ->get();
+        $count_fly_bajo = Layanan::whereHas('categories', function ($query) {
+            $query->where('name', 'fly bajo')->orWhere('name', 'Fly Bajo');
+        })->count();
+
+        $count_destination = Destination::count();
+        $count_facility = Fasilitas::count();
+        $services = Layanan::get();
+        $fasilitas = Fasilitas::get();
+        $destination = Destination::get();
+
 
         $data = ([
-            // "count_wisata" => $count_wisata,
-            // "count_kuliner" => $count_kuliner,
-            // "count_oleholeh" => $count_oleholeh,
-            // "count_akomodasi" => $count_akomodasi,
-            // "events"    => $events,
-            // "cardSales" => $cardSales,
-            // "giftSales" => $giftSales,
-            // "news"  => $news,
+            "count_open_trip" => $count_open_trip,
+            "count_private_trip" => $count_private_trip,
+            "count_land_trip" => $count_land_trip,
+            "count_fly_bajo" => $count_fly_bajo,
+            "count_destination" => $count_destination,
+            "count_facility" => $count_facility,
+            "services" => $services,
+            "fasilitas" => $fasilitas,
+            "destination" => $destination,
         ]);
 
-        return view("admin.dashboard",$data);
+        return view("admin.dashboard", $data);
     }
 
-     public function buat_slug(Request $request)
+
+    public function buat_slug(Request $request)
     {
         $slug = Str::of($request->name)->slug('-');
         return response()->json(['slug' => $slug]);

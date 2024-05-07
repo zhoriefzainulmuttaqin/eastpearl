@@ -138,7 +138,7 @@ Route::prefix("app-admin")->group(function () {
         Route::get("data/layanan/hapus/{id}", [LayananController::class, "proses_hapus_layanan"]);
 
         //  data per layanan
-        Route::get('data/laynanan/{slug}', [LayananController::class, 'layananKategori'])->name('data.layanan.kategori');
+        Route::get('data/layanan/{slug}', [LayananController::class, 'layananKategori'])->name('data.layanan.kategori');
         Route::get('data/detail/laynanan/{slug}', [LayananController::class, 'detailLayananKategori'])->name('layanan.detail');
         Route::get("data/tambah/layanan", [LayananController::class, "tambah_layanan"]);
         Route::post("data/layanan/proses-tambah", [LayananController::class, "proses_tambah_layanan"]);

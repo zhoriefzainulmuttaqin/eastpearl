@@ -195,7 +195,7 @@
                         <div
                             class="relative flex flex-col mt-2 rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                             <img class="rounded-xl" src="{{ url("/assets/services/$ots->image") }}"
-                                alt="{{ $ots->slug }}" style="width: cover; height: 100%;" />
+                                alt="{{ $ots->slug }}" style="width: 100%; height: 10rem;" />
                             <div class="m-3 flex flex-col">
                                 <span class="title2 font-semibold text-gray-900 ">
                                     @if (App::isLocale('id'))
@@ -208,12 +208,17 @@
                                 </span>
 
                                 @if (App::isLocale('id'))
-                                    {!! nl2br($ots->short_desc) !!}
+                                    {!! nl2br(strlen($ots->short_desc) > 200 ? substr($ots->short_desc, 0, 200) . '...' : $ots->short_desc) !!}
                                 @elseif(App::isLocale('en'))
-                                    {!! nl2br($ots->short_desc_en) !!}
+                                    {!! nl2br(strlen($ots->short_desc_en) > 200 ? substr($ots->short_desc_en, 0, 200) . '...' : $ots->short_desc_en) !!}
                                 @else
-                                    {!! nl2br($ots->short_desc_mandarin) !!}
+                                    {!! nl2br(
+                                        strlen($ots->short_desc_mandarin) > 200
+                                            ? substr($ots->short_desc_mandarin, 0, 200) . '...'
+                                            : $ots->short_desc_mandarin,
+                                    ) !!}
                                 @endif
+
                             </div>
                         </div>
                     </a>
