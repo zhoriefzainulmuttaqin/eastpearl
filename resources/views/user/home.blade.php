@@ -138,8 +138,13 @@
             .title_event {
                 font-size: 16px;
                 font-weight: 999;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
                 margin-top: -5% !important;
+            }
+
+            .subt_event {
+                font-size: 12px;
+
             }
 
             .owl-carousel .owl-dots .owl-dot {
@@ -247,7 +252,15 @@
             }
         }
     </style>
-    <div style="position: relative; margin-top: 40px;">
+    <div class="d-none d-md-block" style="position: relative; margin-top: 40px;">
+        <div class="wave wave1">
+
+        </div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+    </div>
+    <div class="d-block d-md-none" style="position: relative; margin-top: 0;">
         <div class="wave wave1">
 
         </div>
@@ -504,11 +517,11 @@
             </div>
         </div>
     </div>
-    <div class="container top_wisata mt-4 d-block d-md-none">
+    <div class="container-fluid p-5 mt-4 d-block d-md-none">
         <div class="">
             <div class="row " style="margin-bottom: -50px;">
                 <div class="text-center">
-                    <p class="" style="font-size: 28px; font-weight: 400;">
+                    <p class="" style="font-size: 16px; font-weight: 400;">
                         <b> {{ __('home.tentang_kami') }}
 
                         </b>
@@ -519,14 +532,15 @@
         <div class="d-flex flex-col mt-4 mb-4">
             <div class="rounded-xl  mt-5">
                 <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                    <img src="{{ url('assets/tentang/' . $about->image) }}"
-                        style="width: 250rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
+                    <img src="{{ url('assets/tentang/' . $about->image) }}" style="width: 80% !important; height: 15rem;"
+                        alt="img-blur-shadow" layout="fill" />
                 </div>
 
             </div>
             <div class="p-1 mt-2">
 
-                <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
+                    style="font-size: 12px;">
                     @if (App::isLocale('id'))
                         {{ $about->long_description }}
                     @elseif(App::isLocale('en'))

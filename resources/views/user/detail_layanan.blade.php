@@ -35,7 +35,7 @@
         }
     </style>
 @endsection
-<div class="container-lg">
+<div class="container-lg d-none d-lg-block">
 
     <div class="grid grid-cols-1 md:grid-cols-1 gap-1 flex-wrap">
         <div class="w-full">
@@ -228,6 +228,213 @@
     </div>
 
     <div class="flex mt-4 justify-content-left">
+        <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+            <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
+                <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+            </a>
+        </div>
+        <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
+            <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
+                <i class="uil uil-envelope"></i> {{ __('detail_layanan.book_email') }}
+            </a>
+        </div>
+    </div>
+
+</div>
+<div class="container-lg d-block d-lg-none">
+
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-1 flex-wrap">
+        <div class="w-full">
+            <div class="atas relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                <div class="titLin m-4 d-flex">
+                    <nav aria-label="breadcrumb">
+                        <ol class="flex space-x-2">
+                            <li><a href="{{ url('/') }}"
+                                    class="after:content-['/'] after:ml-2 text-gray-600 hover:text-red-700">{{ __('detail_layanan.home') }}</a>
+                            </li>
+                            <li><a href="javascript:void(0)" onclick="goBack()"
+                                    class="after:content-['/'] after:ml-2 text-gray-600 hover:text-red-700">{{ __('detail_layanan.layanan') }}</a>
+                            </li>
+                            <li class="text-red-700" aria-current="page">
+                                @if (App::isLocale('id'))
+                                    {{ $services->name }}
+                                @elseif(App::isLocale('en'))
+                                    {{ $services->name_en }}
+                                @else
+                                    {{ $services->name_mandarin }}
+                                @endif
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="ms-3">
+                    <span class="title font-semibold text-gray-900 ms-2">
+                        @if (App::isLocale('id'))
+                            {{ $services->name }}
+                        @elseif(App::isLocale('en'))
+                            {{ $services->name_en }}
+                        @else
+                            {{ $services->name_mandarin }}
+                        @endif
+                    </span>
+                </div>
+                <div class="ms-4 mt-2 mb-4">
+                    <span class="price text-gray-600">{{ __('detail_layanan.start_from') }} Rp.
+                        {{ number_format($services->price, 0, ',', '.') }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" justify-content-between">
+        <div class="kiri flex-col col-12 " style="">
+            <div class="relative flex flex-col  rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                <img class="rounded-xl" src="{{ url("/assets/services/$services->image") }}"
+                    alt="{{ $services->slug }}" style="width: cover; height: 100%;" />
+            </div>
+            <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                <div class="titLin m-4 ">
+
+                    @if (App::isLocale('id'))
+                        {!! nl2br($services->long_desc) !!}
+                    @elseif(App::isLocale('en'))
+                        {!! nl2br($services->long_desc_en) !!}
+                    @else
+                        {!! nl2br($services->long_desc_mandarin) !!}
+                    @endif
+                </div>
+            </div>
+            <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                <div class="ms-4 mt-4 font-semibold text-gray-900">
+                    {{ __('detail_layanan.fasilitas') }}
+                </div>
+                <div class="m-4 ">
+                    <ul class="list-disc ms-4">
+                        @foreach ($facilities as $fas)
+                            <li>{{ $fas->name }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                <div class="ms-4 mt-4 font-semibold text-gray-900">
+                    {{ __('detail_layanan.seputar') }}
+                </div>
+                <div class="m-4 ">
+                    <ul class="list-disc ms-4">
+                        <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.meeting') }}
+                            </span>{{ $services->meeting_point }}
+                        </li>
+                        <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.durasi') }}
+                            </span>{{ $services->durasi }}</li>
+                        <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.peserta') }}
+                            </span>{{ $services->minimal_peserta }}</li>
+                        <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.bulan') }}
+                            </span>{{ $services->bulan_terbaik }}
+                        <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.aktivitas') }}
+                            </span>{{ $services->aktivitas_fisik }}
+                        </li>
+                        <!-- ... -->
+                    </ul>
+                </div>
+            </div>
+            <div class="relative mt-2  flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                <div class="ms-4 mt-4 font-semibold text-gray-900">
+                    {{ __('detail_layanan.rute') }}
+                </div>
+                @foreach ($destination as $dest)
+                    <div class="m-4">
+                        <div class="py-5">
+                            <details class="group">
+                                <summary
+                                    class="flex justify-between items-center font-medium cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">{{ $dest->name }}</span>
+                                    <span class="transition group-open:rotate-180">
+                                        <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                            <path d="M6 9l6 6 6-6"></path>
+                                        </svg>
+                                    </span>
+                                </summary>
+                                <div class="flex mt-4">
+                                    <img class="rounded-xl" src="{{ url("/assets/destination/{$dest->image}") }}"
+                                        alt="{{ $dest->name }}" style="width: 50%; height: 100%;" />
+                                    <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
+                                        {{ $dest->description }}
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+
+
+        <div class="kanan col-12 ms-auto">
+            <div class="flex mt-4 m-auto justify-content-center">
+                <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+                    <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
+                        <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                    </a>
+                </div>
+                <div
+                    class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
+                    <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
+                        <i class="uil uil-envelope"></i> {{ __('detail_layanan.book_email') }}
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex flex-col">
+
+                    <span
+                        class="trip_lainnya font-semibold text-gray-900">{{ __('detail_layanan.trip_lainnya') }}</span>
+                    <span class="">{{ __('detail_layanan.rekomendasi') }}</span>
+                </div>
+                @foreach ($other_services->take(3) as $ots)
+                    <a href="{{ url('/layanan/detail/' . $ots->slug) }}">
+
+                        <div
+                            class="relative flex flex-col mt-2 rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                            <img class="rounded-xl" src="{{ url("/assets/services/$ots->image") }}"
+                                alt="{{ $ots->slug }}" style="width: 100%; height: 10rem;" />
+                            <div class="m-3 flex flex-col">
+                                <span class="title2 font-semibold text-gray-900 ">
+                                    @if (App::isLocale('id'))
+                                        {{ $ots->name }}
+                                    @elseif(App::isLocale('en'))
+                                        {{ $ots->name_en }}
+                                    @else
+                                        {{ $ots->name_mandarin }}
+                                    @endif
+                                </span>
+
+                                @if (App::isLocale('id'))
+                                    {!! nl2br(strlen($ots->short_desc) > 200 ? substr($ots->short_desc, 0, 200) . '...' : $ots->short_desc) !!}
+                                @elseif(App::isLocale('en'))
+                                    {!! nl2br(strlen($ots->short_desc_en) > 200 ? substr($ots->short_desc_en, 0, 200) . '...' : $ots->short_desc_en) !!}
+                                @else
+                                    {!! nl2br(
+                                        strlen($ots->short_desc_mandarin) > 200
+                                            ? substr($ots->short_desc_mandarin, 0, 200) . '...'
+                                            : $ots->short_desc_mandarin,
+                                    ) !!}
+                                @endif
+
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <div class="flex mt-4 justify-content-center">
         <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
             <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
                 <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}

@@ -134,37 +134,26 @@ $locale = App::currentLocale();
                                 <div>Home</div>
                             </a></li>
                         <li class="menu-item">
-
-                            <a class="menu-link" href="#">
-                                <div>
-                                    {{ __('menu.services') }}
-                                    <i
-                                        class="bi-caret-down-fill text-smaller d-none d-lg-inline-block d-lg-inline-block d-xl-inline-block me-0"></i>
-                                </div>
-                            </a>
-                            <ul class="sub-menu-container mega-menu-dropdown p-lg-0">
-                                <li class="menu-item">
-                                    <a class="menu-link" href="{{ url('open-trip') }}">
-                                        <div>{{ __('menu.open_trip') }}</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class="menu-link" href="{{ url('private-trip') }}">
-                                        <div>{{ __('menu.private_trip') }}</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class="menu-link" href="{{ url('land-trip') }}">
-                                        <div>{{ __('menu.land_trip') }}</div>
-                                    </a>
-                                </li>
-                            </ul>
+                            @foreach ($categories as $category)
+                                <a class="menu-link"
+                                    href="{{ route('layanan.kategori', ['slug' => $category->slug]) }}">
+                                    <div>
+                                        @if (App::isLocale('id'))
+                                            {{ $category->name }}
+                                        @elseif(App::isLocale('en'))
+                                            {{ $category->name_en }}
+                                        @else
+                                            {{ $category->name_mandarin }}
+                                        @endif
+                                    </div>
+                                </a>
+                            @endforeach
                         </li>
                         <li class="menu-item"><a class="menu-link" href="{{ url('about') }}">
-                                <div>{{ __('menu.about') }}</div>
+                                <div>{{ __('menu.tentang') }}</div>
                             </a></li>
                         <li class="menu-item"><a class="menu-link" href="{{ url('galeri') }}">
-                                <div>Galeri</div>
+                                <div>{{ __('menu.galeri') }}</div>
                             </a></li>
                         <li class="menu-item">
                             {{-- @if (Auth()->check())

@@ -17,36 +17,36 @@ class OptionSeeder extends Seeder
         //
         $options = ([
             ([
-                "option_code"   => "tourism_card_price",
-                "option_value"  => "25000",
+                "option_code" => "tourism_card_price",
+                "option_value" => "25000",
             ]),
             ([
                 "option_code" => "cs_phone",
-                "option_value" => "+6281392786802",
+                "option_value" => "+6285292252220",
             ]),
             ([
                 "option_code" => "email",
-                "option_value" => "visitcirebon@gmail.com",
+                "option_value" => "info@eastpearl.id",
             ]),
             ([
                 "option_code" => "slogan",
-                "option_value" => "Never-Ending Experience",
+                "option_value" => "Preferred Partner For Travels",
             ]),
             ([
                 "option_code" => "fb_link",
-                "option_value" => "https://facebook.com/",
+                "option_value" => "https://www.facebook.com/profile.php?id=61558959234440",
             ]),
             ([
                 "option_code" => "ig_link",
-                "option_value" => "https://instagram.com/",
+                "option_value" => "https://www.instagram.com/eastpearl.id/",
             ]),
             ([
                 "option_code" => "tiktok_link",
-                "option_value" => "https://tiktok.com/",
+                "option_value" => "https://www.tiktok.com/@east.pearl",
             ]),
             ([
                 "option_code" => "youtube_link",
-                "option_value" => "https://www.youtube.com",
+                "option_value" => "https://www.youtube.com/channel/UCCkb7FZj67-WU3JBBok3v6w",
             ])
         ]);
 
