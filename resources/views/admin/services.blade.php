@@ -41,6 +41,10 @@
                                             <button type="button" class="btn btn-sm btn-success" title="Ubah">
                                                 <i class="fas fa-edit"></i></button>
                                         </a>
+                                        <a href="{{ url("/app-admin/data/galeri/layanan/$layanan->slug") }}">
+                                            <button type="button" class="btn btn-sm btn-warning" title="galeri"><i
+                                                    class="fas fa-image"></i></button>
+                                        </a>
                                         <a href="{{ url("/app-admin/data/layanan/hapus/$layanan->id") }}"
                                             onclick='return confirm("Apakah anda yakin hapus {{ $layanan->name }}?")'>
                                             <button type="button" class="btn btn-sm btn-danger" title="hapus">

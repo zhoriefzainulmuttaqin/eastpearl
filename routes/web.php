@@ -35,6 +35,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\GaleriLayananController;
 use App\Http\Controllers\LayananController;
 use Illuminate\Support\Facades\Route;
 
@@ -136,6 +137,14 @@ Route::prefix("app-admin")->group(function () {
         Route::get("data/layanan/ubah/{slug}", [LayananController::class, "ubah_layanan"]);
         Route::post("data/layanan/proses-ubah", [LayananController::class, "proses_ubah_layanan"]);
         Route::get("data/layanan/hapus/{id}", [LayananController::class, "proses_hapus_layanan"]);
+
+        //  galeri layanan
+        Route::get("data/galeri/layanan/{slug}", [GaleriLayananController::class, "admin_galeri_layanan"]);
+        Route::get("data/tambah/galeri/layanan/{slug}", [GaleriLayananController::class, "tambah_galeri_layanan"]);
+        Route::post("data/galeri/layanan/proses-tambah", [GaleriLayananController::class, "proses_tambah_galeri_layanan"]);
+        Route::get("data/galeri/layanan/ubah/{slug}/{id}", [GaleriLayananController::class, "ubah_galeri_layanan"]);
+        Route::post("data/galeri/layanan/proses-ubah", [GaleriLayananController::class, "proses_ubah_galeri_layanan"]);
+        Route::get("data/galeri/layanan/hapus/{slug}/{id}", [GaleriLayananController::class, "proses_hapus_galeri_layanan"]);
 
         //  data per layanan
         Route::get('data/layanan/{slug}', [LayananController::class, 'layananKategori'])->name('data.layanan.kategori');

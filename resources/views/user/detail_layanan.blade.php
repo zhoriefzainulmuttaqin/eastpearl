@@ -1,7 +1,7 @@
 @extends('user.template')
 
 @section('title')
-    {{ __('event.title') }}
+    Services - Detail
 @endsection
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -83,10 +83,60 @@
 
     <div class="flex justify-content-between">
         <div class="kiri flex-col col-9 " style="padding-right: 20px;">
-            <div class="relative flex flex-col  rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+            {{-- <div class="relative flex flex-col  rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <img class="rounded-xl" src="{{ url("/assets/services/$services->image") }}"
                     alt="{{ $services->slug }}" style="width: cover; height: 100%;" />
+            </div> --}}
+            <div id="default-carousel" class="relative" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="overflow-hidden relative shadow-lg h-70 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+                    @foreach ($ServicesGallery->take(5) as $index => $galeri)
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <span
+                                class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">{{ $index + 1 }}</span>
+                            <img src="{{ url("/assets/galeri_layanan/$galeri->image") }}"
+                                class="block absolute top-1/2 left-1/2 w-full h- -translate-x-1/2 -translate-y-1/2"
+                                alt="{{ $galeri->image_name }}">
+                        </div>
+                    @endforeach
+                </div>
+                <!-- Slider indicators -->
+                <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                    @foreach ($ServicesGallery->take(5) as $index => $galeri)
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false"
+                            aria-label="Slide {{ $index + 1 }}"
+                            data-carousel-slide-to="{{ $index }}"></button>
+                    @endforeach
+                </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        <span class="hidden">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                        <span class="hidden">Next</span>
+                    </span>
+                </button>
             </div>
+
             <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div class="titLin m-4 ">
 
@@ -279,7 +329,9 @@
                     </span>
                 </div>
                 <div class="ms-4 mt-2 mb-4">
-                    <span class="price text-gray-600">{{ __('detail_layanan.start_from') }} Rp.
+                    <span class="price text-gray-600"
+                        style="font-size: 20px !important;">{{ __('detail_layanan.start_from') }}
+                        Rp.
                         {{ number_format($services->price, 0, ',', '.') }}
                     </span>
                 </div>
@@ -289,9 +341,59 @@
 
     <div class=" justify-content-between">
         <div class="kiri flex-col col-12 " style="">
-            <div class="relative flex flex-col  rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+            {{-- <div class="relative flex flex-col  rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <img class="rounded-xl" src="{{ url("/assets/services/$services->image") }}"
                     alt="{{ $services->slug }}" style="width: cover; height: 100%;" />
+            </div> --}}
+            <div id="default-carousel" class="relative" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="overflow-hidden relative h-52 shadow-lg rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+                    @foreach ($ServicesGallery->take(5) as $index => $galeri)
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <span
+                                class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">{{ $index + 1 }}</span>
+                            <img src="{{ url("/assets/galeri_layanan/$galeri->image") }}"
+                                class="block absolute top-1/2 left-1/2 w-full h- -translate-x-1/2 -translate-y-1/2"
+                                alt="{{ $galeri->image_name }}">
+                        </div>
+                    @endforeach
+                </div>
+                <!-- Slider indicators -->
+                <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                    @foreach ($ServicesGallery->take(5) as $index => $galeri)
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false"
+                            aria-label="Slide {{ $index + 1 }}"
+                            data-carousel-slide-to="{{ $index }}"></button>
+                    @endforeach
+                </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        <span class="hidden">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                        <span class="hidden">Next</span>
+                    </span>
+                </button>
             </div>
             <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div class="titLin m-4 ">
@@ -456,6 +558,7 @@
 <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js'></script>
 
 <script>
     function goBack() {

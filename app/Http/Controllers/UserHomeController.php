@@ -14,7 +14,9 @@ use App\Models\Shop;
 use App\Models\Tour;
 use App\Models\Accomodation;
 use App\Models\Category;
+use App\Models\Destination;
 use App\Models\Layanan;
+use App\Models\ServicesGallery;
 use Illuminate\Support\Facades\Cookie;
 
 class UserHomeController extends Controller
@@ -35,7 +37,11 @@ class UserHomeController extends Controller
         $category = Category::first();
         $categories = Category::all();
         $about = About::first();
+        $trip = Destination::get();
+        $topServices = Layanan::first();
+        $facilities = $topServices->facilities;
+        $destination = $topServices->destinations;
 
-        return view("user.home", compact('category', 'about', 'categories'));
+        return view("user.home", compact('category', 'about', 'categories', 'trip', 'topServices', 'facilities', 'destination'));
     }
 }

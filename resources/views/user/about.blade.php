@@ -1,7 +1,7 @@
 @extends('user.template')
 
 @section('title')
-    {{ __('event.title') }}
+    About Us
 @endsection
 
 

@@ -29,7 +29,7 @@
         @media (max-width: 760px) {
             #home-event-container {
                 background-size: cover;
-                height: 23em;
+                height: 38em;
                 /* padding-top: 100px !important; */
                 /* padding-bottom: 10px; */
                 /* margin-top: 0rem; */
@@ -164,16 +164,81 @@
 
     {{-- end css event --}}
     <div id="home-event-container" class="d-none d-md-block">
-        <div class=" container mt-md-0 text-white" style="margin-top: -4rem !important;">
+        <div class=" container mt-md-0 text-white" style="margin-top: -4rem !important; margin-bottom: 5rem;">
             <p class=" text-center title_event">
                 {{ __('home.slogan_atas') }}
             </p>
             <p class=" text-center subt_event" style="margin-top: 1rem;">
                 {{ __('home.text_slogan_atas') }}
             </p>
+
+            <div class="d-flex flex-row mt-4">
+                <div class="col-6">
+
+                    <iframe class="rounded-xl mt-4 shadow-lg"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1794735.3830136342!2d117.33893461917772!3d-9.542222171245745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db4667f78c5c9c3%3A0x2543ed6a00d784da!2sBadjo%2C%20Labuan%20Bajo%2C%20Kec.%20Komodo%2C%20Kabupaten%20Manggarai%20Barat%2C%20Nusa%20Tenggara%20Tim.!5e0!3m2!1sid!2sid!4v1715242527886!5m2!1sid!2sid"
+                        width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="col-6 ml-3 mt-5">
+
+                    <div id="default-carousel" class="relative" data-carousel="static">
+                        <!-- Carousel wrapper -->
+                        <div class="overflow-hidden relative h-80 shadow-lg rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+                            @foreach ($trip as $index => $dest)
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <span
+                                        class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">{{ $index + 1 }}</span>
+                                    <img src="{{ url("/assets/destination/{$dest->image}") }}"
+                                        class="block absolute top-1/2 left-1/2 w-full h- -translate-x-1/2 -translate-y-1/2"
+                                        alt="{{ $dest->name }}">
+                                </div>
+                            @endforeach
+                        </div>
+                        <!-- Slider indicators -->
+                        <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                            @foreach ($trip as $index => $dest)
+                                <button type="button" class="w-3 h-3 rounded-full" aria-current="false"
+                                    aria-label="Slide {{ $index + 1 }}"
+                                    data-carousel-slide-to="{{ $index }}"></button>
+                            @endforeach
+                        </div>
+                        <!-- Slider controls -->
+                        <button type="button"
+                            class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                            data-carousel-prev>
+                            <span
+                                class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7">
+                                    </path>
+                                </svg>
+                                <span class="hidden">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button"
+                            class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                            data-carousel-next>
+                            <span
+                                class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                                <span class="hidden">Next</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="clearfix"></div>
     </div>
+
     <div id="home-event-container" class="d-block d-md-none">
         <div class=" container mt-md-0 text-white" style="margin-top: -4rem !important;">
             <p class=" text-center title_event">
@@ -183,6 +248,71 @@
                 {{ __('home.text_slogan_atas') }}
 
             </p>
+            <div class="d-flex flex-col mt-4">
+                <div class="col-11 ml-auto mr-auto shadow-lg">
+                    <iframe class="rounded-xl  shadow-lg"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1794735.3830136342!2d117.33893461917772!3d-9.542222171245745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db4667f78c5c9c3%3A0x2543ed6a00d784da!2sBadjo%2C%20Labuan%20Bajo%2C%20Kec.%20Komodo%2C%20Kabupaten%20Manggarai%20Barat%2C%20Nusa%20Tenggara%20Tim.!5e0!3m2!1sid!2sid!4v1715242527886!5m2!1sid!2sid"
+                        width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="col-11 mt-2 ml-auto mr-auto shadow-lg">
+
+                    <div id="default-carousel" class="relative" data-carousel="static">
+                        <!-- Carousel wrapper -->
+                        <div class="overflow-hidden relative h-36 shadow-lg rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+                            @foreach ($trip as $index => $dest)
+                                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                    <span
+                                        class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">{{ $index + 1 }}</span>
+                                    <img src="{{ url("/assets/destination/{$dest->image}") }}"
+                                        class="block absolute top-1/2 left-1/2 w-full h- -translate-x-1/2 -translate-y-1/2"
+                                        alt="{{ $dest->name }}">
+                                </div>
+                            @endforeach
+
+
+                        </div>
+                        <!-- Slider indicators -->
+                        <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                            @foreach ($trip as $index => $dest)
+                                <button type="button" class="w-2 h-2 rounded-full" aria-current="false"
+                                    aria-label="Slide {{ $index + 1 }}"
+                                    data-carousel-slide-to="{{ $index }}"></button>
+                            @endforeach
+                        </div>
+                        <!-- Slider controls -->
+                        <button type="button"
+                            class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                            data-carousel-prev>
+                            <span
+                                class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7">
+                                    </path>
+                                </svg>
+                                <span class="hidden">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button"
+                            class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                            data-carousel-next>
+                            <span
+                                class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                                <span class="hidden">Next</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="clearfix"></div>
     </div>
@@ -268,6 +398,132 @@
         <div class="wave wave3"></div>
         <div class="wave wave4"></div>
     </div>
+
+    <style>
+        .background-text {
+            background-image: url('assets/destination/padar.webp');
+            /* Ganti dengan path gambar Anda */
+            background-size: cover;
+            /* Untuk memastikan gambar menutupi seluruh area teks */
+            -webkit-background-clip: text;
+            /* Untuk menerapkan gambar sebagai latar belakang teks */
+            color: transparent;
+            background-position: center;
+            line-height: 50px;
+            /* text-shadow: 0px 20px, 20px 0px, 20px 20px; */
+
+            /* Membuat teks menjadi transparan */
+        }
+    </style>
+
+    <div class="container top_wisata mt-4 d-none d-md-block">
+        <div class="">
+            <div class="row ">
+                <div class="text-center">
+                    <p class="background-text  font-sans " style="font-size: 58px; font-weight: 1000;">
+                        {!! nl2br(__('home.rekomendasi')) !!}
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-row mt-3">
+            <div class="rounded-xl col-5 ">
+                <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                    <img src="{{ url('assets/services/' . $topServices->image) }}"
+                        style="width: 250rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
+                </div>
+
+            </div>
+            <div class="p-7 col-7">
+
+                <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                    @if (App::isLocale('id'))
+                        <div class="d-flex flex-col">
+                            <div class="d-flex flex-col">
+                                <span style="font-size: 26px; font-weight: 900;">
+                                    {{ $topServices->name }}:
+                                </span>
+                                <span>IDR {{ number_format($topServices->price, 0, ',', '.') }} Nett/pax
+                                </span>
+                            </div>
+                            <div>
+                                <span style="font-size: 26px; font-weight: 900;">
+                                    Termasuk:
+                                </span>
+                                <span class="d-flex flex-row">
+                                    @foreach ($facilities as $fas)
+                                        <li>{{ $fas->name }}</li>
+                                    @endforeach
+                                </span>
+                            </div>
+                            <div class="d-flex flex-col">
+                                <span style="font-size: 26px; font-weight: 900;">
+                                    Tidak Termasuk:
+                                </span>
+                                <span class="d-flex flex-row">
+                                    @foreach ($facilities as $fas)
+                                        <li>{{ $fas->name }}</li>
+                                    @endforeach
+                                </span>
+                            </div>
+                            <div class="d-flex flex-col">
+                                <span style="font-size: 26px; font-weight: 900;">
+                                    Rute:
+                                </span>
+                                <span class="d-flex flex-row">
+                                    @foreach ($destination as $dest)
+                                        <li>{{ $dest->name }}</li>
+                                    @endforeach
+                                </span>
+                            </div>
+                        </div>
+                    @elseif(App::isLocale('en'))
+                        {{ $about->long_description_en }}
+                    @else
+                        {{ $about->long_description_mandarin }}
+                    @endif
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-5 mt-4 d-block d-md-none">
+        <div class="">
+            <div class="row " style="margin-bottom: -50px;">
+                <div class="text-center">
+                    <p class="" style="font-size: 16px; font-weight: 400;">
+                        <b> {{ __('home.rekomendasi') }}
+
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-col mt-4 mb-4">
+            <div class="rounded-xl  mt-5">
+                <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                    <img src="{{ url('assets/tentang/' . $about->image) }}" style="width: 80% !important; height: 15rem;"
+                        alt="img-blur-shadow" layout="fill" />
+                </div>
+
+            </div>
+            <div class="p-1 mt-2">
+
+                <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
+                    style="font-size: 12px;">
+                    @if (App::isLocale('id'))
+                        {{ $about->long_description }}
+                    @elseif(App::isLocale('en'))
+                        {{ $about->long_description_en }}
+                    @else
+                        {{ $about->long_description_mandarin }}
+                    @endif
+                </p>
+            </div>
+        </div>
+    </div>
+
+
 
     {{-- css wisata --}}
     <style>
@@ -397,8 +653,9 @@
 
         }
     </style>
+
     {{-- end css wisata --}}
-    <div class="container top_wisata ">
+    <div class="container top_wisata mt-6">
         <div class="d-none d-md-block">
             <div class="row mb-5">
                 <div class="text-center">
@@ -556,8 +813,15 @@
 
 @section('script')
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
     <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
+
+    <!-- from cdn -->
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js'></script>
 
     <!-- Initialize Swiper -->
     <script></script>

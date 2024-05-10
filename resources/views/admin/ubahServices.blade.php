@@ -226,7 +226,7 @@
                         <a href="<?= url('app-admin/data/layanan') ?>">
                             <button type="button" class="btn btn-danger float-left">Kembali</button>
                         </a>
-                        <button type="submit" class="btn btn-primary float-right">Tambah</button>
+                        <button type="submit" class="btn btn-primary float-right">Ubah</button>
                     </div>
                 </form>
             </div>

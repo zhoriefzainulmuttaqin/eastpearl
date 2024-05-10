@@ -9,6 +9,7 @@ use App\Models\Fasilitas;
 use App\Models\Layanan;
 use App\Models\LayananDestinasi;
 use App\Models\LayananFasilitas;
+use App\Models\ServicesGallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cookie;
@@ -99,7 +100,7 @@ class LayananController extends Controller
         $allDest = Destination::get();
         $destination = $services->destinations;
         $facility = $services->facilities;
-        return view('admin.ubahservices', compact('services', 'categories', 'destination', 'facility','allFas','allDest'));
+        return view('admin.ubahservices', compact('services', 'categories', 'destination', 'facility', 'allFas', 'allDest'));
     }
 
     public function proses_ubah_layanan(Request $request)
@@ -209,8 +210,8 @@ class LayananController extends Controller
             $locale = "id";
             App::setLocale("id");
         }
-
         $services = Layanan::where('slug', $slug)->first();
+        $ServicesGallery = ServicesGallery::where('services_id', $services->id)->get();
         $other_services = Layanan::where('slug', '!=', $slug)->get();
         $destination = $services->destinations;
 
@@ -219,6 +220,6 @@ class LayananController extends Controller
 
         $allDest = Destination::get();
         $allFasc = Destination::get();
-        return view('user.detail_layanan', compact('services', 'other_services', 'destination', 'facilities', 'allDest', 'allFasc'));
+        return view('user.detail_layanan', compact('services', 'other_services', 'destination', 'facilities', 'allDest', 'allFasc', 'ServicesGallery'));
     }
 }

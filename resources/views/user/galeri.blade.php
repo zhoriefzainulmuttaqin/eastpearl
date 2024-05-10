@@ -1,7 +1,7 @@
 @extends('user.template')
 
 @section('title')
-    {{ __('event.title') }}
+    Gallery
 @endsection
 <script src="https://cdn.tailwindcss.com"></script>
 

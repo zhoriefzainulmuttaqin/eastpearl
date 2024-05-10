@@ -18,7 +18,7 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="image_name"> image_name </label>
+                            <label for="image_name"> Nama gambar </label>
                             <input type="text" class="form-control" name="image_name" id="image_name"
                                 placeholder="Beri nama gambar" value="{{ old('image_name') ?? $galeri->image_name }}"
                                 required></input>

@@ -28,7 +28,7 @@
 
     <!-- Document Title
  ============================================= -->
-    <link href="{{ url('assets/eastpearl-color.png') }}" rel="icon" type="image/png">
+    <link href="{{ url('assets/eastpearl_logo3.png') }}" rel="icon" type="image/png">
     <title>@yield('title') | {{ config('app.name') }} - {{ config('app.slogan') }}</title>
 
     @yield('style')
@@ -95,7 +95,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide dark">
                                     <div class="container-fluid py-5 text-center">
-                                        <img src="{{ url('assets/eastpearl_logo3.png') }}" id="logo-on-header">
+                                        {{-- <img src="{{ url('assets/eastpearl_logo3.png') }}" id="logo-on-header"> --}}
 
                                         <div class="language">
                                             <a href="{{ url('atur-bahasa/id') }}"
@@ -132,7 +132,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide dark">
                                     <div class="container-fluid py-5 text-center">
-                                        <img src="{{ url('assets/eastpearl_logo3.png') }}" id="logo-on-header">
+                                        {{-- <img src="{{ url('assets/eastpearl_logo3.png') }}" id="logo-on-header"> --}}
 
                                         <div class="language">
                                             <a href="{{ url('atur-bahasa/id') }}"
