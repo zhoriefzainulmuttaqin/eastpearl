@@ -37,11 +37,17 @@ class UserHomeController extends Controller
         $category = Category::first();
         $categories = Category::all();
         $about = About::first();
-        $trip = Destination::get();
-        $topServices = Layanan::first();
-        $facilities = $topServices->facilities;
-        $destination = $topServices->destinations;
+        $trip = Destination::orderByRaw("CASE WHEN name = 'Pulau Komodo' THEN 0 ELSE 1 END")
+            ->orderBy('name')
+            ->get();
+        $topServices = Layanan::where('name', 'One Day Trip')
+            ->orWhere('name', 'one day trip')
+            ->orWhere('name', 'Panoramic Paradise Road to Golo Mori')
+            ->orWhere('name', 'panoramic paradise road to golo mori')
+            ->get();
+        // $facilities = $topServices->facilities;
+        // $destination = $topServices->destinations;
 
-        return view("user.home", compact('category', 'about', 'categories', 'trip', 'topServices', 'facilities', 'destination'));
+        return view("user.home", compact('category', 'about', 'categories', 'trip', 'topServices'));
     }
 }
