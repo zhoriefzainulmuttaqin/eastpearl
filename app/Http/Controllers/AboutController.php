@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\File;
 
 class AboutController extends Controller
 {
@@ -91,35 +92,44 @@ class AboutController extends Controller
 
     public function proses_ubah_tentang(Request $request)
     {
-        $checkEvent = About::where('company_name', $request->input('company_name'))->where('id', '!=', $request->input('tentang_id'))->first();
-        if ($checkEvent) {
-            $rules = [
-                'company_name' => 'max:255',
+        $tentang = About::findOrFail($request->id);
 
-            ];
-        } else {
-            $rules = [
-                'company_name' => 'max:255',
+        // Jika ada file gambar baru yang diunggah
+        if ($request->hasFile('image')) {
+            // Hapus file gambar lama
+            if (File::exists(public_path("assets/tentang/{$tentang->image}"))) {
+                File::delete(public_path("assets/tentang/{$tentang->image}"));
+            }
 
-            ];
+            // Upload file gambar baru
+            $image = $request->file('image');
+            $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path("assets/tentang/"), $nameImage);
+
+            $tentang->image = $nameImage;
         }
 
-        $validatedData = $request->validate(
-            $rules,
-            [
-                'company_name.max' => 'Nama maksimal 255 karakter',
+        $tentang->company_name = $request->company_name;
+        $tentang->description = $request->description;
+        $tentang->description_en = $request->description_en;
+        $tentang->description_mandarin = $request->description_mandarin;
+        $tentang->long_description = $request->long_description;
+        $tentang->long_description_en = $request->long_description_en;
+        $tentang->long_description_mandarin = $request->long_description_mandarin;
+        $tentang->slogan = $request->slogan;
+        $tentang->location = $request->location;
+        $tentang->link_maps = $request->link_maps;
 
-            ]
-        );
 
-        About::where('id', $request->input('tentang_id'))->update($validatedData);
-        $tentang = About::where('id', $request->input('tentang_id'))->first();
+        // Simpan perubahan
+        $tentang->save();
+
+        // Synchronize fasilitas dan destinasi baru
 
         session()->flash('msg_status', 'success');
         session()->flash('msg', "<h5>Berhasil</h5><p>Data Berhasil Diubah</p>");
-        return redirect()->to("/app-admin/data/ubah/tentang/$tentang->company_name");
+        return redirect()->to('/app-admin/data/tentang');
     }
-
 
     public function proses_hapus_tentang(Request $request)
     {

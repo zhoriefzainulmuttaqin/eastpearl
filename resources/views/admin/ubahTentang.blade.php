@@ -67,30 +67,65 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="long_description">Deskripsi Panjang</label>
-                            <textarea id="long_description" name="long_description" placeholder="Masukkan Deskripsi Panjang" rows="10"
-                                required>{{ old('long_description') ?? $tentang->long_description }}</textarea>
+                            <label for="long_content">Deskripsi panjang</label>
+                            <textarea id="long_content" name="long_description" placeholder="Masukkan Deskripsi Panjang" rows="10" required>{{ old('long_description') ?? $tentang->long_description }}</textarea>
                             <div class="my-3"></div>
                         </div>
                         <div class="form-group">
-                            <label for="long_description_en">Deskripsi Panjang (Inggris)</label>
-                            <textarea id="long_description_en" name="long_description_en" placeholder="Masukkan Deskripsi Panjang" rows="10"
+                            <label for="long_content_en">Deskripsi Panjang (Inggris)</label>
+                            <textarea id="long_content_en" name="long_description_en" placeholder="Masukkan Deskripsi Panjang" rows="10"
                                 required>{{ old('long_description_en') ?? $tentang->long_description_en }}</textarea>
                             <div class="my-3"></div>
                         </div>
                         <div class="form-group">
-                            <label for="long_description_mandarin">Deskripsi Panjang (Mandarin)</label>
-                            <textarea id="long_description_mandarin" name="long_description_mandarin" placeholder="Masukkan Deskripsi Panjang"
+                            <label for="long_content_mandarin">Deskripsi Panjang (Mandarin)</label>
+                            <textarea id="long_content_mandarin" name="long_description_mandarin" placeholder="Masukkan Deskripsi Panjang"
                                 rows="10" required>{{ old('long_description_mandarin') ?? $tentang->long_description_mandarin }}</textarea>
                             <div class="my-3"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="slogan"> Slogan </label>
+                                <input type="text" class="form-control @error('slogan') is-invalid @enderror"
+                                    name="slogan" id="slogan" placeholder="Masukan Slogan "
+                                    value="{{ old('slogan') ?? $tentang->slogan }}" required autocomplete="off"></input>
+                                @error('slogan')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location"> Lokasi </label>
+                            <input type="text" class="form-control @error('location') is-invalid @enderror"
+                                name="location" id="location" placeholder="Masukan location "
+                                value="{{ old('location') ?? $tentang->location }}" required autocomplete="off"></input>
+                            @error('location')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="link_maps"> Embeded Maps </label>
+                            <input type="text" class="form-control @error('link_maps') is-invalid @enderror"
+                                name="link_maps" id="link_maps" placeholder="Masukan Embed Maps "
+                                value="{{ old('link_maps') ?? $tentang->link_maps }}" required
+                                autocomplete="off"></input>
+                            @error('link_maps')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="image" class="form-label">Gambar</label>
                             <br>
                             <img id="addImage" src='{{ url("/assets/tentang/$tentang->image") }}'
                                 class="img-preview mb-3 img-fluid" style="max-height: 300px; width: auto;">
-                            <input class="form-control @error('image') is-invalid @enderror" type="file" name="image"
-                                id="image" onchange="previewImage()">
+                            <input class="form-control @error('image') is-invalid @enderror" type="file"
+                                name="image" id="image" onchange="previewImage()">
                             @error('image')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -126,15 +161,15 @@
             }
         }
 
-        CKEDITOR.replace('long_description', {
+        CKEDITOR.replace('long_content', {
             enterMode: CKEDITOR.ENTER_BR,
             removePlugins: 'image'
         });
-        CKEDITOR.replace('long_description_en', {
+        CKEDITOR.replace('long_content_en', {
             enterMode: CKEDITOR.ENTER_BR,
             removePlugins: 'image'
         });
-        CKEDITOR.replace('long_description_mandarin', {
+        CKEDITOR.replace('long_content_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
             removePlugins: 'image'
         });
