@@ -31,7 +31,7 @@
         @media (max-width: 760px) {
             #home-event-container {
                 background-size: cover;
-                height: 42em;
+                height: 44em;
                 /* padding-top: 100px !important; */
                 /* padding-bottom: 10px; */
                 /* margin-top: 0rem; */
@@ -247,7 +247,7 @@
             <p class=" text-center title_event">
                 {{ __('home.slogan_atas') }}
             </p>
-            <p class=" text-center subt_event ">
+            <p class="container text-center subt_event ">
                 {!! nl2br(__('home.text_slogan_atas')) !!}
             </p>
             <div class="d-flex flex-col mt-4">
@@ -774,7 +774,7 @@
     </div>
     <div class="container-fluid p-5 mt-4 d-block d-md-none">
         <div class="">
-            <div class="row " style="margin-bottom: -40px; margin-top: -30px;">
+            <div class="row " style="margin-bottom: -30px; margin-top: -30px;">
                 <div class="text-center">
                     <p class="background-text " style="font-size: 16px; font-weight: 900;">
                         <b>
@@ -882,21 +882,21 @@
                         </div>
                     </div>
                 @elseif(App::isLocale('en'))
-                    <div class="d-flex flex-col font-sans">
+                    <div class="d-flex flex-col justify-content-lg-center mt-4">
                         @foreach ($topServices as $serv)
-                            <div class="d-flex flex-col" style="font-size: 26px;">
+                            <div class="d-flex flex-col" style="font-size: 18px;">
                                 <span style=" font-weight: 900;">
                                     @if ($serv->name == 'One Day Trip')
                                         {{ $serv->name_en }} (SpeedBoat)
                                     @elseif ($serv->name == 'one day trip')
-                                        {{ $serv->name }} (SpeedBoat)
+                                        {{ $serv->name_en }} (SpeedBoat)
                                     @else
                                         <div class="mt-2">
                                             {{ $serv->name_en }} (Bus)
                                         </div>
                                     @endif
                                 </span>
-                                <span style="color: #F35E46;">IDR
+                                <span style="color: #F35E46; font-size: 20px">IDR
                                     {{ number_format($serv->price, 0, ',', '.') }}
                                     Nett/pax
                                 </span>
@@ -904,11 +904,11 @@
                         @endforeach
 
                         <div class="mt-2">
-                            <span style="font-size: 26px; font-weight: 900;">
+                            <span style="font-size: 22px; font-weight: 900;">
                                 Include
                             </span>
-                            <span class="d-flex">
-                                <div class="d-flex align-items-center">
+                            <span class="d-flex include ">
+                                <div class="d-flex align-items-center item-include">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
                                     <span>Trekking</span>
@@ -918,7 +918,7 @@
                                         alt="">
                                     <span>Snorkeling</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/4746/4746811.png"
                                         alt="">
                                     <span>Relaxing</span>
@@ -928,7 +928,7 @@
                                         alt="">
                                     <span>Hiking</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
                                         alt="">
@@ -937,29 +937,29 @@
                             </span>
                         </div>
                         <div class="d-flex flex-col mt-2">
-                            <span style="font-size: 26px; font-weight: 900;">
+                            <span style="font-size: 22px; font-weight: 900;">
                                 Exclude
                             </span>
-                            <span class="d-flex">
-                                <div class="d-flex align-items-center ">
+                            <span class="d-flex flex-row exclude">
+                                <div class="d-flex align-items-center">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
                                         alt="">
                                     <span>Entrance Fee</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
                                         alt="">
                                     <span>Ranger Fee</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
                                         alt="">
                                     <span>Breakfast</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
                                         alt="">
@@ -969,22 +969,21 @@
                         </div>
                     </div>
                 @else
-                    <div class="d-flex flex-col font-sans">
+                    <div class="d-flex flex-col justify-content-lg-center mt-4">
                         @foreach ($topServices as $serv)
-                            <div class="d-flex flex-col" style="font-size: 26px;">
+                            <div class="d-flex flex-col" style="font-size: 18px;">
                                 <span style=" font-weight: 900;">
                                     @if ($serv->name == 'One Day Trip')
-                                        {{ $serv->name_mandarin }} (快艇):
+                                        {{ $serv->name_mandarin }} (快艇)
                                     @elseif ($serv->name == 'one day trip')
-                                        {{ $serv->name_mandarin }} (快艇):
+                                        {{ $serv->name_mandarin }} (快艇)
                                     @else
                                         <div class="mt-2">
-                                            {{ $serv->name_mandarin }} (公共汽车):
+                                            {{ $serv->name_mandarin }} (公共汽车)
                                         </div>
                                     @endif
-
                                 </span>
-                                <span style="color: #F35E46;">IDR
+                                <span style="color: #F35E46; font-size: 20px">IDR
                                     {{ number_format($serv->price, 0, ',', '.') }}
                                     Nett/pax
                                 </span>
@@ -992,31 +991,31 @@
                         @endforeach
 
                         <div class="mt-2">
-                            <span style="font-size: 26px; font-weight: 900;">
-                                包括:
+                            <span style="font-size: 22px; font-weight: 900;">
+                                包括
                             </span>
-                            <span class="d-flex">
-                                <div class="d-flex align-items-center">
+                            <span class="d-flex flex-row include ">
+                                <div class="d-flex align-items-center item-include">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
                                     <span>徒步旅行</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/2120/2120781.png"
                                         alt="">
                                     <span>浮潜</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center  ">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/4746/4746811.png"
                                         alt="">
                                     <span>放松</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/7802/7802662.png"
                                         alt="">
                                     <span>远足</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
                                         alt="">
@@ -1025,29 +1024,29 @@
                             </span>
                         </div>
                         <div class="d-flex flex-col mt-2">
-                            <span style="font-size: 26px; font-weight: 900;">
-                                排除:
+                            <span style="font-size: 22px; font-weight: 900;">
+                                排除
                             </span>
-                            <span class="d-flex ">
+                            <span class="d-flex flex-row exclude">
                                 <div class="d-flex align-items-center">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
                                         alt="">
                                     <span>入场费</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
                                         alt="">
                                     <span>护林员费</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
                                         alt="">
                                     <span>早餐</span>
                                 </div>
-                                <div class="d-flex align-items-center ml-4">
+                                <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
                                         alt="">
@@ -1088,7 +1087,7 @@
                 @endforeach
             </div>
         @else
-            <div class="d-flex flex-col mt-3" style="justify-content: center;">
+            <div class="d-flex flex-col mt-3 mb-5" style="justify-content: center;">
                 @foreach ($topServices as $serv)
                     <a href="/layanan/detail/{{ $serv->slug }}">
                         <button type="button"
@@ -1252,8 +1251,8 @@
         <div class="d-block d-md-none ">
             <div class="container text-center">
                 <p class="" style="font-size: 16px; font-weight: 400;">
-                    <b> {{ __('home.paket') }}
-
+                    <b>
+                        {{ __('home.paket') }}
                     </b>
                 </p>
             </div>
@@ -1288,7 +1287,7 @@
                 </a>
             @endforeach
         </div>
-        <div class="d-md-flex justify-content-center flex-wrap d-block d-md-none">
+        <div class="d-md-flex justify-content-center flex-wrap d-block d-md-none mt-3">
             <!-- component -->
             @foreach ($categories as $kategori)
                 <a href="{{ url('layanan/' . $kategori->slug) }}">
@@ -1323,7 +1322,7 @@
     {{-- tentang --}}
     <div class="container top_wisata mt-5 d-none d-md-block">
         <div class="">
-            <div class="row " style="margin-bottom: -50px;">
+            <div class="row " style="margin-bottom: -40px;">
                 <div class="text-center">
                     <p class="" style="font-size: 28px; font-weight: 400;">
                         <b> {{ __('home.tentang_kami') }}
@@ -1355,7 +1354,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid p-5 mt-4 d-block d-md-none">
+    <div class="container-fluid p-5 mt-3 d-block d-md-none">
         <div class="">
             <div class="row " style="margin-bottom: -50px;">
                 <div class="text-center">
@@ -1371,7 +1370,7 @@
             <div class="rounded-xl  mt-5">
                 <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img src="{{ url('assets/tentang/' . $about->image) }}"
-                        style="width: cover !important; height: 15rem;" alt="img-blur-shadow" layout="fill" />
+                        style="width: 250em !important; height: auto;" alt="img-blur-shadow" layout="fill" />
                 </div>
 
             </div>
