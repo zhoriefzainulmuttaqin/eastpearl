@@ -188,7 +188,7 @@
 
                     <div id="default-carousel" class="relative" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="overflow-hidden relative h-80 shadow-lg rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+                        <div class="overflow-hidden relative h-80 shadow-lg rounded-lg sm:h-80 xl:h-80 2xl:h-80">
                             @foreach ($trip as $index => $dest)
                                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                     <span
@@ -772,338 +772,331 @@
             </div>
         @endif
     </div>
-    <div class="container-fluid p-5 mt-4 d-block d-md-none">
-        <div class="">
-            <div class="row " style="margin-bottom: -30px; margin-top: -30px;">
-                <div class="text-center">
-                    <p class="background-text " style="font-size: 16px; font-weight: 900;">
-                        <b>
-                            {!! nl2br(__('home.rekomendasi')) !!}
-                        </b>
-                    </p>
+    <div class="container mt-6 d-block d-md-none">
+        <div class="col-11 ml-auto mr-auto">
+
+            <div class="">
+                <div class="row " style="margin-bottom: -30px; margin-top: -30px;">
+                    <div class="text-center">
+                        <p class="background-text " style="font-size: 16px; font-weight: 900;">
+                            <b>
+                                {!! nl2br(__('home.rekomendasi')) !!}
+                            </b>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="d-flex flex-col mt-5">
-            <div class="rounded-xl col-12 ">
-                <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                    <img src="{{ url('assets/bus.png') }}" style="width: auto !important; height: auto;"
-                        alt="img-blur-shadow" layout="fill" />
+            <div class="d-flex flex-col mt-5">
+                <div class="rounded-xl col-12 ">
+                    <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                        <img src="{{ url('assets/bus.png') }}" style="width: auto !important; height: auto;"
+                            alt="img-blur-shadow" layout="fill" />
+                    </div>
+
                 </div>
+                <div class="col-12">
 
+                    @if (App::isLocale('id'))
+                        <div class="d-flex flex-col justify-content-lg-center mt-4">
+                            @foreach ($topServices as $serv)
+                                <div class="d-flex flex-col" style="font-size: 18px;">
+                                    <span style=" font-weight: 900;">
+                                        @if ($serv->name == 'One Day Trip')
+                                            {{ $serv->name }} (SpeedBoat)
+                                        @elseif ($serv->name == 'one day trip')
+                                            {{ $serv->name }} (SpeedBoat)
+                                        @else
+                                            <div class="mt-2">
+                                                {{ $serv->name }} (Bus)
+                                            </div>
+                                        @endif
+                                    </span>
+                                    <span style="color: #F35E46; font-size: 20px">IDR
+                                        {{ number_format($serv->price, 0, ',', '.') }}
+                                        Nett/pax
+                                    </span>
+                                </div>
+                            @endforeach
+
+                            <div class="mt-2">
+                                <span style="font-size: 22px; font-weight: 900;">Termasuk</span>
+                                <div class="d-flex include mt-2">
+                                    <div class="d-flex align-items-center item-include mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
+                                        <span>Trekking</span>
+                                    </div>
+                                    <div class="d-flex align-items-center item-include mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/2120/2120781.png" alt="">
+                                        <span>Snorkeling</span>
+                                    </div>
+                                    <div class="d-flex align-items-center item-include mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/4746/4746811.png" alt="">
+                                        <span>Relaxing</span>
+                                    </div>
+                                    <div class="d-flex align-items-center item-include mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="">
+                                        <span>Hiking</span>
+                                    </div>
+                                    <div class="d-flex align-items-center item-include">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
+                                            alt="">
+                                        <span>Swimming</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-col mt-2">
+                                <span style="font-size: 22px; font-weight: 900;">
+                                    Tidak Termasuk
+                                </span>
+                                <span class="d-flex exclude">
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
+                                            alt="">
+                                        <span>Tiket Masuk</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4 ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
+                                            alt="">
+                                        <span>Biaya Penjaga Hutan</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4 ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
+                                            alt="">
+                                        <span>Sarapan</span>
+                                    </div>
+                                    <div class="d-flex align-items-center  ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
+                                            alt="">
+                                        <span>Pembelian pribadi</span>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    @elseif(App::isLocale('en'))
+                        <div class="d-flex flex-col justify-content-lg-center mt-4">
+                            @foreach ($topServices as $serv)
+                                <div class="d-flex flex-col" style="font-size: 18px;">
+                                    <span style=" font-weight: 900;">
+                                        @if ($serv->name == 'One Day Trip')
+                                            {{ $serv->name_en }} (SpeedBoat)
+                                        @elseif ($serv->name == 'one day trip')
+                                            {{ $serv->name_en }} (SpeedBoat)
+                                        @else
+                                            <div class="mt-2">
+                                                {{ $serv->name_en }} (Bus)
+                                            </div>
+                                        @endif
+                                    </span>
+                                    <span style="color: #F35E46; font-size: 20px">IDR
+                                        {{ number_format($serv->price, 0, ',', '.') }}
+                                        Nett/pax
+                                    </span>
+                                </div>
+                            @endforeach
+
+                            <div class="mt-2">
+                                <span style="font-size: 22px; font-weight: 900;">
+                                    Include
+                                </span>
+                                <span class="d-flex include ">
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
+                                        <span>Trekking</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/2120/2120781.png" alt="">
+                                        <span>Snorkeling</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/4746/4746811.png" alt="">
+                                        <span>Relaxing</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="">
+                                        <span>Hiking</span>
+                                    </div>
+                                    <div class="d-flex align-items-center ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
+                                            alt="">
+                                        <span>Swimming</span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="d-flex flex-col  mt-2">
+                                <span style="font-size: 22px; font-weight: 900;">
+                                    Exclude
+                                </span>
+                                <span class="d-flex exclude">
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
+                                            alt="">
+                                        <span>Entrance Fee</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4 ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
+                                            alt="">
+                                        <span>Ranger Fee</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4 ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
+                                            alt="">
+                                        <span>Breakfast</span>
+                                    </div>
+                                    <div class="d-flex align-items-center ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
+                                            alt="">
+                                        <span>Personal purchase</span>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    @else
+                        <div class="d-flex flex-col justify-content-lg-center mt-4">
+                            @foreach ($topServices as $serv)
+                                <div class="d-flex flex-col" style="font-size: 18px;">
+                                    <span style=" font-weight: 900;">
+                                        @if ($serv->name == 'One Day Trip')
+                                            {{ $serv->name_mandarin }} (快艇)
+                                        @elseif ($serv->name == 'one day trip')
+                                            {{ $serv->name_mandarin }} (快艇)
+                                        @else
+                                            <div class="mt-2">
+                                                {{ $serv->name_mandarin }} (公共汽车)
+                                            </div>
+                                        @endif
+                                    </span>
+                                    <span style="color: #F35E46; font-size: 20px">IDR
+                                        {{ number_format($serv->price, 0, ',', '.') }}
+                                        Nett/pax
+                                    </span>
+                                </div>
+                            @endforeach
+
+                            <div class="mt-2">
+                                <span style="font-size: 22px; font-weight: 900;">
+                                    包括
+                                </span>
+                                <span class="d-flex  include ">
+                                    <div class="d-flex align-items-center mr-4 item-include">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
+                                        <span>徒步旅行</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4 ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/2120/2120781.png" alt="">
+                                        <span>浮潜</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4  ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/4746/4746811.png" alt="">
+                                        <span>放松</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4 ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="">
+                                        <span>远足</span>
+                                    </div>
+                                    <div class="d-flex align-items-center ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
+                                            alt="">
+                                        <span>游泳</span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="d-flex flex-col mt-2">
+                                <span style="font-size: 22px; font-weight: 900;">
+                                    排除
+                                </span>
+                                <span class="d-flex  exclude">
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
+                                            alt="">
+                                        <span>入场费</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4 ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
+                                            alt="">
+                                        <span>护林员费</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4 ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
+                                            alt="">
+                                        <span>早餐</span>
+                                    </div>
+                                    <div class="d-flex align-items-center ">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
+                                            alt="">
+                                        <span>个人购买</span>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    @endif
+                </div>
             </div>
-            <div class="col-12">
+            @if (App::isLocale('id'))
+                <div class="d-flex flex-col mt-3" style="justify-content: center;">
+                    @foreach ($topServices as $serv)
+                        <a href="/layanan/detail/{{ $serv->slug }}">
+                            <button type="button"
+                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 w-100 text-center  mb-2">
+                                <span class="m-auto">{{ $serv->name }}</span>
 
-                @if (App::isLocale('id'))
-                    <div class="d-flex flex-col justify-content-lg-center mt-4">
-                        @foreach ($topServices as $serv)
-                            <div class="d-flex flex-col" style="font-size: 18px;">
-                                <span style=" font-weight: 900;">
-                                    @if ($serv->name == 'One Day Trip')
-                                        {{ $serv->name }} (SpeedBoat)
-                                    @elseif ($serv->name == 'one day trip')
-                                        {{ $serv->name }} (SpeedBoat)
-                                    @else
-                                        <div class="mt-2">
-                                            {{ $serv->name }} (Bus)
-                                        </div>
-                                    @endif
-                                </span>
-                                <span style="color: #F35E46; font-size: 20px">IDR
-                                    {{ number_format($serv->price, 0, ',', '.') }}
-                                    Nett/pax
-                                </span>
-                            </div>
-                        @endforeach
+                            </button>
+                        </a>
+                    @endforeach
+                </div>
+            @elseif(App::isLocale('en'))
+                <div class="d-flex flex-col mt-3" style="justify-content: center;">
+                    @foreach ($topServices as $serv)
+                        <a href="/layanan/detail/{{ $serv->slug }}">
+                            <button type="button"
+                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 w-100 text-center  mb-2">
+                                <span class="m-auto">{{ $serv->name_en }}</span>
 
-                        <div class="mt-2">
-                            <span style="font-size: 22px; font-weight: 900;">
-                                Termasuk
-                            </span>
-                            <span class="d-flex include ">
-                                <div class="d-flex align-items-center item-include">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
-                                    <span>Trekking</span>
-                                </div>
-                                <div class="d-flex align-items-center ml-4">
-                                    <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/2120/2120781.png"
-                                        alt="">
-                                    <span>Snorkeling</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/4746/4746811.png"
-                                        alt="">
-                                    <span>Relaxing</span>
-                                </div>
-                                <div class="d-flex align-items-center ml-4">
-                                    <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/7802/7802662.png"
-                                        alt="">
-                                    <span>Hiking</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
-                                        alt="">
-                                    <span>Swimming</span>
-                                </div>
-                            </span>
-                        </div>
-                        <div class="d-flex flex-col mt-2">
-                            <span style="font-size: 22px; font-weight: 900;">
-                                Tidak Termasuk
-                            </span>
-                            <span class="d-flex flex-row exclude">
-                                <div class="d-flex align-items-center">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
-                                    <span>Tiket Masuk</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
-                                    <span>Biaya Penjaga Hutan</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
-                                        alt="">
-                                    <span>Sarapan</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
-                                        alt="">
-                                    <span>Pembelian pribadi</span>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                @elseif(App::isLocale('en'))
-                    <div class="d-flex flex-col justify-content-lg-center mt-4">
-                        @foreach ($topServices as $serv)
-                            <div class="d-flex flex-col" style="font-size: 18px;">
-                                <span style=" font-weight: 900;">
-                                    @if ($serv->name == 'One Day Trip')
-                                        {{ $serv->name_en }} (SpeedBoat)
-                                    @elseif ($serv->name == 'one day trip')
-                                        {{ $serv->name_en }} (SpeedBoat)
-                                    @else
-                                        <div class="mt-2">
-                                            {{ $serv->name_en }} (Bus)
-                                        </div>
-                                    @endif
-                                </span>
-                                <span style="color: #F35E46; font-size: 20px">IDR
-                                    {{ number_format($serv->price, 0, ',', '.') }}
-                                    Nett/pax
-                                </span>
-                            </div>
-                        @endforeach
-
-                        <div class="mt-2">
-                            <span style="font-size: 22px; font-weight: 900;">
-                                Include
-                            </span>
-                            <span class="d-flex include ">
-                                <div class="d-flex align-items-center item-include">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
-                                    <span>Trekking</span>
-                                </div>
-                                <div class="d-flex align-items-center ml-4">
-                                    <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/2120/2120781.png"
-                                        alt="">
-                                    <span>Snorkeling</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/4746/4746811.png"
-                                        alt="">
-                                    <span>Relaxing</span>
-                                </div>
-                                <div class="d-flex align-items-center ml-4">
-                                    <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/7802/7802662.png"
-                                        alt="">
-                                    <span>Hiking</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
-                                        alt="">
-                                    <span>Swimming</span>
-                                </div>
-                            </span>
-                        </div>
-                        <div class="d-flex flex-col mt-2">
-                            <span style="font-size: 22px; font-weight: 900;">
-                                Exclude
-                            </span>
-                            <span class="d-flex flex-row exclude">
-                                <div class="d-flex align-items-center">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
-                                    <span>Entrance Fee</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
-                                    <span>Ranger Fee</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
-                                        alt="">
-                                    <span>Breakfast</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
-                                        alt="">
-                                    <span>Personal purchase</span>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                @else
-                    <div class="d-flex flex-col justify-content-lg-center mt-4">
-                        @foreach ($topServices as $serv)
-                            <div class="d-flex flex-col" style="font-size: 18px;">
-                                <span style=" font-weight: 900;">
-                                    @if ($serv->name == 'One Day Trip')
-                                        {{ $serv->name_mandarin }} (快艇)
-                                    @elseif ($serv->name == 'one day trip')
-                                        {{ $serv->name_mandarin }} (快艇)
-                                    @else
-                                        <div class="mt-2">
-                                            {{ $serv->name_mandarin }} (公共汽车)
-                                        </div>
-                                    @endif
-                                </span>
-                                <span style="color: #F35E46; font-size: 20px">IDR
-                                    {{ number_format($serv->price, 0, ',', '.') }}
-                                    Nett/pax
-                                </span>
-                            </div>
-                        @endforeach
-
-                        <div class="mt-2">
-                            <span style="font-size: 22px; font-weight: 900;">
-                                包括
-                            </span>
-                            <span class="d-flex flex-row include ">
-                                <div class="d-flex align-items-center item-include">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
-                                    <span>徒步旅行</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/2120/2120781.png"
-                                        alt="">
-                                    <span>浮潜</span>
-                                </div>
-                                <div class="d-flex align-items-center  ">
-                                    <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/4746/4746811.png"
-                                        alt="">
-                                    <span>放松</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/7802/7802662.png"
-                                        alt="">
-                                    <span>远足</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
-                                        alt="">
-                                    <span>游泳</span>
-                                </div>
-                            </span>
-                        </div>
-                        <div class="d-flex flex-col mt-2">
-                            <span style="font-size: 22px; font-weight: 900;">
-                                排除
-                            </span>
-                            <span class="d-flex flex-row exclude">
-                                <div class="d-flex align-items-center">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
-                                    <span>入场费</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
-                                    <span>护林员费</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
-                                        alt="">
-                                    <span>早餐</span>
-                                </div>
-                                <div class="d-flex align-items-center ">
-                                    <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
-                                        alt="">
-                                    <span>个人购买</span>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                @endif
-            </div>
+                            </button>
+                        </a>
+                    @endforeach
+                </div>
+            @else
+                <div class="d-flex flex-col mt-3 mb-5" style="justify-content: center;">
+                    @foreach ($topServices as $serv)
+                        <a href="/layanan/detail/{{ $serv->slug }}">
+                            <button type="button"
+                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 w-100 text-center  mb-2">
+                                <span class="m-auto">{{ $serv->name_mandarin }}</span>
+                            </button>
+                        </a>
+                    @endforeach
+                </div>
+            @endif
         </div>
-        @if (App::isLocale('id'))
-            <div class="d-flex flex-col mt-3" style="justify-content: center;">
-                @foreach ($topServices as $serv)
-                    <a href="/layanan/detail/{{ $serv->slug }}">
-                        <button type="button"
-                            class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 w-100 text-center  mb-2">
-                            <i class="uil-arrow-right m-auto"></i>
-                            <span>{{ $serv->name }}</span>
-                            <i class="uil-arrow-left m-auto"></i>
-
-                        </button>
-                    </a>
-                @endforeach
-            </div>
-        @elseif(App::isLocale('en'))
-            <div class="d-flex flex-col mt-3" style="justify-content: center;">
-                @foreach ($topServices as $serv)
-                    <a href="/layanan/detail/{{ $serv->slug }}">
-                        <button type="button"
-                            class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 w-100 text-center  mb-2">
-                            <i class="uil-arrow-right m-auto"></i>
-                            <span>{{ $serv->name_en }}</span>
-                            <i class="uil-arrow-left m-auto"></i>
-
-                        </button>
-                    </a>
-                @endforeach
-            </div>
-        @else
-            <div class="d-flex flex-col mt-3 mb-5" style="justify-content: center;">
-                @foreach ($topServices as $serv)
-                    <a href="/layanan/detail/{{ $serv->slug }}">
-                        <button type="button"
-                            class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 w-100 text-center  mb-2">
-                            <i class="uil-arrow-right m-auto"></i>
-                            <span>{{ $serv->name_mandarin }}</span>
-                            <i class="uil-arrow-left m-auto"></i>
-
-                        </button>
-                    </a>
-                @endforeach
-            </div>
-        @endif
     </div>
-
-
 
     {{-- css wisata --}}
     <style>
@@ -1248,51 +1241,56 @@
                 </div>
             </div>
         </div>
-        <div class="d-block d-md-none ">
-            <div class="container text-center">
-                <p class="" style="font-size: 16px; font-weight: 400;">
-                    <b>
-                        {{ __('home.paket') }}
-                    </b>
-                </p>
+        <div class="d-block d-md-none mt-5">
+            <div class="row mb-3">
+                <div class="text-center">
+                    <p class="" style="font-size: 16px; font-weight: 400;">
+                        <b>
+                            {{ __('home.paket') }}
+
+                        </b>
+                    </p>
+                </div>
             </div>
         </div>
-        <!-- Swiper -->
-        <div class="d-md-flex justify-content-center flex-wrap d-none d-md-block " style="margin-top: -10px;">
-            <!-- component -->
-            @foreach ($categories as $kategori)
-                <a href="{{ url('layanan/' . $kategori->slug) }}">
+
+    </div>
+    <!-- Swiper -->
+    <div class="d-md-flex justify-content-center flex-wrap d-none d-md-block " style="margin-top: -10px;">
+        <!-- component -->
+        @foreach ($categories as $kategori)
+            <a href="{{ url('layanan/' . $kategori->slug) }}">
+                <div class="group relative m-0 h-72 w-72 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
                     <div
-                        class="group relative m-0 h-72 w-72 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-2">
-                        <div
-                            class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
-                            <img src="{{ url("/assets/kategori/$kategori->image") }}"
-                                class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
-                                alt="" />
-                        </div>
-                        <div
-                            class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-                            <h1 class="font-serif text-2xl font-bold text-white shadow-xl">
-                                @if (App::isLocale('id'))
-                                    {{ $kategori->name }}
-                                @elseif(App::isLocale('en'))
-                                    {{ $kategori->name_en }}
-                                @else
-                                    {{ $kategori->name_mandarin }}
-                                @endif
-                            </h1>
-                            </h1>
-                        </div>
+                        class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                        <img src="{{ url("/assets/kategori/$kategori->image") }}"
+                            class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                            alt="" />
                     </div>
-                </a>
-            @endforeach
-        </div>
-        <div class="d-md-flex justify-content-center flex-wrap d-block d-md-none mt-3">
+                    <div
+                        class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                        <h1 class="font-serif text-2xl font-bold text-white shadow-xl">
+                            @if (App::isLocale('id'))
+                                {{ $kategori->name }}
+                            @elseif(App::isLocale('en'))
+                                {{ $kategori->name_en }}
+                            @else
+                                {{ $kategori->name_mandarin }}
+                            @endif
+                        </h1>
+                        </h1>
+                    </div>
+                </div>
+            </a>
+        @endforeach
+    </div>
+    <div class="container d-md-flex justify-content-center flex-wrap d-block d-md-none mt-3">
+        <div class="col-11 ml-auto mr-auto">
             <!-- component -->
             @foreach ($categories as $kategori)
                 <a href="{{ url('layanan/' . $kategori->slug) }}">
                     <div
-                        class="group relative m-0 h-72 w-72 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-auto mt-2">
+                        class="group relative m-0 h-72 w-auto rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg m-auto mt-2">
                         <div
                             class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
                             <img src="{{ url("/assets/kategori/$kategori->image") }}"
@@ -1354,38 +1352,40 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid p-5 mt-3 d-block d-md-none">
-        <div class="">
-            <div class="row " style="margin-bottom: -50px;">
-                <div class="text-center">
-                    <p class="" style="font-size: 16px; font-weight: 400;">
-                        <b> {{ __('home.tentang_kami') }}
+    <div class="container  mt-5 d-block d-md-none">
+        <div class="col-11 ml-auto mr-auto">
+            <div class="">
+                <div class="row " style="margin-bottom: -50px;">
+                    <div class="text-center">
+                        <p class="" style="font-size: 16px; font-weight: 400;">
+                            <b> {{ __('home.tentang_kami') }}
 
-                        </b>
+                            </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-col mt-4 mb-4">
+                <div class="rounded-xl  mt-5">
+                    <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+                        <img src="{{ url('assets/tentang/' . $about->image) }}"
+                            style="width: 250em !important; height: auto;" alt="img-blur-shadow" layout="fill" />
+                    </div>
+
+                </div>
+                <div class="mt-2 p-2">
+
+                    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
+                        style="font-size: 12px;">
+                        @if (App::isLocale('id'))
+                            {{ $about->long_description }}
+                        @elseif(App::isLocale('en'))
+                            {{ $about->long_description_en }}
+                        @else
+                            {{ $about->long_description_mandarin }}
+                        @endif
                     </p>
                 </div>
-            </div>
-        </div>
-        <div class="d-flex flex-col mt-4 mb-4">
-            <div class="rounded-xl  mt-5">
-                <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-                    <img src="{{ url('assets/tentang/' . $about->image) }}"
-                        style="width: 250em !important; height: auto;" alt="img-blur-shadow" layout="fill" />
-                </div>
-
-            </div>
-            <div class="p-1 mt-2">
-
-                <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
-                    style="font-size: 12px;">
-                    @if (App::isLocale('id'))
-                        {{ $about->long_description }}
-                    @elseif(App::isLocale('en'))
-                        {{ $about->long_description_en }}
-                    @else
-                        {{ $about->long_description_mandarin }}
-                    @endif
-                </p>
             </div>
         </div>
     </div>

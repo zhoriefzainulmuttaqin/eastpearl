@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->longText('name_en');
             $table->longText('name_mandarin');
             $table->string('slug');
+            $table->string('long_trip');
             $table->longText('short_desc');
             $table->longText('short_desc_en');
             $table->longText('short_desc_mandarin');
