@@ -60,17 +60,31 @@
                             </button>
                         </div>
                         <div class="p-6">
-                            <div class="flex items-center justify-center">
+                            <div class="flex items-center justify-center mb-2" style="text-align: center;">
                                 <h5
                                     class="mb-2 block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
                                     @if (App::isLocale('id'))
-                                        {{ $layanan->name }}
+                                        <div class="d-flex flex-col">
+
+                                            <span>
+                                                {{ $layanan->name }}
+
+                                            </span>
+                                            <span class="text-red-500">
+                                                {{ $layanan->durasi }}
+                                            </span>
+                                            <span class="text-red-500">
+                                                IDR {{ number_format($layanan->price, 0, ',', '.') }}
+
+                                            </span>
+                                        </div>
                                     @elseif(App::isLocale('en'))
                                         {{ $layanan->name_en }}
                                     @else
                                         {{ $layanan->name_mandarin }}
                                     @endif
                                 </h5>
+
                             </div>
                             <p class="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
                                 @if (App::isLocale('id'))

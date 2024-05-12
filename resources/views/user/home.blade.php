@@ -31,7 +31,7 @@
         @media (max-width: 760px) {
             #home-event-container {
                 background-size: cover;
-                height: 44em;
+                height: 46.5em;
                 /* padding-top: 100px !important; */
                 /* padding-bottom: 10px; */
                 /* margin-top: 0rem; */
@@ -262,7 +262,7 @@
 
                     <div id="default-carousel" class="relative" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="overflow-hidden relative h-36 shadow-lg rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+                        <div class="gambar_destinasi overflow-hidden relative  shadow-lg rounded-lg" style="height: 11em;">
                             @foreach ($trip as $index => $dest)
                                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                     <span

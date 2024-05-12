@@ -42,8 +42,8 @@ class UserHomeController extends Controller
             ->get();
         $topServices = Layanan::where('name', 'One Day Trip')
             ->orWhere('name', 'one day trip')
-            ->orWhere('name', 'Panoramic Paradise Road to Golo Mori')
-            ->orWhere('name', 'panoramic paradise road to golo mori')
+            ->orWhere('name', 'Panoramic Paradise Road to Golomori')
+            ->orWhere('name', 'panoramic paradise road to golomori')
             ->get();
         // $facilities = $topServices->facilities;
         // $destination = $topServices->destinations;

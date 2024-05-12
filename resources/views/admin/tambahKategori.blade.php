@@ -48,34 +48,33 @@
                                 </div>
                             @enderror
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="slug">Slug</label>
-                        <input name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug"
-                            value="{{ old('slug') }}"type="text" required placeholder="Masukkan Slug . . .">
-                        @error('slug')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="image" class="form-label">Gambar </label>
-                        <img id="addImage" class="img-preview mb-3 img-fluid" style="max-height: 300px; width: auto;">
-                        <input class="form-control @error('image') is-invalid @enderror" type="file" name="image"
-                            id="image" onchange="previewImage()" required>
-                        @error('image')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-                    <div class="card-footer">
-                        <a href="{{ url('/app-admin/data/kategori') }}">
-                            <button type="button" class="btn btn-danger float-left">Kembali</button>
-                        </a>
-                        <button type="submit" class="btn btn-primary float-right">Tambah</button>
-                    </div>
+                        <div class="form-group">
+                            <label for="slug">Slug</label>
+                            <input name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug"
+                                value="{{ old('slug') }}"type="text" required placeholder="Masukkan Slug . . .">
+                            @error('slug')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="image" class="form-label">Gambar </label>
+                            <img id="addImage" class="img-preview mb-3 img-fluid" style="max-height: 300px; width: auto;">
+                            <input class="form-control @error('image') is-invalid @enderror" type="file" name="image"
+                                id="image" onchange="previewImage()" required>
+                            @error('image')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ url('/app-admin/data/kategori') }}">
+                                <button type="button" class="btn btn-danger float-left">Kembali</button>
+                            </a>
+                            <button type="submit" class="btn btn-primary float-right">Tambah</button>
+                        </div>
                 </form>
             </div>
         </div>
