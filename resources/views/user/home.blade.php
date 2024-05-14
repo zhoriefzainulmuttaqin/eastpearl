@@ -41,38 +41,9 @@
     </style>
 
     <!-- Demo styles -->
-    <style>
-        .swiper {
-            width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 300px;
-            height: 300px;
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-        }
-
-        @media (max-width: 760px) {
-            .swiper-slide img {
-                /* display: block; */
-                width: 100px !important;
-                height: 10rem !important;
-            }
-        }
-    </style>
 @endsection
 
-@section('cover')
-    <?= url('assets/bg/padar.png') ?>
-@endsection
+
 
 @section('content')
     {{-- css event --}}
@@ -1064,8 +1035,8 @@
                     @foreach ($topServices as $serv)
                         <a href="/layanan/detail/{{ $serv->slug }}">
                             <button type="button"
-                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 w-100 text-center  mb-2">
-                                <span class="m-auto">{{ $serv->name }}</span>
+                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
+                                <span class="ml-auto mr-auto">{{ $serv->name }}</span>
 
                             </button>
                         </a>
@@ -1076,8 +1047,8 @@
                     @foreach ($topServices as $serv)
                         <a href="/layanan/detail/{{ $serv->slug }}">
                             <button type="button"
-                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 w-100 text-center  mb-2">
-                                <span class="m-auto">{{ $serv->name_en }}</span>
+                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
+                                <span class="ml-auto mr-auto">{{ $serv->name_en }}</span>
 
                             </button>
                         </a>
@@ -1088,8 +1059,8 @@
                     @foreach ($topServices as $serv)
                         <a href="/layanan/detail/{{ $serv->slug }}">
                             <button type="button"
-                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 w-100 text-center  mb-2">
-                                <span class="m-auto">{{ $serv->name_mandarin }}</span>
+                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
+                                <span class="ml-auto mr-auto">{{ $serv->name_mandarin }}</span>
                             </button>
                         </a>
                     @endforeach
@@ -1098,136 +1069,7 @@
         </div>
     </div>
 
-    {{-- css wisata --}}
-    <style>
-        #but_wisata {
-            width: 12rem;
-            height: 40px;
-            font-size: 12px;
-            font-weight: 500;
-            margin-bottom: 5rem;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-            background-color: #ba1918;
-        }
 
-        .image-caption {
-            font-size: 22px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            /* Adjust the background color and opacity */
-            padding: 1.5rem;
-            backdrop-filter: blur(5px);
-            /* Adjust the blur amount */
-        }
-
-        .image-caption p {
-            color: white;
-            margin: 0;
-        }
-
-        .mySwiper2 {
-            margin-top: 1rem;
-            height: 20rem;
-            width: 100%;
-            /* Ubah lebar menjadi 100% agar responsif */
-        }
-
-        .mySwiper2 img {
-            height: 20rem;
-            width: 100%;
-            /* Ubah lebar menjadi 100% agar sesuai dengan ukuran container */
-        }
-
-        #top_wisata {
-            margin-top: 0;
-            /* Hapus margin-top negatif */
-        }
-
-        .top_wisata {
-            position: relative;
-            margin-top: 0px;
-        }
-
-        @media (max-width: 760px) {
-            .top_wisata {
-                position: static;
-                margin-top: 0px;
-            }
-        }
-
-        @media only screen and (min-width: 200px) and (max-width: 767px) {
-            .mySwiper2-mobile {
-                /* margin-left:-20%; */
-            }
-
-            #top_wisata {
-                margin-top: 5rem;
-                margin-bottom: -0.5rem;
-                margin-bottom: -0.3rem;
-
-            }
-
-            #but_wisata {
-                width: 8rem;
-                height: 30px;
-                font-size: 10px;
-                font-weight: 500;
-                margin-top: 2rem;
-                margin-left: auto;
-                margin-right: auto;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 5px;
-
-            }
-
-            .image-caption {
-                font-size: 12px;
-                position: absolute;
-                bottom: -2px;
-                left: 0;
-                width: 100%;
-                background: rgba(0, 0, 0, 0.3);
-                /* Adjust the background color and opacity */
-                padding: 5px;
-                backdrop-filter: blur(10px);
-                /* Adjust the blur amount */
-            }
-
-            .image-caption p {
-                color: white;
-                margin: 0;
-            }
-
-            .title_wisata {
-                font-size: 16px;
-                font-weight: 999;
-            }
-
-            .mySwiper2 {
-                margin-top: 1rem;
-                height: 10rem;
-                width: 101%;
-            }
-
-            .mySwiper2 img {
-                height: 10rem;
-                width: cover;
-            }
-
-        }
-    </style>
-
-    {{-- end css wisata --}}
     <div class="container top_wisata ">
         <div class="d-none d-md-block mt-5">
             <div class="row mb-5">
@@ -1316,6 +1158,301 @@
         </div>
     </div>
 
+    {{-- css kuliner --}}
+    <style>
+        .top_kuliner {
+            /* margin-top: 6rem; */
+        }
+
+        #but_kuliner {
+            width: 12rem;
+            height: 40px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 5rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+
+        .kuliner_caption .image-caption {
+
+            font-size: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            /* Adjust the background color and opacity */
+            padding: 0.5rem;
+            backdrop-filter: blur(5px);
+            /* Adjust the blur amount */
+        }
+
+        .image-caption p {
+            color: white;
+            margin: 0;
+
+        }
+
+        .kuliner .owl-carousel .owl-dots .owl-dot {
+            margin-top: -1em;
+            height: 0.3em;
+            width: 0.3em;
+        }
+
+
+        @media (max-width: 768px) {
+            .kuliner_caption .image-caption {
+
+                font-size: 16px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.3);
+                /* Adjust the background color and opacity */
+                padding: 0.5rem;
+                backdrop-filter: blur(5px);
+                /* Adjust the blur amount */
+            }
+
+            #but_kuliner {
+                width: 8rem;
+                height: 30px;
+                font-size: 10px;
+                font-weight: 500;
+                margin-top: -1.5rem;
+                margin-bottom: -4rem;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+            }
+
+            .title_kuliner {
+                font-size: 16px;
+                font-weight: 999;
+            }
+
+            #top_kuliner {
+                margin-top: 3em;
+            }
+
+            .event {
+                width: 16.5rem;
+                /* height: 100%; */
+                margin: auto;
+            }
+
+            .kuliner .owl-carousel .owl-dots .owl-dot {
+                margin-top: -10em !important;
+                height: 0.3em;
+                width: 0.3em;
+            }
+
+            .image-caption p {
+                color: white;
+                margin: 0;
+
+            }
+        }
+    </style>
+    {{-- end css kuliner --}}
+
+
+
+    {{-- web --}}
+    <div class="container d-none d-md-block">
+        <div class="col-11 ml-auto mr-auto">
+
+            <div class="row mb-5 top_kuliner">
+
+            </div>
+            <div class="row mb-2">
+                <div class="text-center">
+                    <p class="" style="font-size: 26px; font-weight: 400;">
+                        <b class="mb-1 ">
+                            <b>{{ __('home.layanan_lainnya') }}</b>
+                        </b>
+                    <div class="text-lg " style="font-size: 18px;">
+                        {{ __('home.text_layanan_lainnya') }}
+                    </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="">
+                <div id="oc-events" class="owl-carousel events-carousel carousel-widget" data-margin="0"
+                    data-pagi="true" data-items="2" data-items-md="2" data-items-lg="3" data-items-xl="3"
+                    data-autoplay="3000" data-loop="true">
+                    <div class="oc-item mt-2">
+                        <article class="entry event " style="padding-left: 0.5em; padding-right: 0.5em;">
+                            <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
+                                style="height: 15rem;">
+                                <div class=" mb-md-0">
+                                    <a href="{{ url('kuliner') }}" class="entry-image">
+                                        <img src='{{ url('assets/bg/padar.jpg') }}' alt="Padar" class="rounded-2"
+                                            style="max-height: 20rem;">
+                                    </a>
+                                </div>
+                                <div class="image-caption text-center"
+                                    style="background: #000000 transparent; color: #ddd; ">
+                                    @if (App::isLocale('id'))
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @elseif (App::isLocale('en'))
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @else
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @endif
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="oc-item mt-2">
+                        <article class="entry event " style="padding-left: 0.5em; padding-right: 0.5em;">
+                            <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
+                                style="height: 15rem;">
+                                <div class=" mb-md-0">
+                                    <a href="{{ url('kuliner') }}" class="entry-image">
+                                        <img src='{{ url('assets/bg/padar.jpg') }}' alt="Padar" class="rounded-2"
+                                            style="max-height: 20rem;">
+                                    </a>
+                                </div>
+                                <div class="image-caption text-center"
+                                    style="background: #000000 transparent; color: #ddd; ">
+                                    @if (App::isLocale('id'))
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @elseif (App::isLocale('en'))
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @else
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @endif
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="oc-item mt-2">
+                        <article class="entry event " style="padding-left: 0.5em; padding-right: 0.5em;">
+                            <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
+                                style="height: 15rem;">
+                                <div class=" mb-md-0">
+                                    <a href="{{ url('kuliner') }}" class="entry-image">
+                                        <img src='{{ url('assets/bg/padar.jpg') }}' alt="Padar" class="rounded-2"
+                                            style="max-height: 20rem;">
+                                    </a>
+                                </div>
+                                <div class="image-caption text-center"
+                                    style="background: #000000 transparent; color: #ddd; ">
+                                    @if (App::isLocale('id'))
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @elseif (App::isLocale('en'))
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @else
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @endif
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="oc-item mt-2">
+                        <article class="entry event " style="padding-left: 0.5em; padding-right: 0.5em;">
+                            <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
+                                style="height: 15rem;">
+                                <div class=" mb-md-0">
+                                    <a href="{{ url('kuliner') }}" class="entry-image">
+                                        <img src='{{ url('assets/bg/padar.jpg') }}' alt="Padar" class="rounded-2"
+                                            style="max-height: 20rem;">
+                                    </a>
+                                </div>
+                                <div class="image-caption text-center"
+                                    style="background: #000000 transparent; color: #ddd; ">
+                                    @if (App::isLocale('id'))
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @elseif (App::isLocale('en'))
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @else
+                                        <b style="font-weight: 800;">Reflexiology</b>
+                                    @endif
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end web --}}
+
+    {{-- mobile --}}
+    <div class="container d-block d-md-none kuliner">
+        <div class="col-11 ml-auto mr-auto">
+
+            <div class="text-center" id="top_kuliner">
+                <b class="h1 title_kuliner">{{ __('home.layanan_lainnya') }}</b>
+                <br>
+                <div style="font-size:10px">
+                    {{ __('home.text_layanan_lainnya') }}
+                </div>
+            </div>
+            <div id="oc-events" class="owl-carousel events-carousel carousel-widget" data-margin="1" data-pagi="true"
+                data-items="1" data-items-md="2" data-items-lg="3" data-items-xl="3" data-autoplay='3000'
+                data-loop='true'>
+                <div class="oc-item">
+                    <article class="entry event mt-3">
+                        <div
+                            class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption">
+                            <div class="">
+                                <a href="{{ url('kuliner') }}" class="">
+                                    <img src="{{ url('assets/bg/tentang.jpg') }}" class="rounded-2">
+                                    <div class="image-caption text-center"
+                                        style="background: #000000 transparent; color: #ddd; ">
+                                        @if (App::isLocale('id'))
+                                            <b style="font-weight: 800;">Coffee & Beer</b>
+                                        @elseif (App::isLocale('en'))
+                                            <b style="font-weight: 800;">Coffee & Beer</b>
+                                        @else
+                                            <b style="font-weight: 800;">Coffee & Beer</b>
+                                        @endif
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="oc-item">
+                    <article class="entry event mt-3">
+                        <div
+                            class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption">
+                            <div class="">
+                                <a href="{{ url('kuliner') }}" class="">
+                                    <img src="{{ url('assets/bg/tentang.jpg') }}" class="rounded-2">
+                                    <div class="image-caption text-center"
+                                        style="background: #000000 transparent; color: #ddd; ">
+                                        @if (App::isLocale('id'))
+                                            <b style="font-weight: 800;">Coffee & Beer</b>
+                                        @elseif (App::isLocale('en'))
+                                            <b style="font-weight: 800;">Coffee & Beer</b>
+                                        @else
+                                            <b style="font-weight: 800;">Coffee & Beer</b>
+                                        @endif
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{-- end mobile --}}
 
     {{-- tentang --}}
     <div class="container top_wisata mt-5 d-none d-md-block">

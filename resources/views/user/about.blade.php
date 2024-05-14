@@ -6,7 +6,7 @@
 
 
 @section('cover')
-    <?= url('assets/bg/tentang.png') ?>
+    <?= url('assets/bg/tentang.jpg') ?>
 @endsection
 
 @section('style')

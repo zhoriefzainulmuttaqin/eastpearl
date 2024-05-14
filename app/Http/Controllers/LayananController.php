@@ -98,10 +98,15 @@ class LayananController extends Controller
         $categories = Category::get();
         $allFas = Fasilitas::get();
         $allDest = Destination::get();
-        $destination = $services->destinations;
-        $facility = $services->facilities;
-        return view('admin.ubahservices', compact('services', 'categories', 'destination', 'facility', 'allFas', 'allDest'));
+
+        // Inisialisasi fasilitas yang dipilih
+        $selectedFacilities = $services->facilities->pluck('id')->toArray();
+        // Inisialisasi destinasi yang dipilih
+        $selectedDestinations = $services->destinations->pluck('id')->toArray();
+
+        return view('admin.ubahservices', compact('services', 'categories', 'selectedDestinations', 'selectedFacilities', 'allFas', 'allDest'));
     }
+
 
     public function proses_ubah_layanan(Request $request)
     {
@@ -150,8 +155,6 @@ class LayananController extends Controller
         session()->flash('msg', "<h5>Berhasil</h5><p>Data Berhasil Diubah</p>");
         return redirect()->to('/app-admin/data/layanan');
     }
-
-
 
     public function proses_hapus_layanan(Request $request)
     {

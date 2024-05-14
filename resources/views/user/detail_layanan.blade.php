@@ -8,7 +8,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
 @section('cover')
-    <?= url('assets/bg/tentang.png') ?>
+    <?= url('assets/bg/tentang.jpg') ?>
 @endsection
 
 @section('content')
@@ -187,12 +187,20 @@
                 <div class="ms-4 mt-4 font-semibold text-gray-900">
                     {{ __('detail_layanan.rute') }}
                 </div>
-                @foreach ($destination as $dest)
+                @foreach ($destination as $index => $dest)
                     <div class="m-4">
-                        <div class="py-5">
-                            <details class="group">
+                        <div class="">
+                            <details class="group" id="destination{{ $index }}">
                                 <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                    <span class="font-semibold text-gray-800">{{ $dest->name }}</span>
+                                    <span class="font-semibold text-gray-800">
+                                        @if (App::isLocale('id'))
+                                            {!! nl2br($dest->name) !!}
+                                        @elseif(App::isLocale('en'))
+                                            {!! nl2br($dest->name_en) !!}
+                                        @else
+                                            {!! nl2br($dest->name_mandarin) !!}
+                                        @endif
+                                    </span>
                                     <span class="transition group-open:rotate-180">
                                         <svg fill="none" height="24" shape-rendering="geometricPrecision"
                                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -204,15 +212,20 @@
                                 <div class="flex mt-4">
                                     <img class="rounded-xl" src="{{ url("/assets/destination/{$dest->image}") }}"
                                         alt="{{ $dest->name }}" style="width: 50%; height: 100%;" />
-                                    <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
-                                        {{ $dest->description }}
+                                    <p class="text-neutral-600 ml-3 mr-3 group-open:animate-fadeIn">
+                                        @if (App::isLocale('id'))
+                                            {!! nl2br($dest->description) !!}
+                                        @elseif(App::isLocale('en'))
+                                            {!! nl2br($dest->description_en) !!}
+                                        @else
+                                            {!! nl2br($dest->description_mandarin) !!}
+                                        @endif
                                     </p>
                                 </div>
                             </details>
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
 
@@ -441,17 +454,26 @@
                     </ul>
                 </div>
             </div>
-            <div class="relative mt-2  flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+            <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
                 <div class="ms-4 mt-4 font-semibold text-gray-900">
                     {{ __('detail_layanan.rute') }}
                 </div>
-                @foreach ($destination as $dest)
+                @foreach ($destination as $index => $dest)
                     <div class="m-4">
-                        <div class="py-5">
-                            <details class="group">
+                        <div class="">
+                            <details class="group" id="destination{{ $index }}"
+                                @if ($index === 0) open @endif>
                                 <summary
                                     class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                    <span class="font-semibold text-gray-800">{{ $dest->name }}</span>
+                                    <span class="font-semibold text-gray-800">
+                                        @if (App::isLocale('id'))
+                                            {!! nl2br($dest->name) !!}
+                                        @elseif(App::isLocale('en'))
+                                            {!! nl2br($dest->name_en) !!}
+                                        @else
+                                            {!! nl2br($dest->name_mandarin) !!}
+                                        @endif
+                                    </span>
                                     <span class="transition group-open:rotate-180">
                                         <svg fill="none" height="24" shape-rendering="geometricPrecision"
                                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -460,18 +482,23 @@
                                         </svg>
                                     </span>
                                 </summary>
-                                <div class="flex mt-4">
+                                <div class="d-flex flex-col mt-2">
                                     <img class="rounded-xl" src="{{ url("/assets/destination/{$dest->image}") }}"
-                                        alt="{{ $dest->name }}" style="width: 50%; height: 100%;" />
-                                    <p class="text-neutral-600 m-3 group-open:animate-fadeIn">
-                                        {{ $dest->description }}
+                                        alt="{{ $dest->name }}" style="width: 100%; height: 100%;" />
+                                    <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                                        @if (App::isLocale('id'))
+                                            {!! nl2br($dest->description) !!}
+                                        @elseif(App::isLocale('en'))
+                                            {!! nl2br($dest->description_en) !!}
+                                        @else
+                                            {!! nl2br($dest->description_mandarin) !!}
+                                        @endif
                                     </p>
                                 </div>
                             </details>
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
 
@@ -564,5 +591,13 @@
     function goBack() {
         window.history.back();
     }
+
+    // Menggunakan JavaScript untuk menentukan apakah harus menambahkan atribut `open` pada elemen `details` pertama
+    document.addEventListener('DOMContentLoaded', function() {
+        var details = document.querySelectorAll('details');
+        if (details.length > 0) {
+            details[0].setAttribute('open', 'true');
+        }
+    });
 </script>
 @endsection

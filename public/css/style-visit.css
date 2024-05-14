@@ -180,10 +180,6 @@
 }
 
 @media (width <= 768px) {
-    #header-wrap {
-        /* background-color: transparent !important; */
-        /* border-bottom: none; */
-    }
     .logo-default {
         width: 75px !important;
         width: 30px !important;

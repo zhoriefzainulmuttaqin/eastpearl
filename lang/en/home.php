@@ -9,5 +9,6 @@ return [
     "tentang_kami" => "About Us",
     "rekomendasi" => "OUR RECOMMENDATION PACKAGES",
     "paket" => "East Pearl Packages in Labuan Bajo",
-
+    "layanan_lainnya" => "Other Services",
+    "text_layanan_lainnya" => "Anda juga dapat menikmati layanan kami berikut",
 ];

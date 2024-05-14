@@ -8,7 +8,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
 @section('cover')
-    <?= url('assets/bg/tentang.png') ?>
+    <?= url('assets/bg/tentang.jpg') ?>
 @endsection
 
 @section('content')
@@ -79,9 +79,35 @@
                                             </span>
                                         </div>
                                     @elseif(App::isLocale('en'))
-                                        {{ $layanan->name_en }}
+                                        <div class="d-flex flex-col">
+
+                                            <span>
+                                                {{ $layanan->name_en }}
+
+                                            </span>
+                                            <span class="text-red-500">
+                                                {{ $layanan->durasi }}
+                                            </span>
+                                            <span class="text-red-500">
+                                                IDR {{ number_format($layanan->price, 0, ',', '.') }}
+
+                                            </span>
+                                        </div>
                                     @else
-                                        {{ $layanan->name_mandarin }}
+                                        <div class="d-flex flex-col">
+
+                                            <span>
+                                                {{ $layanan->name_mandarin }}
+
+                                            </span>
+                                            <span class="text-red-500">
+                                                {{ $layanan->durasi }}
+                                            </span>
+                                            <span class="text-red-500">
+                                                IDR {{ number_format($layanan->price, 0, ',', '.') }}
+
+                                            </span>
+                                        </div>
                                     @endif
                                 </h5>
 
@@ -205,16 +231,55 @@
                             </span>
                         </button>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-center">
+                    <div class="p-4">
+                        <div class="flex items-center justify-center" style="text-align: center">
                             <h5
                                 class="mb-2 block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
                                 @if (App::isLocale('id'))
-                                    {{ $layanan->name }}
+                                    <div class="d-flex flex-col">
+
+                                        <span>
+                                            {{ $layanan->name }}
+
+                                        </span>
+                                        <span class="text-red-500">
+                                            {{ $layanan->durasi }}
+                                        </span>
+                                        <span class="text-red-500">
+                                            IDR {{ number_format($layanan->price, 0, ',', '.') }}
+
+                                        </span>
+                                    </div>
                                 @elseif(App::isLocale('en'))
-                                    {{ $layanan->name_en }}
+                                    <div class="d-flex flex-col">
+
+                                        <span>
+                                            {{ $layanan->name_en }}
+
+                                        </span>
+                                        <span class="text-red-500">
+                                            {{ $layanan->durasi }}
+                                        </span>
+                                        <span class="text-red-500">
+                                            IDR {{ number_format($layanan->price, 0, ',', '.') }}
+
+                                        </span>
+                                    </div>
                                 @else
-                                    {{ $layanan->name_mandarin }}
+                                    <div class="d-flex flex-col">
+
+                                        <span>
+                                            {{ $layanan->name_mandarin }}
+
+                                        </span>
+                                        <span class="text-red-500">
+                                            {{ $layanan->durasi }}
+                                        </span>
+                                        <span class="text-red-500">
+                                            IDR {{ number_format($layanan->price, 0, ',', '.') }}
+
+                                        </span>
+                                    </div>
                                 @endif
                             </h5>
                         </div>

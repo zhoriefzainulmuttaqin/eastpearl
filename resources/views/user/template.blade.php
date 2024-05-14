@@ -85,6 +85,33 @@
                 /*    }*/
                 /*}*/
             </style>
+            <style>
+                .swiper {
+                    width: 100%;
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                }
+
+                .swiper-slide {
+                    background-position: center;
+                    background-size: cover;
+                    width: 300px;
+                    height: 300px;
+                }
+
+                .swiper-slide img {
+                    display: block;
+                    width: 100%;
+                }
+
+                @media (max-width: 760px) {
+                    .swiper-slide img {
+                        /* display: block; */
+                        width: 100px !important;
+                        height: 10rem !important;
+                    }
+                }
+            </style>
 
             <div class="d-none d-lg-block">
 
@@ -113,7 +140,7 @@
                                         </div>
                                     </div>
                                     <div class="swiper-slide-bg bg_image2"
-                                        style="background-image: url('assets/bg/padar.png');">
+                                        style="background-image: url('assets/bg/padar.jpg');">
                                     </div>
                                 </div>
 
@@ -149,7 +176,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide-bg" style="background-image: url('assets/bg/padar.png');">
+                                    <div class="swiper-slide-bg" style="background-image: url('assets/bg/padar.jpg');">
                                     </div>
                                 </div>
 
@@ -324,55 +351,9 @@
                     delay: 3000,
                     disableOnInteraction: false,
                 },
-                loop: true,
+                loop: false,
             });
         });
-
-        // iklan
-        window.onload = function() {
-            // Set a timeout of 15 seconds before triggering the ad
-            setTimeout(function() {
-                $(".click-me a").trigger("click");
-                startCountdown();
-            }, 15000);
-        };
-
-        $(".click-me a").click(function() {
-            $("#ad_position_box").addClass("active");
-            setTimeout(function() {
-                $("#ad_position_box").slideUp();
-            }, 15000);
-            startCountdown();
-        });
-
-        $(".skip").click(function() {
-            $("#ad_position_box").removeClass("active");
-        });
-
-        function startCountdown() {
-            // Waktu dalam detik untuk 48 jam
-            var countdownTime = 48 * 60 * 60;
-
-            var countdownElement = document.getElementById("countdown");
-
-            function updateCountdown() {
-                var hours = Math.floor(countdownTime / 3600);
-                var minutes = Math.floor((countdownTime % 3600) / 60);
-                var seconds = countdownTime % 60;
-
-                // Format waktu ke format "HH:MM:SS"
-                // var formattedTime = hours + " jam " + minutes + " menit " + seconds + " detik";
-
-                countdownElement.textContent = "Available " + formattedTime + " Soon";
-
-                if (countdownTime > 0) {
-                    countdownTime--;
-                    setTimeout(updateCountdown, 1000); // Perbarui setiap 1 detik
-                }
-            }
-
-            updateCountdown();
-        }
     </script>
     @yield('script')
 

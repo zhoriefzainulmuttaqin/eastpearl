@@ -87,15 +87,10 @@
                             <select class="js-example-basic-multiple form-control" multiple="multiple" id="facilities_id[]"
                                 required name="facilities_id[]">
                                 <option value="">--- Pilih Fasilitas ---</option>
-                                @foreach ($facility as $fas)
-                                    <?php
-                                    if ($fas->id) {
-                                        $selected = 'selected';
-                                    } else {
-                                        $selected = '';
-                                    }
-                                    ?>
-                                    <option value="{{ $fas->id }}" {{ $selected }}>{{ $fas->name }}
+                                @foreach ($allFas as $fas)
+                                    <option value="{{ $fas->id }}"
+                                        {{ in_array($fas->id, $selectedFacilities) ? 'selected' : '' }}>
+                                        {{ $fas->name }}
                                     </option>
                                 @endforeach
                             </select>
@@ -105,15 +100,10 @@
                             <select class="js-example-basic-multiple form-control" multiple="multiple" id="destination_id[]"
                                 required name="destination_id[]">
                                 <option value="">--- Pilih Destinasi ---</option>
-                                @foreach ($destination as $des)
-                                    <?php
-                                    if ($des->id) {
-                                        $selected = 'selected';
-                                    } else {
-                                        $selected = '';
-                                    }
-                                    ?>
-                                    <option value="{{ $des->id }}" {{ $selected }}>{{ $des->name }}
+                                @foreach ($allDest as $des)
+                                    <option value="{{ $des->id }}"
+                                        {{ in_array($des->id, $selectedDestinations) ? 'selected' : '' }}>
+                                        {{ $des->name }}
                                     </option>
                                 @endforeach
                             </select>
