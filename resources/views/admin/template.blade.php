@@ -107,10 +107,13 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Destinasi Layanan</p>
                                     </a>
-
                                     <a href="{{ url('app-admin/data/layanan') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Layanan</p>
+                                    </a>
+                                    <a href="{{ url('app-admin/data/other_services') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Layanan Lainnya</p>
                                     </a>
                                 </li>
                             </ul>

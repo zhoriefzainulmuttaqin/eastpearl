@@ -167,7 +167,7 @@
                                                 BAHASA
                                             </a>
                                             <a href="{{ url('atur-bahasa/en') }}"
-                                                class="btn text-center bg-btn-language but_lang2">
+                                                class="btn text-center bg-btn-language but_lang2 ml-auto mr-auto">
                                                 ENGLISH
                                             </a>
                                             <a href="{{ url('atur-bahasa/mandarin') }}"

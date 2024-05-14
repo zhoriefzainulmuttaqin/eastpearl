@@ -9,5 +9,6 @@ return [
     "paket" => "旅游套餐",
     "tentang_kami" => "关于我们",
     "rekomendasi" => "我们推荐的  套餐",
-
+    "layanan_lainnya" => "其他服务",
+    "text_layanan_lainnya" => "享受我们的其他特别优惠",
 ];

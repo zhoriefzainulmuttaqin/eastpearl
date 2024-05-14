@@ -451,10 +451,23 @@
                                         </div>
                                     @endif
                                 </span>
-                                <span style="color: #F35E46;">IDR
-                                    {{ number_format($serv->price, 0, ',', '.') }}
-                                    Nett/pax
-                                </span>
+                                @if ($serv->name == 'Panoramic Paradise Road to Golomori')
+                                    <div class="d-flex">
+                                        <span class="line-through mr-2" style="color: #F35E46; font-weight: 900;">IDR
+                                            {{ number_format(250000, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                        <span style="color: #F35E46;">IDR
+                                            {{ number_format($serv->price, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                    </div>
+                                @else
+                                    <span style="color: #F35E46;">IDR
+                                        {{ number_format($serv->price, 0, ',', '.') }}
+                                        Nett/pax
+                                    </span>
+                                @endif
                             </div>
                         @endforeach
 
@@ -488,6 +501,20 @@
                                         src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
                                         alt="">
                                     <span>Swimming</span>
+                                </div>
+                            </span>
+                            <span class="d-flex ">
+                                <div class="d-flex align-items-center ">
+                                    <img class="h-4 w-4 mr-2"
+                                        src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                        alt="">
+                                    <span>Voucher Reflexology</span>
+                                </div>
+                                <div class="d-flex align-items-center ml-4">
+                                    <img class="h-4 w-4 mr-2"
+                                        src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                        alt="">
+                                    <span>Voucher Coffee & Beer</span>
                                 </div>
                             </span>
                         </div>
@@ -538,10 +565,23 @@
                                         </div>
                                     @endif
                                 </span>
-                                <span style="color: #F35E46;">IDR
-                                    {{ number_format($serv->price, 0, ',', '.') }}
-                                    Nett/pax
-                                </span>
+                                @if ($serv->name_en == 'Panoramic Paradise Road to Golomori')
+                                    <div class="d-flex">
+                                        <span class="line-through mr-2" style="color: #F35E46; font-weight: 900;">IDR
+                                            {{ number_format(250000, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                        <span style="color: #F35E46;">IDR
+                                            {{ number_format($serv->price, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                    </div>
+                                @else
+                                    <span style="color: #F35E46;">IDR
+                                        {{ number_format($serv->price, 0, ',', '.') }}
+                                        Nett/pax
+                                    </span>
+                                @endif
                             </div>
                         @endforeach
 
@@ -575,6 +615,20 @@
                                         src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
                                         alt="">
                                     <span>Swimming</span>
+                                </div>
+                            </span>
+                            <span class="d-flex ">
+                                <div class="d-flex align-items-center ">
+                                    <img class="h-4 w-4 mr-2"
+                                        src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                        alt="">
+                                    <span>Voucher Reflexology</span>
+                                </div>
+                                <div class="d-flex align-items-center ml-4">
+                                    <img class="h-4 w-4 mr-2"
+                                        src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                        alt="">
+                                    <span>Voucher Coffee & Beer</span>
                                 </div>
                             </span>
                         </div>
@@ -626,10 +680,23 @@
                                     @endif
 
                                 </span>
-                                <span style="color: #F35E46;">IDR
-                                    {{ number_format($serv->price, 0, ',', '.') }}
-                                    Nett/pax
-                                </span>
+                                @if ($serv->name_mandarin == 'Panoramic Paradise Road to Golomori')
+                                    <div class="d-flex">
+                                        <span class="line-through mr-2" style="color: #F35E46; font-weight: 900;">IDR
+                                            {{ number_format(250000, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                        <span style="color: #F35E46;">IDR
+                                            {{ number_format($serv->price, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                    </div>
+                                @else
+                                    <span style="color: #F35E46;">IDR
+                                        {{ number_format($serv->price, 0, ',', '.') }}
+                                        Nett/pax
+                                    </span>
+                                @endif
                             </div>
                         @endforeach
 
@@ -663,6 +730,20 @@
                                         src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
                                         alt="">
                                     <span>游泳</span>
+                                </div>
+                            </span>
+                            <span class="d-flex ">
+                                <div class="d-flex align-items-center ">
+                                    <img class="h-4 w-4 mr-2"
+                                        src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                        alt="">
+                                    <span>反射疗法优惠券</span>
+                                </div>
+                                <div class="d-flex align-items-center ml-4">
+                                    <img class="h-4 w-4 mr-2"
+                                        src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                        alt="">
+                                    <span>咖啡和啤酒优惠券</span>
                                 </div>
                             </span>
                         </div>
@@ -782,10 +863,24 @@
                                             </div>
                                         @endif
                                     </span>
-                                    <span style="color: #F35E46; font-size: 20px">IDR
-                                        {{ number_format($serv->price, 0, ',', '.') }}
-                                        Nett/pax
-                                    </span>
+                                    @if ($serv->name == 'Panoramic Paradise Road to Golomori')
+                                        <div class="d-flex flex-col">
+                                            <span class="line-through mr-2"
+                                                style="color: #F35E46; font-weight: 900; font-size: 20px">IDR
+                                                {{ number_format(250000, 0, ',', '.') }}
+                                                Nett/pax
+                                            </span>
+                                            <span style="color: #F35E46; font-size: 20px;">IDR
+                                                {{ number_format($serv->price, 0, ',', '.') }}
+                                                Nett/pax
+                                            </span>
+                                        </div>
+                                    @else
+                                        <span style="color: #F35E46; font-size: 20px;">IDR
+                                            {{ number_format($serv->price, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                    @endif
                                 </div>
                             @endforeach
 
@@ -812,11 +907,23 @@
                                             src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="">
                                         <span>Hiking</span>
                                     </div>
-                                    <div class="d-flex align-items-center item-include">
+                                    <div class="d-flex align-items-center item-include mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
                                             alt="">
                                         <span>Swimming</span>
+                                    </div>
+                                    <div class="d-flex align-items-center item-include mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                            alt="">
+                                        <span>Voucher Reflexology</span>
+                                    </div>
+                                    <div class="d-flex align-items-center item-include mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                            alt="">
+                                        <span>Voucher Coffee & Beer</span>
                                     </div>
                                 </div>
                             </div>
@@ -868,10 +975,24 @@
                                             </div>
                                         @endif
                                     </span>
-                                    <span style="color: #F35E46; font-size: 20px">IDR
-                                        {{ number_format($serv->price, 0, ',', '.') }}
-                                        Nett/pax
-                                    </span>
+                                    @if ($serv->name_en == 'Panoramic Paradise Road to Golomori')
+                                        <div class="d-flex flex-col">
+                                            <span class="line-through mr-2"
+                                                style="color: #F35E46; font-weight: 900; font-size: 20px">IDR
+                                                {{ number_format(250000, 0, ',', '.') }}
+                                                Nett/pax
+                                            </span>
+                                            <span style="color: #F35E46; font-size: 20px;">IDR
+                                                {{ number_format($serv->price, 0, ',', '.') }}
+                                                Nett/pax
+                                            </span>
+                                        </div>
+                                    @else
+                                        <span style="color: #F35E46; font-size: 20px;">IDR
+                                            {{ number_format($serv->price, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                    @endif
                                 </div>
                             @endforeach
 
@@ -905,6 +1026,18 @@
                                             src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
                                             alt="">
                                         <span>Swimming</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                            alt="">
+                                        <span>Voucher Reflexology</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                            alt="">
+                                        <span>Voucher Coffee & Beer</span>
                                     </div>
                                 </span>
                             </div>
@@ -955,10 +1088,24 @@
                                             </div>
                                         @endif
                                     </span>
-                                    <span style="color: #F35E46; font-size: 20px">IDR
-                                        {{ number_format($serv->price, 0, ',', '.') }}
-                                        Nett/pax
-                                    </span>
+                                    @if ($serv->name_mandarin == 'Panoramic Paradise Road to Golomori')
+                                        <div class="d-flex flex-col">
+                                            <span class="line-through mr-2"
+                                                style="color: #F35E46; font-weight: 900; font-size: 20px">IDR
+                                                {{ number_format(250000, 0, ',', '.') }}
+                                                Nett/pax
+                                            </span>
+                                            <span style="color: #F35E46; font-size: 20px;">IDR
+                                                {{ number_format($serv->price, 0, ',', '.') }}
+                                                Nett/pax
+                                            </span>
+                                        </div>
+                                    @else
+                                        <span style="color: #F35E46; font-size: 20px;">IDR
+                                            {{ number_format($serv->price, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                    @endif
                                 </div>
                             @endforeach
 
@@ -987,11 +1134,23 @@
                                             src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="">
                                         <span>远足</span>
                                     </div>
-                                    <div class="d-flex align-items-center ">
+                                    <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
                                             alt="">
                                         <span>游泳</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                            alt="">
+                                        <span>反射疗法优惠券</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mr-4">
+                                        <img class="h-4 w-4 mr-2"
+                                            src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
+                                            alt="">
+                                        <span>咖啡和啤酒优惠券</span>
                                     </div>
                                 </span>
                             </div>
@@ -1291,99 +1450,31 @@
                 <div id="oc-events" class="owl-carousel events-carousel carousel-widget" data-margin="0"
                     data-pagi="true" data-items="2" data-items-md="2" data-items-lg="3" data-items-xl="3"
                     data-autoplay="3000" data-loop="true">
-                    <div class="oc-item mt-2">
-                        <article class="entry event " style="padding-left: 0.5em; padding-right: 0.5em;">
-                            <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
-                                style="height: 15rem;">
-                                <div class=" mb-md-0">
-                                    <a href="{{ url('kuliner') }}" class="entry-image">
-                                        <img src='{{ url('assets/bg/padar.jpg') }}' alt="Padar" class="rounded-2"
-                                            style="max-height: 20rem;">
-                                    </a>
+                    @foreach ($other_services as $lainnya)
+                        <div class="oc-item mt-2">
+                            <article class="entry event " style="padding-left: 0.5em; padding-right: 0.5em;">
+                                <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
+                                    style="height: 15rem;">
+                                    <div class=" mb-md-0">
+                                        <div class="entry-image">
+                                            <img src='{{ url('assets/lainnya/' . $lainnya->image) }}'
+                                                alt="{{ $lainnya->slug }}" class="rounded-2" style="max-height: 20rem;">
+                                        </div>
+                                    </div>
+                                    <div class="image-caption text-center"
+                                        style="background: #000000 transparent; color: #ddd; ">
+                                        @if (App::isLocale('id'))
+                                            <b style="font-weight: 800;">{{ $lainnya->name }}</b>
+                                        @elseif (App::isLocale('en'))
+                                            <b style="font-weight: 800;">{{ $lainnya->name_en }}</b>
+                                        @else
+                                            <b style="font-weight: 800;">{{ $lainnya->name_mandarin }}</b>
+                                        @endif
+                                    </div>
                                 </div>
-                                <div class="image-caption text-center"
-                                    style="background: #000000 transparent; color: #ddd; ">
-                                    @if (App::isLocale('id'))
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @elseif (App::isLocale('en'))
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @else
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @endif
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="oc-item mt-2">
-                        <article class="entry event " style="padding-left: 0.5em; padding-right: 0.5em;">
-                            <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
-                                style="height: 15rem;">
-                                <div class=" mb-md-0">
-                                    <a href="{{ url('kuliner') }}" class="entry-image">
-                                        <img src='{{ url('assets/bg/padar.jpg') }}' alt="Padar" class="rounded-2"
-                                            style="max-height: 20rem;">
-                                    </a>
-                                </div>
-                                <div class="image-caption text-center"
-                                    style="background: #000000 transparent; color: #ddd; ">
-                                    @if (App::isLocale('id'))
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @elseif (App::isLocale('en'))
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @else
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @endif
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="oc-item mt-2">
-                        <article class="entry event " style="padding-left: 0.5em; padding-right: 0.5em;">
-                            <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
-                                style="height: 15rem;">
-                                <div class=" mb-md-0">
-                                    <a href="{{ url('kuliner') }}" class="entry-image">
-                                        <img src='{{ url('assets/bg/padar.jpg') }}' alt="Padar" class="rounded-2"
-                                            style="max-height: 20rem;">
-                                    </a>
-                                </div>
-                                <div class="image-caption text-center"
-                                    style="background: #000000 transparent; color: #ddd; ">
-                                    @if (App::isLocale('id'))
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @elseif (App::isLocale('en'))
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @else
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @endif
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="oc-item mt-2">
-                        <article class="entry event " style="padding-left: 0.5em; padding-right: 0.5em;">
-                            <div class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption"
-                                style="height: 15rem;">
-                                <div class=" mb-md-0">
-                                    <a href="{{ url('kuliner') }}" class="entry-image">
-                                        <img src='{{ url('assets/bg/padar.jpg') }}' alt="Padar" class="rounded-2"
-                                            style="max-height: 20rem;">
-                                    </a>
-                                </div>
-                                <div class="image-caption text-center"
-                                    style="background: #000000 transparent; color: #ddd; ">
-                                    @if (App::isLocale('id'))
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @elseif (App::isLocale('en'))
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @else
-                                        <b style="font-weight: 800;">Reflexiology</b>
-                                    @endif
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
+                            </article>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -1404,51 +1495,29 @@
             <div id="oc-events" class="owl-carousel events-carousel carousel-widget" data-margin="1" data-pagi="true"
                 data-items="1" data-items-md="2" data-items-lg="3" data-items-xl="3" data-autoplay='3000'
                 data-loop='true'>
-                <div class="oc-item">
-                    <article class="entry event mt-3">
-                        <div
-                            class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption">
-                            <div class="">
-                                <a href="{{ url('kuliner') }}" class="">
-                                    <img src="{{ url('assets/bg/tentang.jpg') }}" class="rounded-2">
+                @foreach ($other_services as $lainnya)
+                    <div class="oc-item">
+                        <article class=" mt-3">
+                            <div
+                                class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption">
+                                <div class="">
+                                    <img src="{{ url('assets/lainnya/' . $lainnya->image) }}" class="rounded-2"
+                                        style="height: 13em;">
                                     <div class="image-caption text-center"
                                         style="background: #000000 transparent; color: #ddd; ">
                                         @if (App::isLocale('id'))
-                                            <b style="font-weight: 800;">Coffee & Beer</b>
+                                            <b style="font-weight: 800;">{{ $lainnya->name }}</b>
                                         @elseif (App::isLocale('en'))
-                                            <b style="font-weight: 800;">Coffee & Beer</b>
+                                            <b style="font-weight: 800;">{{ $lainnya->name_en }}</b>
                                         @else
-                                            <b style="font-weight: 800;">Coffee & Beer</b>
+                                            <b style="font-weight: 800;">{{ $lainnya->name_mandarin }}</b>
                                         @endif
                                     </div>
-                                </a>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="oc-item">
-                    <article class="entry event mt-3">
-                        <div
-                            class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption">
-                            <div class="">
-                                <a href="{{ url('kuliner') }}" class="">
-                                    <img src="{{ url('assets/bg/tentang.jpg') }}" class="rounded-2">
-                                    <div class="image-caption text-center"
-                                        style="background: #000000 transparent; color: #ddd; ">
-                                        @if (App::isLocale('id'))
-                                            <b style="font-weight: 800;">Coffee & Beer</b>
-                                        @elseif (App::isLocale('en'))
-                                            <b style="font-weight: 800;">Coffee & Beer</b>
-                                        @else
-                                            <b style="font-weight: 800;">Coffee & Beer</b>
-                                        @endif
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
+                        </article>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

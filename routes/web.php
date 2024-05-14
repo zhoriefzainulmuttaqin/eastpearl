@@ -36,7 +36,9 @@ use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\GaleriLayananController;
+use App\Http\Controllers\LainnyaController;
 use App\Http\Controllers\LayananController;
+use App\Models\Lainnya;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -129,6 +131,14 @@ Route::prefix("app-admin")->group(function () {
         Route::get("data/destination/ubah/{id}", [DestinationController::class, "ubah_destination"]);
         Route::post("data/destination/proses-ubah", [DestinationController::class, "proses_ubah_destination"]);
         Route::get("data/destination/hapus/{id}", [DestinationController::class, "proses_hapus_destination"]);
+
+        //  layanan lainnya
+        Route::get("data/other_services", [LainnyaController::class, "admin_other_services"]);
+        Route::get("data/tambah/other_services", [LainnyaController::class, "tambah_other_services"]);
+        Route::post("data/other_services/proses-tambah", [LainnyaController::class, "proses_tambah_other_services"]);
+        Route::get("data/other_services/ubah/{slug}", [LainnyaController::class, "ubah_other_services"]);
+        Route::post("data/other_services/proses-ubah", [LainnyaController::class, "proses_ubah_other_services"]);
+        Route::get("data/other_services/hapus/{id}", [LainnyaController::class, "proses_hapus_other_services"]);
 
         //  layanan
         Route::get("data/layanan", [LayananController::class, "admin_layanan"]);

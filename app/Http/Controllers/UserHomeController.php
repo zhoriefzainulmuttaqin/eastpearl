@@ -15,6 +15,7 @@ use App\Models\Tour;
 use App\Models\Accomodation;
 use App\Models\Category;
 use App\Models\Destination;
+use App\Models\Lainnya;
 use App\Models\Layanan;
 use App\Models\ServicesGallery;
 use Illuminate\Support\Facades\Cookie;
@@ -45,9 +46,11 @@ class UserHomeController extends Controller
             ->orWhere('name', 'Panoramic Paradise Road to Golomori')
             ->orWhere('name', 'panoramic paradise road to golomori')
             ->get();
+        $other_services = Lainnya::all();
+
         // $facilities = $topServices->facilities;
         // $destination = $topServices->destinations;
 
-        return view("user.home", compact('category', 'about', 'categories', 'trip', 'topServices'));
+        return view("user.home", compact('category', 'about', 'categories', 'trip', 'topServices', 'other_services'));
     }
 }

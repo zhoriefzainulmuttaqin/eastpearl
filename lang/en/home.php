@@ -10,5 +10,5 @@ return [
     "rekomendasi" => "OUR RECOMMENDATION PACKAGES",
     "paket" => "East Pearl Packages in Labuan Bajo",
     "layanan_lainnya" => "Other Services",
-    "text_layanan_lainnya" => "Anda juga dapat menikmati layanan kami berikut",
+    "text_layanan_lainnya" => "Enjoy other special offers from us",
 ];
