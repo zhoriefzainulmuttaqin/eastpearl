@@ -17,14 +17,14 @@
         rel="stylesheet">
 
     <!-- Core Style -->
-    <link rel="stylesheet" href="{{ url('canvas') }}/style.css">
+    <link rel="stylesheet" href="{{ url('canvas') }}/style.min.css">
 
     <!-- Font Icons -->
-    <link rel="stylesheet" href="{{ url('canvas') }}/css/font-icons.css">
+    <link rel="stylesheet" href="{{ url('canvas') }}/css/font-icons.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url('canvas') }}/css/custom.css">
-    <link rel="stylesheet" href="{{ url('css/style-visit.css') }}">
+    <link rel="stylesheet" href="{{ url('canvas') }}/css/custom.min.css">
+    <link rel="stylesheet" href="{{ url('css/style-visit.min.css') }}">
 
     <!-- Document Title
  ============================================= -->

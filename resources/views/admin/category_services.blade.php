@@ -21,7 +21,7 @@
                             <tr>
                                 <th class="text-center">Foto</th>
                                 <th class="text-center">Nama</th>
-                                <th class="text-center">Fasilitas</th>
+                                <th class="text-center">Kategori</th>
                                 <th class="text-center">Harga</th>
                                 <th class="text-center">Aksi</th>
                             </tr>
@@ -34,7 +34,7 @@
                                             class="img-preview mb-3 img-fluid" style="height: 50px; widht: auto;">
                                     </td>
                                     <td>{{ $layanan->name }}</td>
-                                    <td>{{ $layanan->facilities_id }}</td>
+                                    <td>{{ $layanan->categories->name }}</td>
                                     <td>{{ $layanan->price }}</td>
                                     <td class="text-center">
                                         <a href='{{ url("/app-admin/data/layanan/ubah/$layanan->slug") }}'>

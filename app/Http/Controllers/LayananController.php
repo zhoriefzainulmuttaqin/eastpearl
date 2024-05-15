@@ -115,14 +115,14 @@ class LayananController extends Controller
         // Jika ada file gambar baru yang diunggah
         if ($request->hasFile('image')) {
             // Hapus file gambar lama
-            if (File::exists(public_path("assets/services/{$layanan->image}"))) {
-                File::delete(public_path("assets/services/{$layanan->image}"));
+            if (File::exists("./assets/services/{$layanan->image}")) {
+                File::delete("./assets/services/{$layanan->image}");
             }
 
             // Upload file gambar baru
             $image = $request->file('image');
             $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path("assets/services/"), $nameImage);
+            $image->move("./assets/services/", $nameImage);
 
             $layanan->image = $nameImage;
         }

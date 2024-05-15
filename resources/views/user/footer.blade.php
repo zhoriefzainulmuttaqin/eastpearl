@@ -11,16 +11,18 @@
                 <br>
                 with <span class='text-white'>eastpearl.id</span>
                 <br>
-                <a href="https://www.facebook.com/profile.php?id=61558959234440" target="_blank" class="h5">
+                <a href="https://www.facebook.com/profile.php?id=61558959234440" target="_blank" class="h5"
+                    aria-label="facebook">
                     <i class='uil-facebook-f'></i>
                 </a>
-                <a href="https://www.instagram.com/eastpearl.id/" target="_blank" class="h5">
+                <a href="https://www.instagram.com/eastpearl.id/" target="_blank" class="h5" aria-label="instagram">
                     <i class='uil-instagram'></i>
                 </a>
-                <a href="https://www.tiktok.com/@east.pearl" target="_blank" class="h5">
+                <a href="https://www.tiktok.com/@east.pearl" target="_blank" class="h5" aria-label="tiktok">
                     <i class='fa-brands fa-tiktok'></i>
                 </a>
-                <a href="https://www.youtube.com/channel/UCCkb7FZj67-WU3JBBok3v6w" target="_blank" class="h5">
+                <a href="https://www.youtube.com/channel/UCCkb7FZj67-WU3JBBok3v6w" target="_blank" class="h5"
+                    aria-label="youtube">
                     <i class='uil-youtube'></i>
                 </a>
                 <br><br>

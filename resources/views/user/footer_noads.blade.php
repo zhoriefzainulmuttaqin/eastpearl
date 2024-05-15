@@ -9,19 +9,20 @@
             <p class="text-center">
                 <b class="h3">Preferred Partner For Travels</b>
                 <br>
-                with <span class='text-warning'>eastpearl.id</span>
+                with <span class='text-white'>eastpearl.id</span>
                 <br>
-                <a href="{{ getOption('fb_link') }}" target="_blank" class="h5">
+                <a href="https://www.facebook.com/profile.php?id=61558959234440" target="_blank" class="h5"
+                    aria-label="facebook">
                     <i class='uil-facebook-f'></i>
                 </a>
-                <a href="https://www.instagram.com/visitcirebon.id?igshid=ODA1NTc5OTg5Nw==" target="_blank"
-                    class="h5">
+                <a href="https://www.instagram.com/eastpearl.id/" target="_blank" class="h5" aria-label="instagram">
                     <i class='uil-instagram'></i>
                 </a>
-                <a href="https://www.tiktok.com/@visit.cirebon.id?_t=8iKVr2u4Z6e&_r=1" target="_blank" class="h5">
+                <a href="https://www.tiktok.com/@east.pearl" target="_blank" class="h5" aria-label="tiktok">
                     <i class='fa-brands fa-tiktok'></i>
                 </a>
-                <a href="https://youtube.com/@VisitCirebonId?si=AS4mL5Y_ehCoyXBE" target="_blank" class="h5">
+                <a href="https://www.youtube.com/channel/UCCkb7FZj67-WU3JBBok3v6w" target="_blank" class="h5"
+                    aria-label="youtube">
                     <i class='uil-youtube'></i>
                 </a>
                 <br><br>

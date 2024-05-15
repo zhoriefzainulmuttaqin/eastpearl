@@ -7,38 +7,10 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ url('canvas') }}/css/components/bs-rating.css">
     <link rel="stylesheet" href="{{ url('swiperjs/swiper-bundle.min.css') }}" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
-    <style>
-        body {
-            /* overflow-x: hidden; */
-        }
-
-        #home-event-container {
-            /* background-image: url("<?= url('assets/ellipse.png') ?>"); */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding-top: 100px;
-            padding-bottom: 100px;
-            background-color: #ba1918;
-            height: 52em;
-
-        }
-
-        @media (max-width: 760px) {
-            #home-event-container {
-                background-size: cover;
-                height: 46.5em;
-                /* padding-top: 100px !important; */
-                /* padding-bottom: 10px; */
-                /* margin-top: 0rem; */
-                display: inline;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url('css/home.min.css') }}">
 
     <!-- Demo styles -->
 @endsection
@@ -46,91 +18,6 @@
 
 
 @section('content')
-    {{-- css event --}}
-    <style>
-        #but_event {
-            width: 12rem;
-            height: 40px;
-            font-size: 12px;
-            font-weight: 500;
-            margin-bottom: 5rem;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-        }
-
-        .title_event {
-            font-size: 28px;
-            font-weight: 600;
-        }
-
-        .subt_event {
-            font-size: 16px;
-
-        }
-
-        .entry-title h3 {
-            max-height: 3em;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .entry-meta a {
-            max-height: 3em;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .owl-carousel .owl-dots .owl-dot {
-            background-color: #676565;
-
-        }
-
-        @media (max-width: 760px) {
-
-            #but_event {
-                width: 8rem;
-                height: 30px;
-                font-size: 10px;
-                font-weight: 500;
-                margin-top: -3rem;
-                margin-left: auto;
-                margin-right: auto;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 5px;
-
-            }
-
-            .title_event {
-                font-size: 16px;
-                font-weight: 999;
-                margin-bottom: 1rem;
-                margin-top: -5% !important;
-            }
-
-            .subt_event {
-                font-size: 8px;
-                margin-top: -8px;
-
-            }
-
-            .owl-carousel .owl-dots .owl-dot {
-                background-color: #676565;
-                width: 0.7em;
-                height: 0.7em;
-            }
-
-
-
-        }
-    </style>
     {{-- @php
         $sortedEvents = $events->sortByDesc('start_date');
     @endphp --}}
@@ -152,7 +39,7 @@
                     <iframe class="rounded-xl mt-4 shadow-lg"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1794735.3830136342!2d117.33893461917772!3d-9.542222171245745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db4667f78c5c9c3%3A0x2543ed6a00d784da!2sBadjo%2C%20Labuan%20Bajo%2C%20Kec.%20Komodo%2C%20Kabupaten%20Manggarai%20Barat%2C%20Nusa%20Tenggara%20Tim.!5e0!3m2!1sid!2sid!4v1715242527886!5m2!1sid!2sid"
                         width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        referrerpolicy="no-referrer-when-downgrade" title="Maps Labuan Bajo">
                     </iframe>
                 </div>
                 <div class="col-6 ml-3 mt-5">
@@ -171,15 +58,15 @@
                             @endforeach
                         </div>
                         <!-- Slider indicators -->
-                        <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                        {{-- <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
                             @foreach ($trip as $index => $dest)
                                 <button type="button" class="w-3 h-3 rounded-full" aria-current="false"
                                     aria-label="Slide {{ $index + 1 }}"
                                     data-carousel-slide-to="{{ $index }}"></button>
                             @endforeach
-                        </div>
+                        </div> --}}
                         <!-- Slider controls -->
-                        <button type="button"
+                        <button type="button" aria-label="previous"
                             class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
                             data-carousel-prev>
                             <span
@@ -193,7 +80,7 @@
                                 <span class="hidden">Previous</span>
                             </span>
                         </button>
-                        <button type="button"
+                        <button type="button" aria-label="next"
                             class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
                             data-carousel-next>
                             <span
@@ -226,7 +113,7 @@
                     <iframe class="rounded-xl  shadow-lg"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1794735.3830136342!2d117.33893461917772!3d-9.542222171245745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db4667f78c5c9c3%3A0x2543ed6a00d784da!2sBadjo%2C%20Labuan%20Bajo%2C%20Kec.%20Komodo%2C%20Kabupaten%20Manggarai%20Barat%2C%20Nusa%20Tenggara%20Tim.!5e0!3m2!1sid!2sid!4v1715242527886!5m2!1sid!2sid"
                         width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        referrerpolicy="no-referrer-when-downgrade" title="Maps Labuan Bajo">
                     </iframe>
                 </div>
                 <div class="col-11 mt-2 ml-auto mr-auto shadow-lg">
@@ -247,15 +134,15 @@
 
                         </div>
                         <!-- Slider indicators -->
-                        <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                        {{-- <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
                             @foreach ($trip as $index => $dest)
                                 <button type="button" class="w-2 h-2 rounded-full" aria-current="false"
                                     aria-label="Slide {{ $index + 1 }}"
                                     data-carousel-slide-to="{{ $index }}"></button>
                             @endforeach
-                        </div>
+                        </div> --}}
                         <!-- Slider controls -->
-                        <button type="button"
+                        <button type="button" aria-label="previous"
                             class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
                             data-carousel-prev>
                             <span
@@ -269,7 +156,7 @@
                                 <span class="hidden">Previous</span>
                             </span>
                         </button>
-                        <button type="button"
+                        <button type="button" aria-label="next"
                             class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
                             data-carousel-next>
                             <span
@@ -296,10 +183,9 @@
             left: 0;
             width: 100%;
             height: 100px;
-            background: url(assets/wave.png);
+            background: url("assets/wave.png");
             /* transform: rotate(180deg); */
             background-size: 1000px 100px;
-
         }
 
         .wave.wave1 {
@@ -334,7 +220,6 @@
             bottom: 20px;
         }
 
-
         @keyframes animate {
             0% {
                 background-position-x: 0;
@@ -363,7 +248,7 @@
         <div class="wave wave3"></div>
         <div class="wave wave4"></div>
     </div>
-    <div class="d-block d-md-non" style="position: relative; margin-top: 30px;">
+    <div class="d-block d-md-none" style="position: relative; margin-top: 30px;">
         <div class="wave wave1">
 
         </div>
@@ -371,49 +256,6 @@
         <div class="wave wave3"></div>
         <div class="wave wave4"></div>
     </div>
-
-    <style>
-        .background-text {
-            background-color: #ba1918;
-            /* Ganti dengan path gambar Anda */
-            background-size: cover;
-            /* Untuk memastikan gambar menutupi seluruh area teks */
-            -webkit-background-clip: text;
-            /* Untuk menerapkan gambar sebagai latar belakang teks */
-            color: transparent;
-            background-position: center;
-            line-height: 60px;
-            /* text-shadow: 0px 20px, 20px 0px, 20px 20px; */
-
-            /* Membuat teks menjadi transparan */
-        }
-
-        @media only screen and (max-width: 760px) {
-            .background-text {
-                background-color: #ba1918;
-                /* Ganti dengan path gambar Anda */
-
-                background-position: center;
-                line-height: 20px;
-                /* text-shadow: 0px 20px, 20px 0px, 20px 20px; */
-
-                /* Membuat teks menjadi transparan */
-            }
-
-            .include {
-                /* display: flex; */
-                flex-wrap: wrap;
-            }
-
-            .exclude {
-                /* display: flex; */
-                flex-wrap: wrap;
-            }
-
-
-
-        }
-    </style>
 
     <div class="container top_wisata mt-4 d-none d-md-block">
         <div class="">
@@ -430,7 +272,7 @@
             <div class="rounded-xl col-5 ">
                 <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img src="{{ url('assets/bus.png') }}" style="width: 250rem !important; height: 20rem;"
-                        alt="img-blur-shadow" layout="fill" />
+                        alt="gambar-bus-eastpearl" layout="fill" />
                 </div>
 
             </div>
@@ -478,28 +320,29 @@
                             <span class="d-flex ">
                                 <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
+                                        src="https://cdn-icons-png.freepik.com/256/15052/15052974.png"
+                                        alt="icon trekking">
                                     <span>Trekking</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/2120/2120781.png"
-                                        alt="">
+                                        alt="icon snorkeling">
                                     <span>Snorkeling</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/4746/4746811.png"
-                                        alt="">
+                                        alt="icon relaxing">
                                     <span>Relaxing</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/7802/7802662.png"
-                                        alt="">
+                                        alt="icon hiking">
                                     <span>Hiking</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
-                                        alt="">
+                                        alt="ikon swimming">
                                     <span>Swimming</span>
                                 </div>
                             </span>
@@ -507,13 +350,13 @@
                                 <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon voucher">
                                     <span>Voucher Reflexology</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon voucher">
                                     <span>Voucher Coffee & Beer</span>
                                 </div>
                             </span>
@@ -526,25 +369,25 @@
                                 <div class="d-flex align-items-center">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon ticket">
                                     <span>Tiket Masuk</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon ticket">
                                     <span>Biaya Penjaga Hutan</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon eat">
                                     <span>Sarapan</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon cart">
                                     <span>Pembelian pribadi</span>
                                 </div>
                             </span>
@@ -592,28 +435,28 @@
                             <span class="d-flex">
                                 <div class="d-flex align-items-center">
                                     <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
+                                        src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="icon">
                                     <span>Trekking</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/2120/2120781.png"
-                                        alt="">
+                                        alt="icon">
                                     <span>Snorkeling</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/4746/4746811.png"
-                                        alt="">
+                                        alt="icon">
                                     <span>Relaxing</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/7802/7802662.png"
-                                        alt="">
+                                        alt="icon">
                                     <span>Hiking</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>Swimming</span>
                                 </div>
                             </span>
@@ -621,13 +464,13 @@
                                 <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>Voucher Reflexology</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>Voucher Coffee & Beer</span>
                                 </div>
                             </span>
@@ -640,25 +483,25 @@
                                 <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>Entrance Fee</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>Ranger Fee</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>Breakfast</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>Personal purchase</span>
                                 </div>
                             </span>
@@ -707,28 +550,28 @@
                             <span class="d-flex">
                                 <div class="d-flex align-items-center">
                                     <img class="h-4 w-4 mr-2"
-                                        src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
+                                        src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="icon">
                                     <span>徒步旅行</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/2120/2120781.png"
-                                        alt="">
+                                        alt="icon">
                                     <span>浮潜</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/4746/4746811.png"
-                                        alt="">
+                                        alt="icon">
                                     <span>放松</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2" src="https://cdn-icons-png.freepik.com/256/7802/7802662.png"
-                                        alt="">
+                                        alt="icon">
                                     <span>远足</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>游泳</span>
                                 </div>
                             </span>
@@ -736,13 +579,13 @@
                                 <div class="d-flex align-items-center ">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>反射疗法优惠券</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>咖啡和啤酒优惠券</span>
                                 </div>
                             </span>
@@ -755,25 +598,25 @@
                                 <div class="d-flex align-items-center">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>入场费</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>护林员费</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>早餐</span>
                                 </div>
                                 <div class="d-flex align-items-center ml-4">
                                     <img class="h-4 w-4 mr-2"
                                         src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
-                                        alt="">
+                                        alt="icon">
                                     <span>个人购买</span>
                                 </div>
                             </span>
@@ -786,7 +629,7 @@
             <div class="d-flex" style="justify-content: center;">
                 @foreach ($topServices as $serv)
                     <a href="/layanan/detail/{{ $serv->slug }}">
-                        <button type="button"
+                        <button type="button" aria-label="Click for details"
                             class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                             <i class="uil-arrow-right"></i>
                             <span>{{ $serv->name }}</span>
@@ -800,7 +643,7 @@
             <div class="d-flex" style="justify-content: center;">
                 @foreach ($topServices as $serv)
                     <a href="/layanan/detail/{{ $serv->slug }}">
-                        <button type="button"
+                        <button type="button" aria-label="Click for details"
                             class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                             <i class="uil-arrow-right"></i>
                             <span>{{ $serv->name_en }}</span>
@@ -813,7 +656,7 @@
             <div class="d-flex" style="justify-content: center;">
                 @foreach ($topServices as $serv)
                     <a href="/layanan/detail/{{ $serv->slug }}">
-                        <button type="button"
+                        <button type="button" aria-label="Click for details"
                             class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                             <i class="uil-arrow-right"></i>
                             <span>{{ $serv->name_mandarin }}</span>
@@ -842,7 +685,7 @@
                 <div class="rounded-xl col-12 ">
                     <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                         <img src="{{ url('assets/bus.png') }}" style="width: auto !important; height: auto;"
-                            alt="img-blur-shadow" layout="fill" />
+                            alt="image bus estpearl" layout="fill" />
                     </div>
 
                 </div>
@@ -889,40 +732,40 @@
                                 <div class="d-flex include mt-2">
                                     <div class="d-flex align-items-center item-include mr-4">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="icon">
                                         <span>Trekking</span>
                                     </div>
                                     <div class="d-flex align-items-center item-include mr-4">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/2120/2120781.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/2120/2120781.png" alt="icon">
                                         <span>Snorkeling</span>
                                     </div>
                                     <div class="d-flex align-items-center item-include mr-4">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/4746/4746811.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/4746/4746811.png" alt="icon">
                                         <span>Relaxing</span>
                                     </div>
                                     <div class="d-flex align-items-center item-include mr-4">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="icon">
                                         <span>Hiking</span>
                                     </div>
                                     <div class="d-flex align-items-center item-include mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Swimming</span>
                                     </div>
                                     <div class="d-flex align-items-center item-include mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Voucher Reflexology</span>
                                     </div>
                                     <div class="d-flex align-items-center item-include mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Voucher Coffee & Beer</span>
                                     </div>
                                 </div>
@@ -936,25 +779,25 @@
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Tiket Masuk</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4 ">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Biaya Penjaga Hutan</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4 ">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Sarapan</span>
                                     </div>
                                     <div class="d-flex align-items-center  ">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Pembelian pribadi</span>
                                     </div>
                                 </span>
@@ -1003,40 +846,40 @@
                                 <span class="d-flex include ">
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="icon">
                                         <span>Trekking</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/2120/2120781.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/2120/2120781.png" alt="icon">
                                         <span>Snorkeling</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/4746/4746811.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/4746/4746811.png" alt="icon">
                                         <span>Relaxing</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="icon">
                                         <span>Hiking</span>
                                     </div>
                                     <div class="d-flex align-items-center ">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Swimming</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Voucher Reflexology</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Voucher Coffee & Beer</span>
                                     </div>
                                 </span>
@@ -1049,25 +892,25 @@
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Entrance Fee</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4 ">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Ranger Fee</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4 ">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Breakfast</span>
                                     </div>
                                     <div class="d-flex align-items-center ">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>Personal purchase</span>
                                     </div>
                                 </span>
@@ -1116,40 +959,40 @@
                                 <span class="d-flex  include ">
                                     <div class="d-flex align-items-center mr-4 item-include">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/15052/15052974.png" alt="icon">
                                         <span>徒步旅行</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4 ">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/2120/2120781.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/2120/2120781.png" alt="icon">
                                         <span>浮潜</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4  ">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/4746/4746811.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/4746/4746811.png" alt="icon">
                                         <span>放松</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4 ">
                                         <img class="h-4 w-4 mr-2"
-                                            src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="">
+                                            src="https://cdn-icons-png.freepik.com/256/7802/7802662.png" alt="icon">
                                         <span>远足</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1859/1859174.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>游泳</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>反射疗法优惠券</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/3267/3267974.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>咖啡和啤酒优惠券</span>
                                     </div>
                                 </span>
@@ -1162,25 +1005,25 @@
                                     <div class="d-flex align-items-center mr-4">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>入场费</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4 ">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1665/1665372.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>护林员费</span>
                                     </div>
                                     <div class="d-flex align-items-center mr-4 ">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/8174/8174280.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>早餐</span>
                                     </div>
                                     <div class="d-flex align-items-center ">
                                         <img class="h-4 w-4 mr-2"
                                             src="https://cdn-icons-png.freepik.com/256/1345/1345645.png?uid=R21317414"
-                                            alt="">
+                                            alt="icon">
                                         <span>个人购买</span>
                                     </div>
                                 </span>
@@ -1193,7 +1036,7 @@
                 <div class="d-flex flex-col mt-3" style="justify-content: center;">
                     @foreach ($topServices as $serv)
                         <a href="/layanan/detail/{{ $serv->slug }}">
-                            <button type="button"
+                            <button type="button" aria-label="Click for details"
                                 class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
                                 <span class="ml-auto mr-auto">{{ $serv->name }}</span>
 
@@ -1205,7 +1048,7 @@
                 <div class="d-flex flex-col mt-3" style="justify-content: center;">
                     @foreach ($topServices as $serv)
                         <a href="/layanan/detail/{{ $serv->slug }}">
-                            <button type="button"
+                            <button type="button" aria-label="Click for details"
                                 class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
                                 <span class="ml-auto mr-auto">{{ $serv->name_en }}</span>
 
@@ -1217,7 +1060,7 @@
                 <div class="d-flex flex-col mt-3 mb-5" style="justify-content: center;">
                     @foreach ($topServices as $serv)
                         <a href="/layanan/detail/{{ $serv->slug }}">
-                            <button type="button"
+                            <button type="button" aria-label="Click for details"
                                 class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
                                 <span class="ml-auto mr-auto">{{ $serv->name_mandarin }}</span>
                             </button>
@@ -1266,7 +1109,7 @@
                         class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
                         <img src="{{ url("/assets/kategori/$kategori->image") }}"
                             class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
-                            alt="" />
+                            alt="{{ $kategori->slug }}" />
                     </div>
                     <div
                         class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
@@ -1296,7 +1139,7 @@
                             class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
                             <img src="{{ url("/assets/kategori/$kategori->image") }}"
                                 class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
-                                alt="" />
+                                alt="{{ $kategori->slug }}" />
                         </div>
                         <div
                             class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
@@ -1316,115 +1159,6 @@
             @endforeach
         </div>
     </div>
-
-    {{-- css kuliner --}}
-    <style>
-        .top_kuliner {
-            /* margin-top: 6rem; */
-        }
-
-        #but_kuliner {
-            width: 12rem;
-            height: 40px;
-            font-size: 12px;
-            font-weight: 500;
-            margin-bottom: 5rem;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-        }
-
-        .kuliner_caption .image-caption {
-
-            font-size: 20px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            /* Adjust the background color and opacity */
-            padding: 0.5rem;
-            backdrop-filter: blur(5px);
-            /* Adjust the blur amount */
-        }
-
-        .image-caption p {
-            color: white;
-            margin: 0;
-
-        }
-
-        .kuliner .owl-carousel .owl-dots .owl-dot {
-            margin-top: -1em;
-            height: 0.3em;
-            width: 0.3em;
-        }
-
-
-        @media (max-width: 768px) {
-            .kuliner_caption .image-caption {
-
-                font-size: 16px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                background: rgba(0, 0, 0, 0.3);
-                /* Adjust the background color and opacity */
-                padding: 0.5rem;
-                backdrop-filter: blur(5px);
-                /* Adjust the blur amount */
-            }
-
-            #but_kuliner {
-                width: 8rem;
-                height: 30px;
-                font-size: 10px;
-                font-weight: 500;
-                margin-top: -1.5rem;
-                margin-bottom: -4rem;
-                margin-left: auto;
-                margin-right: auto;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 5px;
-            }
-
-            .title_kuliner {
-                font-size: 16px;
-                font-weight: 999;
-            }
-
-            #top_kuliner {
-                margin-top: 3em;
-            }
-
-            .event {
-                width: 16.5rem;
-                /* height: 100%; */
-                margin: auto;
-            }
-
-            .kuliner .owl-carousel .owl-dots .owl-dot {
-                margin-top: -10em !important;
-                height: 0.3em;
-                width: 0.3em;
-            }
-
-            .image-caption p {
-                color: white;
-                margin: 0;
-
-            }
-        }
-    </style>
-    {{-- end css kuliner --}}
-
-
 
     {{-- web --}}
     <div class="container d-none d-md-block">
@@ -1502,7 +1236,7 @@
                                 class="grid-inner bg-contrast-0 row g-0 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm kuliner_caption">
                                 <div class="">
                                     <img src="{{ url('assets/lainnya/' . $lainnya->image) }}" class="rounded-2"
-                                        style="height: 13em;">
+                                        style="height: 13em;" alt="{{ $lainnya->slug }}">
                                     <div class="image-caption text-center"
                                         style="background: #000000 transparent; color: #ddd; ">
                                         @if (App::isLocale('id'))
@@ -1540,7 +1274,8 @@
             <div class="rounded-xl  ">
                 <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img src="{{ url('assets/tentang/' . $about->image) }}"
-                        style="width: 250rem !important; height: 20rem;" alt="img-blur-shadow" layout="fill" />
+                        style="width: 250rem !important; height: 20rem;" alt="{{ $about->company_name }}"
+                        layout="fill" />
                 </div>
 
             </div>
@@ -1575,7 +1310,8 @@
                 <div class="rounded-xl  mt-5">
                     <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                         <img src="{{ url('assets/tentang/' . $about->image) }}"
-                            style="width: 250em !important; height: auto;" alt="img-blur-shadow" layout="fill" />
+                            style="width: 250em !important; height: auto;" alt="{{ $about->company_name }}"
+                            layout="fill" />
                     </div>
 
                 </div>
@@ -1598,17 +1334,13 @@
 @endsection
 
 @section('script')
-    <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" />
 
-    <!-- from cdn -->
     <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js'></script>
 
     <!-- Initialize Swiper -->
-    <script></script>
 @endsection
