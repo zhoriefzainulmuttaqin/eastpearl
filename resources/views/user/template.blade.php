@@ -116,34 +116,26 @@
             <div class="d-none d-lg-block">
 
                 <section id="slider"
-                    class="slider-element swiper_wrapper min-vh-40 min-vh-md-100 dark include-header">
-                    <div class="slider-inner">
-                        <div class="swiper swiper-parent">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide dark">
-                                    <div class="container-fluid py-5 text-center">
-                                        {{-- <img src="{{ url('assets/eastpearl_logo3.png') }}" id="logo-on-header"> --}}
+                    class="bg_image slider-element slider-parallax min-vh-40 min-vh-md-100 dark include-header"
+                    style="background: url('/assets/bg/padar.jpg') no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
+                    <div class="">
+                        <div class="">
 
-                                        <div class="language">
-                                            <a href="{{ url('atur-bahasa/id') }}"
-                                                class="btn text-center bg-btn-language but_lang1">
-                                                BAHASA
-                                            </a>
-                                            <a href="{{ url('atur-bahasa/en') }}"
-                                                class="btn text-center bg-btn-language but_lang2">
-                                                ENGLISH
-                                            </a>
-                                            <a href="{{ url('atur-bahasa/mandarin') }}"
-                                                class="btn text-center bg-btn-language but_lang3">
-                                                普通话
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide-bg bg_image2"
-                                        style="background-image: url('assets/bg/padar.jpg');">
-                                    </div>
+                            <div class="text-center border-bottom-0 mt-6 mt-md-0" style="">
+                                <div class="language">
+                                    <a href="{{ url('atur-bahasa/id') }}"
+                                        class="btn text-center bg-btn-language but_lang1">
+                                        BAHASA
+                                    </a>
+                                    <a href="{{ url('atur-bahasa/en') }}"
+                                        class="btn text-center bg-btn-language but_lang2">
+                                        ENGLISH
+                                    </a>
+                                    <a href="{{ url('atur-bahasa/mandarin') }}"
+                                        class="btn text-center bg-btn-language but_lang3">
+                                        普通话
+                                    </a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -151,35 +143,32 @@
             </div>
 
 
-            <div class="d-block d-lg-none">
-                <section id="slider" class="slider-element swiper_wrapper min-vh-md-100 dark include-header"
-                    style="height: 395px; margin-bottom: -135px !important;">
-                    <div class="slider-inner">
-                        <div class="swiper swiper-parent">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide dark">
-                                    <div class="container-fluid py-5 text-center">
-                                        {{-- <img src="{{ url('assets/eastpearl_logo3.png') }}" id="logo-on-header"> --}}
 
-                                        <div class="language">
-                                            <a href="{{ url('atur-bahasa/id') }}"
-                                                class="btn text-center bg-btn-language but_lang1">
-                                                BAHASA
-                                            </a>
-                                            <a href="{{ url('atur-bahasa/en') }}"
-                                                class="btn text-center bg-btn-language but_lang2 ml-auto mr-auto">
-                                                ENGLISH
-                                            </a>
-                                            <a href="{{ url('atur-bahasa/mandarin') }}"
-                                                class="btn text-center bg-btn-language but_lang3">
-                                                普通话
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide-bg" style="background-image: url('assets/bg/padar.jpg');">
+
+            <div class="d-block d-lg-none">
+
+                <section id="slider"
+                    class="bg_image slider-element slider-parallax min-vh-40 min-vh-md-100 dark include-header"
+                    style="background: url('/assets/bg/padar.jpg') no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
+                    <div class="slider-inner">
+                        <div class="vertical-middle slider-element-fade">
+                            <div class="container-fluid py-5">
+                                <div class="heading-block text-center border-bottom-0 mt-6 mt-md-0" style="">
+                                    <div class="language">
+                                        <a href="{{ url('atur-bahasa/id') }}"
+                                            class="btn text-center bg-btn-language but_lang1">
+                                            BAHASA
+                                        </a>
+                                        <a href="{{ url('atur-bahasa/en') }}"
+                                            class="btn text-center bg-btn-language but_lang2 ml-auto mr-auto">
+                                            ENGLISH
+                                        </a>
+                                        <a href="{{ url('atur-bahasa/mandarin') }}"
+                                            class="btn text-center bg-btn-language but_lang3">
+                                            普通话
+                                        </a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -189,7 +178,7 @@
             {{-- <div class=" d-block d-lg-none"> --}}
             <section id="slider"
                 class="bg_image slider-element slider-parallax min-vh-40 min-vh-md-100 dark include-header"
-                style="background: url(@yield('cover')) no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
+                style="background: url('@yield('cover')') no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
                 <div class="slider-inner">
                     <div class="vertical-middle slider-element-fade">
                         <div class="container-fluid py-5">
@@ -273,71 +262,25 @@
         </style>
 
 
-        <!-- Content
-  ============================================= -->
 
-        {{-- <div class="popup-wrapper " id="popup">
-            <a href="https://visitcirebon.id/layanan-produk/tourism-card">
-                <div class="popup-container" style="">
-                </div>
-                <a class="popup-close" href="#popup">X</a>
-            </a>
-        </div> --}}
-
-        {{-- <div class="container">
-            <div class="click-me"><a href="#">Click Me</a></div>
-        </div>
-        <div id="ad_position_box">
-            <div class="card">
-                <div class="top-row flex-row">
-                    <div class="colmun">
-                        <span id="countdown" style="font-size: 15px">Iklan</span>
-                    </div>
-                    <div class="colmun">
-
-                        <button class="skip" style="color: #ce0a0a">Close</button>
-                    </div>
-                </div>
-                <div class="ad-content d-none d-lg-block" style="width: 50%; height: 50%; margin:auto;">
-                    @foreach ($iklanPopup as $ads)
-                    <a href="https://visitcirebon.id/layanan-produk/tourism-card">
-                        <img src="{{ url('assets/iklan/' . $ads->picture) }}" alt="{{ $ads->slug }}">
-                    </a>
-                </div>
-                <div class="ad-content d-block d-lg-none" style="width: 100%; height: 100%; margin:auto;">
-                    <a href="https://visitcirebon.id/layanan-produk/tourism-card">
-                        <img src="{{ url('assets/iklan/' . $ads->picture) }}" alt="{{ $ads->slug }}">
-                    </a>
-                    @endforeach
-                </div>
-            </div>
-        </div> --}}
 
 
         <section>
 
             @yield('content')
         </section>
-        <!-- #content end -->
 
         {{ view('user.footer') }}
 
     </div><!-- #wrapper end -->
 
-    <!-- Go To Top
- ============================================= -->
-    <!-- <div id="gotoTop" class="uil uil-angle-up"></div> -->
 
-    <!-- <a href="https://wa.me/<?= str_replace('+', '', getOption('cs_phone')) ?>" target="_blank" id="chatWA">
-  <img src="{{ url('assets/logo-wa.png') }}" width="50px" class="rounded-circle">
- </a> -->
     <div class="whatsapp-button">
         <a href="https://wa.me/<?= str_replace('+', '', getOption('cs_phone')) ?>?text=Halo, saya ingin diskusi mengenai paket layanan East Pearl."
             target="_blank">
             <img src="{{ url('assets/logo-wa.png') }}" alt="WhatsApp">
         </a>
     </div>
-
     <!-- JavaScripts
  ============================================= -->
     <script src="{{ url('js/jquery-3.7.1.min.js') }}"></script>

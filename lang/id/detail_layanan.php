@@ -10,7 +10,7 @@ return [
     'book_email' => 'Booking Email',
     'trip_lainnya' => 'Trip Lainnya',
     'rekomendasi' => 'Rekomendasi terbaik untuk anda',
-    'fasilitas' => 'Fasilitas yang didapatkan:',
+    'fasilitas' => 'Termasuk:',
     'seputar' => 'Seputar trip:',
     'rute' => 'Rute yang akan dijelajahi:',
     'meeting' => 'Meeting point:',

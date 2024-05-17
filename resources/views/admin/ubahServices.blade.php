@@ -222,6 +222,9 @@
             </div>
         </div>
     </div>
+    <style>
+
+    </style>
 @endsection
 @section('script')
     <script src="{{ url('ckeditor/ckeditor.js') }}"></script>
@@ -251,27 +254,30 @@
         }
         CKEDITOR.replace('content', {
             enterMode: CKEDITOR.ENTER_BR,
-            removePlugins: 'image'
+
+
         });
         CKEDITOR.replace('content_en', {
             enterMode: CKEDITOR.ENTER_BR,
-            removePlugins: 'image'
+
         });
         CKEDITOR.replace('content_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
-            removePlugins: 'image'
+
         });
         CKEDITOR.replace('long_content', {
             enterMode: CKEDITOR.ENTER_BR,
-            removePlugins: 'image'
+
+
+
         });
         CKEDITOR.replace('long_content_en', {
             enterMode: CKEDITOR.ENTER_BR,
-            removePlugins: 'image'
+
         });
         CKEDITOR.replace('long_content_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
-            removePlugins: 'image'
+
         });
 
         $(document).ready(function() {

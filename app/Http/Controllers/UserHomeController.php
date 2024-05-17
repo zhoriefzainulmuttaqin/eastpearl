@@ -33,8 +33,6 @@ class UserHomeController extends Controller
             App::setLocale("id");
         }
 
-
-
         $category = Category::first();
         $categories = Category::all();
         $about = About::first();
@@ -45,6 +43,10 @@ class UserHomeController extends Controller
             ->orWhere('name', 'one day trip')
             ->orWhere('name', 'Panoramic Paradise Road to Golomori')
             ->orWhere('name', 'panoramic paradise road to golomori')
+            ->orWhere('name', '3D2N Beautiful Bajo Private Trip')
+            ->orWhere('name', '3d2n beautiful bajo private trip')
+            ->orWhere('name', 'Joy Flight Labuan Bajo')
+            ->orWhere('name', 'joy flight labuan bajo')
             ->get();
         $other_services = Lainnya::all();
 

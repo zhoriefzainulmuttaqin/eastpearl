@@ -14,6 +14,10 @@
 @section('content')
 @section('style')
     <style>
+        br {
+            line-height: 0.5px !important;
+        }
+
         .atas {
             top: -50px !important;
         }

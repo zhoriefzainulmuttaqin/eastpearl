@@ -215,14 +215,13 @@ class LayananController extends Controller
         }
         $services = Layanan::where('slug', $slug)->first();
         $ServicesGallery = ServicesGallery::where('services_id', $services->id)->get();
-        $other_services = Layanan::where('slug', '!=', $slug)->get();
+        $other_services = Layanan::where('slug', '!=', $slug)->inRandomOrder()->get();
         $destination = $services->destinations;
-
         $facilities = $services->facilities;
 
 
         $allDest = Destination::get();
-        $allFasc = Destination::get();
+        $allFasc = Fasilitas::get();
         return view('user.detail_layanan', compact('services', 'other_services', 'destination', 'facilities', 'allDest', 'allFasc', 'ServicesGallery'));
     }
 }

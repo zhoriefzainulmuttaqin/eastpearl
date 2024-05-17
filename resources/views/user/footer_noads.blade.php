@@ -7,7 +7,7 @@
     <div id="copyrights">
         <div class="container">
             <p class="text-center">
-                <b class="h3">Preferred Partner For Travels</b>
+                <b class="h3">Preferred Partner For Travel</b>
                 <br>
                 with <span class='text-white'>eastpearl.id</span>
                 <br>

@@ -29,7 +29,7 @@
             <p class=" text-center title_event">
                 {{ __('home.slogan_atas') }}
             </p>
-            <p class=" text-center subt_event" style="margin-top: 1rem;">
+            <p class=" text-justify subt_event" style="margin-top: 1rem;">
                 {!! nl2br(__('home.text_slogan_atas')) !!}
             </p>
 
@@ -105,7 +105,7 @@
             <p class=" text-center title_event">
                 {{ __('home.slogan_atas') }}
             </p>
-            <p class="container text-center subt_event ">
+            <p class="container text-justify subt_event ">
                 {!! nl2br(__('home.text_slogan_atas')) !!}
             </p>
             <div class="d-flex flex-col mt-4">
@@ -287,10 +287,18 @@
                                         {{ $serv->name }} (SpeedBoat)
                                     @elseif ($serv->name == 'one day trip')
                                         {{ $serv->name }} (SpeedBoat)
-                                    @else
-                                        <div class="mt-2">
-                                            {{ $serv->name }} (Bus)
-                                        </div>
+                                    @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
+                                        {{ $serv->name }}
+                                    @elseif ($serv->name == '3d2n beautiful bajo private trip')
+                                        {{ $serv->name }}
+                                    @elseif ($serv->name == 'Panoramic Paradise Road to Golomori')
+                                        {{ $serv->name }} (Bus)
+                                    @elseif ($serv->name == 'panoramic paradise poad to golomori')
+                                        {{ $serv->name }} (Bus)
+                                    @elseif ($serv->name == 'Joy Flight Labuan Bajo')
+                                        {{ $serv->name }} (Heli)
+                                    @elseif ($serv->name == 'joy flight labuan bajo')
+                                        {{ $serv->name }} (Heli)
                                     @endif
                                 </span>
                                 @if ($serv->name == 'Panoramic Paradise Road to Golomori')
@@ -313,7 +321,7 @@
                             </div>
                         @endforeach
 
-                        <div class="mt-2">
+                        {{-- <div class="mt-2">
                             <span style="font-size: 26px; font-weight: 900;">
                                 Termasuk
                             </span>
@@ -391,7 +399,7 @@
                                     <span>Pembelian pribadi</span>
                                 </div>
                             </span>
-                        </div>
+                        </div> --}}
                     </div>
                 @elseif(App::isLocale('en'))
                     <div class="d-flex flex-col font-sans">
@@ -399,13 +407,21 @@
                             <div class="d-flex flex-col" style="font-size: 26px;">
                                 <span style=" font-weight: 900;">
                                     @if ($serv->name == 'One Day Trip')
-                                        {{ $serv->name_en }} (SpeedBoat)
+                                        {{ $serv->name }} (SpeedBoat)
                                     @elseif ($serv->name == 'one day trip')
                                         {{ $serv->name }} (SpeedBoat)
-                                    @else
-                                        <div class="mt-2">
-                                            {{ $serv->name_en }} (Bus)
-                                        </div>
+                                    @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
+                                        {{ $serv->name }}
+                                    @elseif ($serv->name == '3d2n beautiful bajo private trip')
+                                        {{ $serv->name }}
+                                    @elseif ($serv->name == 'Panoramic Paradise Road to Golomori')
+                                        {{ $serv->name }} (Bus)
+                                    @elseif ($serv->name == 'panoramic paradise poad to golomori')
+                                        {{ $serv->name }} (Bus)
+                                    @elseif ($serv->name == 'Joy Flight Labuan Bajo')
+                                        {{ $serv->name }} (Heli)
+                                    @elseif ($serv->name == 'joy flight labuan bajo')
+                                        {{ $serv->name }} (Heli)
                                     @endif
                                 </span>
                                 @if ($serv->name_en == 'Panoramic Paradise Road to Golomori')
@@ -428,7 +444,7 @@
                             </div>
                         @endforeach
 
-                        <div class="mt-2">
+                        {{-- <div class="mt-2">
                             <span style="font-size: 26px; font-weight: 900;">
                                 Include
                             </span>
@@ -505,7 +521,7 @@
                                     <span>Personal purchase</span>
                                 </div>
                             </span>
-                        </div>
+                        </div> --}}
                     </div>
                 @else
                     <div class="d-flex flex-col font-sans">
@@ -513,13 +529,21 @@
                             <div class="d-flex flex-col" style="font-size: 26px;">
                                 <span style=" font-weight: 900;">
                                     @if ($serv->name == 'One Day Trip')
-                                        {{ $serv->name_mandarin }} (快艇):
+                                        {{ $serv->name }} (快艇)
                                     @elseif ($serv->name == 'one day trip')
-                                        {{ $serv->name_mandarin }} (快艇):
-                                    @else
-                                        <div class="mt-2">
-                                            {{ $serv->name_mandarin }} (公共汽车):
-                                        </div>
+                                        {{ $serv->name }} (快艇)
+                                    @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
+                                        {{ $serv->name }}
+                                    @elseif ($serv->name == '3d2n beautiful bajo private trip')
+                                        {{ $serv->name }}
+                                    @elseif ($serv->name == 'Panoramic Paradise Road to Golomori')
+                                        {{ $serv->name }} (公共汽车)
+                                    @elseif ($serv->name == 'panoramic paradise poad to golomori')
+                                        {{ $serv->name }} (公共汽车)
+                                    @elseif ($serv->name == 'Joy Flight Labuan Bajo')
+                                        {{ $serv->name }} (直升机)
+                                    @elseif ($serv->name == 'joy flight labuan bajo')
+                                        {{ $serv->name }} (直升机)
                                     @endif
 
                                 </span>
@@ -543,7 +567,7 @@
                             </div>
                         @endforeach
 
-                        <div class="mt-2">
+                        {{-- <div class="mt-2">
                             <span style="font-size: 26px; font-weight: 900;">
                                 包括:
                             </span>
@@ -620,13 +644,13 @@
                                     <span>个人购买</span>
                                 </div>
                             </span>
-                        </div>
+                        </div> --}}
                     </div>
                 @endif
             </div>
         </div>
         @if (App::isLocale('id'))
-            <div class="d-flex" style="justify-content: center;">
+            <div class="d-flex mt-2" style="justify-content: center;">
                 @foreach ($topServices as $serv)
                     <a href="/layanan/detail/{{ $serv->slug }}">
                         <button type="button" aria-label="Click for details"
@@ -700,10 +724,18 @@
                                             {{ $serv->name }} (SpeedBoat)
                                         @elseif ($serv->name == 'one day trip')
                                             {{ $serv->name }} (SpeedBoat)
-                                        @else
-                                            <div class="mt-2">
-                                                {{ $serv->name }} (Bus)
-                                            </div>
+                                        @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
+                                            {{ $serv->name }}
+                                        @elseif ($serv->name == '3d2n beautiful bajo private trip')
+                                            {{ $serv->name }}
+                                        @elseif ($serv->name == 'Panoramic Paradise Road to Golomori')
+                                            {{ $serv->name }} (Bus)
+                                        @elseif ($serv->name == 'panoramic paradise poad to golomori')
+                                            {{ $serv->name }} (Bus)
+                                        @elseif ($serv->name == 'Joy Flight Labuan Bajo')
+                                            {{ $serv->name }} (Heli)
+                                        @elseif ($serv->name == 'joy flight labuan bajo')
+                                            {{ $serv->name }} (Heli)
                                         @endif
                                     </span>
                                     @if ($serv->name == 'Panoramic Paradise Road to Golomori')
@@ -727,7 +759,7 @@
                                 </div>
                             @endforeach
 
-                            <div class="mt-2">
+                            {{-- <div class="mt-2">
                                 <span style="font-size: 22px; font-weight: 900;">Termasuk</span>
                                 <div class="d-flex include mt-2">
                                     <div class="d-flex align-items-center item-include mr-4">
@@ -801,7 +833,7 @@
                                         <span>Pembelian pribadi</span>
                                     </div>
                                 </span>
-                            </div>
+                            </div> --}}
                         </div>
                     @elseif(App::isLocale('en'))
                         <div class="d-flex flex-col justify-content-lg-center mt-4">
@@ -809,13 +841,21 @@
                                 <div class="d-flex flex-col" style="font-size: 18px;">
                                     <span style=" font-weight: 900;">
                                         @if ($serv->name == 'One Day Trip')
-                                            {{ $serv->name_en }} (SpeedBoat)
+                                            {{ $serv->name }} (SpeedBoat)
                                         @elseif ($serv->name == 'one day trip')
-                                            {{ $serv->name_en }} (SpeedBoat)
-                                        @else
-                                            <div class="mt-2">
-                                                {{ $serv->name_en }} (Bus)
-                                            </div>
+                                            {{ $serv->name }} (SpeedBoat)
+                                        @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
+                                            {{ $serv->name }}
+                                        @elseif ($serv->name == '3d2n beautiful bajo private trip')
+                                            {{ $serv->name }}
+                                        @elseif ($serv->name == 'Panoramic Paradise Road to Golomori')
+                                            {{ $serv->name }} (Bus)
+                                        @elseif ($serv->name == 'panoramic paradise poad to golomori')
+                                            {{ $serv->name }} (Bus)
+                                        @elseif ($serv->name == 'Joy Flight Labuan Bajo')
+                                            {{ $serv->name }} (Heli)
+                                        @elseif ($serv->name == 'joy flight labuan bajo')
+                                            {{ $serv->name }} (Heli)
                                         @endif
                                     </span>
                                     @if ($serv->name_en == 'Panoramic Paradise Road to Golomori')
@@ -839,7 +879,7 @@
                                 </div>
                             @endforeach
 
-                            <div class="mt-2">
+                            {{-- <div class="mt-2">
                                 <span style="font-size: 22px; font-weight: 900;">
                                     Include
                                 </span>
@@ -914,7 +954,7 @@
                                         <span>Personal purchase</span>
                                     </div>
                                 </span>
-                            </div>
+                            </div> --}}
                         </div>
                     @else
                         <div class="d-flex flex-col justify-content-lg-center mt-4">
@@ -922,13 +962,21 @@
                                 <div class="d-flex flex-col" style="font-size: 18px;">
                                     <span style=" font-weight: 900;">
                                         @if ($serv->name == 'One Day Trip')
-                                            {{ $serv->name_mandarin }} (快艇)
+                                            {{ $serv->name }} (快艇)
                                         @elseif ($serv->name == 'one day trip')
-                                            {{ $serv->name_mandarin }} (快艇)
-                                        @else
-                                            <div class="mt-2">
-                                                {{ $serv->name_mandarin }} (公共汽车)
-                                            </div>
+                                            {{ $serv->name }} (快艇)
+                                        @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
+                                            {{ $serv->name }}
+                                        @elseif ($serv->name == '3d2n beautiful bajo private trip')
+                                            {{ $serv->name }}
+                                        @elseif ($serv->name == 'Panoramic Paradise Road to Golomori')
+                                            {{ $serv->name }} (公共汽车)
+                                        @elseif ($serv->name == 'panoramic paradise poad to golomori')
+                                            {{ $serv->name }} (公共汽车)
+                                        @elseif ($serv->name == 'Joy Flight Labuan Bajo')
+                                            {{ $serv->name }} (直升机)
+                                        @elseif ($serv->name == 'joy flight labuan bajo')
+                                            {{ $serv->name }} (直升机)
                                         @endif
                                     </span>
                                     @if ($serv->name_mandarin == 'Panoramic Paradise Road to Golomori')
@@ -952,7 +1000,7 @@
                                 </div>
                             @endforeach
 
-                            <div class="mt-2">
+                            {{-- <div class="mt-2">
                                 <span style="font-size: 22px; font-weight: 900;">
                                     包括
                                 </span>
@@ -1027,7 +1075,7 @@
                                         <span>个人购买</span>
                                     </div>
                                 </span>
-                            </div>
+                            </div> --}}
                         </div>
                     @endif
                 </div>
@@ -1192,7 +1240,8 @@
                                     <div class=" mb-md-0">
                                         <div class="entry-image">
                                             <img src='{{ url('assets/lainnya/' . $lainnya->image) }}'
-                                                alt="{{ $lainnya->slug }}" class="rounded-2" style="max-height: 20rem;">
+                                                alt="{{ $lainnya->slug }}" class="rounded-2"
+                                                style="max-height: 20rem;">
                                         </div>
                                     </div>
                                     <div class="image-caption text-center"

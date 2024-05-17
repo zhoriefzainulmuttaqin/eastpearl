@@ -10,7 +10,7 @@ return [
     'book_email' => '邮件预订',
     'trip_lainnya' => '其他行程',
     'rekomendasi' => '最佳推荐给您',
-    'fasilitas' => '所获设施:',
+    'fasilitas' => '包括:',
     'seputar' => '关于行程:',
     'rute' => '探索路线:',
     'meeting' => '集合地点：',
