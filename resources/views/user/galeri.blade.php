@@ -27,7 +27,7 @@
     <div class="container-lg mt-5">
         <h1
             class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-dark">
-            {{ __('galeri.keseruan') }}</span>
+            {!! nl2br(__('galeri.keseruan')) !!}
         </h1>
         <p class="text-lg mb-4 font-normal text-gray-500 lg:text-1xl dark:text-gray-400">
             {{ __('galeri.text_keseruan') }}
