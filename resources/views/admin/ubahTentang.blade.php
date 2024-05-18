@@ -28,73 +28,48 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <label for="description"> Deskripsi </label>
-                            <input type="text" class="form-control @error('description') is-invalid @enderror"
-                                name="description" id="description" placeholder="Masukan Deskripsi "
-                                value="{{ old('description') ?? $tentang->description }}" required
-                                autocomplete="off"></input>
-                            @error('description')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="description_en"> Deskripsi (Inggris) </label>
-                            <input type="text" class="form-control @error('description_en') is-invalid @enderror"
-                                name="description_en" id="description_en" placeholder="Masukan Deskripsi (Inggris) "
-                                value="{{ old('description_en') ?? $tentang->description_en }}" required
-                                autocomplete="off"></input>
-                            @error('description_en')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="description_mandarin"> Deskripsi (Mandarin) </label>
-                            <input type="text" class="form-control @error('description_mandarin') is-invalid @enderror"
-                                name="description_mandarin" id="description_mandarin"
-                                placeholder="Masukan Deskripsi (Mandarin) "
-                                value="{{ old('description_mandarin') ?? $tentang->description_mandarin }}" required
-                                autocomplete="off"></input>
-                            @error('description_mandarin')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
 
                         <div class="form-group">
-                            <label for="long_content">Deskripsi panjang</label>
-                            <textarea id="long_content" name="long_description" placeholder="Masukkan Deskripsi Panjang" rows="10" required>{{ old('long_description') ?? $tentang->long_description }}</textarea>
+                            <label for="description">Deskripsi (Dalam Bahasa Indonesia)</label>
+                            <textarea id="description" name="description" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('description') ?? $tentang->description }}</textarea>
                             <div class="my-3"></div>
                         </div>
                         <div class="form-group">
-                            <label for="long_content_en">Deskripsi Panjang (Inggris)</label>
-                            <textarea id="long_content_en" name="long_description_en" placeholder="Masukkan Deskripsi Panjang" rows="10"
-                                required>{{ old('long_description_en') ?? $tentang->long_description_en }}</textarea>
+                            <label for="description_en">Deskripsi (Dalam Bahasa Inggris)</label>
+                            <textarea id="description_en" name="description_en" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('description_en') ?? $tentang->description_en }}</textarea>
                             <div class="my-3"></div>
                         </div>
                         <div class="form-group">
-                            <label for="long_content_mandarin">Deskripsi Panjang (Mandarin)</label>
-                            <textarea id="long_content_mandarin" name="long_description_mandarin" placeholder="Masukkan Deskripsi Panjang"
-                                rows="10" required>{{ old('long_description_mandarin') ?? $tentang->long_description_mandarin }}</textarea>
+                            <label for="description_mandarin">Deskripsi (Dalam Bahasa Mandarin)</label>
+                            <textarea id="description_mandarin" name="description_mandarin" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('description_mandarin') ?? $tentang->description_mandarin }}</textarea>
                             <div class="my-3"></div>
                         </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="slogan"> Slogan </label>
-                                <input type="text" class="form-control @error('slogan') is-invalid @enderror"
-                                    name="slogan" id="slogan" placeholder="Masukan Slogan "
-                                    value="{{ old('slogan') ?? $tentang->slogan }}" required autocomplete="off"></input>
-                                @error('slogan')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
+                        <div class="form-group">
+                            <label for="long_description">Deskripsi Panjang (Dalam Bahasa Indonesia)</label>
+                            <textarea id="long_description" name="long_description" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('long_description') ?? $tentang->long_description }}</textarea>
+                            <div class="my-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="long_description_en">Deskripsi Panjang (Dalam Bahasa Inggris)</label>
+                            <textarea id="long_description_en" name="long_description_en" placeholder="Masukkan Deskripsi" rows="10"required>{{ old('long_description_en') ?? $tentang->long_description_en }}</textarea>
+                            <div class="my-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="long_description_mandarin">Deskripsi Panjang (Dalam Bahasa Mandarin)</label>
+                            <textarea id="long_description_mandarin" name="long_description_mandarin" placeholder="Masukkan Deskripsi"
+                                rows="10"required>{{ old('long_description_mandarin') ?? $tentang->long_description_mandarin }}</textarea>
+                            <div class="my-3"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="slogan"> Slogan </label>
+                            <input type="text" class="form-control @error('slogan') is-invalid @enderror" name="slogan"
+                                id="slogan" placeholder="Masukan Slogan "
+                                value="{{ old('slogan') ?? $tentang->slogan }}" required autocomplete="off"></input>
+                            @error('slogan')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="location"> Lokasi </label>
@@ -111,8 +86,7 @@
                             <label for="link_maps"> Embeded Maps </label>
                             <input type="text" class="form-control @error('link_maps') is-invalid @enderror"
                                 name="link_maps" id="link_maps" placeholder="Masukan Embed Maps "
-                                value="{{ old('link_maps') ?? $tentang->link_maps }}" required
-                                autocomplete="off"></input>
+                                value="{{ old('link_maps') ?? $tentang->link_maps }}" required autocomplete="off"></input>
                             @error('link_maps')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -146,6 +120,7 @@
 @endsection
 @section('script')
     <script src="{{ url('ckeditor/ckeditor.js') }}"></script>
+
     <script>
         function previewImage() {
             const image = document.querySelector('#image');
@@ -153,25 +128,38 @@
 
             imgPreview.style.display = 'block';
 
-            const ofReader = tentang FileReader();
+            const ofReader = new FileReader();
             ofReader.readAsDataURL(image.files[0]);
 
             ofReader.onload = function(oFREvent) {
                 imgPreview.src = oFREvent.target.result;
             }
         }
+        CKEDITOR.replace('description', {
+            enterMode: CKEDITOR.ENTER_BR,
+            removePlugins: 'image'
+        });
+        CKEDITOR.replace('description_en', {
+            enterMode: CKEDITOR.ENTER_BR,
+            removePlugins: 'image'
+        });
+        CKEDITOR.replace('description_mandarin', {
+            enterMode: CKEDITOR.ENTER_BR,
+            removePlugins: 'image'
+        });
+        CKEDITOR.replace('long_description', {
+            enterMode: CKEDITOR.ENTER_BR,
 
-        CKEDITOR.replace('long_content', {
-            enterMode: CKEDITOR.ENTER_BR,
-            removePlugins: 'image'
+
+
         });
-        CKEDITOR.replace('long_content_en', {
+        CKEDITOR.replace('long_description_en', {
             enterMode: CKEDITOR.ENTER_BR,
-            removePlugins: 'image'
+
         });
-        CKEDITOR.replace('long_content_mandarin', {
+        CKEDITOR.replace('long_description_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
-            removePlugins: 'image'
+
         });
     </script>
 @endsection

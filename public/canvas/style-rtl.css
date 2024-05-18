@@ -17746,7 +17746,7 @@ body:not(.top-search-open) .top-search-parent .primary-menu-trigger {
 .is-expanded-menu .mega-menu-content {
   position: absolute;
   visibility: hidden;
-  background-color: var(--cnvs-primary-menu-submenu-bg);
+  background-color: white;
   box-shadow: 0px 13px 42px 11px rgba(0, 0, 0, 0.05);
   border: var(--cnvs-primary-menu-submenu-border);
   border-top: var(--cnvs-primary-menu-submenu-top-border);

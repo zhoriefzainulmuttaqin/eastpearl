@@ -8,10 +8,22 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
 @section('cover')
-    <?= url('assets/bg/tentang.jpg') ?>
+    <?= url("/assets/services/$services->image") ?>
 @endsection
 
 @section('content')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BV3NGNRL2G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BV3NGNRL2G');
+    </script>
 @section('style')
     <style>
         br {
@@ -142,7 +154,7 @@
             </div>
 
             <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                <div class="titLin m-4 ">
+                <div class="titLin m-4 " style="text-align: justify;">
 
                     @if (App::isLocale('id'))
                         {!! nl2br($services->long_desc) !!}
@@ -413,7 +425,7 @@
                 </button>
             </div>
             <div class="relative mt-2 flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                <div class="titLin m-4 ">
+                <div class="titLin m-4 " style="text-align: justify;">
 
                     @if (App::isLocale('id'))
                         {!! nl2br($services->long_desc) !!}

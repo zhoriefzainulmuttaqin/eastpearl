@@ -30,7 +30,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td class="text-center">
-                                        <img src='{{ url("/assets/lainnya/$lainnya->image") }}'
+                                        <img src='{{ url("./assets/lainnya/$lainnya->image") }}'
                                             class="img-preview mb-3 img-fluid" style="height: 50px; widht: auto;">
                                     </td>
                                     <td>{{ $lainnya->name }}</td>

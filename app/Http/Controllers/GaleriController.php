@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Destination;
 use App\Models\Galeri;
-
+use App\Models\Layanan;
+use App\Models\ServicesGallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -148,8 +151,12 @@ class GaleriController extends Controller
             $locale = "id";
             App::setLocale("id");
         }
+
         $galeri = Galeri::get();
 
-        return view('user.galeri', compact('galeri'));
+        $destinasi = Destination::get();
+
+        return view('user.galeri', compact('galeri', 'destinasi'));
+
     }
 }

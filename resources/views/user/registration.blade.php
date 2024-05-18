@@ -34,7 +34,7 @@
 
 </head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-26YC4R3P36"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BV3NGNRL2G"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -43,7 +43,7 @@
     }
     gtag('js', new Date());
 
-    gtag('config', 'G-26YC4R3P36');
+    gtag('config', 'G-BV3NGNRL2G');
 </script>
 
 <body class="stretched">

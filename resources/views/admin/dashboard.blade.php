@@ -5,30 +5,30 @@
 @endsection
 
 @section('content')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BV3NGNRL2G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BV3NGNRL2G');
+    </script>
+
     <div class="row">
         <div class="col-lg-2 col-6">
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>{{ $count_open_trip }}</h3>
-                    <p>Open Trip</p>
+                    <h3>{{ $count_sharing_trip }}</h3>
+                    <p>Sharing & Private Trip</p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-map-marked"></i>
                 </div>
-                <a href="{{ url('app-admin/data/layanan/open-trip') }}" class="small-box-footer">Kelola Data <i
-                        class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <div class="col-lg-2 col-6">
-            <div class="small-box bg-success">
-                <div class="inner">
-                    <h3>{{ $count_private_trip }}</h3>
-                    <p>Private Trip</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-map-marked"></i>
-                </div>
-                <a href="{{ url('app-admin/data/layanan/private-trip') }}" class="small-box-footer">Kelola Data <i
+                <a href="{{ url('app-admin/data/layanan/sharing-and-private-trip') }}" class="small-box-footer">Kelola Data <i
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>

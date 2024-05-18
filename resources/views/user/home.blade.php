@@ -18,10 +18,18 @@
 
 
 @section('content')
-    {{-- @php
-        $sortedEvents = $events->sortByDesc('start_date');
-    @endphp --}}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BV3NGNRL2G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BV3NGNRL2G');
+    </script>
 
     {{-- end css event --}}
     <div id="home-event-container" class="d-none d-md-block">
@@ -1319,24 +1327,25 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex flex-row mt-4">
-            <div class="rounded-xl  ">
+        <div class="d-flex flex-col mt-4">
+            {{-- <div class="rounded-xl  ">
                 <div class="  overflow-hidden rounded-xl bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img src="{{ url('assets/tentang/' . $about->image) }}"
-                        style="width: 250rem !important; height: 20rem;" alt="{{ $about->company_name }}"
+                        style="width: 250rem !important; height: auto;" alt="{{ $about->company_name }}"
                         layout="fill" />
                 </div>
 
-            </div>
+            </div> --}}
             <div class="p-6">
 
-                <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
+                    style="text-align: justify;">
                     @if (App::isLocale('id'))
-                        {{ $about->long_description }}
+                        {!! nl2br(__($about->long_description)) !!}
                     @elseif(App::isLocale('en'))
-                        {{ $about->long_description_en }}
+                        {!! nl2br(__($about->long_description_en)) !!}
                     @else
-                        {{ $about->long_description_mandarin }}
+                        {!! nl2br(__($about->long_description_mandarin)) !!}
                     @endif
                 </p>
             </div>
@@ -1367,13 +1376,13 @@
                 <div class="mt-2 p-2">
 
                     <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
-                        style="font-size: 12px;">
+                        style="font-size: 12px; text-align:justify;">
                         @if (App::isLocale('id'))
-                            {{ $about->long_description }}
+                            {!! nl2br(__($about->long_description)) !!}
                         @elseif(App::isLocale('en'))
-                            {{ $about->long_description_en }}
+                            {!! nl2br(__($about->long_description_en)) !!}
                         @else
-                            {{ $about->long_description_mandarin }}
+                            {!! nl2br(__($about->long_description_mandarin)) !!}
                         @endif
                     </p>
                 </div>

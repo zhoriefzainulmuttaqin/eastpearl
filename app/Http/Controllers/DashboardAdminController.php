@@ -27,13 +27,10 @@ class DashboardAdminController extends Controller
     //
     public function dashboard()
     {
-        $count_open_trip = Layanan::whereHas('categories', function ($query) {
-            $query->where('name', 'open trip')->orWhere('name', 'Open Trip');
+        $count_sharing_trip = Layanan::whereHas('categories', function ($query) {
+            $query->where('name', 'sharing & private trip')->orWhere('name', 'Sharing & Private Trip');
         })->count();
 
-        $count_private_trip = Layanan::whereHas('categories', function ($query) {
-            $query->where('name', 'private trip')->orWhere('name', 'Private Trip');
-        })->count();
 
         $count_land_trip = Layanan::whereHas('categories', function ($query) {
             $query->where('name', 'land trip')->orWhere('name', 'Land Trip');
@@ -51,8 +48,7 @@ class DashboardAdminController extends Controller
 
 
         $data = ([
-            "count_open_trip" => $count_open_trip,
-            "count_private_trip" => $count_private_trip,
+            "count_sharing_trip" => $count_sharing_trip,
             "count_land_trip" => $count_land_trip,
             "count_fly_bajo" => $count_fly_bajo,
             "count_destination" => $count_destination,

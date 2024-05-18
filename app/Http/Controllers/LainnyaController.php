@@ -59,8 +59,8 @@ class LainnyaController extends Controller
         // Jika ada file gambar baru yang diunggah
         if ($request->hasFile('image')) {
             // Hapus file gambar lama
-            if (File::exists(public_path("assets/lainnya/{$other->image}"))) {
-                File::delete(public_path("assets/lainnya/{$other->image}"));
+            if (File::exists("./assets/lainnya/{$other->image}")) {
+                File::delete("./assets/lainnya/{$other->image}");
             }
 
             // Upload file gambar baru

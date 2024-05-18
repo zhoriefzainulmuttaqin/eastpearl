@@ -19,6 +19,18 @@
 @endsection
 
 @section('content')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BV3NGNRL2G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BV3NGNRL2G');
+    </script>
     @foreach ($about as $tentang)
         <div class="container-lg mt-5">
 
@@ -28,12 +40,13 @@
             <div class="mt-4" style="text-align:justify; padding-left: 50px; padding-right: 50px;">
                 <span class="isi">
                     @if (App::isLocale('id'))
-                        {{ $tentang->long_description }}
+                        {!! nl2br(__($tentang->long_description)) !!}
                     @elseif(App::isLocale('en'))
-                        {{ $tentang->long_description_en }}
+                        {!! nl2br(__($tentang->long_description_en)) !!}
                     @else
-                        {{ $tentang->long_description_mandarin }}
+                        {!! nl2br(__($tentang->long_description_mandarin)) !!}
                     @endif
+
                 </span>
             </div>
 

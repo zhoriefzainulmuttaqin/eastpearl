@@ -6,6 +6,6 @@ return [
     "home" => "Home",
     "layanan" => "Services",
     "tentang" => "About Us",
-    "galeri" => "Galleries",
+    "galeri" => "Gallery",
 
 ];

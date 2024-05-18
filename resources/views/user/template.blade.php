@@ -74,7 +74,7 @@
                 .swiper_wrapper .swiper-slide {
                     margin-top: -50px !important;
 
-                    @media (max-width: 760px) {
+                    @media (max-width: 768px) {
                         margin-top: -50px !important;
                     }
                 }
@@ -104,11 +104,36 @@
                     width: 100%;
                 }
 
-                @media (max-width: 760px) {
+                @media (max-width: 768px) {
                     .swiper-slide img {
                         /* display: block; */
                         width: 100px !important;
                         height: 10rem !important;
+                    }
+                }
+
+                /* ip 67 */
+                @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+                    .atas {
+                        /* width: 10em !important;
+                        height: 10em !important; */
+                    }
+                }
+
+                /* Portrait */
+                @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+                    .atas {
+                        /* width: 10em !important;
+                        height: 10em !important; */
+
+                    }
+                }
+
+                /* Landscape */
+                @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+                    .atas {
+                        /* width: 10em !important;
+                        height: 10em !important; */
                     }
                 }
             </style>
@@ -117,11 +142,11 @@
 
                 <section id="slider"
                     class="bg_image slider-element slider-parallax min-vh-40 min-vh-md-100 dark include-header"
-                    style="background: url('/assets/bg/padar.jpg') no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
+                    style="background: url('/assets/bg/padar.jpg') no-repeat; background-size: cover; margin-bottom:0px; background-position: center center;">
                     <div class="">
                         <div class="">
 
-                            <div class="text-center border-bottom-0 mt-6 mt-md-0" style="">
+                            {{-- <div class="text-center border-bottom-0 mt-6 mt-md-0" style="">
                                 <div class="language">
                                     <a href="{{ url('atur-bahasa/id') }}"
                                         class="btn text-center bg-btn-language but_lang1">
@@ -137,37 +162,22 @@
                                     </a>
                                 </div>
                             </div>
+                        </div> --}}
                         </div>
-                    </div>
                 </section>
             </div>
 
 
 
-
             <div class="d-block d-lg-none">
-
                 <section id="slider"
                     class="bg_image slider-element slider-parallax min-vh-40 min-vh-md-100 dark include-header"
-                    style="background: url('/assets/bg/padar.jpg') no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
+                    style="background: url('assets/bg/padar.jpg') no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
                     <div class="slider-inner">
                         <div class="vertical-middle slider-element-fade">
                             <div class="container-fluid py-5">
                                 <div class="heading-block text-center border-bottom-0 mt-6 mt-md-0" style="">
-                                    <div class="language">
-                                        <a href="{{ url('atur-bahasa/id') }}"
-                                            class="btn text-center bg-btn-language but_lang1">
-                                            BAHASA
-                                        </a>
-                                        <a href="{{ url('atur-bahasa/en') }}"
-                                            class="btn text-center bg-btn-language but_lang2 ml-auto mr-auto">
-                                            ENGLISH
-                                        </a>
-                                        <a href="{{ url('atur-bahasa/mandarin') }}"
-                                            class="btn text-center bg-btn-language but_lang3">
-                                            普通话
-                                        </a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -178,7 +188,7 @@
             {{-- <div class=" d-block d-lg-none"> --}}
             <section id="slider"
                 class="bg_image slider-element slider-parallax min-vh-40 min-vh-md-100 dark include-header"
-                style="background: url('@yield('cover')') no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
+                style="background: url(@yield('cover')) no-repeat; background-size: cover;margin-bottom:0px; background-position: center center;">
                 <div class="slider-inner">
                     <div class="vertical-middle slider-element-fade">
                         <div class="container-fluid py-5">

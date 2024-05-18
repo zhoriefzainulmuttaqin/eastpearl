@@ -12,6 +12,18 @@
 @endsection
 
 @section('content')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BV3NGNRL2G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BV3NGNRL2G');
+    </script>
     <div class="container-lg mt-5">
         <h1
             class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-dark">
@@ -22,15 +34,27 @@
         </p>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Loop untuk variabel galeri -->
             @foreach ($galeri as $galleries)
                 <div class="grid gap-12">
                     <div>
                         <img class="h-auto max-w-full rounded-lg" src="{{ url('assets/galeri/' . $galleries->image) }}"
-                            alt="">
+                            alt="{{ $galleries->name }}">
+                    </div>
+                </div>
+            @endforeach
+
+            <!-- Loop untuk variabel destinasi -->
+            @foreach ($destinasi as $destination)
+                <div class="grid gap-12">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg"
+                            src="{{ url('assets/destination/' . $destination->image) }}" alt="{{ $destination->name }}">
                     </div>
                 </div>
             @endforeach
         </div>
+
 
     </div>
 
