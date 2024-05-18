@@ -1,7 +1,7 @@
 @extends('admin.template')
 
 @section('title')
-    Tambah Kategori Layanan
+    Tambah Kategori Galeri
 @endsection
 
 @section('content')
@@ -9,9 +9,10 @@
         <div class="col-md-12">
             <div class="card" style="padding-bottom: 15px;">
                 <div class="card-header">
-                    <h3 class="card-title">Tambah Kategori Layanan</h3>
+                    <h3 class="card-title">Tambah Kategori Galeri</h3>
                 </div>
-                <form method="POST" action="{{ url('app-admin/data/kategori/proses-tambah') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ url('app-admin/data/kategori_galeri/proses-tambah') }}"
+                    enctype="multipart/form-data">
                     <input type="hidden" name="id">
                     @csrf
                     <div class="card-body">
@@ -58,19 +59,8 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <label for="image" class="form-label">Gambar </label>
-                            <img id="addImage" class="img-preview mb-3 img-fluid" style="max-height: 300px; width: auto;">
-                            <input class="form-control @error('image') is-invalid @enderror" type="file" name="image"
-                                id="image" onchange="previewImage()" required>
-                            @error('image')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
                         <div class="card-footer">
-                            <a href="{{ url('/app-admin/data/kategori') }}">
+                            <a href="{{ url('/app-admin/data/kategori_galeri') }}">
                                 <button type="button" class="btn btn-danger float-left">Kembali</button>
                             </a>
                             <button type="submit" class="btn btn-primary float-right">Tambah</button>
@@ -89,19 +79,5 @@
                 .then(response => response.json())
                 .then(data => slug.value = data.slug)
         })
-
-        function previewImage() {
-            const image = document.querySelector('#image');
-            const imgPreview = document.querySelector('#addImage');
-
-            imgPreview.style.display = 'block';
-
-            const ofReader = new FileReader();
-            ofReader.readAsDataURL(image.files[0]);
-
-            ofReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result;
-            }
-        }
     </script>
 @endsection

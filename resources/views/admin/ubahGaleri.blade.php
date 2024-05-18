@@ -28,7 +28,23 @@
                                 </div>
                             @enderror
                         </div>
-
+                        <div class="form-group">
+                            <label for="category_id">Kategori</label>
+                            <select class="form-control" id="category_id" required name="category_id">
+                                <option value="">--- Pilih Kategori ---</option>
+                                @foreach ($category as $category)
+                                    <?php
+                                    if ($galeri->category_id == $category->id) {
+                                        $selected = 'selected';
+                                    } else {
+                                        $selected = '';
+                                    }
+                                    ?>
+                                    <option value="{{ $category->id }}" {{ $selected }}>{{ $category->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="image" class="form-label">Gambar </label>
                             <br>

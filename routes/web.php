@@ -32,6 +32,7 @@ use App\Http\Controllers\TransactionAffiliate;
 use App\Http\Controllers\UserHomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CategoryGalleryController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\GaleriController;
@@ -115,6 +116,14 @@ Route::prefix("app-admin")->group(function () {
         Route::get("data/kategori/ubah/{slug}", [CategoryController::class, "ubah_kategori"]);
         Route::post("data/kategori/proses-ubah", [CategoryController::class, "proses_ubah_kategori"]);
         Route::get("data/kategori/hapus/{id}", [CategoryController::class, "proses_hapus_kategori"]);
+
+        //  kategori_galeri
+        Route::get("data/kategori_galeri", [CategoryGalleryController::class, "admin_kategori_galeri"]);
+        Route::get("data/tambah/kategori_galeri", [CategoryGalleryController::class, "tambah_kategori_galeri"]);
+        Route::post("data/kategori_galeri/proses-tambah", [CategoryGalleryController::class, "proses_tambah_kategori_galeri"]);
+        Route::get("data/kategori_galeri/ubah/{slug}", [CategoryGalleryController::class, "ubah_kategori_galeri"]);
+        Route::post("data/kategori_galeri/proses-ubah", [CategoryGalleryController::class, "proses_ubah_kategori_galeri"]);
+        Route::get("data/kategori_galeri/hapus/{id}", [CategoryGalleryController::class, "proses_hapus_kategori_galeri"]);
 
         //  fasilitas
         Route::get("data/fasilitas", [FasilitasController::class, "admin_fasilitas"]);

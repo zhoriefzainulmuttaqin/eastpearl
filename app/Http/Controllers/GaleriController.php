@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\CategoryGallery;
 use App\Models\Destination;
 use App\Models\Galeri;
 use App\Models\Layanan;
@@ -27,8 +28,9 @@ class GaleriController extends Controller
     public function tambah_galeri()
     {
         $galeri = Galeri::get();
+        $category = CategoryGallery::get();
 
-        return view('admin.tambahGaleri', compact('galeri'));
+        return view('admin.tambahGaleri', compact('galeri', 'category'));
     }
 
     public function proses_tambah_galeri(Request $request)
@@ -52,6 +54,7 @@ class GaleriController extends Controller
         Galeri::insert([
 
             'image_name' => $request->image_name,
+            'category_id' => $request->category_id,
             'image' => $nameImage,
         ]);
 
@@ -65,14 +68,16 @@ class GaleriController extends Controller
         $id = $request->id;
 
         $galeri = Galeri::where('id', $id)->first();
+        $category = CategoryGallery::get();
 
-        return view('admin.ubahGaleri', compact('galeri'));
+        return view('admin.ubahGaleri', compact('galeri', 'category'));
     }
     public function proses_ubah_galeri(Request $request)
     {
         // wajib
         $id = $request->id;
         $image_name = $request->image_name;
+        $category_id = $request->category_id;
 
         $data_galeri = Galeri::where('id', $id)->first();
 
@@ -114,6 +119,7 @@ class GaleriController extends Controller
             ->update([
 
                 'image_name' => $image_name,
+                'category_id' => $category_id,
                 'image' => $nameImage,
 
             ]);
@@ -152,11 +158,12 @@ class GaleriController extends Controller
             App::setLocale("id");
         }
 
-        $galeri = Galeri::get();
+        // Mengambil data galeri beserta relasi kategorinya
+        $galeri = Galeri::with('category')->get();
+        $categories = CategoryGallery::with('galeri')->get();
 
-        $destinasi = Destination::get();
-
-        return view('user.galeri', compact('galeri', 'destinasi'));
-
+        return view('user.galeri', compact('galeri', 'categories'));
     }
+
+
 }

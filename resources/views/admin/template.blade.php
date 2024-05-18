@@ -91,6 +91,10 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Galeri</p>
                                     </a>
+                                    <a href="{{ url('app-admin/data/kategori_galeri') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Kategori Galeri</p>
+                                    </a>
                                     <a href="{{ url('app-admin/data/tentang') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tentang Kami</p>

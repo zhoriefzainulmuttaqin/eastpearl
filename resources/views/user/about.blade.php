@@ -58,7 +58,7 @@
                     <div class="grid gap-12">
                         <div>
                             <img class="h-auto max-w-full rounded-lg" src="{{ url('assets/galeri/' . $galleries->image) }}"
-                                alt="">
+                                alt="{{ $galleries->name }}">
                         </div>
                     </div>
                 @endforeach

@@ -7,7 +7,7 @@
     background-color: #ba1918;
     height: 52em;
 }
-@media (max-width: 760px) {
+@media (max-width: 768px) {
     #home-event-container {
         background-size: cover;
         height: 46.5em;
@@ -49,7 +49,7 @@
 .owl-carousel .owl-dots .owl-dot {
     background-color: #676565;
 }
-@media (max-width: 760px) {
+@media (max-width: 768px) {
     #but_event {
         width: 8rem;
         height: 30px;
@@ -88,7 +88,7 @@
     background-position: center;
     line-height: 60px;
 }
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 768px) {
     .background-text {
         background-color: #ba1918;
         background-position: center;

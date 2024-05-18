@@ -32,33 +32,38 @@
         <p class="text-lg mb-4 font-normal text-gray-500 lg:text-1xl dark:text-gray-400">
             {{ __('galeri.text_keseruan') }}
         </p>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Loop untuk variabel galeri -->
-            @foreach ($galeri as $galleries)
-                <div class="grid gap-12">
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg" src="{{ url('assets/galeri/' . $galleries->image) }}"
-                            alt="{{ $galleries->name }}">
-                    </div>
+        <div class="container">
+            @foreach ($categories as $category)
+                <div class="text-center mb-4 mt-2">
+                    <p style="font-size: 26px; font-weight: 400;">
+                        <b>
+                            @if (App::isLocale('id'))
+                                {{ $category->name }}
+                            @elseif(App::isLocale('en'))
+                                {{ $category->name_en }}
+                            @else
+                                {{ $category->name_mandarin }}
+                            @endif
+                        </b>
+                    </p>
                 </div>
-            @endforeach
-
-            <!-- Loop untuk variabel destinasi -->
-            @foreach ($destinasi as $destination)
-                <div class="grid gap-12">
-                    <div>
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="{{ url('assets/destination/' . $destination->image) }}" alt="{{ $destination->name }}">
-                    </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    @foreach ($category->galeri as $gallery)
+                        @if ($gallery)
+                            <div class="grid gap-12">
+                                <div>
+                                    <img class="h-auto max-w-full rounded-lg"
+                                        src="{{ url('assets/galeri/' . $gallery->image) }}" alt="{{ $gallery->name }}">
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
                 </div>
             @endforeach
         </div>
 
-
     </div>
 
-    <script></script>
 
     <div class="clearfix mb-5"></div>
 

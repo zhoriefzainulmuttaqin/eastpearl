@@ -10,11 +10,12 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('category_gallery', function (Blueprint $table) {
             $table->id();
-            $table->string('image_name');
-            $table->string('category_id');
-            $table->string('image');
+            $table->longText('name');
+            $table->longText('name_en');
+            $table->longText('name_mandarin');
+            $table->string('slug');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('galleries');
+        Schema::dropIfExists('category_gallery');
     }
 };

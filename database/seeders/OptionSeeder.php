@@ -30,7 +30,7 @@ class OptionSeeder extends Seeder
             ]),
             ([
                 "option_code" => "slogan",
-                "option_value" => "Preferred Partner For Travels",
+                "option_value" => "Preferred Partner For Travel",
             ]),
             ([
                 "option_code" => "fb_link",

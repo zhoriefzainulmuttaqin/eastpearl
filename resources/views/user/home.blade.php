@@ -30,6 +30,17 @@
 
         gtag('config', 'G-BV3NGNRL2G');
     </script>
+    <style>
+        .equal-height {
+            height: 20em;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .equal-height {
+                height: 10em;
+            }
+        }
+    </style>
 
     {{-- end css event --}}
     <div id="home-event-container" class="d-none d-md-block">
@@ -43,18 +54,16 @@
 
             <div class="d-flex flex-row mt-4">
                 <div class="col-6">
-
-                    <iframe class="rounded-xl mt-4 shadow-lg"
+                    <iframe id="mapIframe" class="rounded-xl mt-4 shadow-lg equal-height"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1794735.3830136342!2d117.33893461917772!3d-9.542222171245745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db4667f78c5c9c3%3A0x2543ed6a00d784da!2sBadjo%2C%20Labuan%20Bajo%2C%20Kec.%20Komodo%2C%20Kabupaten%20Manggarai%20Barat%2C%20Nusa%20Tenggara%20Tim.!5e0!3m2!1sid!2sid!4v1715242527886!5m2!1sid!2sid"
-                        width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade" title="Maps Labuan Bajo">
-                    </iframe>
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Maps Labuan Bajo"></iframe>
                 </div>
                 <div class="col-6 ml-3 mt-5">
-
-                    <div id="default-carousel" class="relative" data-carousel="static">
+                    <div id="default-carousel" class="relative equal-height" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="overflow-hidden relative h-80 shadow-lg rounded-lg sm:h-80 xl:h-80 2xl:h-80">
+                        <div id="carouselWrapper"
+                            class="overflow-hidden relative h-80 shadow-lg rounded-lg sm:h-80 xl:h-80 2xl:h-80">
                             @foreach ($trip as $index => $dest)
                                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                     <span
@@ -65,15 +74,7 @@
                                 </div>
                             @endforeach
                         </div>
-                        <!-- Slider indicators -->
-                        {{-- <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
-                            @foreach ($trip as $index => $dest)
-                                <button type="button" class="w-3 h-3 rounded-full" aria-current="false"
-                                    aria-label="Slide {{ $index + 1 }}"
-                                    data-carousel-slide-to="{{ $index }}"></button>
-                            @endforeach
-                        </div> --}}
-                        <!-- Slider controls -->
+                        <!-- Buttons for navigation -->
                         <button type="button" aria-label="previous"
                             class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
                             data-carousel-prev>
@@ -82,8 +83,7 @@
                                 <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 19l-7-7 7-7">
-                                    </path>
+                                        d="M15 19l-7-7 7-7"></path>
                                 </svg>
                                 <span class="hidden">Previous</span>
                             </span>
@@ -103,6 +103,7 @@
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="clearfix"></div>
@@ -118,15 +119,15 @@
             </p>
             <div class="d-flex flex-col mt-4">
                 <div class="col-11 ml-auto mr-auto shadow-lg">
-                    <iframe class="rounded-xl  shadow-lg"
+                    <iframe class="rounded-xl  shadow-lg equal-height"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1794735.3830136342!2d117.33893461917772!3d-9.542222171245745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db4667f78c5c9c3%3A0x2543ed6a00d784da!2sBadjo%2C%20Labuan%20Bajo%2C%20Kec.%20Komodo%2C%20Kabupaten%20Manggarai%20Barat%2C%20Nusa%20Tenggara%20Tim.!5e0!3m2!1sid!2sid!4v1715242527886!5m2!1sid!2sid"
-                        width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade" title="Maps Labuan Bajo">
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Maps Labuan Bajo">
                     </iframe>
                 </div>
-                <div class="col-11 mt-2 ml-auto mr-auto shadow-lg">
+                <div class="col-11 mt-2 ml-auto mr-auto">
 
-                    <div id="default-carousel" class="relative" data-carousel="static">
+                    <div id="default-carousel" class="relative equal-height" data-carousel="static">
                         <!-- Carousel wrapper -->
                         <div class="gambar_destinasi overflow-hidden relative  shadow-lg rounded-lg" style="height: 11em;">
                             @foreach ($trip as $index => $dest)
@@ -1399,6 +1400,23 @@
     <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 
     <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function setEqualHeight() {
+                const iframe = document.getElementById('mapIframe');
+                const carouselWrapper = document.getElementById('carouselWrapper');
+                const iframeHeight = iframe.clientHeight;
+
+                carouselWrapper.style.height = iframeHeight + 'px';
+            }
+
+            // Set height on page load
+            setEqualHeight();
+
+            // Set height on window resize
+            window.addEventListener('resize', setEqualHeight);
+        });
+    </script>
 
     <!-- Initialize Swiper -->
 @endsection

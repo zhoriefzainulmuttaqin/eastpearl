@@ -68,7 +68,7 @@ $locale = App::currentLocale();
         display: block;
     }
 </style>
-<header id="header" class=" page-section white shadow-lg">
+<header id="header" class=" page-section white shadow-lg" style="opacity: 0.8; z-index: 9999999999;">
     <div id="header-wrap">
         <div class="container-fluid">
             <div class="header-row">
