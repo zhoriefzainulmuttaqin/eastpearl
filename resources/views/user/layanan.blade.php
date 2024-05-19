@@ -36,7 +36,7 @@
                     {{ $category->name_mandarin }}
                 @endif
                 @if (App::isLocale('id'))
-                    {{ __('layanan.paket') }} {{ $about->company_name }}
+                    {{ $about->company_name }}
                 @elseif(App::isLocale('en'))
                     {{ $about->company_name }} {{ __('layanan.paket') }}
                 @else
