@@ -49,6 +49,16 @@
         .trip_lainnya {
             font-size: 26px !important;
         }
+
+        @media only screen and (max-width: 768px) {
+            .title {
+                line-height: 1.3em;
+            }
+
+            .titLin {
+                font-size: 10px;
+            }
+        }
     </style>
 @endsection
 <div class="container-lg d-none d-lg-block">
@@ -78,7 +88,7 @@
                     </nav>
                 </div>
                 <div class="ms-3">
-                    <span class="title font-semibold text-gray-900 ms-2">
+                    <span class="title font-semibold text-gray-900">
                         @if (App::isLocale('id'))
                             {{ $services->name }}
                         @elseif(App::isLocale('en'))
@@ -325,7 +335,7 @@
     <div class="grid grid-cols-1 md:grid-cols-1 gap-1 flex-wrap">
         <div class="w-full">
             <div class="atas relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                <div class="titLin m-4 d-flex">
+                <div class="titLin ms-3 me-4 mt-4 d-flex">
                     <nav aria-label="breadcrumb">
                         <ol class="flex space-x-2">
                             <li><a href="{{ url('/') }}"
@@ -347,7 +357,7 @@
                     </nav>
                 </div>
                 <div class="ms-3">
-                    <span class="title font-semibold text-gray-900 ms-2">
+                    <span class="title font-semibold text-gray-900">
                         @if (App::isLocale('id'))
                             {{ $services->name }}
                         @elseif(App::isLocale('en'))
