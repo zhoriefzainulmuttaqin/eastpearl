@@ -3,6 +3,6 @@
 // lang/en/home.php
 
 return [
-    "alasan" => "Mengapa Harus Memilih Kami",
+    "alasan" => "Tentang Kami",
     "galeri" => "Galeri",
 ];
