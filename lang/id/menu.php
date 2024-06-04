@@ -7,4 +7,5 @@ return [
     "layanan" => "Layanan",
     "tentang" => "Tentang Kami",
     "galeri" => "Galeri",
+    "news" => "Traveltopia",
 ];

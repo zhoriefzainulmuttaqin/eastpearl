@@ -137,6 +137,9 @@ $locale = App::currentLocale();
                             <li class="menu-item"><a class="menu-link" href="{{ url('galeri') }}">
                                     <div>{{ __('menu.galeri') }}</div>
                                 </a></li>
+                            <li class="menu-item"><a class="menu-link" href="{{ url('traveltopia') }}">
+                                    <div>{{ __('menu.news') }}</div>
+                                </a></li>
                             <li class="menu-item">
                                 <a class="menu-link" href="#">
                                     <div class="d-flex">
@@ -271,6 +274,9 @@ $locale = App::currentLocale();
                             </a></li>
                         <li class="menu-item"><a class="menu-link" href="{{ url('galeri') }}">
                                 <div>{{ __('menu.galeri') }}</div>
+                            </a></li>
+                        <li class="menu-item"><a class="menu-link" href="{{ url('traveltopia') }}">
+                                <div>{{ __('menu.news') }}</div>
                             </a></li>
                     </ul>
                 </nav>

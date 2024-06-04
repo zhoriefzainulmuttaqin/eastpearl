@@ -292,9 +292,9 @@
                         @foreach ($topServices as $serv)
                             <div class="d-flex flex-col" style="font-size: 26px;">
                                 <span style=" font-weight: 900;">
-                                    @if ($serv->name == 'One Day Trip')
+                                    @if ($serv->name == 'One Day Trip (6 Destinasi)')
                                         {{ $serv->name }} (SpeedBoat)
-                                    @elseif ($serv->name == 'one day trip')
+                                    @elseif ($serv->name == 'One Day Trip (6 Destinasi)')
                                         {{ $serv->name }} (SpeedBoat)
                                     @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
                                         {{ $serv->name }}
@@ -415,9 +415,9 @@
                         @foreach ($topServices as $serv)
                             <div class="d-flex flex-col" style="font-size: 26px;">
                                 <span style=" font-weight: 900;">
-                                    @if ($serv->name == 'One Day Trip')
+                                    @if ($serv->name == 'One Day Trip (6 Destinasi)')
                                         {{ $serv->name }} (SpeedBoat)
-                                    @elseif ($serv->name == 'one day trip')
+                                    @elseif ($serv->name == 'One Day Trip (6 Destinasi)')
                                         {{ $serv->name }} (SpeedBoat)
                                     @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
                                         {{ $serv->name }}
@@ -537,7 +537,7 @@
                         @foreach ($topServices as $serv)
                             <div class="d-flex flex-col" style="font-size: 26px;">
                                 <span style=" font-weight: 900;">
-                                    @if ($serv->name == 'One Day Trip')
+                                    @if ($serv->name == 'One Day Trip (6 Destinasi)')
                                         {{ $serv->name }} (快艇)
                                     @elseif ($serv->name == 'one day trip')
                                         {{ $serv->name }} (快艇)
@@ -665,7 +665,11 @@
                         <button type="button" aria-label="Click for details"
                             class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                             <i class="uil-arrow-right"></i>
-                            <span>{{ $serv->name }}</span>
+                            @if ($serv->name == 'One Day Trip (6 Destinasi)')
+                                One Day Trip
+                            @else
+                                <span>{{ $serv->name }}</span>
+                            @endif
                             <i class="uil-arrow-left"></i>
 
                         </button>
@@ -679,7 +683,11 @@
                         <button type="button" aria-label="Click for details"
                             class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                             <i class="uil-arrow-right"></i>
-                            <span>{{ $serv->name_en }}</span>
+                            @if ($serv->name == 'One Day Trip (6 Destinasi)')
+                                One Day Trip
+                            @else
+                                <span>{{ $serv->name_en }}</span>
+                            @endif
                             <i class="uil-arrow-left"></i>
                         </button>
                     </a>
@@ -692,7 +700,11 @@
                         <button type="button" aria-label="Click for details"
                             class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                             <i class="uil-arrow-right"></i>
-                            <span>{{ $serv->name_mandarin }}</span>
+                            @if ($serv->name == 'One Day Trip (6 Destinasi)')
+                                One Day Trip
+                            @else
+                                <span>{{ $serv->name_mandarin }}</span>
+                            @endif
                             <i class="uil-arrow-left"></i>
                         </button>
                     </a>
@@ -729,9 +741,9 @@
                             @foreach ($topServices as $serv)
                                 <div class="d-flex flex-col" style="font-size: 18px;">
                                     <span style=" font-weight: 900;">
-                                        @if ($serv->name == 'One Day Trip')
+                                        @if ($serv->name == 'One Day Trip (6 Destinasi)')
                                             {{ $serv->name }} (SpeedBoat)
-                                        @elseif ($serv->name == 'one day trip')
+                                        @elseif ($serv->name == 'One Day Trip (6 Destinasi)s')
                                             {{ $serv->name }} (SpeedBoat)
                                         @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
                                             {{ $serv->name }}
@@ -849,9 +861,9 @@
                             @foreach ($topServices as $serv)
                                 <div class="d-flex flex-col" style="font-size: 18px;">
                                     <span style=" font-weight: 900;">
-                                        @if ($serv->name == 'One Day Trip')
+                                        @if ($serv->name == 'One Day Trip (6 Destinasi)')
                                             {{ $serv->name }} (SpeedBoat)
-                                        @elseif ($serv->name == 'one day trip')
+                                        @elseif ($serv->name == 'One Day Trip (6 Destinasi)')
                                             {{ $serv->name }} (SpeedBoat)
                                         @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
                                             {{ $serv->name }}
@@ -970,9 +982,9 @@
                             @foreach ($topServices as $serv)
                                 <div class="d-flex flex-col" style="font-size: 18px;">
                                     <span style=" font-weight: 900;">
-                                        @if ($serv->name == 'One Day Trip')
+                                        @if ($serv->name == 'One Day Trip (6 Destinasi)')
                                             {{ $serv->name }} (快艇)
-                                        @elseif ($serv->name == 'one day trip')
+                                        @elseif ($serv->name == 'One Day Trip (6 Destinasi)')
                                             {{ $serv->name }} (快艇)
                                         @elseif ($serv->name == '3D2N Beautiful Bajo Private Trip')
                                             {{ $serv->name }}

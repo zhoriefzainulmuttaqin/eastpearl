@@ -39,6 +39,7 @@ use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\GaleriLayananController;
 use App\Http\Controllers\LainnyaController;
 use App\Http\Controllers\LayananController;
+use App\Http\Controllers\NewsController;
 use App\Models\Lainnya;
 use Illuminate\Support\Facades\Route;
 
@@ -64,7 +65,8 @@ Route::get('/about', [AboutController::class, 'about']);
 Route::get('/galeri', [GaleriController::class, 'user_galeri']);
 Route::get('/layanan/{slug}', [LayananController::class, 'layanan'])->name('layanan.kategori');
 Route::get('/layanan/detail/{slug}', [LayananController::class, 'detail_layanan'])->name('detail.layanan.kategori');
-
+Route::get('/traveltopia', [NewsController::class, 'berita']);
+Route::get("detail-traveltopia/{slug}", [NewsController::class, "detail_berita"]);
 
 Route::get("login", [AuthUserController::class, "masuk"])->name("login");
 Route::post("proses-login", [AuthUserController::class, "proses_masuk"]);
@@ -148,6 +150,20 @@ Route::prefix("app-admin")->group(function () {
         Route::get("data/other_services/ubah/{slug}", [LainnyaController::class, "ubah_other_services"]);
         Route::post("data/other_services/proses-ubah", [LainnyaController::class, "proses_ubah_other_services"]);
         Route::get("data/other_services/hapus/{id}", [LainnyaController::class, "proses_hapus_other_services"]);
+
+        // traveltopia
+        Route::get("data/traveltopia", [NewsController::class, "admin_berita"]);
+        Route::get("data/tambah/traveltopia", [NewsController::class, "tambah_berita"]);
+        Route::get("data/ubah/traveltopia/{News:slug}", [NewsController::class, "ubah_berita"]);
+        Route::post("data/traveltopia/proses-tambah", [NewsController::class, "proses_tambah_berita"]);
+        Route::post("data/traveltopia/proses-ubah", [NewsController::class, "proses_ubah_berita"]);
+        Route::get("data/hapus/traveltopia/{News:slug}", [NewsController::class, "hapus_berita"]);
+
+        // kategori traveltopia
+        Route::get("data/traveltopia/kategori", [NewsController::class, "admin_berita_kategori"]);
+        Route::post("data/traveltopia/kategori/proses-tambah", [NewsController::class, "proses_tambah_kategori_berita"]);
+        Route::post("data/traveltopia/kategori/proses-ubah", [NewsController::class, "proses_ubah_kategori_berita"]);
+        Route::get("data/traveltopia/kategori/proses-hapus/{id}", [NewsController::class, "proses_hapus_kategori_berita"]);
 
         //  layanan
         Route::get("data/layanan", [LayananController::class, "admin_layanan"]);

@@ -55,7 +55,7 @@
                 line-height: 1.3em;
             }
 
-            .titLin {
+            .titLin1 {
                 font-size: 10px;
             }
         }
@@ -182,7 +182,15 @@
                 <div class="m-4 ">
                     <ul class="list-disc ms-4">
                         @foreach ($facilities as $fas)
-                            <li>{{ $fas->name }}</li>
+                            <li>
+                                @if (App::isLocale('id'))
+                                    {{ $fas->name }}
+                                @elseif(App::isLocale('en'))
+                                    {{ $fas->name_en }}
+                                @else
+                                    {{ $fas->name_mandarin }}
+                                @endif
+                            </li>
                         @endforeach
                     </ul>
                 </div>
@@ -335,7 +343,7 @@
     <div class="grid grid-cols-1 md:grid-cols-1 gap-1 flex-wrap">
         <div class="w-full">
             <div class="atas relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                <div class="titLin ms-3 me-4 mt-4 d-flex">
+                <div class="titLin1 ms-3 me-4 mt-4 d-flex">
                     <nav aria-label="breadcrumb">
                         <ol class="flex space-x-2">
                             <li><a href="{{ url('/') }}"
@@ -453,7 +461,15 @@
                 <div class="m-4 ">
                     <ul class="list-disc ms-4">
                         @foreach ($facilities as $fas)
-                            <li>{{ $fas->name }}</li>
+                            <li>
+                                @if (App::isLocale('id'))
+                                    {{ $fas->name }}
+                                @elseif(App::isLocale('en'))
+                                    {{ $fas->name_en }}
+                                @else
+                                    {{ $fas->name_mandarin }}
+                                @endif
+                            </li>
                         @endforeach
                     </ul>
                 </div>

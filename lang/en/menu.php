@@ -7,5 +7,6 @@ return [
     "layanan" => "Services",
     "tentang" => "About Us",
     "galeri" => "Gallery",
+    "news" => "Traveltopia ",
 
 ];

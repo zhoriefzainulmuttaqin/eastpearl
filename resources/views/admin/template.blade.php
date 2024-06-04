@@ -119,6 +119,10 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Layanan Lainnya</p>
                                     </a>
+                                    <a href="{{ url('app-admin/data/traveltopia') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>TravelTopia</p>
+                                    </a>
                                 </li>
                             </ul>
                         </li>

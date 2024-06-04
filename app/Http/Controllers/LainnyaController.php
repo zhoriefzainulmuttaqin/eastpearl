@@ -66,7 +66,7 @@ class LainnyaController extends Controller
             // Upload file gambar baru
             $image = $request->file('image');
             $nameImage = Str::random(40) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path("assets/lainnya/"), $nameImage);
+            $image->move("./assets/lainnya/", $nameImage);
 
             $other->image = $nameImage;
         }

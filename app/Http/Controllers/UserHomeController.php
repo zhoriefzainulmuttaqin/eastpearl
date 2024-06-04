@@ -39,8 +39,8 @@ class UserHomeController extends Controller
         $trip = Destination::orderByRaw("CASE WHEN name = 'Pulau Komodo' THEN 0 ELSE 1 END")
             ->orderBy('name')
             ->get();
-        $topServices = Layanan::where('name', 'One Day Trip')
-            ->orWhere('name', 'one day trip')
+        $topServices = Layanan::where('name', 'One Day Trip (6 Destinasi)')
+            ->orWhere('name', 'one day trip (6 destinasi)')
             ->orWhere('name', 'Panoramic Paradise Road to Golomori')
             ->orWhere('name', 'panoramic paradise road to golomori')
             ->orWhere('name', '3D2N Beautiful Bajo Private Trip')
