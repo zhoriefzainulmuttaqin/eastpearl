@@ -127,22 +127,22 @@
                             <p class="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
                                 @if (App::isLocale('id'))
                                     {!! nl2br(
-                                        strlen($layanan->short_desc) > 200 ? substr($layanan->short_desc, 0, 200) . '...' : $layanan->short_desc,
+                                        strlen($layanan->short_desc) > 300 ? substr($layanan->short_desc, 0, 300) . '...' : $layanan->short_desc,
                                     ) !!}
                                 @elseif(App::isLocale('en'))
                                     {!! nl2br(
-                                        strlen($layanan->short_desc_en) > 200 ? substr($layanan->short_desc_en, 0, 200) . '...' : $layanan->short_desc_en,
+                                        strlen($layanan->short_desc_en) > 300 ? substr($layanan->short_desc_en, 0, 300) . '...' : $layanan->short_desc_en,
                                     ) !!}
                                 @else
                                     {!! nl2br(
-                                        strlen($layanan->short_desc_mandarin) > 200
-                                            ? substr($layanan->short_desc_mandarin, 0, 200) . '...'
+                                        strlen($layanan->short_desc_mandarin) > 300
+                                            ? substr($layanan->short_desc_mandarin, 0, 300) . '...'
                                             : $layanan->short_desc_mandarin,
                                     ) !!}
                                 @endif
                             </p>
 
-                            <div class="group mt-8 inline-flex flex-wrap items-center gap-3">
+                            {{-- <div class="group mt-8 inline-flex flex-wrap items-center gap-3">
                                 <span data-tooltip-target="money"
                                     class="cursor-pointer rounded-full border border-pink-500/5 bg-pink-500/5 p-3 text-danger transition-colors hover:border-pink-500/10 hover:bg-pink-500/10 hover:!opacity-100 group-hover:opacity-70">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -202,7 +202,7 @@
                                     class="cursor-pointer rounded-full border border-pink-500/5 bg-pink-500/5 p-3 text-danger transition-colors hover:border-pink-500/10 hover:bg-pink-500/10 hover:!opacity-100 group-hover:opacity-70">
                                     +20
                                 </span>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="p-6 pt-3">
                             <a href="{{ route('detail.layanan.kategori', ['slug' => $layanan->slug]) }}">
@@ -298,22 +298,22 @@
                         <p class="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
                             @if (App::isLocale('id'))
                                 {!! nl2br(
-                                    strlen($layanan->short_desc) > 200 ? substr($layanan->short_desc, 0, 200) . '...' : $layanan->short_desc,
+                                    strlen($layanan->short_desc) > 300 ? substr($layanan->short_desc, 0, 300) . '...' : $layanan->short_desc,
                                 ) !!}
                             @elseif(App::isLocale('en'))
                                 {!! nl2br(
-                                    strlen($layanan->short_desc_en) > 200 ? substr($layanan->short_desc_en, 0, 200) . '...' : $layanan->short_desc_en,
+                                    strlen($layanan->short_desc_en) > 300 ? substr($layanan->short_desc_en, 0, 300) . '...' : $layanan->short_desc_en,
                                 ) !!}
                             @else
                                 {!! nl2br(
-                                    strlen($layanan->short_desc_mandarin) > 200
-                                        ? substr($layanan->short_desc_mandarin, 0, 200) . '...'
+                                    strlen($layanan->short_desc_mandarin) > 300
+                                        ? substr($layanan->short_desc_mandarin, 0, 300) . '...'
                                         : $layanan->short_desc_mandarin,
                                 ) !!}
                             @endif
                         </p>
 
-                        <div class="group mt-8 inline-flex flex-wrap items-center gap-3">
+                        {{-- <div class="group mt-8 inline-flex flex-wrap items-center gap-3">
                             <span data-tooltip-target="money"
                                 class="cursor-pointer rounded-full border border-pink-500/5 bg-pink-500/5 p-3 text-danger transition-colors hover:border-pink-500/10 hover:bg-pink-500/10 hover:!opacity-100 group-hover:opacity-70">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -373,11 +373,10 @@
                                 class="cursor-pointer rounded-full border border-pink-500/5 bg-pink-500/5 p-3 text-danger transition-colors hover:border-pink-500/10 hover:bg-pink-500/10 hover:!opacity-100 group-hover:opacity-70">
                                 +20
                             </span>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="p-6 pt-3">
                         <a href="{{ route('detail.layanan.kategori', ['slug' => $layanan->slug]) }}">
-
                             <button
                                 class="block w-full select-none rounded-lg bg-danger py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                 type="button" data-ripple-light="true">

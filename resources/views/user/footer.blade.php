@@ -18,7 +18,7 @@
                 <a href="https://www.instagram.com/eastpearl.id/" target="_blank" class="h5" aria-label="instagram">
                     <i class='uil-instagram'></i>
                 </a>
-                <a href="https://www.tiktok.com/@east.pearl" target="_blank" class="h5" aria-label="tiktok">
+                <a href="https://www.tiktok.com/@eastpearl.id" target="_blank" class="h5" aria-label="tiktok">
                     <i class='fa-brands fa-tiktok'></i>
                 </a>
                 <a href="https://www.youtube.com/channel/UCCkb7FZj67-WU3JBBok3v6w" target="_blank" class="h5"
