@@ -1,7 +1,13 @@
 @extends('user.template')
 
 @section('title')
-    Services
+    {{ __('layanan.title') }} - @if (App::isLocale('id'))
+        {{ $category->name }}
+    @elseif(App::isLocale('en'))
+        {{ $category->name_en }}
+    @else
+        {{ $category->name_mandarin }}
+    @endif
 @endsection
 <script src="https://cdn.tailwindcss.com"></script>
 

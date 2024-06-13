@@ -1,7 +1,13 @@
 @extends('user.template_no_cover')
 
 @section('title')
-    {{ __('news_detail.title') }}
+    @if (App::isLocale('id'))
+        {{ $new->name }}
+    @elseif (App::isLocale('en'))
+        {{ $new->name_en }}
+    @else
+        {{ $new->name_mandarin }}
+    @endif
 @endsection
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -58,8 +64,10 @@
                             <div class="entry-title">
                                 @if (App::isLocale('id'))
                                     <h2>{{ $new->name }}</h2>
-                                @else
+                                @elseif (App::isLocale('en'))
                                     <h2>{{ $new->name_en }}</h2>
+                                @else
+                                    <h2>{{ $new->name_mandarin }}</h2>
                                 @endif
                             </div>
                             <div class="entry-meta">
@@ -94,8 +102,10 @@
                             <div class="entry-content mt-0">
                                 @if (App::isLocale('id'))
                                     {!! nl2br($new->content) !!}
-                                @else
+                                @elseif (App::isLocale('en'))
                                     {!! nl2br($new->content_en) !!}
+                                @else
+                                    {!! nl2br($new->content_mandarin) !!}
                                 @endif
                             </div>
                         </div>
@@ -137,8 +147,10 @@
                                                                 class="link-underline-opacity-0 link-info text-dark fw-bolder">
                                                                 @if (App::isLocale('id'))
                                                                     {{ $new1->name }}
-                                                                @else
+                                                                @elseif (App::isLocale('en'))
                                                                     {{ $new1->name_en }}
+                                                                @else
+                                                                    {{ $new1->name_mandarin }}
                                                                 @endif
                                                             </a>
                                                             <div
@@ -161,8 +173,10 @@
                                                         </h4>
                                                         @if (App::isLocale('id'))
                                                             {!! mb_substr(nl2br($new1->content), 0, 50) !!}...
-                                                        @else
+                                                        @elseif (App::isLocale('en'))
                                                             {!! mb_substr(nl2br($new1->content_en), 0, 50) !!}...
+                                                        @else
+                                                            {!! mb_substr(nl2br($new1->content_mandarin), 0, 50) !!}...
                                                         @endif
                                                     </div>
                                                 </div>
@@ -205,15 +219,19 @@
                                                         class="link-underline-opacity-0 link-info text-dark fw-bolder">
                                                         @if (App::isLocale('id'))
                                                             {{ $new1->name }}
-                                                        @else
+                                                        @elseif (App::isLocale('en'))
                                                             {{ $new1->name_en }}
+                                                        @else
+                                                            {{ $new1->name_mandarin }}
                                                         @endif
                                                     </a>
                                                 </h5>
                                                 @if (App::isLocale('id'))
                                                     {!! mb_substr(nl2br($new1->content), 0, 50) !!}...
-                                                @else
+                                                @elseif (App::isLocale('id'))
                                                     {!! mb_substr(nl2br($new1->content_en), 0, 50) !!}...
+                                                @else
+                                                    {!! mb_substr(nl2br($new1->content_mandarin), 0, 50) !!}...
                                                 @endif
                                             </div>
                                         </div>
