@@ -254,29 +254,35 @@
         }
         CKEDITOR.replace('content', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
 
 
         });
         CKEDITOR.replace('content_en', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
 
         });
         CKEDITOR.replace('content_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
 
         });
         CKEDITOR.replace('long_content', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
 
 
 
         });
         CKEDITOR.replace('long_content_en', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
 
         });
         CKEDITOR.replace('long_content_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
 
         });
 

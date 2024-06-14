@@ -101,11 +101,11 @@
                             </div>
                             <div class="entry-content mt-0">
                                 @if (App::isLocale('id'))
-                                    {!! nl2br($new->content) !!}
+                                    {!! $new->content !!}
                                 @elseif (App::isLocale('en'))
-                                    {!! nl2br($new->content_en) !!}
+                                    {!! $new->content_en !!}
                                 @else
-                                    {!! nl2br($new->content_mandarin) !!}
+                                    {!! $new->content_mandarin !!}
                                 @endif
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                 @endif
                 <h4 class="fs-4 fw-medium">{{ __('news_detail.recomendation') }}</h4>
                 <div class="row my-5">
-                    <div class="col-md-8 col-lg-8 col-sm-12 mb-3 mb-sm-0">
+                    <div class="col-md-12 col-lg-12 col-sm-12 mb-3 mb-sm-0">
                         <?php
                         $i = 0;
                         ?>
@@ -129,7 +129,8 @@
                                                 <div class="row g-0">
                                                     <div class="col-md-3">
                                                         <img src="{{ url("assets/berita/$new1->image") }}"
-                                                            alt="{{ $new1->name }}" class="img-fluid w-100 h-100">
+                                                            alt="{{ $new1->name }}" class="img-fluid"
+                                                            style="width: 100%; height: 286px;">
                                                     </div>
                                                     <div class="col-md-9 ps-3 pe-2 mb-3">
                                                         <h4 class="card-title fs-3 mt-2">
@@ -172,11 +173,11 @@
                                                             </div>
                                                         </h4>
                                                         @if (App::isLocale('id'))
-                                                            {!! mb_substr(nl2br($new1->content), 0, 50) !!}...
+                                                            {!! mb_substr(nl2br($new1->content), 0, 300) !!}...
                                                         @elseif (App::isLocale('en'))
-                                                            {!! mb_substr(nl2br($new1->content_en), 0, 50) !!}...
+                                                            {!! mb_substr(nl2br($new1->content_en), 0, 300) !!}...
                                                         @else
-                                                            {!! mb_substr(nl2br($new1->content_mandarin), 0, 50) !!}...
+                                                            {!! mb_substr(nl2br($new1->content_mandarin), 0, 300) !!}...
                                                         @endif
                                                     </div>
                                                 </div>
@@ -187,7 +188,7 @@
                             @endif
                         @endforeach
                     </div>
-
+                    {{--
                     <div class="col-lg-4 col-sm-12 col-md-4">
                         @foreach ($news->skip($i) as $new1)
                             @if ($new1->slug != $new->slug || isset($_GET['keyword']))
@@ -239,7 +240,7 @@
                                 </div>
                             @endif
                         @endforeach
-                    </div>
+                    </div> --}}
                 </div>
             </main>
         </div>

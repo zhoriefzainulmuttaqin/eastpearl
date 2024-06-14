@@ -137,28 +137,34 @@
         }
         CKEDITOR.replace('description', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
             removePlugins: 'image'
         });
         CKEDITOR.replace('description_en', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
             removePlugins: 'image'
         });
         CKEDITOR.replace('description_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
             removePlugins: 'image'
         });
         CKEDITOR.replace('long_description', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
 
 
 
         });
         CKEDITOR.replace('long_description_en', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
 
         });
         CKEDITOR.replace('long_description_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true // Pastikan semua konten diperbolehkan
 
         });
     </script>
