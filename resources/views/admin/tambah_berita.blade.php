@@ -16,9 +16,9 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name"> Nama </label>
+                            <label for="name"> Judul </label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                                id="name" placeholder="Masukan Nama" value="{{ old('name') }}" required
+                                id="name" placeholder="Masukan Judul" value="{{ old('name') }}" required
                                 autocomplete="off"></input>
                             @error('name')
                                 <div class="invalid-feedback">
@@ -27,9 +27,9 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="name_en"> Nama (Inggris) </label>
+                            <label for="name_en"> Judul (Inggris) </label>
                             <input type="text" class="form-control @error('name_en') is-invalid @enderror" name="name_en"
-                                id="name_en" placeholder="Masukan Nama (Inggris)" value="{{ old('name_en') }}" required
+                                id="name_en" placeholder="Masukan Judul (Inggris)" value="{{ old('name_en') }}" required
                                 autocomplete="off"></input>
                             @error('name_en')
                                 <div class="invalid-feedback">
@@ -38,9 +38,9 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="name_mandarin"> Nama (Mandarin) </label>
+                            <label for="name_mandarin"> Judul (Mandarin) </label>
                             <input type="text" class="form-control @error('name_mandarin') is-invalid @enderror"
-                                name="name_mandarin" id="name_mandarin" placeholder="Masukan Nama (Mandarin)"
+                                name="name_mandarin" id="name_mandarin" placeholder="Masukan Judul (Mandarin)"
                                 value="{{ old('name_mandarin') }}" required autocomplete="off"></input>
                             @error('name_mandarin')
                                 <div class="invalid-feedback">
@@ -131,15 +131,26 @@
         }
         CKEDITOR.replace('content', {
             enterMode: CKEDITOR.ENTER_BR,
-            allowedContent: true // Pastikan semua konten diperbolehkan
+            allowedContent: true,
+            extraPlugins: 'tableresize,uploadimage,image2',
+            filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
+            filebrowserUploadMethod: 'form',
         });
+
         CKEDITOR.replace('content_en', {
             enterMode: CKEDITOR.ENTER_BR,
-            allowedContent: true // Pastikan semua konten diperbolehkan
+            allowedContent: true,
+            extraPlugins: 'tableresize,uploadimage,image2',
+            filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
+            filebrowserUploadMethod: 'form',
         });
+
         CKEDITOR.replace('content_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
-            allowedContent: true // Pastikan semua konten diperbolehkan
+            allowedContent: true,
+            extraPlugins: 'tableresize,uploadimage,image2',
+            filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
+            filebrowserUploadMethod: 'form',
         });
     </script>
 @endsection

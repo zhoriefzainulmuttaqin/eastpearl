@@ -42,6 +42,7 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\NewsController;
 use App\Models\Lainnya;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CKEditorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,9 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', [UserHomeController::class, "home"]);
+
+Route::post('ckeditor/upload', [CKEditorController::class, 'upload'])->name('ckeditor.upload');
+
 
 Route::get("atur-bahasa/{locale}", [LocaleController::class, "atur_bahasa"]);
 Route::get("set-bahasa/{locale}", [LocaleController::class, "set_bahasa"]);

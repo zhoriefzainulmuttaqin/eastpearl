@@ -17,9 +17,9 @@
                     <input type="hidden" name="new_id" value="{{ $new->id }}">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name"> Nama </label>
+                            <label for="name"> Judul </label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                                id="name" placeholder="Masukan Nama" value="{{ old('name') ?? $new->name }}" required
+                                id="name" placeholder="Masukan Judul" value="{{ old('name') ?? $new->name }}" required
                                 autocomplete="off"></input>
                             @error('name')
                                 <div class="invalid-feedback">
@@ -28,9 +28,9 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="name_en"> Nama (Inggris) </label>
+                            <label for="name_en"> Judul (Inggris) </label>
                             <input type="text" class="form-control @error('name_en') is-invalid @enderror" name="name_en"
-                                id="name_en" placeholder="Masukan Nama (Inggris)"
+                                id="name_en" placeholder="Masukan Judul (Inggris)"
                                 value="{{ old('name_en') ?? $new->name_en }}" required autocomplete="off"></input>
                             @error('name_en')
                                 <div class="invalid-feedback">
@@ -39,9 +39,9 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="name_mandarin"> Nama (Mandarin) </label>
+                            <label for="name_mandarin"> Judul (Mandarin) </label>
                             <input type="text" class="form-control @error('name_mandarin') is-invalid @enderror"
-                                name="name_mandarin" id="name_mandarin" placeholder="Masukan Nama (Mandarin)"
+                                name="name_mandarin" id="name_mandarin" placeholder="Masukan Judul (Mandarin)"
                                 value="{{ old('name_mandarin') ?? $new->name_mandarin }}" required
                                 autocomplete="off"></input>
                             @error('name_mandarin')

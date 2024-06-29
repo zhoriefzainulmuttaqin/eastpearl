@@ -113,7 +113,7 @@
                 @endif
                 <h4 class="fs-4 fw-medium">{{ __('news_detail.recomendation') }}</h4>
                 <div class="row my-5">
-                    <div class="col-md-12 col-lg-12 col-sm-12 mb-3 mb-sm-0">
+                    <div class="col-md-12 gcol-lg-12 col-sm-12 mb-3 mb-sm-0">
                         <?php
                         $i = 0;
                         ?>
