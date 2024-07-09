@@ -36,7 +36,8 @@ class UserHomeController extends Controller
         $category = Category::first();
         $categories = Category::all();
         $about = About::first();
-        $trip = Destination::orderByRaw("CASE WHEN name = 'Pulau Komodo' THEN 0 ELSE 1 END")
+        $trip = Destination::whereNotIn('name', ['Bali', 'Pulau Moyo', 'Sumba'])
+            ->orderByRaw("CASE WHEN name = 'Pulau Komodo' THEN 0 ELSE 1 END")
             ->orderBy('name')
             ->get();
         $topServices = Layanan::where('name', 'One Day Trip (6 Destinasi)')

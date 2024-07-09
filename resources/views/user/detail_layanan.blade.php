@@ -105,9 +105,45 @@
                     </span>
                 </div>
                 <div class="ms-4 mt-2 mb-4">
-                    <span class="price text-gray-600">{{ __('detail_layanan.start_from') }} Rp.
-                        {{ number_format($services->price, 0, ',', '.') }}
-                    </span>
+                    @if ($services->name == 'One Day Trip (6 Destinasi)')
+                        <div class="d-flex">
+                            <span class="price text-gray-600">{{ __('detail_layanan.start_from') }} Rp.
+                                {{ number_format($services->price, 0, ',', '.') }}
+                            </span>
+                            @if (App::isLocale('id'))
+                                <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <button type="button" aria-label="Click for details"
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100  text-center ms-2">
+                                        <span class="text-xs">DAPATKAN HARGA KHUSUS LANGSUNG DI KANTOR KAMI
+                                        </span>
+                                    </button>
+                                </a>
+                            @elseif(App::isLocale('en'))
+                                <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <button type="button" aria-label="Click for details"
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100  text-center ms-2">
+                                        <span class="">GET SPECIAL PRICES DIRECTLY AT OUR OFFICE
+                                        </span>
+                                    </button>
+                                </a>
+                            @else
+                                <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <button type="button" aria-label="Click for details"
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100  text-center ms-2">
+                                        <span class="">D直接在我们的办公室获取特价
+                                        </span>
+                                    </button>
+                                </a>
+                            @endif
+                        </div>
+                    @else
+                        <span class="price text-gray-600">{{ __('detail_layanan.start_from') }} Rp.
+                            {{ number_format($services->price, 0, ',', '.') }}
+                        </span>
+                    @endif
                 </div>
             </div>
         </div>
@@ -231,7 +267,8 @@
                     <div class="m-4">
                         <div class="">
                             <details class="group" id="destination{{ $index }}">
-                                <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                                <summary
+                                    class="flex justify-between items-center font-medium cursor-pointer list-none">
                                     <span class="font-semibold text-gray-800">
                                         @if (App::isLocale('id'))
                                             {!! nl2br($dest->name) !!}
@@ -381,12 +418,47 @@
                         @endif
                     </span>
                 </div>
-                <div class="ms-4 mt-2 mb-4">
-                    <span class="price text-gray-600"
-                        style="font-size: 20px !important;">{{ __('detail_layanan.start_from') }}
-                        Rp.
-                        {{ number_format($services->price, 0, ',', '.') }}
-                    </span>
+                <div class="ms-3 mt-2 mb-4">
+                    @if ($services->name == 'One Day Trip (6 Destinasi)')
+                        <div class="d-flex flex-col">
+                            <span class="price text-gray-600">{{ __('detail_layanan.start_from') }} Rp.
+                                {{ number_format($services->price, 0, ',', '.') }}
+                            </span>
+                            @if (App::isLocale('id'))
+                                <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <button type="button" aria-label="Click for details"
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-90 me-4 text-center">
+                                        <span class="text-xs">DAPATKAN HARGA KHUSUS LANGSUNG DI KANTOR KAMI
+                                        </span>
+                                    </button>
+                                </a>
+                            @elseif(App::isLocale('en'))
+                                <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <button type="button" aria-label="Click for details"
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-90 me-4 text-center">
+                                        <span class="">GET SPECIAL PRICES DIRECTLY AT OUR OFFICE
+                                        </span>
+                                    </button>
+                                </a>
+                            @else
+                                <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <button type="button" aria-label="Click for details"
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-90 me-4 text-center">
+                                        <span class="">D直接在我们的办公室获取特价
+                                        </span>
+                                    </button>
+                                </a>
+                            @endif
+                        </div>
+                    @else
+                        <span class="price text-gray-600">{{ __('detail_layanan.start_from') }} Rp.
+                            {{ number_format($services->price, 0, ',', '.') }}
+                        </span>
+                    @endif
+
                 </div>
             </div>
         </div>

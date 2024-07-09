@@ -321,6 +321,21 @@
                                             Nett/pax
                                         </span>
                                     </div>
+                                @elseif ($serv->name == 'One Day Trip (6 Destinasi)')
+                                    <div class="d-flex">
+                                        <span style="color: #F35E46;">IDR
+                                            {{ number_format($serv->price, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                        <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                            rel="noopener noreferrer">
+                                            <button type="button" aria-label="Click for details"
+                                                class="blink d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-45 text-center  mb-2 ms-2">
+                                                <span class="ml-auto mr-auto">DAPATKAN HARGA KHUSUS LANGSUNG DI KANTOR KAMI
+                                                </span>
+                                            </button>
+                                        </a>
+                                    </div>
                                 @else
                                     <span style="color: #F35E46;">IDR
                                         {{ number_format($serv->price, 0, ',', '.') }}
@@ -444,6 +459,21 @@
                                             Nett/pax
                                         </span>
                                     </div>
+                                @elseif ($serv->name == 'One Day Trip (6 Destinasi)')
+                                    <div class="d-flex">
+                                        <span style="color: #F35E46;">IDR
+                                            {{ number_format($serv->price, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                        <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                            rel="noopener noreferrer">
+                                            <button type="button" aria-label="Click for details"
+                                                class="blink d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-45 text-center  mb-2 ms-2">
+                                                <span class="ml-auto mr-auto">GET SPECIAL PRICES DIRECTLY AT OUR OFFICE
+                                                </span>
+                                            </button>
+                                        </a>
+                                    </div>
                                 @else
                                     <span style="color: #F35E46;">IDR
                                         {{ number_format($serv->price, 0, ',', '.') }}
@@ -566,6 +596,21 @@
                                             {{ number_format($serv->price, 0, ',', '.') }}
                                             Nett/pax
                                         </span>
+                                    </div>
+                                @elseif ($serv->name == 'One Day Trip (6 Destinasi)')
+                                    <div class="d-flex">
+                                        <span style="color: #F35E46;">IDR
+                                            {{ number_format($serv->price, 0, ',', '.') }}
+                                            Nett/pax
+                                        </span>
+                                        <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                            rel="noopener noreferrer">
+                                            <button type="button" aria-label="Click for details"
+                                                class="blink d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-45 text-center  mb-2 ms-2">
+                                                <span class="ml-auto mr-auto">直接在我们的办公室获取特价
+                                                </span>
+                                            </button>
+                                        </a>
                                     </div>
                                 @else
                                     <span style="color: #F35E46;">IDR
@@ -771,6 +816,23 @@
                                                 Nett/pax
                                             </span>
                                         </div>
+                                    @elseif ($serv->name == 'One Day Trip (6 Destinasi)')
+                                        <div class="d-flex flex-col">
+                                            <span style="color: #F35E46;">IDR
+                                                {{ number_format($serv->price, 0, ',', '.') }}
+                                                Nett/pax
+                                            </span>
+                                            <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                                rel="noopener noreferrer">
+                                                <button type="button" aria-label="Click for details"
+                                                    class="blink d-flex text-white  bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg px-2 py-2 w-100 h-8 text-center  mb-2"
+                                                    style="font-size: 0.6rem;">
+                                                    <span class="ml-auto mr-auto">DAPATKAN HARGA KHUSUS LANGSUNG DI KANTOR
+                                                        KAMI
+                                                    </span>
+                                                </button>
+                                            </a>
+                                        </div>
                                     @else
                                         <span style="color: #F35E46; font-size: 20px;">IDR
                                             {{ number_format($serv->price, 0, ',', '.') }}
@@ -890,6 +952,22 @@
                                                 {{ number_format($serv->price, 0, ',', '.') }}
                                                 Nett/pax
                                             </span>
+                                        </div>
+                                    @elseif ($serv->name == 'One Day Trip (6 Destinasi)')
+                                        <div class="d-flex flex-col">
+                                            <span style="color: #F35E46;">IDR
+                                                {{ number_format($serv->price, 0, ',', '.') }}
+                                                Nett/pax
+                                            </span>
+                                            <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                                rel="noopener noreferrer">
+                                                <button type="button" aria-label="Click for details"
+                                                    class="blink d-flex text-white  bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg px-2 py-2 w-100 h-8 text-center  mb-2"
+                                                    style="font-size: 0.6rem;">
+                                                    <span class="ml-auto mr-auto">GET SPECIAL PRICES DIRECTLY AT OUR OFFICE
+                                                    </span>
+                                                </button>
+                                            </a>
                                         </div>
                                     @else
                                         <span style="color: #F35E46; font-size: 20px;">IDR
@@ -1011,6 +1089,22 @@
                                                 {{ number_format($serv->price, 0, ',', '.') }}
                                                 Nett/pax
                                             </span>
+                                        </div>
+                                    @elseif ($serv->name == 'One Day Trip (6 Destinasi)')
+                                        <div class="d-flex flex-col">
+                                            <span style="color: #F35E46;">IDR
+                                                {{ number_format($serv->price, 0, ',', '.') }}
+                                                Nett/pax
+                                            </span>
+                                            <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
+                                                rel="noopener noreferrer">
+                                                <button type="button" aria-label="Click for details"
+                                                    class="blink d-flex text-white  bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg px-2 py-2 w-100 h-8 text-center  mb-2"
+                                                    style="font-size: 0.6rem;">
+                                                    <span class="ml-auto mr-auto">直接在我们的办公室获取特价
+                                                    </span>
+                                                </button>
+                                            </a>
                                         </div>
                                     @else
                                         <span style="color: #F35E46; font-size: 20px;">IDR

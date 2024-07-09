@@ -189,3 +189,19 @@
         height: 30px !important;
     }
 }
+/*  tombol kedip-kedip */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink {
+    animation: blink 2s infinite;
+}
