@@ -88,7 +88,7 @@
     </div>
 @endsection
 @section('script')
-    <script src="{{ url('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ url('/ckeditor/ckeditor.js') }}"></script>
 
     <script>
         function previewImage() {
@@ -108,17 +108,17 @@
         CKEDITOR.replace('description', {
             enterMode: CKEDITOR.ENTER_BR,
             allowedContent: true // Pastikan semua konten diperbolehkan
-            removePlugins: 'image'
+
         });
         CKEDITOR.replace('description_en', {
             enterMode: CKEDITOR.ENTER_BR,
             allowedContent: true // Pastikan semua konten diperbolehkan
-            removePlugins: 'image'
+
         });
         CKEDITOR.replace('description_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
             allowedContent: true // Pastikan semua konten diperbolehkan
-            removePlugins: 'image'
+
         });
     </script>
 @endsection

@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <label for="name"> Nama Kategori </label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                                id="name" placeholder="Masukan Nama Instansi " value="{{ old('name') }}" required
+                                id="name" placeholder="Masukan Nama Kategori " value="{{ old('name') }}" required
                                 autocomplete="off"></input>
                             @error('name')
                                 <div class="invalid-feedback">
@@ -29,7 +29,7 @@
                         <div class="form-group">
                             <label for="name_en"> Nama Kategori (Inggris)</label>
                             <input type="text" class="form-control @error('name_en') is-invalid @enderror" name="name_en"
-                                id="name_en" placeholder="Masukan Nama Instansi " value="{{ old('name_en') }}" required
+                                id="name_en" placeholder="Masukan Nama Kategori " value="{{ old('name_en') }}" required
                                 autocomplete="off"></input>
                             @error('name_en')
                                 <div class="invalid-feedback">
@@ -40,7 +40,7 @@
                         <div class="form-group">
                             <label for="name_mandarin"> Nama Kategori (Mandarin)</label>
                             <input type="text" class="form-control @error('name_mandarin') is-invalid @enderror"
-                                name="name_mandarin" id="name_mandarin" placeholder="Masukan Nama Instansi "
+                                name="name_mandarin" id="name_mandarin" placeholder="Masukan Nama Kategori "
                                 value="{{ old('name_mandarin') }}" required autocomplete="off"></input>
                             @error('name_mandarin')
                                 <div class="invalid-feedback">

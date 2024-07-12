@@ -48,6 +48,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'name_en' => $request->name_en,
             'name_mandarin' => $request->name_mandarin,
+            'slug' => $request->slug,
             'image' => $nameImage,
 
         ]);

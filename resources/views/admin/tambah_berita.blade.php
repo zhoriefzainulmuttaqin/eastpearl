@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label for="slug">Slug</label>
                             <input name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug"
-                                value="{{ old('slug') }}"type="text" required placeholder="Masukkan Slu">
+                                value="{{ old('slug') }}"type="text" required placeholder="Masukkan Slug">
                             @error('slug')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -131,26 +131,15 @@
         }
         CKEDITOR.replace('content', {
             enterMode: CKEDITOR.ENTER_BR,
-            allowedContent: true,
-            extraPlugins: 'tableresize,uploadimage,image2',
-            filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form',
+            allowedContent: true // Pastikan semua konten diperbolehkan
         });
-
         CKEDITOR.replace('content_en', {
             enterMode: CKEDITOR.ENTER_BR,
-            allowedContent: true,
-            extraPlugins: 'tableresize,uploadimage,image2',
-            filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form',
+            allowedContent: true // Pastikan semua konten diperbolehkan
         });
-
         CKEDITOR.replace('content_mandarin', {
             enterMode: CKEDITOR.ENTER_BR,
-            allowedContent: true,
-            extraPlugins: 'tableresize,uploadimage,image2',
-            filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form',
+            allowedContent: true // Pastikan semua konten diperbolehkan
         });
     </script>
 @endsection

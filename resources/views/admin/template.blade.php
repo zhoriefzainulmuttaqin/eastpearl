@@ -196,7 +196,7 @@
                 &nbsp;
             </div>
             <strong>Copyright &copy; {{ config('app.year_made') }} <a
-                    href="https://visitcirebon.id">{{ config('app.name') }}</a>.</strong> All rights reserved.
+                    href="https://eastpearl.id">{{ config('app.name') }}</a>.</strong> All rights reserved.
         </footer>
     </div>
 

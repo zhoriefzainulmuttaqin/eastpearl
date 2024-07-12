@@ -57,8 +57,6 @@ use App\Http\Controllers\CKEditorController;
 
 Route::get('/', [UserHomeController::class, "home"]);
 
-Route::post('ckeditor/upload', [CKEditorController::class, 'upload'])->name('ckeditor.upload');
-
 
 Route::get("atur-bahasa/{locale}", [LocaleController::class, "atur_bahasa"]);
 Route::get("set-bahasa/{locale}", [LocaleController::class, "set_bahasa"]);

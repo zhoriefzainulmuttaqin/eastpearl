@@ -33,22 +33,47 @@
     <div class="container-lg mt-5">
         <h1
             class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-6xl dark:text-white">
-            {{ __('layanan.liburan') }} <span class="" style="color: #ba1918">
+            @if ($category->name == 'Massage & Reflexology')
                 @if (App::isLocale('id'))
-                    {{ __('layanan.paket') }} {{ $category->name }}
+                    Setelah trip, enaknya merefleksikan tubuh dengan pijatan dari <span style="color: #ba1918"> East Pearl.
+                    </span>
                 @elseif(App::isLocale('en'))
-                    {{ $category->name_en }}
+                    After the trip, it's perfect to rejuvenate your body with a massage from <span style="color: #ba1918">
+                        East Pearl. </span>
                 @else
-                    {{ $category->name_mandarin }}
+                    旅行后，最适合用东珠的按摩来放松身体。
                 @endif
-                @if (App::isLocale('id'))
-                    {{ $about->company_name }}
-                @elseif(App::isLocale('en'))
-                    {{ $about->company_name }} {{ __('layanan.paket') }}
-                @else
-                @endif
+            @else
+                {{ __('layanan.liburan') }} <span class="" style="color: #ba1918">
+                    @if (App::isLocale('id'))
+                        {{ __('layanan.paket') }} {{ $category->name }}
+                    @elseif(App::isLocale('en'))
+                        {{ $category->name_en }}
+                    @else
+                        {{ $category->name_mandarin }}
+                    @endif
+                    @if (App::isLocale('id'))
+                        {{ $about->company_name }}
+                    @elseif(App::isLocale('en'))
+                        {{ $about->company_name }} {{ __('layanan.paket') }}
+                    @else
+                    @endif
+            @endif
         </h1>
-        <p class="text-lg mb-4 font-normal text-gray-500 lg:text-xl dark:text-gray-400"> {{ __('layanan.text_liburan') }}
+        <p class="text-lg mb-4 font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+            @if ($category->name == 'Massage & Reflexology')
+                @if (App::isLocale('id'))
+                    Kami menawarkan pijatan yang sempurna untuk merefleksikan tubuh setelah perjalanan panjang. Nikmati
+                    pijatan yang menenangkan dan menyegarkan untuk mengembalikan energi dan kenyamanan Anda.
+                @elseif(App::isLocale('en'))
+                    We offer the perfect massage to rejuvenate your body after a long journey. Enjoy a soothing and
+                    refreshing massage to restore your energy and comfort.
+                @else
+                    我们提供完美的按摩，让您在长途旅行后恢复身体。享受舒缓而清新的按摩，恢复您的能量和舒适感。
+                @endif
+            @else
+                {{ __('layanan.text_liburan') }}
+            @endif
         </p>
         <!-- component -->
         <div class="d-none d-lg-block">
