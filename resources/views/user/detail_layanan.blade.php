@@ -310,9 +310,22 @@
         <div class="kanan col-3 ms-auto">
             <div class="flex">
                 <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-                    <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
-                        <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
-                    </a>
+                    @if (App::isLocale('id'))
+                        <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
+                            target="_blank">
+                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                        </a>
+                    @elseif(App::isLocale('en'))
+                        <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
+                            target="_blank">
+                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                        </a>
+                    @else
+                        <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
+                            target="_blank">
+                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                        </a>
+                    @endif
                 </div>
                 <div
                     class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
@@ -369,9 +382,34 @@
 
     <div class="flex mt-4 justify-content-left">
         <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-            <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
-                <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
-            </a>
+            @if (App::isLocale('id'))
+                @if (App::isLocale('id'))
+                    <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
+                        target="_blank">
+                        <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                    </a>
+                @elseif(App::isLocale('en'))
+                    <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
+                        target="_blank">
+                        <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                    </a>
+                @else
+                    <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
+                        target="_blank">
+                        <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                    </a>
+                @endif
+            @elseif(App::isLocale('en'))
+                <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
+                    target="_blank">
+                    <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                </a>
+            @else
+                <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
+                    target="_blank">
+                    <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                </a>
+            @endif
         </div>
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
             <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
@@ -626,8 +664,22 @@
         <div class="kanan col-12 ms-auto">
             <div class="flex mt-4 m-auto justify-content-center">
                 <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-                    <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
-                        <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                    @if (App::isLocale('id'))
+                        <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
+                            target="_blank">
+                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                        </a>
+                    @elseif(App::isLocale('en'))
+                        <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
+                            target="_blank">
+                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                        </a>
+                    @else
+                        <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
+                            target="_blank">
+                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                        </a>
+                    @endif
                     </a>
                 </div>
                 <div
@@ -685,9 +737,22 @@
 
     <div class="flex mt-4 justify-content-center">
         <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-            <a href="{{ url('https://wa.link/yrs1zw') }}" class="btn text-white " id="but_wisata">
-                <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
-            </a>
+            @if (App::isLocale('id'))
+                <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
+                    target="_blank">
+                    <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                </a>
+            @elseif(App::isLocale('en'))
+                <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
+                    target="_blank">
+                    <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                </a>
+            @else
+                <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
+                    target="_blank">
+                    <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                </a>
+            @endif
         </div>
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
             <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
