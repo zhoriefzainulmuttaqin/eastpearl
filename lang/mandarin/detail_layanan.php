@@ -8,6 +8,7 @@ return [
     'start_from' => '起始于',
     'book_wa' => '预订 WhatsApp',
     'book_email' => '邮件预订',
+    'book_wechat' => '预约微信',
     'trip_lainnya' => '其他行程',
     'rekomendasi' => '最佳推荐给您',
     'fasilitas' => '包括:',

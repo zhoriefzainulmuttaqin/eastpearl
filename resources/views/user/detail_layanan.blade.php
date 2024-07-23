@@ -313,24 +313,30 @@
                     @if (App::isLocale('id'))
                         <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
                             target="_blank">
-                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                            <i class="uil uil-whatsapp"></i> <br> {{ __('detail_layanan.book_wa') }}
                         </a>
                     @elseif(App::isLocale('en'))
                         <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
                             target="_blank">
-                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                            <i class="uil uil-whatsapp"></i> <br> {{ __('detail_layanan.book_wa') }}
                         </a>
                     @else
                         <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
                             target="_blank">
-                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                            <i class="uil uil-whatsapp"></i> <br> {{ __('detail_layanan.book_wa') }}
                         </a>
                     @endif
                 </div>
                 <div
                     class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
                     <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
-                        <i class="uil uil-envelope"></i> {{ __('detail_layanan.book_email') }}
+                        <i class="uil uil-envelope"></i><br> {{ __('detail_layanan.book_email') }}
+                    </a>
+                </div>
+                <div
+                    class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+                    <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata">
+                        <i class="uil uil-chat"></i> <br>{{ __('detail_layanan.book_wechat') }}
                     </a>
                 </div>
             </div>
@@ -386,34 +392,39 @@
                 @if (App::isLocale('id'))
                     <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
                         target="_blank">
-                        <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                        <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                     </a>
                 @elseif(App::isLocale('en'))
                     <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
                         target="_blank">
-                        <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                        <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                     </a>
                 @else
                     <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
                         target="_blank">
-                        <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                        <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                     </a>
                 @endif
             @elseif(App::isLocale('en'))
                 <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
                     target="_blank">
-                    <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                    <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                 </a>
             @else
                 <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
                     target="_blank">
-                    <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                    <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                 </a>
             @endif
         </div>
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
             <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
-                <i class="uil uil-envelope"></i> {{ __('detail_layanan.book_email') }}
+                <i class="uil uil-envelope"></i><br> {{ __('detail_layanan.book_email') }}
+            </a>
+        </div>
+        <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+            <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata">
+                <i class="uil uil-chat"></i> <br> {{ __('detail_layanan.book_wechat') }}
             </a>
         </div>
     </div>
@@ -667,17 +678,17 @@
                     @if (App::isLocale('id'))
                         <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
                             target="_blank">
-                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                            <i class="uil uil-whatsapp"></i> <br>{{ __('detail_layanan.book_wa') }}
                         </a>
                     @elseif(App::isLocale('en'))
                         <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
                             target="_blank">
-                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                            <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                         </a>
                     @else
                         <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
                             target="_blank">
-                            <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                            <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                         </a>
                     @endif
                     </a>
@@ -685,7 +696,13 @@
                 <div
                     class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
                     <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
-                        <i class="uil uil-envelope"></i> {{ __('detail_layanan.book_email') }}
+                        <i class="uil uil-envelope"></i><br> {{ __('detail_layanan.book_email') }}
+                    </a>
+                </div>
+                <div
+                    class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+                    <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata">
+                        <i class="uil uil-chat"></i> <br> {{ __('detail_layanan.book_wechat') }}
                     </a>
                 </div>
             </div>
@@ -740,23 +757,28 @@
             @if (App::isLocale('id'))
                 <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
                     target="_blank">
-                    <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                    <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                 </a>
             @elseif(App::isLocale('en'))
                 <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
                     target="_blank">
-                    <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                    <i class="uil uil-whatsapp"></i> <br>{{ __('detail_layanan.book_wa') }}
                 </a>
             @else
                 <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
                     target="_blank">
-                    <i class="uil uil-whatsapp"></i> {{ __('detail_layanan.book_wa') }}
+                    <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                 </a>
             @endif
         </div>
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
             <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
-                <i class="uil uil-envelope"></i> {{ __('detail_layanan.book_email') }}
+                <i class="uil uil-envelope"></i><br> {{ __('detail_layanan.book_email') }}
+            </a>
+        </div>
+        <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+            <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata">
+                <i class="uil uil-chat"></i> <br> {{ __('detail_layanan.book_wechat') }}
             </a>
         </div>
     </div>

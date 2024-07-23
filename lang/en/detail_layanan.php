@@ -8,6 +8,7 @@ return [
     'start_from' => 'Start from',
     'book_wa' => 'Booking WA',
     'book_email' => 'Booking Email',
+    'book_wechat' => 'Booking WeChat',
     'trip_lainnya' => 'Other Trip',
     'rekomendasi' => 'The best recommendation for you',
     'fasilitas' => 'Included:',
