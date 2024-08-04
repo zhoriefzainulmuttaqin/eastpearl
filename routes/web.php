@@ -43,6 +43,8 @@ use App\Http\Controllers\NewsController;
 use App\Models\Lainnya;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CKEditorController;
+use App\Http\Controllers\PaymentController;
+use Faker\Provider\da_DK\Payment;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,17 +78,25 @@ Route::get("registrasi", [AuthUserController::class, "registrasi"]);
 Route::post("proses-registrasi", [AuthUserController::class, "proses_registrasi"]);
 Route::get("keluar", [AuthUserController::class, "keluar"]);
 
+// payment
+Route::get('/payment', [PaymentController::class, 'payment']);
+Route::get('/payment/select-service', [PaymentController::class, 'select']);
+Route::post('/payment/select-service/pay', [PaymentController::class, 'proccess_pay'])->name('create.pay');
+Route::get('/payment/select-service/confirm-pay/{id}', [PaymentController::class, 'confirm_pay']);
+Route::post('/payment/select-service/proccess-confirm-pay/{id}', [PaymentController::class, 'proccess_confirm_pay']);
+Route::post('/payment/update-status', 'PaymentController@updateStatus')->name('payment.updateStatus');
+Route::get('/payment/success/{code}', [PaymentController::class, 'payment_success']);
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profil', [ProfileController::class, 'profile']);
-    Route::post('/proses-ubah-foto-profil', [ProfileController::class, 'process_change_profile_photo']);
-    Route::get('/ubah-biodata-profil', [ProfileController::class, 'change_profile_biodata']);
-    Route::post('/proses-ubah-biodata-profil', [ProfileController::class, 'process_change_profile_biodata']);
-    Route::get('/ubah-password-profil', [ProfileController::class, 'change_profile_password']);
-    Route::post('/proses-ubah-password-profil', [ProfileController::class, 'process_change_profile_password']);
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profil', [ProfileController::class, 'profile']);
+//     Route::post('/proses-ubah-foto-profil', [ProfileController::class, 'process_change_profile_photo']);
+//     Route::get('/ubah-biodata-profil', [ProfileController::class, 'change_profile_biodata']);
+//     Route::post('/proses-ubah-biodata-profil', [ProfileController::class, 'process_change_profile_biodata']);
+//     Route::get('/ubah-password-profil', [ProfileController::class, 'change_profile_password']);
+//     Route::post('/proses-ubah-password-profil', [ProfileController::class, 'process_change_profile_password']);
 
 
-});
+// });
 
 Route::prefix("app-admin")->group(function () {
     Route::get('/', [AuthAdminController::class, 'login'])->middleware('GuestAdmin');
