@@ -1,7 +1,7 @@
 @extends('payment.template')
 
 @section('title')
-    Payment - Select Service
+    Payment - Payment Success
 @endsection
 
 @section('style')
@@ -28,12 +28,12 @@
         }
     </style>
     <div class="container">
-        <section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16 ">
+        <section class="bg-white py-8 antialiased  md:py-16 ">
             <div class="mx-auto max-w-2xl px-4 2xl:px-0 mt-6">
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl mb-2">Thanks for your payment!
+                <h2 class="text-xl font-semibold text-gray-900  sm:text-2xl mb-2">Thanks for your payment!
                 </h2>
-                <p class="text-gray-500 dark:text-gray-400 mb-2 md:mb-8">Your payment ID <a href="#"
-                        class="font-medium text-gray-900 dark:text-white hover:underline">{{ $payment->code }}</a>
+                <p class="text-gray-500 dark:text-gray-400 mb-2 md:mb-8">Your payment ID <span
+                        class="font-bold  hover:underline">{{ $payment->code }}</span>
                     <span class="text-green-500">successfuly.</span>
                 </p>
                 <div
@@ -55,7 +55,7 @@
                         <dd class="font-medium text-gray-900 dark:text-white sm:text-end">RP.{{ $payment->amount }}</dd>
                     </dl>
                 </div>
-                <div class="flex w-full items-center space-x-4">
+                <div class="d-flex items-center space-x-4">
                     <a href="/payment"
                         class="text-white bg-primary hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Other
                         Transaction</a>

@@ -1,7 +1,7 @@
 @extends('payment.template')
 
 @section('title')
-    Payment - Select Service
+    Payment - Confirm Pay
 @endsection
 
 @section('style')
@@ -86,7 +86,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://app.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
 
     <script>
         document.getElementById('pay-button').onclick = function() {
@@ -94,8 +94,10 @@
             snap.pay('{{ $payment->snap_token }}', {
                 // Optional
                 onSuccess: function(result) {
-                    // Submit the form when payment is successful
-                    window.location.href = '/payment/success/{code}';
+                    // Extract the code from the result object if it exists
+                    let code = result.order_id; // Assuming result.order_id is the code
+                    // Redirect to the success page with the code
+                    window.location.href = '/payment/success/' + code;
                 },
                 // Optional
                 onPending: function(result) {
@@ -109,33 +111,5 @@
                 }
             });
         };
-
-        // success: function(response) {
-        //     if (response.status == 'success') {
-        //         snap.pay(response.snap_token, {
-        //             onSuccess: function(result) {
-        //                 console.log('success');
-        //                 console.log(result);
-        //                 window.location.href = '/payment/success';
-        //             },
-        //             onPending: function(result) {
-        //                 console.log('pending');
-        //                 console.log(result);
-        //             },
-        //             onError: function(result) {
-        //                 console.log('error');
-        //                 console.log(result);
-        //             },
-        //             onClose: function() {
-        //                 console.log(
-        //                     'customer closed the popup without finishing the payment'
-        //                 );
-        //             }
-        //         });
-        //     }
-        // },
-        // error: function(response) {
-        //     console.log(response);
-        // }
     </script>
 @endsection
