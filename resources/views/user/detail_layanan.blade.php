@@ -249,7 +249,7 @@
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.durasi') }}
                             </span>{{ $services->durasi }}</li>
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.peserta') }}
-                            </span>{{ $services->minimal_peserta }}</li>
+                            </span>{{ $services->minimal_peserta == 0 ? '-' : $services->minimal_peserta }}</li>
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.bulan') }}
                             </span>{{ $services->bulan_terbaik }}
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.aktivitas') }}
@@ -613,7 +613,7 @@
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.durasi') }}
                             </span>{{ $services->durasi }}</li>
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.peserta') }}
-                            </span>{{ $services->minimal_peserta }}</li>
+                            </span>{{ $services->minimal_peserta == 0 ? '-' : $services->minimal_peserta }}</li>
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.bulan') }}
                             </span>{{ $services->bulan_terbaik }}
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.aktivitas') }}
