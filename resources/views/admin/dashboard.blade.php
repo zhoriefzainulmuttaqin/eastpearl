@@ -84,6 +84,19 @@
                         class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
+        <div class="col-lg-2 col-6">
+            <div class="small-box bg-dark">
+                <div class="inner">
+                    <h3>{{ $count_traveltopia }}</h3>
+                    <p>Traveltopia</p>
+                </div>
+                <div class="icon" style="color: white; opacity: 0.3;">
+                    <i class="fa fa-newspaper"></i>
+                </div>
+                <a href="{{ url('app-admin/data/traveltopia') }}" class="small-box-footer">Kelola Data <i
+                        class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
     </div>
 
 

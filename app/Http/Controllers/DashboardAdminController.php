@@ -42,6 +42,7 @@ class DashboardAdminController extends Controller
 
         $count_destination = Destination::count();
         $count_facility = Fasilitas::count();
+        $count_traveltopia = News::count();
         $services = Layanan::get();
         $fasilitas = Fasilitas::get();
         $destination = Destination::get();
@@ -53,6 +54,7 @@ class DashboardAdminController extends Controller
             "count_fly_bajo" => $count_fly_bajo,
             "count_destination" => $count_destination,
             "count_facility" => $count_facility,
+            "count_traveltopia" => $count_traveltopia,
             "services" => $services,
             "fasilitas" => $fasilitas,
             "destination" => $destination,
