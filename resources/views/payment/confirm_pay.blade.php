@@ -7,6 +7,14 @@
 @section('style')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        /* Tambahkan CSS untuk meningkatkan z-index dari popup Snap Midtrans */
+        .snap-midtrans,
+        .snap-container,
+        .snap-popup {
+            z-index: 999999 !important;
+        }
+    </style>
 @endsection
 
 @section('content')
