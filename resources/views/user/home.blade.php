@@ -8,10 +8,9 @@
 
 @section('style')
     <link rel="stylesheet" href="{{ url('swiperjs/swiper-bundle.min.css') }}" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
     <link rel="stylesheet" href="{{ url('css/home.min.css') }}">
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Demo styles -->
 @endsection
 
@@ -330,7 +329,7 @@
                                         <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                             rel="noopener noreferrer">
                                             <button type="button" aria-label="Click for details"
-                                                class="blink d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-45 text-center  mb-2 ms-2">
+                                                class="blink d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-45 text-center  mb-2 ms-2">
                                                 <span class="ml-auto mr-auto">DAPATKAN HARGA KHUSUS LANGSUNG DI KANTOR KAMI
                                                 </span>
                                             </button>
@@ -468,7 +467,7 @@
                                         <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                             rel="noopener noreferrer">
                                             <button type="button" aria-label="Click for details"
-                                                class="blink d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-45 text-center  mb-2 ms-2">
+                                                class="blink d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-45 text-center  mb-2 ms-2">
                                                 <span class="ml-auto mr-auto">GET SPECIAL PRICES DIRECTLY AT OUR OFFICE
                                                 </span>
                                             </button>
@@ -606,7 +605,7 @@
                                         <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                             rel="noopener noreferrer">
                                             <button type="button" aria-label="Click for details"
-                                                class="blink d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-45 text-center  mb-2 ms-2">
+                                                class="blink d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-45 text-center  mb-2 ms-2">
                                                 <span class="ml-auto mr-auto">直接在我们的办公室获取特价
                                                 </span>
                                             </button>
@@ -708,7 +707,7 @@
                 @foreach ($topServices as $serv)
                     <a href="/layanan/detail/{{ $serv->slug }}">
                         <button type="button" aria-label="Click for details"
-                            class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                            class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center !bg-gradient-to-br me-2 mb-2">
                             <i class="uil-arrow-right"></i>
                             @if ($serv->name == 'One Day Trip (6 Destinasi)')
                                 One Day Trip
@@ -825,7 +824,7 @@
                                             <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                                 rel="noopener noreferrer">
                                                 <button type="button" aria-label="Click for details"
-                                                    class="blink d-flex text-white  bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg px-2 py-2 w-100 h-8 text-center  mb-2"
+                                                    class="blink d-flex text-white  bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg px-2 py-2 w-100 h-8 text-center  mb-2"
                                                     style="font-size: 0.6rem;">
                                                     <span class="ml-auto mr-auto">DAPATKAN HARGA KHUSUS LANGSUNG DI KANTOR
                                                         KAMI
@@ -962,7 +961,7 @@
                                             <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                                 rel="noopener noreferrer">
                                                 <button type="button" aria-label="Click for details"
-                                                    class="blink d-flex text-white  bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg px-2 py-2 w-100 h-8 text-center  mb-2"
+                                                    class="blink d-flex text-white  bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg px-2 py-2 w-100 h-8 text-center  mb-2"
                                                     style="font-size: 0.6rem;">
                                                     <span class="ml-auto mr-auto">GET SPECIAL PRICES DIRECTLY AT OUR OFFICE
                                                     </span>
@@ -1099,7 +1098,7 @@
                                             <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                                 rel="noopener noreferrer">
                                                 <button type="button" aria-label="Click for details"
-                                                    class="blink d-flex text-white  bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg px-2 py-2 w-100 h-8 text-center  mb-2"
+                                                    class="blink d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg px-2 py-2 w-100 h-8 text-center  mb-2"
                                                     style="font-size: 0.6rem;">
                                                     <span class="ml-auto mr-auto">直接在我们的办公室获取特价
                                                     </span>
