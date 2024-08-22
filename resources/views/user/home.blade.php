@@ -725,7 +725,7 @@
                 @foreach ($topServices as $serv)
                     <a href="/layanan/detail/{{ $serv->slug }}">
                         <button type="button" aria-label="Click for details"
-                            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center !bg-gradient-to-br me-2 mb-2">
                             <i class="uil-arrow-right"></i>
                             @if ($serv->name == 'One Day Trip (6 Destinasi)')
                                 One Day Trip
@@ -742,7 +742,7 @@
                 @foreach ($topServices as $serv)
                     <a href="/layanan/detail/{{ $serv->slug }}">
                         <button type="button" aria-label="Click for details"
-                            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                            class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center !bg-gradient-to-br me-2 mb-2">
                             <i class="uil-arrow-right"></i>
                             @if ($serv->name == 'One Day Trip (6 Destinasi)')
                                 One Day Trip
@@ -1199,7 +1199,7 @@
                     @foreach ($topServices as $serv)
                         <a href="/layanan/detail/{{ $serv->slug }}">
                             <button type="button" aria-label="Click for details"
-                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
+                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
                                 <span class="ml-auto mr-auto">{{ $serv->name }}</span>
 
                             </button>
@@ -1211,7 +1211,7 @@
                     @foreach ($topServices as $serv)
                         <a href="/layanan/detail/{{ $serv->slug }}">
                             <button type="button" aria-label="Click for details"
-                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
+                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
                                 <span class="ml-auto mr-auto">{{ $serv->name_en }}</span>
 
                             </button>
@@ -1223,7 +1223,7 @@
                     @foreach ($topServices as $serv)
                         <a href="/layanan/detail/{{ $serv->slug }}">
                             <button type="button" aria-label="Click for details"
-                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
+                                class="d-flex text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-100 text-center  mb-2">
                                 <span class="ml-auto mr-auto">{{ $serv->name_mandarin }}</span>
                             </button>
                         </a>
