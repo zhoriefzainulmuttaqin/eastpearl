@@ -49,7 +49,7 @@
                     旅行后，最适合用东珠的按摩来放松身体。
                 @endif
             @else
-                {{ __('layanan.liburan') }} <span class="" style="color: #ba1918">
+                <span class="text-black">{{ __('layanan.liburan') }}</span> <span class="" style="color: #ba1918">
                     @if (App::isLocale('id'))
                         {{ __('layanan.paket') }} {{ $category->name }}
                     @elseif(App::isLocale('en'))
