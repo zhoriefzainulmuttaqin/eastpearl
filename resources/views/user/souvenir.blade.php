@@ -5,8 +5,7 @@ use Illuminate\Support\Facades\App;
 ?>
 
 @section('title')
-    Souvenir
-    {{-- {{ __('tours.title') }} --}}
+    {{ __('tours.title') }}
 @endsection
 
 @section('cover')
@@ -32,12 +31,12 @@ use Illuminate\Support\Facades\App;
         <section class="ftco-section services-section" style="margin-top:2rem; margin-bottom:2rem;">
             <div class="container">
                 <p class="text-dark" style="font-size: 26px; font-weight: 600;">
-                    {{ __('tours.title') }}</p>
-                <p style="font-size: 20px; font-weight: 400; margin-top:-1rem;"> {{ __('tours.desc_title') }}</p>
+                    {{ __('souvenir.title') }}</p>
+                <p style="font-size: 20px; font-weight: 400; margin-top:-1rem;"> {{ __('souvenir.desc_title') }}</p>
 
                 <div class="row">
                     <div class="col-lg-4 col-sm-12 mt-4">
-                        <h5 class="mb-0">{{ __('tours.search_destination') }}</h5>
+                        <h5 class="mb-0">{{ __('souvenir.search_souvenir') }}</h5>
                         <div class="row">
                             <div class="col-lg-6 col-md-3 col-sm-4">
                                 <hr style="height: 2px;
@@ -49,7 +48,7 @@ use Illuminate\Support\Facades\App;
                         <div class="input-group w-100 mt-1">
                             <input type="text" id="icons-filter" name="keyword" class="form-control border-end-0"
                                 value="{{ isset($_GET['keyword']) ? $_GET['keyword'] : '' }}"
-                                placeholder="{{ __('tours.search_destination_placeholder') }}">
+                                placeholder="{{ __('souvenir.search_souvenir_placeholder') }}">
                             <button type="submit" class="input-group-text bg-white border-start-0">
                                 <i class="uil uil-search"></i>
                             </button>
@@ -58,7 +57,7 @@ use Illuminate\Support\Facades\App;
                     <div class="col-lg-8 col-sm-12 mt-4">
                         <div class="row">
                             <div class="col-6">
-                                <h5 class="mb-0">{{ __('tours.search_categories') }}</h5>
+                                <h5 class="mb-0">{{ __('souvenir.search_categories') }}</h5>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <hr
@@ -84,7 +83,7 @@ use Illuminate\Support\Facades\App;
                                     ?>
                                     <a href="{{ url('wisata?keyword=' . $cari) }}" class="btn btn-sm text-white text-sm"
                                         style="background-color: #0F304F;">
-                                        {{ __('tours.search_categories_reset') }}</a>
+                                        {{ __('souvenir.search_categories_reset') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +140,7 @@ use Illuminate\Support\Facades\App;
             <div class="container">
                 @if (count($souvenir) == 0)
                     <div class="text-center">
-                        {{ __('tours.not_found') }}
+                        {{ __('souvenir.not_found') }}
                     </div>
                 @endif
                 <div class="row g-4 mb-5">
@@ -257,7 +256,7 @@ use Illuminate\Support\Facades\App;
                                         <ul class="ms-auto">
                                             <li><a href="{{ url('detail-wisata/' . $svr->slug) }}"
                                                     class="fw-normal text-dark">
-                                                    {{ __('tours.show_more') }}
+                                                    {{ __('souvenir.show_more') }}
                                                     <i class="uil bi-arrow-right-circle"></i></a>
                                             </li>
                                         </ul>

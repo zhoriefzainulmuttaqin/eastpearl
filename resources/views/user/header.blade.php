@@ -10,9 +10,7 @@ $locale = App::currentLocale();
 
     $categories = Category::get();
 @endphp
-<script src="https://cdn.tailwindcss.com"></script>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 <style>
     .header-misc {
         display: flex;
