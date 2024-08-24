@@ -129,6 +129,17 @@ $locale = App::currentLocale();
                                                 </div>
                                             </a>
                                         @endforeach
+                                        <a href="{{ url('souvenir') }}" class="menu-link">
+                                            <div>
+                                                @if (App::isLocale('id'))
+                                                    Souvenir
+                                                @elseif(App::isLocale('en'))
+                                                    Souvenir
+                                                @else
+                                                    纪念品
+                                                @endif
+                                            </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
