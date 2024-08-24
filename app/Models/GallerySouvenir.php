@@ -12,4 +12,9 @@ class GallerySouvenir extends Model
     protected $table = 'gallery_souvenir';
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
+
+    public function souvenir()
+    {
+        return $this->hasMany(Souvenir::class, 'id');
+    }
 }

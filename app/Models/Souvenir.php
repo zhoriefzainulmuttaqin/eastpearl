@@ -12,4 +12,9 @@ class Souvenir extends Model
     protected $table = 'souvenir';
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
+
+    public function category()
+    {
+        return $this->belongsTo(CategorySouvenir::class, 'souvenir_category_id');
+    }
 }

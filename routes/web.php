@@ -44,6 +44,7 @@ use App\Models\Lainnya;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CKEditorController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SouvenirController;
 use Faker\Provider\da_DK\Payment;
 
 /*
@@ -71,6 +72,8 @@ Route::get('/layanan/{slug}', [LayananController::class, 'layanan'])->name('laya
 Route::get('/layanan/detail/{slug}', [LayananController::class, 'detail_layanan'])->name('detail.layanan.kategori');
 Route::get('/traveltopia', [NewsController::class, 'berita']);
 Route::get("detail-traveltopia/{slug}", [NewsController::class, "detail_berita"]);
+Route::get('/souvenir', [SouvenirController::class, 'souvenir']);
+
 
 Route::get("login", [AuthUserController::class, "masuk"])->name("login");
 Route::post("proses-login", [AuthUserController::class, "proses_masuk"]);
