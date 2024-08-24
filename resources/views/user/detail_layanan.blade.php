@@ -114,7 +114,7 @@
                                 <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                     rel="noopener noreferrer">
                                     <button type="button" aria-label="Click for details"
-                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100  text-center ms-2">
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-100  text-center ms-2">
                                         <span class="text-xs">DAPATKAN HARGA KHUSUS LANGSUNG DI KANTOR KAMI
                                         </span>
                                     </button>
@@ -123,7 +123,7 @@
                                 <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                     rel="noopener noreferrer">
                                     <button type="button" aria-label="Click for details"
-                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100  text-center ms-2">
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-100  text-center ms-2">
                                         <span class="">GET SPECIAL PRICES DIRECTLY AT OUR OFFICE
                                         </span>
                                     </button>
@@ -132,7 +132,7 @@
                                 <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                     rel="noopener noreferrer">
                                     <button type="button" aria-label="Click for details"
-                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-100  text-center ms-2">
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-100  text-center ms-2">
                                         <span class="">D直接在我们的办公室获取特价
                                         </span>
                                     </button>
@@ -477,7 +477,7 @@
                                 <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                     rel="noopener noreferrer">
                                     <button type="button" aria-label="Click for details"
-                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-90 me-4 text-center">
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-90 me-4 text-center">
                                         <span class="text-xs">DAPATKAN HARGA KHUSUS LANGSUNG DI KANTOR KAMI
                                         </span>
                                     </button>
@@ -486,7 +486,7 @@
                                 <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                     rel="noopener noreferrer">
                                     <button type="button" aria-label="Click for details"
-                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-90 me-4 text-center">
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-90 me-4 text-center">
                                         <span class="">GET SPECIAL PRICES DIRECTLY AT OUR OFFICE
                                         </span>
                                     </button>
@@ -495,7 +495,7 @@
                                 <a href="https://maps.app.goo.gl/RnVAH9jwNAD5uXjv5" target="_blank"
                                     rel="noopener noreferrer">
                                     <button type="button" aria-label="Click for details"
-                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-2 py-2.5 w-90 me-4 text-center">
+                                        class="blink text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 !bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2.5 w-90 me-4 text-center">
                                         <span class="">D直接在我们的办公室获取特价
                                         </span>
                                     </button>
