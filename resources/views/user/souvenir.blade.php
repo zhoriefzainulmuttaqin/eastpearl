@@ -5,16 +5,19 @@ use Illuminate\Support\Facades\App;
 ?>
 
 @section('title')
-    {{ __('tours.title') }}
+    {{ __('souvenir.title') }}
 @endsection
 
 @section('cover')
-    <?= url('assets/bg/speed.jpg') ?>
+    <?= url('assets/bg/souvenir.png') ?>
 @endsection
+{{-- <script src="https://cdn.tailwindcss.com"></script>     --}}
+
 
 @section('content')
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-26YC4R3P36"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -25,11 +28,12 @@ use Illuminate\Support\Facades\App;
 
         gtag('config', 'G-BV3NGNRL2G');
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <form action="{{ url('souvenir') }}" method="get">
         <section class="ftco-section services-section" style="margin-top:2rem; margin-bottom:2rem;">
-            <div class="container">
+            <div class="container-lg">
                 <p class="text-dark" style="font-size: 26px; font-weight: 600;">
                     {{ __('souvenir.title') }}</p>
                 <p style="font-size: 20px; font-weight: 400; margin-top:-1rem;"> {{ __('souvenir.desc_title') }}</p>
@@ -81,7 +85,7 @@ use Illuminate\Support\Facades\App;
                                         $cari = '';
                                     }
                                     ?>
-                                    <a href="{{ url('wisata?keyword=' . $cari) }}" class="btn btn-sm text-white text-sm"
+                                    <a href="{{ url('souvenir?keyword=' . $cari) }}" class="btn btn-sm text-white text-sm"
                                         style="background-color: #0F304F;">
                                         {{ __('souvenir.search_categories_reset') }}</a>
                                 </div>
@@ -135,9 +139,10 @@ use Illuminate\Support\Facades\App;
             </div>
         </section>
     </form>
+
     <section id="content">
         <div class="content-wrap bg-light">
-            <div class="container">
+            <div class="container-lg">
                 @if (count($souvenir) == 0)
                     <div class="text-center">
                         {{ __('souvenir.not_found') }}
@@ -149,12 +154,19 @@ use Illuminate\Support\Facades\App;
                             <div
                                 class="grid-inner bg-white row g-0 p-2 border-0 rounded-5 shadow-sm h-shadow all-ts h-translate-y-sm">
                                 <div class="col-12 mb-md-0">
-                                    <a href="{{ url('detail-wisata/' . $svr->slug) }}" class="entry-image mb-2">
-                                        <img src="{{ url('assets/wisata/' . $svr->picture) }}"
+                                    <a href="{{ url('detail-souvenir/' . $svr->slug) }}" class="entry-image mb-2">
+                                        <img src="{{ url('assets/souvenir/' . $svr->image) }}"
                                             alt="Inventore voluptates velit totam ipsa tenetur" class="rounded-5">
                                         <div class="bg-overlay">
                                             <div class="bg-overlay-content justify-content-start align-items-start">
-                                                <div class="badge bg-light text-dark rounded-pill">{{ $svr->city }}
+                                                <div class="badge bg-light text-dark rounded-pill">
+                                                    @if (App::isLocale('id'))
+                                                        {{ $svr->category_name }}
+                                                    @elseif (App::isLocale('en'))
+                                                        {{ $svr->category_name_en }}
+                                                    @else
+                                                        {{ $svr->category_name_mandarin }}
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -162,104 +174,136 @@ use Illuminate\Support\Facades\App;
                                 </div>
                                 <div class="col-12 p-4 pt-0 pb-1">
                                     <div class="entry-title nott">
-                                        <h3><a href="{{ url('detail-wisata/' . $svr->slug) }}">
+                                        <h3><a href="{{ url('detail-souvenir/' . $svr->slug) }}">
                                                 @if (App::isLocale('id'))
                                                     {{ $svr->name }}
-                                                @else
+                                                @elseif (App::isLocale('en'))
                                                     {{ $svr->name_en }}
+                                                @else
+                                                    {{ $svr->name_mandarin }}
                                                 @endif
                                             </a></h3>
                                     </div>
-                                    <div class="entry-meta no-separator mb-3">
-                                        <ul>
-                                            <li><a target="_blank" href="{{ $svr->link_maps }}" class="fw-normal"><i
-                                                        class="uil text-warning uil-map-marker"></i> {{ $svr->address }}
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="entry-meta no-separator mb-1">
+                                    {{-- <div class="entry-meta no-separator mb-1">
                                         <ul>
                                             <li class="text-capitalize">
                                                 <h5> <span class="badge" style="background-color: #0F304F">
                                                         @if (App::isLocale('id'))
                                                             {{ $svr->category_name }}
-                                                        @else
+                                                        @elseif (App::isLocale('en'))
                                                             {{ $svr->category_name_en }}
+                                                        @else
+                                                            {{ $svr->category_name_mandarin }}
                                                         @endif
                                                     </span></h5>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                     {{-- fasilitas --}}
                                     {{-- <div class="mb-3">
 								<div class="fw-bold">{{ nl2br($svr->facilities) }}</div>
 							</div> --}}
-                                    <div class="mb-3">
-                                        <div class="fw-bold">Rp. -
-                                            {{-- <?= number_format($svr->price, 0, ',', '.') ?> --}}
+                                    <div class="mt-2">
+                                        <div>
+                                            @if ($svr->disc_price != null)
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <s>
+                                                            Rp.<?= number_format($svr->price, 0, ',', '.') ?>
+                                                        </s>
+                                                    </div>
+                                                    <div class="ms-2 fw-bold fs-4">
+                                                        <mark> Rp.<?= number_format($svr->disc_price, 0, ',', '.') ?>
+                                                        </mark>
+                                                    </div>
+                                                </div>
+                                            @else
+                                                <div class="fw-bold">
+                                                    Rp.<?= number_format($svr->price, 0, ',', '.') ?>
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="entry-meta no-separator mb-3">
-                                        <ul>
-                                            <li class="fw-normal text-warning"><i class="uil bi-telephone-fill"></i>
-                                                {{-- {{ $svr->phone }}</li> --}} -
-                                        </ul>
+                                        @if (App::isLocale('id'))
+                                            {!! nl2br(strlen($svr->desc) > 300 ? substr($svr->desc, 0, 300) . '...' : $svr->desc) !!}
+                                        @elseif(App::isLocale('en'))
+                                            {!! nl2br(strlen($svr->desc_en) > 300 ? substr($svr->desc_en, 0, 300) . '...' : $svr->desc_en) !!}
+                                        @else
+                                            {!! nl2br(strlen($svr->desc_mandarin) > 300 ? substr($svr->desc_mandarin, 0, 300) . '...' : $svr->desc_mandarin) !!}
+                                        @endif
                                     </div>
 
-
                                     @if (
-                                        $svr->link_youtube != null ||
-                                            $svr->link_instagram != null ||
-                                            $svr->link_facebook != null ||
-                                            $svr->link_tiktok != null)
+                                        $svr->link_shopee != null ||
+                                            $svr->link_amazon != null ||
+                                            $svr->link_alibaba != null ||
+                                            $svr->link_tokopedia != null ||
+                                            $svr->link_blibli != null)
                                         <div class="entry-meta no-separator mb-3">
-                                            <ul>
-                                                @if ($svr->link_youtube != null)
-                                                    <li><a target="_blank" href="{{ $svr->link_youtube }}"
-                                                            class="fw-normal text-dark"><i class="uil uil-youtube"></i> </a>
+                                            <ul class="d-flex justify-content-center list-unstyled">
+                                                @if ($svr->link_shopee != null)
+                                                    <li class="mx-2">
+                                                        <a target="_blank" href="{{ $svr->link_shopee }}"
+                                                            class="fw-normal text-dark">
+                                                            <img src="https://img.icons8.com/color/48/000000/shopee.png"
+                                                                alt="Shopee" width="50" height="50">
+                                                        </a>
                                                     </li>
                                                 @endif
-                                                @if ($svr->link_instagram != null)
-                                                    <li><a target="_blank" href="{{ $svr->link_instagram }}"
-                                                            class="fw-normal text-dark"><i class="uil bi-instagram"></i>
-                                                        </a></li>
+                                                @if ($svr->link_amazon != null)
+                                                    <li class="mx-2">
+                                                        <a target="_blank" href="{{ $svr->link_amazon }}"
+                                                            class="fw-normal text-dark">
+                                                            <img src="https://img.icons8.com/color/48/000000/amazon.png"
+                                                                alt="Amazon" width="50" height="50">
+                                                        </a>
+                                                    </li>
                                                 @endif
-                                                @if ($svr->link_facebook != null)
-                                                    <li><a target="_blank" href="{{ $svr->link_facebook }}"
-                                                            class="fw-normal text-dark"><i class="uil uil-facebook"></i>
-                                                        </a></li>
+                                                @if ($svr->link_alibaba != null)
+                                                    <li class="mx-2">
+                                                        <a target="_blank" href="{{ $svr->link_alibaba }}"
+                                                            class="fw-normal text-dark">
+                                                            <img src="https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/alibaba-512.png"
+                                                                alt="Alibaba" width="50" height="50">
+                                                        </a>
+                                                    </li>
                                                 @endif
-                                                @if ($svr->link_tiktok != null)
-                                                    <li><a target="_blank" href="{{ $svr->link_tiktok }}"
-                                                            class="fw-normal text-dark"><i
-                                                                class="uil fa-brands fa-tiktok"></i> </a>
+                                                @if ($svr->link_tokopedia != null)
+                                                    <li class="mx-2">
+                                                        <a target="_blank" href="{{ $svr->link_tokopedia }}"
+                                                            class="fw-normal text-dark">
+                                                            <img src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/arael/kratos/0e535d90.png"
+                                                                alt="Tokopedia" width="50" height="50">
+                                                        </a>
+                                                    </li>
+                                                @endif
+                                                @if ($svr->link_blibli != null)
+                                                    <li class="mx-2">
+                                                        <a target="_blank" href="{{ $svr->link_blibli }}"
+                                                            class="fw-normal text-dark">
+                                                            <img src="https://storage.googleapis.com/static-cms-prod/2023/10/color.jpg"
+                                                                alt="Blibli" width="50" height="50">
+                                                        </a>
                                                     </li>
                                                 @endif
                                             </ul>
                                         </div>
-                                        {{-- @else
-							<div class="entry-meta no-separator mb-3">
-								<ul>
-									<li class="fw-normal text-white"><i class="uil fa-brands bi-dot"></i></li>
-								</ul>
-							</div> --}}
                                     @endif
-                                    <div class="entry-meta no-separator d-flex ">
-                                        <ul class="me-auto">
-                                            <li><a href="{{ url('layanan-produk/tourism-card') }}"
-                                                    class="fw-normal text-dark"><i
-                                                        class="uil uil-ticket text-warning"></i>
-                                                    Disc. Card</a></li>
-                                        </ul>
 
-                                        <ul class="ms-auto">
-                                            <li><a href="{{ url('detail-wisata/' . $svr->slug) }}"
-                                                    class="fw-normal text-dark">
-                                                    {{ __('souvenir.show_more') }}
-                                                    <i class="uil bi-arrow-right-circle"></i></a>
-                                            </li>
-                                        </ul>
+                                    <div class=" ">
+                                        <a href="https://wa.me/6285292252220?text=Halo,%20saya%20ingin%20membeli%20souvenir%20{{ $svr->name }}."
+                                            target="_blank">
+                                            <button class="btn btn-danger fw-semibold shadow-sm w-100" type="button">
+                                                @if (App::isLocale('id'))
+                                                    Beli
+                                                @elseif (App::isLocale('en'))
+                                                    Buy
+                                                @else
+                                                    买
+                                                @endif
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -271,3 +315,13 @@ use Illuminate\Support\Facades\App;
         </div>
     </section>
 @endsection
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (!window.location.pathname.includes('/souvenir/')) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdn.tailwindcss.com';
+            document.head.appendChild(link);
+        }
+    });
+</script>

@@ -222,7 +222,6 @@
                                     @endif
                                 </p>
 
-
                             </div>
                             <div class="p-6 pt-3">
                                 <a href="{{ route('detail.layanan.kategori', ['slug' => $layanan->slug]) }}">

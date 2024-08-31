@@ -43,6 +43,7 @@ use App\Http\Controllers\NewsController;
 use App\Models\Lainnya;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CKEditorController;
+use App\Http\Controllers\GaleriSouvenirController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SouvenirController;
 use Faker\Provider\da_DK\Payment;
@@ -204,6 +205,29 @@ Route::prefix("app-admin")->group(function () {
         Route::get("data/layanan/ubah/{slug}", [LayananController::class, "ubah_layanan"]);
         Route::post("data/layanan/proses-ubah", [LayananController::class, "proses_ubah_layanan"]);
         Route::get("data/layanan/hapus/{id}", [LayananController::class, "proses_hapus_layanan"]);
+
+        // Souvenir
+        Route::get("data/souvenir", [SouvenirController::class, "admin_souvenir"]);
+        Route::get("data/tambah/souvenir", [SouvenirController::class, "tambah_souvenir"]);
+        Route::post("data/souvenir/proses-tambah", [SouvenirController::class, "proses_tambah_souvenir"]);
+        Route::get("data/souvenir/ubah/{slug}", [SouvenirController::class, "ubah_souvenir"]);
+        Route::post("data/souvenir/proses-ubah", [SouvenirController::class, "proses_ubah_souvenir"]);
+        Route::get("data/souvenir/proses-hapus/{slug}", [SouvenirController::class, "proses_hapus_souvenir"]);
+
+        // kategori souvenir
+        Route::get("data/souvenir/kategori", [SouvenirController::class, "admin_souvenir_kategori"]);
+        Route::post("data/souvenir/kategori/proses-tambah", [SouvenirController::class, "proses_tambah_kategori_souvenir"]);
+        Route::post("data/souvenir/kategori/proses-ubah", [SouvenirController::class, "proses_ubah_kategori_souvenir"]);
+        Route::get("data/souvenir/kategori/proses-hapus/{id}", [SouvenirController::class, "proses_hapus_kategori_souvenir"]);
+
+
+        //  galeri souvenir
+        Route::get("data/galeri/souvenir/{slug}", [GaleriSouvenirController::class, "admin_galeri_souvenir"]);
+        Route::get("data/tambah/galeri/souvenir/{slug}", [GaleriSouvenirController::class, "tambah_galeri_souvenir"]);
+        Route::post("data/galeri/souvenir/proses-tambah", [GaleriSouvenirController::class, "proses_tambah_galeri_souvenir"]);
+        Route::get("data/galeri/souvenir/ubah/{slug}/{id}", [GaleriSouvenirController::class, "ubah_galeri_souvenir"]);
+        Route::post("data/galeri/souvenir/proses-ubah", [GaleriSouvenirController::class, "proses_ubah_galeri_souvenir"]);
+        Route::get("data/galeri/souvenir/hapus/{slug}/{id}", [GaleriSouvenirController::class, "proses_hapus_galeri_souvenir"]);
 
         // akun admin
         Route::get("akun/admin", [AccountController::class, "akun_admin"]);

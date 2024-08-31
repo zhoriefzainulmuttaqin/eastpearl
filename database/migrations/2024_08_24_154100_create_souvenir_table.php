@@ -23,7 +23,7 @@ return new class extends Migration {
             $table->longText('desc_en');
             $table->longText('desc_mandarin');
             $table->integer('price');
-            $table->integer('desc_price')->nullable();
+            $table->integer('disc_price')->nullable();
             $table->string('link_shopee')->nullable();
             $table->string('link_amazon')->nullable();
             $table->string('link_alibaba')->nullable();
