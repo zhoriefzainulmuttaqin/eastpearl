@@ -251,7 +251,7 @@
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.peserta') }}
                             </span>{{ $services->minimal_peserta == 0 ? '-' : $services->minimal_peserta }}</li>
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.bulan') }}
-                            </span>{{ $services->bulan_terbaik }}
+                            </span>{{ $bulanTerbaik }}
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.aktivitas') }}
                             </span>{{ $services->aktivitas_fisik }}
                         </li>
@@ -615,7 +615,7 @@
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.peserta') }}
                             </span>{{ $services->minimal_peserta == 0 ? '-' : $services->minimal_peserta }}</li>
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.bulan') }}
-                            </span>{{ $services->bulan_terbaik }}
+                            </span>{{ $bulanTerbaik }}
                         <li><span class="font-bold text-gray-700"> {{ __('detail_layanan.aktivitas') }}
                             </span>{{ $services->aktivitas_fisik }}
                         </li>

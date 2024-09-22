@@ -213,6 +213,35 @@ class LayananController extends Controller
             $locale = "id";
             App::setLocale("id");
         }
+
+        // Mendapatkan bulan saat ini
+        $currentMonth = date('F'); // Menghasilkan bulan saat ini dalam format teks, misalnya "September"
+
+        // Membuat array bulan
+        $months = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
+
+        // Menemukan index dari bulan sekarang
+        $startIndex = array_search($currentMonth, $months);
+
+        // Mengambil bulan dari sekarang sampai Desember
+        $bestMonths = array_slice($months, $startIndex);
+
+        // Gabungkan array menjadi string yang dipisahkan dengan tanda koma
+        $bulanTerbaik = implode(', ', $bestMonths);
+
         $services = Layanan::where('slug', $slug)->first();
         $ServicesGallery = ServicesGallery::where('services_id', $services->id)->get();
         $other_services = Layanan::where('slug', '!=', $slug)->inRandomOrder()->get();
@@ -222,6 +251,6 @@ class LayananController extends Controller
 
         $allDest = Destination::get();
         $allFasc = Fasilitas::get();
-        return view('user.detail_layanan', compact('services', 'other_services', 'destination', 'facilities', 'allDest', 'allFasc', 'ServicesGallery'));
+        return view('user.detail_layanan', compact('services', 'other_services', 'destination', 'facilities', 'allDest', 'allFasc', 'ServicesGallery', 'bulanTerbaik'));
     }
 }
