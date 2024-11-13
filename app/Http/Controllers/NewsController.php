@@ -33,7 +33,8 @@ class NewsController extends Controller
             ->join('administrators', 'news.admin_id', '=', 'administrators.id')
             ->select(['news.*', 'category_news.name as category_name', 'category_news.name_en as category_name_en', 'category_news.name_mandarin as category_name_mandarin', 'administrators.name as admin_name'])
             ->orderBy('news.published_date', 'desc')
-            ->paginate(10);
+            ->paginate(10)
+            ->appends(request()->query());
 
         $batas = (int) (count($news) / 2);
 

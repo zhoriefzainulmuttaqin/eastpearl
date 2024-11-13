@@ -174,9 +174,17 @@
                 @endforeach
             </div> --}}
         </div>
-        <div class="row">
+        <div class="row d-none d-lg-block">
             <div class="col-lg-12">
                 {{ $news->links('vendor.pagination.canvas') }}
+            </div>
+        </div>
+        <div class="container-fluid d-block d-lg-none">
+            <div class=" container-fluid row ">
+                <div class="col-12 px-4 text-center d-flex justify-content-center">
+                    {{ $news->links('vendor.pagination.canvas') }}
+                </div>
+
             </div>
         </div>
     </div>

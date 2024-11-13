@@ -115,14 +115,14 @@ class GaleriController extends Controller
             $nameImage = $request->image_old;
         }
 
-        Galeri::where('id', $id)
-            ->update([
+            Galeri::where('id', $id)
+                ->update([
 
-                'image_name' => $image_name,
-                'category_id' => $category_id,
-                'image' => $nameImage,
+                    'image_name' => $image_name,
+                    'category_id' => $category_id,
+                    'image' => $nameImage,
 
-            ]);
+                ]);
 
         session()->flash('msg_status', 'success');
         session()->flash('msg', "<h5>Berhasil</h5><p>Gambar Berhasil Diubah</p>");

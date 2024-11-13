@@ -340,6 +340,15 @@
                     </a>
                 </div>
             </div>
+            <div class="flex justify-content-left">
+                <div
+                    class="relative w-100 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+                    <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white "
+                        id="but_wisata">
+                        <i class="uil uil-schedule"></i> <br> Booking Online
+                    </a>
+                </div>
+            </div>
 
             <div>
                 <div class="flex flex-col">
@@ -425,6 +434,11 @@
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
             <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata">
                 <i class="uil uil-chat"></i> <br> {{ __('detail_layanan.book_wechat') }}
+            </a>
+        </div>
+        <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+            <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white " id="but_wisata">
+                <i class="uil uil-schedule"></i> <br> Booking Online
             </a>
         </div>
     </div>
@@ -706,6 +720,15 @@
                     </a>
                 </div>
             </div>
+            <div class="flex justify-content-left">
+                <div
+                    class="relative w-100 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+                    <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white "
+                        id="but_wisata">
+                        <i class="uil uil-schedule"></i> <br> Booking Online
+                    </a>
+                </div>
+            </div>
 
             <div>
                 <div class="flex flex-col">
@@ -779,6 +802,13 @@
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
             <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata">
                 <i class="uil uil-chat"></i> <br> {{ __('detail_layanan.book_wechat') }}
+            </a>
+        </div>
+    </div>
+    <div class="flex justify-content-left">
+        <div class="relative w-100 flex flex-col rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
+            <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white " id="but_wisata">
+                <i class="uil uil-schedule"></i> <br> Booking Online
             </a>
         </div>
     </div>
