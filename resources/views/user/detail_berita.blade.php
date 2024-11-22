@@ -49,6 +49,27 @@
             br {
                 line-height: 0.4rem;
             }
+
+            .entry-content h1,
+            .entry-content h2,
+            .entry-content h3 {
+                /* all: unset; */
+                /* Reset semua properti */
+                font-size: inherit;
+                margin: inherit;
+            }
+
+            .entry-content h1 {
+                font-size: 2rem;
+            }
+
+            .entry-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .entry-content h3 {
+                font-size: 1.5rem;
+            }
         </style>
 
         <div class="container">
