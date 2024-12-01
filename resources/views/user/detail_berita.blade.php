@@ -74,7 +74,30 @@
 
         <div class="container">
             <div class="row col-mb-80">
-                <div class=" accent-bluecard border-0 mt-2">
+                <div class=" accent-bluecard border-0 mt-2 d-none d-lg-block">
+                    <div class="card-body">
+                        <form action="" method="get" class="row  align-items-center">
+                            <div class="col-md-11 m-auto">
+                                <div class="mb-1">
+                                    <label for="cari"
+                                        class="form-label fw-bold fs-4">{{ __('news_detail.search') }}</label>
+                                    <div class="input-group mb-3">
+                                        <input type="search" class="form-control" id="cari"
+                                            value="{{ isset($_GET['keyword']) ? $_GET['keyword'] : '' }}" name="keyword"
+                                            placeholder="{{ __('news_detail.placeholder_search') }}">
+                                        <button class="btn btn-secondary" type="submit"
+                                            id="button-addon2">{{ __('news_detail.search') }}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            @if (isset($_GET['keyword']))
+                                <a href="{{ url('traveltopia') }}"
+                                    class="text-primary"><span>{{ __('news_detail.show_all_data') }}</span></a>
+                            @endif
+                        </form>
+                    </div>
+                </div>
+                <div class=" accent-bluecard border-0 mt-6 d-block d-lg-none">
                     <div class="card-body">
                         <form action="" method="get" class="row  align-items-center">
                             <div class="col-md-11 m-auto">
