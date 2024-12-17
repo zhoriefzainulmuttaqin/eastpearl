@@ -29,15 +29,13 @@
             gtag('config', 'G-BV3NGNRL2G');
         </script>
         <style>
-            .entry-content ol {
-                padding-left: 20px;
-                /* Atur jarak daftar dari sisi kiri */
-                margin-bottom: 1.5rem;
-                /* Jarak bawah antar daftar */
-                list-style: decimal;
-                /* Pastikan daftar terurut menggunakan angka */
-                list-style-position: outside;
-                /* Nomor tetap di luar area konten */
+            .entry-content ol,
+            .entry-content ul {
+                list-style: initial;
+                padding-left: 30px;
+                /* Atur sesuai kebutuhan */
+                margin-left: 20px;
+                /* Opsional untuk memberikan margin */
             }
 
             .entry-content li {

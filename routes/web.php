@@ -43,6 +43,7 @@ use App\Http\Controllers\NewsController;
 use App\Models\Lainnya;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CKEditorController;
+use App\Http\Controllers\ClickController;
 use App\Http\Controllers\GaleriSouvenirController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SouvenirController;
@@ -101,6 +102,9 @@ Route::get('/payment/success/{code}', [PaymentController::class, 'payment_succes
 
 
 // });
+
+// hitung click button
+Route::post('/button-click', [ClickController::class, 'storeClick'])->name('button.click');
 
 Route::prefix("app-admin")->group(function () {
     Route::get('/', [AuthAdminController::class, 'login'])->middleware('GuestAdmin');

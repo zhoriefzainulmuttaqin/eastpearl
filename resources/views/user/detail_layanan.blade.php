@@ -312,30 +312,32 @@
                 <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
                     @if (App::isLocale('id'))
                         <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
-                            target="_blank">
+                            data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                             <i class="uil uil-whatsapp"></i> <br> {{ __('detail_layanan.book_wa') }}
                         </a>
                     @elseif(App::isLocale('en'))
                         <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
-                            target="_blank">
+                            data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                             <i class="uil uil-whatsapp"></i> <br> {{ __('detail_layanan.book_wa') }}
                         </a>
                     @else
                         <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
-                            target="_blank">
+                            data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                             <i class="uil uil-whatsapp"></i> <br> {{ __('detail_layanan.book_wa') }}
                         </a>
                     @endif
                 </div>
                 <div
                     class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
-                    <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
+                    <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata"
+                        data-button-id="email" data-button-name="Email" target="_blank">
                         <i class="uil uil-envelope"></i><br> {{ __('detail_layanan.book_email') }}
                     </a>
                 </div>
                 <div
                     class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-                    <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata">
+                    <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata"
+                        data-button-id="wechat" data-button-name="WeChat" target="_blank">
                         <i class="uil uil-chat"></i> <br>{{ __('detail_layanan.book_wechat') }}
                     </a>
                 </div>
@@ -344,7 +346,7 @@
                 <div
                     class="relative w-100 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
                     <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white "
-                        id="but_wisata">
+                        id="but_wisata" data-button-id="booking" data-button-name="Booking Online" target="_blank">
                         <i class="uil uil-schedule"></i> <br> Booking Online
                     </a>
                 </div>
@@ -400,44 +402,47 @@
             @if (App::isLocale('id'))
                 @if (App::isLocale('id'))
                     <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
-                        target="_blank">
+                        data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                         <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                     </a>
                 @elseif(App::isLocale('en'))
                     <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
-                        target="_blank">
+                        data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                         <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                     </a>
                 @else
                     <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
-                        target="_blank">
+                        data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                         <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                     </a>
                 @endif
             @elseif(App::isLocale('en'))
                 <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
-                    target="_blank">
+                    data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                     <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                 </a>
             @else
                 <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
-                    target="_blank">
+                    data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                     <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                 </a>
             @endif
         </div>
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
-            <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
+            <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata"
+                data-button-id="email" data-button-name="Email" target="_blank">
                 <i class="uil uil-envelope"></i><br> {{ __('detail_layanan.book_email') }}
             </a>
         </div>
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-            <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata">
+            <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata"
+                data-button-id="wechat" data-button-name="WeChat" target="_blank">
                 <i class="uil uil-chat"></i> <br> {{ __('detail_layanan.book_wechat') }}
             </a>
         </div>
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-            <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white " id="but_wisata">
+            <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white " id="but_wisata"
+                data-button-id="booking" data-button-name="Booking Online" target="_blank">
                 <i class="uil uil-schedule"></i> <br> Booking Online
             </a>
         </div>
@@ -691,17 +696,17 @@
                 <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
                     @if (App::isLocale('id'))
                         <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
-                            target="_blank">
+                            data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                             <i class="uil uil-whatsapp"></i> <br>{{ __('detail_layanan.book_wa') }}
                         </a>
                     @elseif(App::isLocale('en'))
                         <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
-                            target="_blank">
+                            data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                             <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                         </a>
                     @else
                         <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
-                            target="_blank">
+                            data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                             <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                         </a>
                     @endif
@@ -709,13 +714,15 @@
                 </div>
                 <div
                     class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
-                    <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
+                    <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata"
+                        data-button-id="email" data-button-name="Email" target="_blank">
                         <i class="uil uil-envelope"></i><br> {{ __('detail_layanan.book_email') }}
                     </a>
                 </div>
                 <div
                     class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-                    <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata">
+                    <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata"
+                        data-button-id="wechat" data-button-name="WeChat" target="_blank">
                         <i class="uil uil-chat"></i> <br> {{ __('detail_layanan.book_wechat') }}
                     </a>
                 </div>
@@ -723,8 +730,8 @@
             <div class="flex justify-content-left">
                 <div
                     class="relative w-100 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-                    <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white "
-                        id="but_wisata">
+                    <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white"
+                        id="but_wisata" data-button-id="booking" data-button-name="Booking Online" target="_blank">
                         <i class="uil uil-schedule"></i> <br> Booking Online
                     </a>
                 </div>
@@ -779,35 +786,38 @@
         <div class="relative flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
             @if (App::isLocale('id'))
                 <a href="{{ url('https://wa.link/6737vy') }}" class="btn text-white " id="but_wisata"
-                    target="_blank">
+                    data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                     <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                 </a>
             @elseif(App::isLocale('en'))
                 <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
-                    target="_blank">
+                    data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                     <i class="uil uil-whatsapp"></i> <br>{{ __('detail_layanan.book_wa') }}
                 </a>
             @else
                 <a href="{{ url('https://wa.link/uyw6tn') }}" class="btn text-white " id="but_wisata"
-                    target="_blank">
+                    data-button-id="whatsapp" data-button-name="WhatsApp" target="_blank">
                     <i class="uil uil-whatsapp"></i><br> {{ __('detail_layanan.book_wa') }}
                 </a>
             @endif
         </div>
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-danger bg-clip-border text-gray-700 shadow-lg">
-            <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata">
+            <a href="{{ url('mailto:info@eastpearl.id') }}" class="btn text-white " id="but_wisata"
+                data-button-id="email" data-button-name="Email" target="_blank">
                 <i class="uil uil-envelope"></i><br> {{ __('detail_layanan.book_email') }}
             </a>
         </div>
         <div class="relative ms-2 flex flex-col mb-4 rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-            <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata">
+            <a href="{{ url('weixin://dl/chat?eastpearl_id') }}" class="btn text-white " id="but_wisata"
+                data-button-id="wechat" data-button-name="WeChat" target="_blank">
                 <i class="uil uil-chat"></i> <br> {{ __('detail_layanan.book_wechat') }}
             </a>
         </div>
     </div>
     <div class="flex justify-content-left">
         <div class="relative w-100 flex flex-col rounded-xl bg-success bg-clip-border text-gray-700 shadow-lg">
-            <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white " id="but_wisata">
+            <a href="{{ url('https://eastpearl-online.globaltix.com/') }}" class="btn text-white " id="but_wisata"
+                data-button-id="booking" data-button-name="Booking Online" target="_blank">
                 <i class="uil uil-schedule"></i> <br> Booking Online
             </a>
         </div>
@@ -828,6 +838,34 @@
     function goBack() {
         window.history.back();
     }
+
+    // hitung klik button
+    document.addEventListener('DOMContentLoaded', function() {
+        // Pilih semua button dengan atribut data-button-id
+        const buttons = document.querySelectorAll('[data-button-id]');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const buttonId = this.getAttribute('data-button-id'); // Ambil ID button
+                const buttonName = this.getAttribute('data-button-name'); // Ambil nama button
+
+                // Kirim request ke backend Laravel
+                fetch("{{ route('button.click') }}", {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            button_id: buttonId,
+                            button_name: buttonName
+                        })
+                    }).then(response => response.json())
+                    .then(data => console.log(data.message))
+                    .catch(error => console.error('Error:', error));
+            });
+        });
+    });
 
     // Menggunakan JavaScript untuk menentukan apakah harus menambahkan atribut `open` pada elemen `details` pertama
     document.addEventListener('DOMContentLoaded', function() {
